@@ -1,0 +1,59 @@
+{
+  "$comment": "Evidence sidecar for candidate positions (see docs/candidate-scoring.md). Keyed candidateId -> parameterId -> { value, confidence, rationale, sources }. The engine does NOT read this file; candidates.json[value] is projected from here. WORK IN PROGRESS — golden sample only so far.",
+  "gilad_kariv": {
+    "conflict": {
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Chairs the Knesset caucus for a two-state solution and renewed negotiations; visited Ramallah in 2023 and argued Israel must choose dialogue with the PA over Hamas.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://giladkariv.com/about/"]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Consistent two-state advocate opposed to annexation; explicit settlement-evacuation stance is implied by that framework rather than separately quoted.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+    },
+    "economy": {
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Labor MK active on social-justice and pensioners' lobbies; social-democratic profile, though not primarily an economic-policy figure.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://www.knesset.tv/knesset-members/gilad-kariv/"]
+    },
+    "religion_state": {
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "Reform rabbi and former CEO of the Reform Movement; authored a detailed framework for separating religious institutions from the state and fought Orthodox monopolies on conversion and marriage.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://www.zman.co.il/199378/"]
+    },
+    "shared_society": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Co-chaired the caucus advancing Jewish–Arab shared living; supports bilingual education and equal rights across communities.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+    },
+    "positioning": {
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "Identifies clearly with the Zionist left and called for uniting leftist forces (Labor+Meretz); a values-left figure, not a center-tacker.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+    },
+    "climate": {
+      "value": 0.5,
+      "confidence": "low",
+      "rationale": "Past Green Party affiliation but little current, signature environmental record; placed near the party prior.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+    },
+    "experience": {
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "MK since 2021, chaired the Constitution Committee and now the Immigration & Diaspora Committee; former CEO of the Reform Movement (2009–2019).",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+    },
+    "flagship": {
+      "value": ["religion_and_state", "jewish_arab_equality", "civil_rights", "democracy_integrity"],
+      "confidence": "high",
+      "rationale": "Signature causes: freedom of religion and separation, Jewish–Arab shared society, civil liberties and free press, and constitutional/democratic safeguards.",
+      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://giladkariv.com/about/"]
+    }
+  }
+}
