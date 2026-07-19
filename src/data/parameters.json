@@ -1,19 +1,26 @@
 {
-  "$comment": "Structural only. Display text lives in src/locales, resolved by convention: param.<id>.label, param.<id>.poleLow/poleHigh, option.<id>.label.",
+  "$comment": "Structural only. Display text lives in src/locales, resolved by convention: param.<id>.label, param.<id>.poleLow/poleHigh, option.<id>. Tailored to the הדמוקרטים 2026 primary (see docs/parameters.md).",
   "parameters": [
+    { "id": "conflict", "kind": "scalar" },
+    { "id": "separation_annexation", "kind": "scalar" },
     { "id": "economy", "kind": "scalar" },
-    { "id": "security", "kind": "scalar" },
-    { "id": "court_political", "kind": "scalar" },
-    { "id": "judiciary_balance", "kind": "scalar" },
-    { "id": "religion_state_sep", "kind": "scalar" },
-    { "id": "leadership_style", "kind": "scalar" },
-    { "id": "ideology", "kind": "scalar" },
-    { "id": "honesty", "kind": "valence" },
+    { "id": "religion_state", "kind": "scalar" },
+    { "id": "shared_society", "kind": "scalar" },
+    { "id": "positioning", "kind": "scalar" },
+    { "id": "climate", "kind": "scalar" },
     { "id": "experience", "kind": "valence" },
     {
       "id": "flagship",
       "kind": "set",
-      "options": ["minorities_women", "cost_of_living", "civil_rights", "religion_state", "settlements"]
+      "options": [
+        "cost_of_living",
+        "religion_and_state",
+        "civil_rights",
+        "womens_minority_rep",
+        "democracy_integrity",
+        "jewish_arab_equality",
+        "climate_env"
+      ]
     }
   ]
 }

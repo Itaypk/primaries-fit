@@ -1,16 +1,28 @@
 {
-  "app": { "name": "Compass", "langLabel": "עב" },
+  "app": {
+    "name": "Compass",
+    "langLabel": "עב"
+  },
   "ui": {
     "badge": "Independent · no party affiliation",
     "welcome": {
       "title": "Find the candidate who speaks for you",
       "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
-      "time": "~3 min · 11 questions",
+      "time": "~4 min · 14 questions",
       "start": "Let’s begin",
       "steps": [
-        { "title": "Answer honestly", "desc": "Drag, rate and select what feels closest to you." },
-        { "title": "We compare", "desc": "Your answers are weighed against candidate positions." },
-        { "title": "Transparent ranking", "desc": "Every match comes with a full explanation." }
+        {
+          "title": "Answer honestly",
+          "desc": "Drag, rate and select what feels closest to you."
+        },
+        {
+          "title": "We compare",
+          "desc": "Your answers are weighed against candidate positions."
+        },
+        {
+          "title": "Transparent ranking",
+          "desc": "Every match comes with a full explanation."
+        }
       ]
     },
     "quiz": {
@@ -38,7 +50,8 @@
       "gap": "Position gap",
       "whyMatch": "Why this match",
       "fullBreakdown": "Full breakdown",
-      "restart": "Start over"
+      "restart": "Start over",
+      "limitedRecord": "Limited public record"
     },
     "candidate": {
       "overallMatch": "Overall match to your positions",
@@ -51,42 +64,356 @@
     }
   },
   "param": {
-    "economy": { "label": "Economy", "poleLow": "Free market", "poleHigh": "Government-run" },
-    "security": { "label": "Security", "poleLow": "Hardline", "poleHigh": "Diplomacy" },
-    "court_political": { "label": "The judiciary", "poleLow": "Professional body", "poleHigh": "Political actor" },
-    "judiciary_balance": { "label": "Judicial reform", "poleLow": "Knesset & government", "poleHigh": "The courts" },
-    "religion_state_sep": { "label": "Religion & state", "poleLow": "Religion tied to state", "poleHigh": "Separation of religion & state" },
-    "leadership_style": { "label": "Leadership style", "poleLow": "Confrontational", "poleHigh": "Bridge-builder" },
-    "ideology": { "label": "Ideology", "poleLow": "Strict ideology", "poleHigh": "Broad appeal" },
-    "honesty": { "label": "Integrity & transparency" },
-    "experience": { "label": "Experience" },
-    "flagship": { "label": "Flagship issues" }
+    "conflict": {
+      "label": "Security & the conflict",
+      "poleLow": "Security & deterrence first",
+      "poleHigh": "Diplomacy & two states"
+    },
+    "separation_annexation": {
+      "label": "Occupation & settlements",
+      "poleLow": "Keep the status quo",
+      "poleHigh": "End the occupation"
+    },
+    "economy": {
+      "label": "Economy",
+      "poleLow": "Free market",
+      "poleHigh": "Social-democratic"
+    },
+    "religion_state": {
+      "label": "Religion & state",
+      "poleLow": "Preserve the status quo",
+      "poleHigh": "Full separation"
+    },
+    "shared_society": {
+      "label": "Shared society",
+      "poleLow": "Jewish-national character first",
+      "poleHigh": "Full Jewish–Arab equality"
+    },
+    "positioning": {
+      "label": "Political positioning",
+      "poleLow": "Stay true to the left",
+      "poleHigh": "Move to the center"
+    },
+    "climate": {
+      "label": "Climate & environment",
+      "poleLow": "Not a top priority",
+      "poleHigh": "A central cause"
+    },
+    "experience": {
+      "label": "Experience"
+    },
+    "flagship": {
+      "label": "Flagship issues"
+    }
   },
   "option": {
-    "minorities_women": "Minority & women representation",
     "cost_of_living": "Cost of living",
+    "religion_and_state": "Religion & state",
     "civil_rights": "Civil rights",
-    "religion_state": "Religion & state",
-    "settlements": "Settlements"
+    "womens_minority_rep": "Women's & minority representation",
+    "democracy_integrity": "Democracy & anti-corruption",
+    "jewish_arab_equality": "Jewish–Arab equality",
+    "climate_env": "Climate & environment"
   },
   "question": {
-    "q_economy": { "title": "Which economic approach is closer to you?" },
-    "q_imp_security": { "title": "How decisive is security in your choice?" },
-    "q_security": { "title": "On security matters, where do you lean?" },
-    "q_court_political": { "statement": "The Supreme Court is a political actor." },
-    "q_judiciary": { "title": "In balancing branches of power, whom to strengthen?" },
-    "q_religion_sep": { "statement": "Religion and state should be separated." },
-    "q_champion": { "title": "Which issues should the candidate champion?" },
-    "q_imp_honesty": { "title": "How much weight do integrity and transparency carry?" },
-    "q_style": { "title": "Which leadership style speaks to you?" },
-    "q_ideology": { "title": "How ideologically pure should the candidate be?" },
-    "q_imp_experience": { "title": "How much weight for experience (political & other)?" }
+    "q_conflict": {
+      "title": "On the conflict and security, where do you lean?"
+    },
+    "q_imp_conflict": {
+      "title": "How decisive is security and the conflict in your choice?"
+    },
+    "q_separation": {
+      "statement": "Israel should act to end the occupation and evacuate settlements."
+    },
+    "q_economy": {
+      "title": "Which economic approach is closer to you?"
+    },
+    "q_imp_economy": {
+      "title": "How much weight do economic issues carry for you?"
+    },
+    "q_religion_state": {
+      "title": "On religion and state, where do you lean?"
+    },
+    "q_imp_religion_state": {
+      "title": "How much weight does religion & state carry for you?"
+    },
+    "q_shared_society": {
+      "title": "On Jewish–Arab shared society, where do you lean?"
+    },
+    "q_imp_shared_society": {
+      "title": "How much weight does shared society carry for you?"
+    },
+    "q_positioning": {
+      "title": "Should the party stay true to the left or move to the center?"
+    },
+    "q_climate": {
+      "title": "How central should climate and the environment be?"
+    },
+    "q_imp_climate": {
+      "title": "How much weight does climate carry in your choice?"
+    },
+    "q_flagship": {
+      "title": "Which issues should the candidate champion?"
+    },
+    "q_imp_experience": {
+      "title": "How much weight for experience (political & other)?"
+    }
   },
   "candidate": {
-    "A": { "name": "Candidate A", "tagline": "Business & management background", "initial": "A" },
-    "B": { "name": "Candidate B", "tagline": "Civil-society activism", "initial": "B" },
-    "C": { "name": "Candidate C", "tagline": "Security-sector past", "initial": "C" },
-    "D": { "name": "Candidate D", "tagline": "Academia & law", "initial": "D" },
-    "E": { "name": "Candidate E", "tagline": "Veteran politician", "initial": "E" }
+    "gilad_kariv": {
+      "name": "Gilad Kariv",
+      "tagline": "Reform rabbi & MK",
+      "initial": "G"
+    },
+    "michal_rozin": {
+      "name": "Michal Rozin",
+      "tagline": "Social activist, former MK",
+      "initial": "M"
+    },
+    "mossi_raz": {
+      "name": "Mossi Raz",
+      "tagline": "Peace activist, former MK",
+      "initial": "M"
+    },
+    "naama_lazimi": {
+      "name": "Naama Lazimi",
+      "tagline": "MK, social justice",
+      "initial": "N"
+    },
+    "efrat_rayten": {
+      "name": "Efrat Rayten",
+      "tagline": "MK, faction chair",
+      "initial": "E"
+    },
+    "gaby_lasky": {
+      "name": "Gaby Lasky",
+      "tagline": "Human-rights lawyer, former MK",
+      "initial": "G"
+    },
+    "yariv_oppenheimer": {
+      "name": "Yariv Oppenheimer",
+      "tagline": "Peace Now activist",
+      "initial": "Y"
+    },
+    "chen_arieli": {
+      "name": "Chen Arieli",
+      "tagline": "Feminist & LGBTQ activist",
+      "initial": "C"
+    },
+    "yael_cohen_paran": {
+      "name": "Yael Cohen Paran",
+      "tagline": "Energy & climate expert, former MK",
+      "initial": "Y"
+    },
+    "ram_shefa": {
+      "name": "Ram Shefa",
+      "tagline": "MK, education & labor",
+      "initial": "R"
+    },
+    "tomer_avital": {
+      "name": "Tomer Avital",
+      "tagline": "Transparency journalist",
+      "initial": "T"
+    },
+    "eran_nissan": {
+      "name": "Eran Nissan",
+      "tagline": "Activist, Mehazkim CEO",
+      "initial": "E"
+    },
+    "ayed_badir": {
+      "name": "Ayed Badir",
+      "tagline": "Arab-Jewish activist for equality and genuine partnership",
+      "initial": "A"
+    },
+    "avi_dabush": {
+      "name": "Avi Dabush",
+      "tagline": "Human rights activist and voice for a different religious perspective",
+      "initial": "A"
+    },
+    "avishai_lichtenstein": {
+      "name": "Avishai Lichtenstein",
+      "tagline": "Periphery and democracy activist, architect, civil-military relations researcher",
+      "initial": "A"
+    },
+    "evyatar_beer": {
+      "name": "Evyatar Beer",
+      "tagline": "Man of action and nature from the Negev",
+      "initial": "E"
+    },
+    "achsan_chalaylah": {
+      "name": "Achsan Chalaylah",
+      "tagline": "Educator and civil rights activist focused on Arab civil society",
+      "initial": "A"
+    },
+    "ali_salalha": {
+      "name": "Ali Salalha",
+      "tagline": "Druze educator, former Meretz MK, fought Nation-State Law, advocated Arab-Jewish equality",
+      "initial": "A"
+    },
+    "alice_goldman": {
+      "name": "Alice Goldman",
+      "tagline": "Environmental lawyer and northern region social activist",
+      "initial": "A"
+    },
+    "omri_ronen": {
+      "name": "Omri Ronen",
+      "tagline": "Democracy activist, Brothers and Sisters in Arms leader, reserve officer",
+      "initial": "O"
+    },
+    "emily_moatti": {
+      "name": "Emily Moatti",
+      "tagline": "Feminist, peace activist and writer",
+      "initial": "E"
+    },
+    "amir_khnifes": {
+      "name": "Amir Khnifes",
+      "tagline": "Civil rights activist and Druze community leader",
+      "initial": "A"
+    },
+    "inbal_wortman_shoham": {
+      "name": "Inbal Wortman Shoham",
+      "tagline": "Civil society activist, founder of Avnei Derech L'Chaim, advocate for Jewish-Arab partnership",
+      "initial": "I"
+    },
+    "inbar_bezek": {
+      "name": "Inbar Bezek",
+      "tagline": "Economic manager and self-employed rights activist; experienced voice of the north",
+      "initial": "I"
+    },
+    "eran_etzion": {
+      "name": "Eran Etzion",
+      "tagline": "Diplomat and security veteran with 30 years of foreign and security policy experience",
+      "initial": "E"
+    },
+    "olivia_emanuel_de_lam": {
+      "name": "Olivia Emanuel de Lam",
+      "tagline": "Community activist emphasizing participation over electoral ambition",
+      "initial": "O"
+    },
+    "ihab_shalian": {
+      "name": "Ihab Shalian",
+      "tagline": "First Christian Arab lieutenant colonel in IDF, advocate for minority integration and Christian identity in Israeli society",
+      "initial": "I"
+    },
+    "itai_leshem": {
+      "name": "Itai Leshem",
+      "tagline": "Lawyer and government corruption investigator",
+      "initial": "I"
+    },
+    "rabbi_benjamin_daniel_minich": {
+      "name": "Rabbi Benjamin Daniel Minich",
+      "tagline": "Reform rabbi, scholar, and leader of Israel's Progressive Rabbinate",
+      "initial": "R"
+    },
+    "dani_algart": {
+      "name": "Dani Algart",
+      "tagline": "Retired Deputy Superintendent, teacher, educator, and leader of hostage families' struggle",
+      "initial": "D"
+    },
+    "dima_shapira": {
+      "name": "Dima Shapira",
+      "tagline": "Yokneam activist and Meretz–Democrats field leader",
+      "initial": "D"
+    },
+    "ghaleb_salamna": {
+      "name": "Ghaleb Salamna",
+      "tagline": "Human rights lawyer and advocate for Jewish-Arab partnership",
+      "initial": "G"
+    },
+    "gil_beilin": {
+      "name": "Gil Beilin",
+      "tagline": "Professional leadership rooted in truth and expertise",
+      "initial": "G"
+    },
+    "hadas_ragolsky": {
+      "name": "Hadas Ragolsky",
+      "tagline": "Lawyer, journalist, and leading advocate for women's equality and separation of religion and state",
+      "initial": "H"
+    },
+    "lee_hoffmann_agiv": {
+      "name": "Lee Hoffmann Agiv",
+      "tagline": "Democracy and women's activist from Bonot Alternativa",
+      "initial": "L"
+    },
+    "kati_piasecki": {
+      "name": "Kati Piasecki",
+      "tagline": "Democracy and LGBTQ+ rights activist, advocate for state-religion separation",
+      "initial": "K"
+    },
+    "malek_bader": {
+      "name": "Malek Bader",
+      "tagline": "Druze attorney, equality and democracy activist",
+      "initial": "M"
+    },
+    "mehereta_baruch_ron": {
+      "name": "Mehereta Baruch-Ron",
+      "tagline": "Former Tel Aviv deputy mayor, social bridge-builder for equality and justice",
+      "initial": "M"
+    },
+    "moshe_redman_abutbul": {
+      "name": "Moshe Redman Abutbul",
+      "tagline": "Protest movement leader, high-tech entrepreneur, social activist",
+      "initial": "M"
+    },
+    "moran_michel": {
+      "name": "Moran Michel",
+      "tagline": "Democratic entrepreneur and activist, leader of the protest movement for democracy and women's rights",
+      "initial": "M"
+    },
+    "moran_zer_katzenstein": {
+      "name": "Moran Zer Katzenstein",
+      "tagline": "Founder of Bonot Alternativa women's movement, advocate for democracy and women's rights",
+      "initial": "M"
+    },
+    "naor_narkis": {
+      "name": "Naor Narkis",
+      "tagline": "Secular activist fighting to separate religion from state and money; founder of Returning with Reason",
+      "initial": "N"
+    },
+    "nava_rozolio": {
+      "name": "Nava Rozolio",
+      "tagline": "Attorney, protest leader, and advocate for peace and Jewish-Arab partnership",
+      "initial": "N"
+    },
+    "nidal_masalha": {
+      "name": "Nidal Masalha",
+      "tagline": "Lawyer & economist from Kafr Qara, champion of Arab-Jewish partnership",
+      "initial": "N"
+    },
+    "nimrod_sheffer": {
+      "name": "Nimrod Sheffer",
+      "tagline": "Retired major general, military strategist and democratic liberal",
+      "initial": "N"
+    },
+    "rotem_sivan_hoffmann": {
+      "name": "Rotem Sivan Hoffmann",
+      "tagline": "Neurosurgeon, entrepreneur, co-founder of Aware Mothers movement",
+      "initial": "R"
+    },
+    "sumaya_bashir": {
+      "name": "Sumaya Bashir",
+      "tagline": "Social activist for Jewish-Arab partnership and civil equality",
+      "initial": "S"
+    },
+    "yair_pink": {
+      "name": "Yair Pink",
+      "tagline": "Religious left-wing activist fighting Jewish extremism and church-state separation",
+      "initial": "Y"
+    },
+    "yair_rubinstein": {
+      "name": "Yair Rubinstein",
+      "tagline": "Religion-state affairs leader, advocate for secular governance and Jewish-Arab partnership",
+      "initial": "Y"
+    },
+    "prof_yaron_niv": {
+      "name": "Prof. Yaron Niv",
+      "tagline": "Physician and public health administrator",
+      "initial": "P"
+    },
+    "yoav_agami": {
+      "name": "Yoav Agami",
+      "tagline": "Liberal social-democrat activist for peace and institutional integrity",
+      "initial": "Y"
+    }
   }
 }

@@ -97,6 +97,23 @@ export function ResultsScreen({
                   >
                     {t.candidateTagline(c.candidateId)}
                   </div>
+                  {display.limitedRecord && (
+                    <span
+                      style={{
+                        display: "inline-block",
+                        marginTop: "5px",
+                        padding: "2px 8px",
+                        borderRadius: "999px",
+                        background: "#f0ece2",
+                        color: "#8a7f6f",
+                        fontSize: "10.5px",
+                        fontWeight: 700,
+                        letterSpacing: ".2px",
+                      }}
+                    >
+                      {t.ui.results.limitedRecord}
+                    </span>
+                  )}
                 </div>
                 <div style={{ flex: "none", textAlign: "center" }}>
                   <div

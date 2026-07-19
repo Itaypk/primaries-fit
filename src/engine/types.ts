@@ -62,6 +62,8 @@ export interface Candidate {
   display?: {
     avatarBg?: string;
     avatarInk?: string;
+    /** True when most positions are low-confidence (thin public record). UI-only flag. */
+    limitedRecord?: boolean;
   };
 }
 

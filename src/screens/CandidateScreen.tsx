@@ -50,6 +50,22 @@ export function CandidateScreen({
             {t.candidateName(candidateId)}
           </div>
           <div style={{ fontSize: "14px", color: "#9a8f7e" }}>{t.candidateTagline(candidateId)}</div>
+          {display.limitedRecord && (
+            <span
+              style={{
+                display: "inline-block",
+                marginTop: "6px",
+                padding: "2px 9px",
+                borderRadius: "999px",
+                background: "#f0ece2",
+                color: "#8a7f6f",
+                fontSize: "11px",
+                fontWeight: 700,
+              }}
+            >
+              {t.ui.results.limitedRecord}
+            </span>
+          )}
         </div>
       </div>
 
