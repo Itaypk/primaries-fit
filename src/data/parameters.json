@@ -1,0 +1,19 @@
+{
+  "$comment": "Structural only. Display text lives in src/locales, resolved by convention: param.<id>.label, param.<id>.poleLow/poleHigh, option.<id>.label.",
+  "parameters": [
+    { "id": "economy", "kind": "scalar" },
+    { "id": "security", "kind": "scalar" },
+    { "id": "court_political", "kind": "scalar" },
+    { "id": "judiciary_balance", "kind": "scalar" },
+    { "id": "religion_state_sep", "kind": "scalar" },
+    { "id": "leadership_style", "kind": "scalar" },
+    { "id": "ideology", "kind": "scalar" },
+    { "id": "honesty", "kind": "valence" },
+    { "id": "experience", "kind": "valence" },
+    {
+      "id": "flagship",
+      "kind": "set",
+      "options": ["minorities_women", "cost_of_living", "civil_rights", "religion_state", "settlements"]
+    }
+  ]
+}

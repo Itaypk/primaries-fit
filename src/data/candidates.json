@@ -1,0 +1,85 @@
+{
+  "$comment": "Position vectors keyed by PARAMETER id (not question id). Scalars/valence in [0,1]; sets are option-id arrays. Names/taglines/initials live in src/locales as candidate.<id>.*. Placeholder data mirrors the prototype.",
+  "candidates": [
+    {
+      "id": "A",
+      "positions": {
+        "economy": 0.28,
+        "security": 0.48,
+        "court_political": 0,
+        "judiciary_balance": 0.66,
+        "religion_state_sep": 1,
+        "leadership_style": 0.72,
+        "ideology": 0.76,
+        "honesty": 0.7,
+        "experience": 0.6,
+        "flagship": ["cost_of_living", "civil_rights"]
+      },
+      "display": { "avatarBg": "#e7ddce", "avatarInk": "#6b5f4c" }
+    },
+    {
+      "id": "B",
+      "positions": {
+        "economy": 0.74,
+        "security": 0.8,
+        "court_political": 0,
+        "judiciary_balance": 0.86,
+        "religion_state_sep": 1,
+        "leadership_style": 0.62,
+        "ideology": 0.44,
+        "honesty": 0.85,
+        "experience": 0.4,
+        "flagship": ["minorities_women", "civil_rights"]
+      },
+      "display": { "avatarBg": "#e3e6d6", "avatarInk": "#57603f" }
+    },
+    {
+      "id": "C",
+      "positions": {
+        "economy": 0.46,
+        "security": 0.3,
+        "court_political": 1,
+        "judiciary_balance": 0.54,
+        "religion_state_sep": 0,
+        "leadership_style": 0.34,
+        "ideology": 0.6,
+        "honesty": 0.6,
+        "experience": 0.75,
+        "flagship": ["settlements", "cost_of_living"]
+      },
+      "display": { "avatarBg": "#e0e7e5", "avatarInk": "#3d5b58" }
+    },
+    {
+      "id": "D",
+      "positions": {
+        "economy": 0.6,
+        "security": 0.64,
+        "court_political": 0,
+        "judiciary_balance": 0.9,
+        "religion_state_sep": 1,
+        "leadership_style": 0.74,
+        "ideology": 0.4,
+        "honesty": 0.8,
+        "experience": 0.55,
+        "flagship": ["civil_rights", "minorities_women"]
+      },
+      "display": { "avatarBg": "#ece0d8", "avatarInk": "#7d4f36" }
+    },
+    {
+      "id": "E",
+      "positions": {
+        "economy": 0.5,
+        "security": 0.56,
+        "court_political": 1,
+        "judiciary_balance": 0.5,
+        "religion_state_sep": 0,
+        "leadership_style": 0.5,
+        "ideology": 0.84,
+        "honesty": 0.5,
+        "experience": 0.95,
+        "flagship": ["cost_of_living", "settlements"]
+      },
+      "display": { "avatarBg": "#e6e0e8", "avatarInk": "#5e4c66" }
+    }
+  ]
+}

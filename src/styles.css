@@ -1,0 +1,77 @@
+/* Global styles ported from the Claude Design prototype. Component-specific
+   styling is kept inline in the components (as in the prototype) so the visual
+   spec stays close to source; only shared/reset rules and the custom range
+   input live here. Accent colours are injected as CSS variables on the phone
+   frame (see PhoneFrame). */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #efe7db;
+  font-family: "Assistant", -apple-system, system-ui, sans-serif;
+}
+
+a {
+  color: var(--accent, #c0684a);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-ink, #7d3d29);
+}
+
+/* Hidden scrollbars for the scrolling screen areas. */
+.scr::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.scr {
+  scrollbar-width: none;
+}
+
+/* Custom range slider. */
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e3d8c7;
+  outline: none;
+  margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent, #c0684a);
+  border: 5px solid #fff;
+  box-shadow: 0 3px 10px rgba(70, 40, 20, 0.25);
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--accent, #c0684a);
+  border: 5px solid #fff;
+  box-shadow: 0 3px 10px rgba(70, 40, 20, 0.25);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.serif {
+  font-family: "Frank Ruhl Libre", "Assistant", serif;
+}
