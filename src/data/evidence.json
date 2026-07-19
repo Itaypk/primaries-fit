@@ -1,59 +1,1084 @@
 {
-  "$comment": "Evidence sidecar for candidate positions (see docs/candidate-scoring.md). Keyed candidateId -> parameterId -> { value, confidence, rationale, sources }. The engine does NOT read this file; candidates.json[value] is projected from here. WORK IN PROGRESS — golden sample only so far.",
+  "$comment": "Evidence sidecar (see docs/candidate-scoring.md). candidateId -> parameterId -> {value,confidence,rationale,sources}. Engine does NOT read this; candidates.json[value] is projected from here. Pilot = 12 candidates.",
   "gilad_kariv": {
     "conflict": {
       "value": 0.9,
       "confidence": "high",
       "rationale": "Chairs the Knesset caucus for a two-state solution and renewed negotiations; visited Ramallah in 2023 and argued Israel must choose dialogue with the PA over Hamas.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://giladkariv.com/about/"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב",
+        "https://giladkariv.com/about/"
+      ]
     },
     "separation_annexation": {
       "value": 1,
       "confidence": "medium",
       "rationale": "Consistent two-state advocate opposed to annexation; explicit settlement-evacuation stance is implied by that framework rather than separately quoted.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב"
+      ]
     },
     "economy": {
       "value": 0.75,
       "confidence": "medium",
       "rationale": "Labor MK active on social-justice and pensioners' lobbies; social-democratic profile, though not primarily an economic-policy figure.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://www.knesset.tv/knesset-members/gilad-kariv/"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב",
+        "https://www.knesset.tv/knesset-members/gilad-kariv/"
+      ]
     },
     "religion_state": {
       "value": 0.95,
       "confidence": "high",
       "rationale": "Reform rabbi and former CEO of the Reform Movement; authored a detailed framework for separating religious institutions from the state and fought Orthodox monopolies on conversion and marriage.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://www.zman.co.il/199378/"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב",
+        "https://www.zman.co.il/199378/"
+      ]
     },
     "shared_society": {
       "value": 0.85,
       "confidence": "high",
       "rationale": "Co-chaired the caucus advancing Jewish–Arab shared living; supports bilingual education and equal rights across communities.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב"
+      ]
     },
     "positioning": {
       "value": 0.2,
       "confidence": "medium",
       "rationale": "Identifies clearly with the Zionist left and called for uniting leftist forces (Labor+Meretz); a values-left figure, not a center-tacker.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב"
+      ]
     },
     "climate": {
       "value": 0.5,
       "confidence": "low",
       "rationale": "Past Green Party affiliation but little current, signature environmental record; placed near the party prior.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב"
+      ]
     },
     "experience": {
       "value": 0.8,
       "confidence": "high",
       "rationale": "MK since 2021, chaired the Constitution Committee and now the Immigration & Diaspora Committee; former CEO of the Reform Movement (2009–2019).",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב"
+      ]
     },
     "flagship": {
-      "value": ["religion_and_state", "jewish_arab_equality", "civil_rights", "democracy_integrity"],
+      "value": [
+        "religion_and_state",
+        "jewish_arab_equality",
+        "civil_rights",
+        "democracy_integrity"
+      ],
       "confidence": "high",
       "rationale": "Signature causes: freedom of religion and separation, Jewish–Arab shared society, civil liberties and free press, and constitutional/democratic safeguards.",
-      "sources": ["https://he.wikipedia.org/wiki/גלעד_קריב", "https://giladkariv.com/about/"]
+      "sources": [
+        "https://he.wikipedia.org/wiki/גלעד_קריב",
+        "https://giladkariv.com/about/"
+      ]
+    }
+  },
+  "michal_rozin": {
+    "conflict": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Rozin defended Meretz's two-state solution position and participated in Foreign Affairs & Defense Committee; The Democrats platform explicitly 'endorses a two-state solution' and opposes West Bank occupation.",
+      "sources": [
+        "https://www.timesofisrael.com/is-there-an-alternative-rozin-says-meretz-has-no-option-on-settlement-bill/",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://en.wikipedia.org/wiki/Michal_Rozin"
+      ]
+    },
+    "economy": {
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "As chair of Employment Equality caucus and director of Central Union of Rape Crisis Centers, Rozin promoted worker rights and social services. The Democrats platform champions 'social democratic priorities including affordable housing, equal opportunity, welfare programs, strengthened labor unions, and resistance to privatizing public services.'",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%9C_%D7%A8%D7%95%D7%96%D7%99%D7%9F",
+        "https://israel.vota.com/en/parties/meretz-political/policies"
+      ]
+    },
+    "religion_state": {
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Rozin is a member of Women of the Wall (secular feminist movement) and chairs the Pluralism and Civil Equality caucus. Wikipedia notes she combines 'religious freedom with feminism' and worked to 'equalize budgets between religious and state education systems.' The Democrats seeks to repeal the Nation State Bill.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michal_Rozin",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%9C_%D7%A8%D7%95%D7%96%D7%99%D7%9F"
+      ]
+    },
+    "shared_society": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "As chair of Pluralism and Civil Equality caucus, Rozin advocates for civic equality and minority rights. The Democrats platform emphasizes 'protection of individual rights and minority rights,' but no explicit statements on Arab-Jewish partnership or Arab parties in coalition were found.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michal_Rozin",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://he.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=895"
+      ]
+    },
+    "positioning": {
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Rozin was Meretz faction chair (left-wing) but led Meretz's merger negotiations to form the center-left Democrats party, suggesting strategic positioning for broader electoral appeal while maintaining core values.",
+      "sources": [
+        "https://www.timesofisrael.com/liveblog_entry/former-meretz-mk-michal-rozin-will-run-in-democrats-primaries/",
+        "https://www.timesofisrael.com/labor-and-meretz-merge-into-united-liberal-democratic-zionist-party-the-democrats/",
+        "https://en.idi.org.il/articles/54874"
+      ]
+    },
+    "climate": {
+      "value": 0.45,
+      "confidence": "low",
+      "rationale": "Her website mentions 'significant legislation in social and environmental fields,' and she participated in Knesset discussions on UN Sustainable Development Goals, but climate is not documented as a flagship issue or personal priority.",
+      "sources": [
+        "https://michalrozin.co.il/",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=895"
+      ]
+    },
+    "experience": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Rozin served as MK (2013-2019, 2021-2022), authored/co-authored 77 laws, chaired Meretz faction, led Foreign Affairs & Defense Committee merger negotiations, was director of Central Union of Rape Crisis Centers, and received Israel Democracy Institute's Outstanding Parliamentarian Award (2014).",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michal_Rozin",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%9C_%D7%A8%D7%95%D7%96%D7%99%D7%9F",
+        "https://www.timesofisrael.com/liveblog_entry/former-meretz-mk-michal-rozin-will-run-in-democrats-primaries/"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "womens_minority_rep",
+        "civil_rights",
+        "religion_and_state",
+        "democracy_integrity"
+      ],
+      "confidence": "high",
+      "rationale": "Rozin's career centers on four flagship issues: (1) women's rights—directed rape crisis centers, co-authored harassment and protection laws, chaired Female MK lobby; (2) civil rights—ranked 3rd on Knesset LGBT advocacy, co-chairs gay caucus, pluralism advocate; (3) religion-state—member of Women of the Wall, chairs Pluralism caucus, equalized religious/secular education budgets; (4) democracy—founded 'Small Citizens, Big Vision' for civic education, emphasized democratic values throughout bio.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Michal_Rozin",
+        "https://michalrozin.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%9B%D7%9C_%D7%A8%D7%95%D7%96%D7%99%D7%9F",
+        "https://www.timesofisrael.com/liveblog_entry/former-meretz-mk-michal-rozin-will-run-in-democrats-primaries/"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "Longtime Meretz MK and social-camp figure aligned with ending the occupation and a two-state resolution; factional/record signal rather than a fresh direct quote on settlement evacuation.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/מיכל_רוזין"
+      ]
+    }
+  },
+  "mossi_raz": {
+    "conflict": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Raz has been a lifelong peace activist and served as secretary-general of Peace Now (1994-2000), consistently advocating for a two-state solution and Palestinian self-determination. His bio states 'all my life I've fought for peace and against occupation,' and he has actively participated in promoting peace negotiations.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mossi_Raz",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%99_%D7%A8%D7%96",
+        "https://oknesset.org/members/708.html"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Raz is a core anti-occupation activist who was director of Ir Shalem, a program dedicated to equitable Jewish-Arab coexistence solutions, and has been active in opposing settlement expansion. His Peace Now role and consistent anti-occupation stance throughout his career indicate support for ending the occupation.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mossi_Raz",
+        "https://www.c-r.org/who-we-are/people/mossi-raz",
+        "https://al-monitor.com/pulse/authors/moshe-mossi-raz.html"
+      ]
+    },
+    "economy": {
+      "value": 0.68,
+      "confidence": "medium",
+      "rationale": "Raz is described as an 'avowed social democrat' and is a member of Meretz, a left-wing party generally supporting welfare state policies. However, specific statements on unions, redistribution, or economic deregulation are limited in sources, so confidence relies partly on party affiliation.",
+      "sources": [
+        "https://www.972mag.com/mossi-raz-occupation-government/",
+        "https://en.wikipedia.org/wiki/Mossi_Raz"
+      ]
+    },
+    "religion_state": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Raz participated in 'secular lobbying' and called for repeal of Israel's nation-state law at a 2023 conference, demonstrating support for institutional separation of religion and state. His Wikipedia entry notes his involvement in secular advocacy and religious services committee oversight.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%99_%D7%A8%D7%96",
+        "https://en.wikipedia.org/wiki/Mossi_Raz",
+        "https://www.timesofisrael.com/topic/mossi-raz/"
+      ]
+    },
+    "shared_society": {
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Jewish-Arab partnership is a flagship issue for Raz. He ran for Meretz leadership with Arab candidate Issawi Frej proposing joint Jewish-Arab leadership; directed Ir Shalem coexistence program; and is described as 'one of the most consistent and eloquent speakers of the idea of Jewish-Arab partnership' with a lifelong commitment to full equality.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%99_%D7%A8%D7%96",
+        "https://en.wikipedia.org/wiki/Mossi_Raz",
+        "https://www.c-r.org/who-we-are/people/mossi-raz"
+      ]
+    },
+    "positioning": {
+      "value": 0.4,
+      "confidence": "medium",
+      "rationale": "Raz is identified as the 'most left-wing member of Meretz' and maintains strong left-wing commitments. However, his candidacy in The Democrats (a centrist-left party rather than Meretz) represents slight tactical positioning toward the center, though his core ideology remains firmly left.",
+      "sources": [
+        "https://www.972mag.com/mossi-raz-occupation-government/",
+        "https://en.wikipedia.org/wiki/Mossi_Raz"
+      ]
+    },
+    "climate": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Raz is a key environmental leader who chaired Chaim V'Svivah (Life and Environment) from 2010-2020, passed Knesset legislation for environmental org representation in planning institutions, and is a vegan who uses public transportation. Environment is a significant policy focus, though peace/occupation remains his primary flagship.",
+      "sources": [
+        "https://www.972mag.com/mossi-raz-occupation-government/",
+        "https://openscholar.huji.ac.il/trumanconference/book/%D7%9E%D7%A8-%D7%9E%D7%95%D7%A1%D7%99-%D7%A8%D7%96",
+        "https://en.wikipedia.org/wiki/Mossi_Raz"
+      ]
+    },
+    "experience": {
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Raz has 6 cumulative years as Knesset member (2000-2003, 2017-2019, 2021-2022 across three terms), served as secretary-general of Peace Now, directed Ir Shalem, and chaired Chaim V'Svivah. This represents sustained senior organizational and parliamentary leadership, though not a single extended continuous tenure.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Mossi_Raz",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%99_%D7%A8%D7%96",
+        "https://oknesset.org/members/708.html"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "jewish_arab_equality",
+        "democracy_integrity",
+        "climate_env"
+      ],
+      "confidence": "high",
+      "rationale": "Raz's primary focus is Jewish-Arab partnership and equality (core advocacy throughout career, Ir Shalem director, joint leadership proposal). Democracy/integrity stems from his anti-occupation, human rights, and peace activism. Climate/environment is established through his leadership of Chaim V'Svivah and personal sustainability commitments.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A1%D7%99_%D7%A8%D7%96",
+        "https://www.c-r.org/who-we-are/people/mossi-raz",
+        "https://www.972mag.com/mossi-raz-occupation-government/"
+      ]
+    }
+  },
+  "naama_lazimi": {
+    "conflict": {
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Lazimi is one of few Israeli lawmakers explicitly and consistently advocating for a two-state solution through negotiated peace. She argues that October 7 demonstrated the cost of refusing negotiations and regularly calls for pursuing diplomatic agreements with Palestinians.",
+      "sources": [
+        "https://www.timesofisrael.com/the-practical-peacenik-naama-lazimis-battle-for-israels-soul/",
+        "https://blogs.timesofisrael.com/naama-lazimi-a-feminist-social-democrat-and-pro-peace-member-of-knesset/"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Lazimi explicitly opposes settlement expansion and criticizes coalition funds directed to settlements beyond the Green Line. She calls proposals for Israeli settlement in Gaza 'escalatory' and champions a two-state solution framework that implicitly requires ending occupation.",
+      "sources": [
+        "https://www.timesofisrael.com/the-practical-peacenik-naama-lazimis-battle-for-israels-soul/",
+        "https://en.wikipedia.org/wiki/Naama_Lazimi"
+      ]
+    },
+    "economy": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Lazimi champions workers' rights, minimum wage increases (35-40%), public housing protection, and workers' legal protections. She describes herself as a social democrat and argues 'social democracy is the antidote to tyranny,' prioritizing redistribution and welfare state policies.",
+      "sources": [
+        "https://www.ynet.co.il/economy/article/skijkg6wo",
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%99",
+        "https://www.davar1.co.il/685204/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Lazimi identifies as 'traditional' (not strictly secular) and invokes Jewish religious values in her political arguments, suggesting she does not advocate for complete separation of religion and state. She balances civil equality with Jewish national identity, likely supporting incremental reform rather than institutional separation.",
+      "sources": [
+        "https://blogs.timesofisrael.com/naama-lazimi-a-feminist-social-democrat-and-pro-peace-member-of-knesset/",
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%94"
+      ]
+    },
+    "shared_society": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Lazimi chairs the 'coalition for Jewish-Arab partnership for justice and equality' and explicitly states 'there is no left without Arabs, and there is no equality without real struggle against racism.' She advocates for integrated Jewish-Arab education and focused on barriers to Arab youth integration as Youth Committee chair.",
+      "sources": [
+        "https://nif.org.il/haifa-con-25/",
+        "https://en.wikipedia.org/wiki/Naama_Lazimi",
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%94"
+      ]
+    },
+    "positioning": {
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Lazimi is positioned as center-left within both Labor and The Democrats party. While she is described as a 'left-wing Zionist' and clearly on the progressive wing, the parties she represents (Labor/Democrats) and her pragmatic approach to governance position her toward center relative to the Israeli left spectrum.",
+      "sources": [
+        "https://www.haaretz.com/israel-news/israel-politics/2026-07-09/ty-article/.premium/likud-lawmaker-calls-center-left-mk-lazimi-enemy-worse-than-hamas/0000019f-462a-d4a4-afff-e7afca810000",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)"
+      ]
+    },
+    "climate": {
+      "value": 0.2,
+      "confidence": "low",
+      "rationale": "No evidence from research indicates climate or environmental protection is a stated priority or signature issue for Lazimi. Her documented focus areas are peace, workers' rights, economic justice, gender equality, and Arab-Jewish equality; climate does not appear prominently in her legislative agenda or public statements.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Naama_Lazimi",
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%94"
+      ]
+    },
+    "experience": {
+      "value": 0.65,
+      "confidence": "high",
+      "rationale": "Lazimi has served in the Knesset since 2021 (5 years as of 2026), chairs the Special Committee for Youth Affairs, serves on Finance and Education committees, and has authored major legislation on minimum wage and workers' rights. She previously served on Haifa's city council and led gender equality initiatives.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%94",
+        "https://main.knesset.gov.il/mk/pages/mkpositions.aspx?mkid=1082"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "cost_of_living",
+        "womens_minority_rep",
+        "jewish_arab_equality",
+        "civil_rights"
+      ],
+      "confidence": "high",
+      "rationale": "Lazimi's legislative record and public statements demonstrate four primary policy focuses: cost_of_living (minimum wage bills, workers' rights, public housing), womens_minority_rep (explicit feminist leadership, gender equality committee work), jewish_arab_equality (chairs coalition for Jewish-Arab partnership), and civil_rights (LGBTQ+ support, anti-discrimination advocacy, democracy protection).",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%A2%D7%9E%D7%94_%D7%9C%D7%96%D7%99%D7%9E%D7%94",
+        "https://nif.org.il/haifa-con-25/",
+        "https://www.ynet.co.il/economy/article/skijkg6wo",
+        "https://blogs.timesofisrael.com/naama-lazimi-a-feminist-social-democrat-and-pro-peace-member-of-knesset/"
+      ]
+    }
+  },
+  "efrat_rayten": {
+    "conflict": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "The Democrats party (which she chairs the faction for) explicitly supports a two-state solution; party leader Yair Golan stated 'Our vision is a two-state solution' and opposes the occupation. Rayten criticizes the current government's military strategy as 'very damaging to Israel's interests.' She serves on Foreign and Security Committee and leads coalition opposition to Netanyahu's policies on the conflict. However, limited explicit personal statements on immediate negotiation timelines or active two-state advocacy; positions inferred largely from party platform.",
+      "sources": [
+        "https://www.timesofisrael.com/liveblog_entry/democrats-chair-yair-golan-extremely-damaging-to-israel-at-this-time/",
+        "https://www.timesofisrael.com/yair-golan-vows-not-to-fund-settlements-if-he-comes-to-power/",
+        "https://www.ynet.co.il/news/article/r1ziclmkle",
+        "https://democrats.org.il/social/%D7%94%D7%A6%D7%98%D7%A8%D7%A4%D7%95-%D7%90%D7%9C%D7%99%D7%A0%D7%95/"
+      ]
+    },
+    "economy": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Extensive record of welfare-state advocacy and worker protections. Proposed raising minimum wage by ~250 shekels/month; led efforts to prevent wage erosion and maintain indexing mechanisms to avoid inequality. Sponsored law preventing unemployment benefit deductions for those in professional training. Chairs Labor and Welfare Committee, advocating for social security expansions (900M shekel net for women in pension reform), rights for platform workers as third category with social protections, and prevention of wage deductions. Promotes strong union-friendly and redistribution-oriented labor policies.",
+      "sources": [
+        "https://www.maariv.co.il/business/economic/israel/Article-927666",
+        "https://www.ynet.co.il/economy/article/sk32e5ips",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068",
+        "https://www.efratrayten.com/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Strongly opposes religious legislation imposing separation. Explicitly criticized gender segregation law in academia as 'one of the bad, ugly and dark laws of the State of Israel,' arguing 'the state cannot legislate gender separation in its law book.' Advocates anchoring fundamental rights in Basic Law including 'equality, freedom of expression, freedom of religion.' Serves on Constitutional and Legal Affairs Committee. Frames democracy as requiring secular institutional safeguards. However, part of The Democrats which includes former Labor-Meretz merger (traditional center-left on religion-state), not a flagship cause or consistent public platform.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/hye7w11lezg",
+        "https://www.efratrayten.com/",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068"
+      ]
+    },
+    "shared_society": {
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Advocates for workplace inclusion and economic equality across populations. Stated Israel must 'advance and train women and bring people from all populations of Israeli society, including Haredim and Arabs, into the workforce.' Chairs Labor and Welfare Committee with focus on economic equality. However, primary framing is class/labor rights rather than ethnic-national partnership; limited explicit statements on full Jewish-Arab civic partnership or minority representation at political level. Inclusive in principle but not a flagship cause.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/hye7w11lezg",
+        "https://www.knesset.tv/knesset-members/efrat-rayten-marom/",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068"
+      ]
+    },
+    "positioning": {
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "Clear left-wing positioning. Member of The Democrats, left-wing party formed from Labor-Meretz merger; chairs Democratic faction in Knesset. Focuses on welfare state expansion, worker rights, and social protections—traditional left platform. Advocates for strong rule of law and democratic protections against 'government power.' However, positions are within mainstream Israeli left opposition, not far-left or maximalist redistribution; part of coalition-building political strategy rather than radical reordering. Labor legacy suggests traditional social-democratic left rather than center.",
+      "sources": [
+        "https://democrats.org.il/",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://www.efratrayten.com/",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068"
+      ]
+    },
+    "climate": {
+      "value": 0.45,
+      "confidence": "low",
+      "rationale": "No statements, committee work, or legislative priorities on climate or environmental issues found in research. Not mentioned as personal platform or flagship cause. No public record of climate advocacy. Using party prior for low-confidence scalar.",
+      "sources": [
+        "https://www.efratrayten.com/",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068"
+      ]
+    },
+    "experience": {
+      "value": 0.6,
+      "confidence": "high",
+      "rationale": "Member of Knesset since 2021 (two terms: 2021–2022 entry, re-elected 2022). Chair of Labor, Welfare and Health Committee (substantive role); Chair of Democrats faction (leadership position). Serves on Constitutional and Legal Affairs Committee, Foreign and Security Committee, Communications Committee, and Judicial Selection Committee—multiple key committees. Licensed attorney since 2012; practiced law before political career. However, total parliamentary tenure ~5 years limits to 'substantial' rather than 'senior/sustained' level; no ministerial or executive experience. Lawyer background adds policy credibility.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Efrat_Rayten",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068",
+        "https://www.knesset.tv/knesset-members/efrat-rayten-marom/"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "cost_of_living",
+        "democracy_integrity",
+        "civil_rights",
+        "womens_minority_rep"
+      ],
+      "confidence": "high",
+      "rationale": "Four issues she most actively champions: (1) cost_of_living—led minimum wage increase proposals, prevention of benefit deductions, worker protections, and social security expansions; central to her Labor and Welfare Committee work. (2) democracy_integrity—fights against what she frames as judicial override and 'government power,' advocates for anchoring rights in Basic Law and protecting Supreme Court independence, explicitly calls this 'the last shield of the common citizen.' (3) civil_rights—opposes gender segregation legislation, advocates equality and fundamental freedoms in Basic Law. (4) womens_minority_rep—champions gender equality (opposes segregation laws, promises accountability for non-participation in equality votes), workplace inclusion for Arabs and Haredim. All four are explicitly and repeatedly stated across official platform, voting record, and public statements.",
+      "sources": [
+        "https://www.efratrayten.com/",
+        "https://www.maariv.co.il/business/economic/israel/Article-927666",
+        "https://www.ynet.co.il/news/article/hye7w11lezg",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1068"
+      ]
+    }
+  },
+  "gaby_lasky": {
+    "conflict": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Former Secretary General of Peace Now; explicitly advocates for active two-state solution and negotiated resolution. Stated 'The two state solution requires action' in interviews. Criticizes settlement expansion as preventing Palestinian statehood. Represented anti-occupation activists legally for 25+ years. Strong emphasis on ending conflict through political negotiation, not security-first approaches.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://www.progressiveisrael.org/gaby-lasky-the-gloves-have-fully-come-off-from-the-prime-minister-on-down/",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "As MK, fought against unlawful outposts and succeeded in dismantling additional settlements. Brought discussions in Knesset committees about settler violence and law enforcement failures. Secretary General of Peace Now, an organization explicitly committed to ending occupation and settlement evacuation. Advocated for ending occupation as core principle throughout her career.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99",
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://www.progressiveisrael.org/gaby-lasky-the-gloves-have-fully-come-off-from-the-prime-minister-on-down/"
+      ]
+    },
+    "economy": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Advocated for minimum wage increases and workers' rights while in Knesset. Emphasized social justice as inseparable from civil rights. Meretz party platform supports strong welfare state and worker protections. Limited explicit statements on full economic platform, but record shows consistent support for redistribution and workers' welfare. Advocates for accessible public spaces and equitable resource distribution.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://www.progressiveisrael.org/gaby-lasky-the-gloves-have-fully-come-off-from-the-prime-minister-on-down/",
+        "https://meretz.org.il/%D7%92%D7%91%D7%99-%D7%9C%D7%A1%D7%A7%D7%99/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Co-founder of Havaya, organization providing Jewish marriage ceremonies outside mandatory Orthodox rabbinical framework. Personally in civil union (not religious marriage). Explicitly fought for separation of religion and state in Knesset. Advocates for institutional reform to remove religious monopolies over civic matters. Strong track record supporting religious pluralism and secular civil rights.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://www.progressiveisrael.org/gaby-lasky-the-gloves-have-fully-come-off-from-the-prime-minister-on-down/",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99"
+      ]
+    },
+    "shared_society": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Approximately 50% of legal clients are Palestinian West Bank residents; represented high-profile Palestinian cases (Ahed Tamimi, Dareen Tatour). Advocates for equal legal protections across communities and opposes discriminatory two-law system in occupied territories. Served on Knesset subcommittee against racism. Supports Palestinian-Jewish political cooperation. Argues Israel must be accountable to Declaration of Independence principles of equality for all citizens.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99",
+        "https://www.progressiveisrael.org/a-conversation-with-mk-gaby-lasky/"
+      ]
+    },
+    "positioning": {
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Represents firm left-wing positioning. Career rooted in Meretz (far left). Joined The Democrats party (left-center to left) as human rights activist, not as centrist. Emphasizes human rights and anti-occupation over economic centrism. No evidence of advocating to move party rightward or toward center. Represents protest movement's progressive wing. Slight positioning value reflects Democratic party's broader coalition but her personal positioning remains decidedly left.",
+      "sources": [
+        "https://www.timesofisrael.com/golans-democrats-party-unveils-51-primary-candidates-touts-85000-members/",
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://www.jpost.com/israel-news/politics-and-diplomacy/article-882535"
+      ]
+    },
+    "climate": {
+      "value": 0.5,
+      "confidence": "medium",
+      "rationale": "Founded lobbies for streams protection and trees/shade/greenery in Tel Aviv. Worked on environmental protection legislation against stream pollution. Advised Tel Aviv municipality on sustainability and urbanism. Brought environmental issues to Knesset (Ramat Hasharon landfill closure, Haifa Bay damage). Environmental work is consistent but secondary to primary focus on human rights, democracy, and occupation. Supportive but not a signature cause.",
+      "sources": [
+        "https://meretz.org.il/%D7%92%D7%91%D7%99-%D7%9C%D7%A1%D7%A7%D7%99/",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99",
+        "https://main.knesset.gov.il/mk/pages/mkpersonaldetails.aspx?mkid=1081"
+      ]
+    },
+    "experience": {
+      "value": 0.7,
+      "confidence": "high",
+      "rationale": "Member of Knesset representing Meretz (2021-2022, 1 year). Tel Aviv city council (2013-2018, 5 years). Secretary General of Peace Now (multi-year). Founder and partner in law firm Gaby Lasky & Associates. Human rights attorney with 25+ years of sustained legal practice and activism. Awarded Emil Greenzweig Human Rights Award (2012) by Association for Civil Rights in Israel. Substantial legal and activist record; parliamentary experience relatively brief but focused.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99",
+        "https://www.timesofisrael.com/liveblog_entry/golans-democrats-party-unveils-51-primary-candidates-for-july-20-primary-touts-membership-of-85000/"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "civil_rights",
+        "democracy_integrity",
+        "religion_and_state",
+        "jewish_arab_equality"
+      ],
+      "confidence": "high",
+      "rationale": "Civil rights is foundational to entire career as human rights lawyer (25+ years defending marginalized groups). Democracy integrity is central concern: argues government using democracy to end democracy, emphasizes protection of minority rights and dissent. Religion and state separation: co-founded Havaya, advocates institutional separation from Orthodox rabbinical monopoly. Jewish-Arab equality: 50% Palestinian clients, represents occupied populations, supports equal citizenship rights and Palestinian political cooperation. Women's equality secondary (UN Resolution 1325 work) but less prominent than core four.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Gaby_Lasky",
+        "https://he.wikipedia.org/wiki/%D7%92%D7%91%D7%99_%D7%9C%D7%A1%D7%A7%D7%99",
+        "https://www.progressiveisrael.org/gaby-lasky-the-gloves-have-fully-come-off-from-the-prime-minister-on-down/"
+      ]
+    }
+  },
+  "yariv_oppenheimer": {
+    "conflict": {
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "Oppenheimer led Peace Now for years, explicitly advocating for a Palestinian state, end to occupation, and negotiated political solution. His campaign platform prioritizes 'promoting a political solution, stopping messianic annexation.' His work centers on two-state framework and active peacemaking.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://yariv.oppenheimer.co.il/",
+        "https://peacenow.org.il/"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "As Peace Now secretary-general, Oppenheimer's core mission was ending the occupation and evacuating settlements. Peace Now petitioned Israel's Supreme Court demanding removal of illegal outposts; Oppenheimer led these legal efforts. His work explicitly targets settlement expansion cessation and Palestinian territorial control.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://peacenow.org.il/tag/%D7%99%D7%A8%D7%99%D7%91-%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8"
+      ]
+    },
+    "economy": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "No direct personal statements on economic policy found. Inferred from party affiliation: ran on Meretz list (2019, 2022) and now Democrats (2026). Meretz platform advocates progressive taxation, welfare expansion, union support, corporate regulation. Activist background focused on human rights and equality, not free-market principles.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://meretz.org.il/%D7%9E%D7%A6%D7%A2-%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94/%D7%93%D7%AA-%D7%95%D7%9E%D7%93%D7%99%D7%A0%D7%94/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "No explicit personal statements on religion-state separation found. Inferred from consistent Meretz affiliation (2019-2022) and now Democrats. Meretz platform explicitly supports institutional separation of religion from state, civil marriage rights, pluralistic Judaism, dismantling religious monopoly. Oppenheimer's human rights focus aligns with these values.",
+      "sources": [
+        "https://meretz.org.il/%D7%9E%D7%A6%D7%A2-%D7%94%D7%9E%D7%A4%D7%9C%D7%92%D7%94/%D7%93%D7%AA-%D7%95%D7%9E%D7%93%D7%99%D7%A0%D7%94/",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8"
+      ]
+    },
+    "shared_society": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Explicit advocacy for Jewish-Arab equality. Quoted: 'We came to Israel to build a Jewish and democratic state. We did not come here to rule over another people.' Core Peace Now message is Palestinian statehood and equality. Frames occupation as incompatible with Jewish values of human dignity. Fights for Palestinian rights and democratic values universally.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://peacenow.org.il/",
+        "https://www.timesofisrael.com/topic/yariv-oppenheimer/",
+        "https://www.972mag.com/topic/yariv-oppenheimer/"
+      ]
+    },
+    "positioning": {
+      "value": 0.15,
+      "confidence": "high",
+      "rationale": "Explicitly positions on left. Core member of Peace Now (far-left peace movement). Ran on Meretz list (2019, 2022), then Democrats as Meretz representative. Described as 'one of the leaders of Israel's peace camp.' No evidence of centrist positioning; career entirely within left-wing parties and movements.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://meretz.org.il/"
+      ]
+    },
+    "climate": {
+      "value": 0.45,
+      "confidence": "low",
+      "rationale": "No statements, writings, or activism on climate or environment found in research. Primary focus is Israeli-Palestinian peace, human rights, settler violence. No evidence suggests climate is a signature or stated priority for Oppenheimer. Using party prior for low-confidence axes.",
+      "sources": []
+    },
+    "experience": {
+      "value": 0.65,
+      "confidence": "high",
+      "rationale": "Secretary-general of Peace Now (sustained leadership role, 2002+ until 2016 resignation from executive role, remained board member). Regular media commentator and lecturer. No Knesset service (ran in 2019, 2022 primaries but did not achieve realistic positions). No government or executive service beyond NGO leadership.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://www.timesofisrael.com/yariv-oppenheimer-steps-down-as-peace-now-head/"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "democracy_integrity",
+        "jewish_arab_equality",
+        "civil_rights"
+      ],
+      "confidence": "high",
+      "rationale": "Three signature issues emerge: (1) democracy_integrity—fought settler violence, defended NGO funding rights, defended Supreme Court against judicial reform; (2) jewish_arab_equality—core Peace Now mission, explicit advocacy for Palestinian rights and coexistence; (3) civil_rights—sustained human rights activism and legal defense work. These span his Peace Now leadership, current activism, and campaign platform.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%90%D7%95%D7%A4%D7%A0%D7%94%D7%99%D7%99%D7%9E%D7%A8",
+        "https://en.wikipedia.org/wiki/Yariv_Oppenheimer",
+        "https://yariv.oppenheimer.co.il/",
+        "https://peacenow.org.il/"
+      ]
+    }
+  },
+  "chen_arieli": {
+    "conflict": {
+      "value": 0.6,
+      "confidence": "low",
+      "rationale": "No explicit public statements on conflict resolution or Palestinian statehood found. Member of The Democrats party (2024 merger of Labor and Meretz), which endorses two-state solution and negotiated peace. Using party prior as no personal articulation of position on this axis.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/The_Democrats_(Israel)",
+        "https://www.ynet.co.il/news/article/s1u8vny1fe"
+      ]
+    },
+    "economy": {
+      "value": 0.65,
+      "confidence": "low",
+      "rationale": "Limited direct statements on economic policy. Deputy Mayor portfolio includes welfare and public health in Tel Aviv. Website mentions supporting vulnerable populations, at-risk youth housing, and gender-responsive budgeting in municipal contexts. No explicit statements on broader redistribution, unions, or welfare-state positioning. Using party prior (Labor/Meretz merger positions center-left on economy).",
+      "sources": [
+        "https://chenarieli.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99",
+        "https://colab.org.il/en/member/chen-arieli/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Strong advocacy for secular liberal values and institutional separation implicit in career. Led 2018 LGBTQ+ strike against religious discrimination (specifically demanding marriage equality and surrogacy rights outside religious authority). Website platform emphasizes 'free, egalitarian democratic Israel.' Challenged religious restrictions on LGBTQ+ families and wrote on curriculum inclusion (Green Line maps). Evidence of opposition to religious establishment's control of personal status law, but not explicit comprehensive separation statement.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99",
+        "https://www.ynet.co.il/news/article/s1u8vny1fe",
+        "https://news.walla.co.il/item/3175233"
+      ]
+    },
+    "shared_society": {
+      "value": 0.6,
+      "confidence": "low",
+      "rationale": "No explicit statements or documented work on Jewish-Arab partnership or civil equality between Jewish and Arab citizens found. Her advocacy focuses on LGBTQ+ rights, women's rights, and vulnerable populations (refugees, homeless, trafficking survivors) without emphasis on Arab-Jewish coexistence or shared society work. Using party prior.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99"
+      ]
+    },
+    "positioning": {
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "Ran with The Democrats (center-left party formed from Labor-Meretz merger in 2024). Strong positions on LGBTQ+ rights, women's equality, local democratic strengthening, and secular/liberal values place her on left wing of center-left party. Founding Shita Institute to embed liberal-democratic values in municipalities indicates commitment to democratic but not radical socialist positioning. Platform emphasizes local reform rather than central redistribution. Lower score reflects party's centrist repositioning vs. pure left.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/s1u8vny1fe",
+        "https://colab.org.il/en/member/chen-arieli/",
+        "https://en.wikipedia.org/wiki/Chen_Arieli"
+      ]
+    },
+    "climate": {
+      "value": 0.45,
+      "confidence": "low",
+      "rationale": "Minimal evidence of climate positioning. Search results mention involvement in Tel Aviv municipal discussions on environmental drainage/urban climate adaptation, but climate does not appear as stated priority or signature advocacy area. No public statements on climate as central policy focus. Using party prior as no personal articulation.",
+      "sources": [
+        "https://telem.berl.org.il/writer/%D7%97%D7%9F-%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99/"
+      ]
+    },
+    "experience": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Documented 20+ years of activism in civil society and rights organizations. Served as Chair of Aguda (Israeli LGBT Association) 2015–2019. Deputy Mayor of Tel Aviv-Yafo since April 2019 (approximately 8 years as of 2026), holding welfare/public health and culture portfolios. Founding chair of Shita Institute for Local Policy (2023). Chair of Igui (LGBTQ+ youth organization). Senior sustained local executive and organizational leadership record; not yet parliamentary experience.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99",
+        "https://www.ynet.co.il/news/article/s1u8vny1fe",
+        "https://en.wikipedia.org/wiki/Chen_Arieli"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "civil_rights",
+        "womens_minority_rep",
+        "democracy_integrity"
+      ],
+      "confidence": "high",
+      "rationale": "Three signature areas with substantial documented record: (1) civil_rights — chaired Aguda, led 2018 LGBTQ+ equality strike ('Yes to Equality'), core organizing work over 20+ years. (2) womens_minority_rep — co-initiated 2018 women's protest ('largest in the country' per biographical statement), founded I Am a Woman feminist collective, gender-responsive budgeting in Tel Aviv portfolio. (3) democracy_integrity — founded Shita Institute to strengthen local democratic institutions and liberal-democratic values, municipal transparency advocacy. These three appear consistently across all independent sources and her stated mission.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%9F_%D7%90%D7%A8%D7%99%D7%90%D7%9C%D7%99",
+        "https://www.ynet.co.il/news/article/s1u8vny1fe",
+        "https://news.walla.co.il/item/3175233",
+        "https://colab.org.il/en/member/chen-arieli/"
+      ]
+    }
+  },
+  "yael_cohen_paran": {
+    "conflict": {
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "No explicit personal statement on Palestinian conflict found. However, she is running in the Democratic Party primary, whose official platform explicitly advocates for 'separation from the Palestinians as part of a regional arrangement based on two states for two peoples.' She was previously affiliated with Zionist Union (2015-2019), a center-left party with similar positions. Her silence on contradicting the party platform and her history with center-left parties suggests alignment with pragmatic conditional peace seeking, consistent with the Democratic Party's approach.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%9D",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9B%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F",
+        "https://www.maariv.co.il/news/politics/article-1326128"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "medium",
+      "rationale": "The Democratic Party's official platform explicitly calls for 'separation from the Palestinians as part of a regional arrangement based on two states for two peoples' and ending the occupation. Yael Cohen Paran is running under this party's banner without public dissent on this core position. She was previously in Zionist Union and Hatnua, both center-left parties that support two-state solutions. No evidence of settlement support or opposition to ending occupation.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%9D",
+        "https://www.maariv.co.il/news/politics/article-1326128",
+        "https://www.ynet.co.il/news/article/r1djolazge"
+      ]
+    },
+    "economy": {
+      "value": 0.65,
+      "confidence": "low",
+      "rationale": "No specific statements or voting record found on economic policy, labor relations, welfare redistribution, or unions. Her work focuses on environment and social initiatives (e.g., 'Sunshine for All' solar access program, which has redistributive elements). Democratic Party is social-democratic, but Cohen Paran's public record emphasizes environmental and social welfare access rather than explicit economic ideology. Using party prior due to lack of direct evidence.",
+      "sources": [
+        "https://yaelparan.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9A%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F",
+        "https://www.zman.co.il/person/3186/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Found explicit evidence of her position: she advocates for secular civil law for family matters, arguing that religious court divisions create inequality among citizens. Described as a member of the Conservative (traditional) Jewish movement herself, but supports institutional reform toward separation of religion from state law and 'justice' alignment with Western democracies. This indicates support for incremental-to-moderate institutional separation, not full secularization. Consistent with Democratic Party goal of 'fostering diversity of Jewish identities' and 'separation of politics from established religion.'",
+      "sources": [
+        "https://www.idi.org.il/articles/9114",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9B%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F",
+        "https://oknesset.org/meetings/2/0/2012184.html"
+      ]
+    },
+    "shared_society": {
+      "value": 0.6,
+      "confidence": "low",
+      "rationale": "Limited direct evidence. Found discussion of her involvement in addressing discriminatory settlement policies and supporting civic equality principles with Israeli Democracy Institute. No explicit statements on Jewish-Arab partnership or coexistence. Democratic Party platform calls for 'full civil equality for all sectors' and repealing the Nation-State Law. Given her left-center party affiliation but lack of explicit public positions on Arab-Jewish coexistence, using party prior.",
+      "sources": [
+        "https://www.idi.org.il/articles/9114",
+        "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%9D",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9B%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F"
+      ]
+    },
+    "positioning": {
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "She is running in the Democratic Party (left-center, founded as union of Labor and Meretz). Previously served in Zionist Union and Hatnua (both center-left). However, her public positioning emphasizes pragmatic environmental and security solutions (e.g., connecting environmental protection to national security, solar energy for resilience) rather than ideological left rhetoric. The Democratic Party frames itself as balancing security with progressive social values. She appears to be center-left, not far-left, with emphasis on practical solutions over ideological purity.",
+      "sources": [
+        "https://yaelparan.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%9D",
+        "https://www.maariv.co.il/news/politics/article-1326128"
+      ]
+    },
+    "climate": {
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "This is her signature issue and career focus. Documented evidence: 30 years of environmental activism; founder of Green Movement party (first environmentalist party in Knesset); founder of Israeli Energy Forum (2007); led Knesset renewable energy and Paris Climate Agreement monitoring subcommittee; led campaigns to close polluting power plants in Hadera and ammonia tank; advocates rapid renewable energy transition; created 'Sun for All' social initiative for universal solar access; explicitly frames environmental protection as connected to national security and peace. No ambivalence; this is clearly her central cause.",
+      "sources": [
+        "https://yaelparan.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9B%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F",
+        "https://en.wikipedia.org/wiki/Yael_Cohen_Paran",
+        "https://www.jpost.com/Israel-News/Politics-And-Diplomacy/Cohen-Paran-sworn-in-as-first-ever-MK-from-an-environmentalist-party-435342"
+      ]
+    },
+    "experience": {
+      "value": 0.7,
+      "confidence": "high",
+      "rationale": "Documented record: served as Knesset member 2015-2019 (4 years); member of Interior & Environmental Protection Committee and Science & Technology Committee; chaired renewable energy subcommittee; intelligence officer in Unit 8200 (Israeli intelligence); founded Israeli Energy Forum; co-chair of Green Movement; completed master's degree in public policy. No senior ministerial position, but sustained parliamentary and organizational leadership record in specialized domain (environment, energy). This is mid-level experience, below cabinet-secretary level but above backbench.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A2%D7%9C_%D7%9A%D7%94%D7%9F-%D7%A4%D7%90%D7%A8%D7%9F",
+        "https://main.knesset.gov.il/mk/Pages/MKPositions.aspx?MKID=952",
+        "https://en.wikipedia.org/wiki/Yael_Cohen_Paran"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "climate_env",
+        "democracy_integrity",
+        "civil_rights"
+      ],
+      "confidence": "high",
+      "rationale": "Climate/environment is unambiguously her primary flagship—30-year career, founded parties and organizations, Knesset subcommittee leadership, 'Sun for All' initiative. Democracy integrity appears in her stated mission ('fight for democracy protection') and association with Democratic Party's platform emphasizing 'strengthening liberal foundations.' Civil rights appears in her work on secular family law equality and settlement discrimination discussions. These three represent her documented priorities; cost_of_living and religion_state are secondary (no explicit cost-of-living platform; religion-state is reform-oriented but not central to her public identity).",
+      "sources": [
+        "https://yaelparan.co.il/",
+        "https://he.wikipedia.org/wiki/%D7%94%D7%93%D7%9E%D7%95%D7%A7%D7%A8%D7%98%D7%99%D7%9D",
+        "https://www.idi.org.il/articles/9114"
+      ]
+    }
+  },
+  "ram_shefa": {
+    "conflict": {
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Shefa rejected the Oslo Accords approach, stating it brought October 7th disaster, indicating skepticism of pure peace negotiation frameworks. However, when asked if his party supports a two-state solution, he answered affirmatively. He emphasized that military force alone doesn't work and political thinking is necessary, positioning himself as pragmatic on security + diplomacy. He criticized the right-wing approach for weakening the Palestinian Authority and refusing to engage in negotiations. This reflects a conditional two-state position with skepticism toward specific past peace processes—pragmatic rather than ideologically driven toward active negotiation.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1340968",
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2"
+      ]
+    },
+    "economy": {
+      "value": 0.68,
+      "confidence": "medium",
+      "rationale": "Strong alignment with Labor party's welfare-state and union positions. As education committee chairman and Labor faction chairman, he led legislation strengthening teachers' salaries and working conditions. Secured over 100 million shekels in additional funding for non-formal youth education. Opposed agricultural reforms that would harm peripheral farming communities, framing the issue as protecting 'food security.' His bio emphasizes leadership on strengthening teacher status and education team salaries. Labor background (including student union leadership) and opposition to agricultural market liberalization indicate support for welfare state, unions, and redistribution.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ram_Shefa",
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2"
+      ]
+    },
+    "religion_state": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Post-October 7th, Shefa led kibbutz rehabilitation as coordinator for the western Negev kibbutzim, including a high-profile fight against the Ministry of Religious Affairs over temporary burial arrangements for Negev kibbutz residents, securing commitments for proper burial with eventual grave relocation. This action reflects a secular kibbutz movement position against religious state authority over personal/communal matters. Born in kibbutz Givat Haim Ichud (secular kibbutz), suggesting secular ideological background. Labor party generally supports incremental church-state separation. No explicit statements on religion-state policy found, but the burial dispute and kibbutz secular context suggest support for reducing religious institutional authority.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2",
+        "https://www.labor.org.il/proflles/75-havode-members/111-ram-shefa.html"
+      ]
+    },
+    "shared_society": {
+      "value": 0.6,
+      "confidence": "low",
+      "rationale": "No explicit statements or policy record on Arab-Jewish relations or civil partnerships found. No record of involvement in Arab affairs committees or minority representation issues. Labor party platform supports civic equality in principle. Applied party prior (0.6) due to lack of personal record on this axis.",
+      "sources": []
+    },
+    "positioning": {
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Solidly positioned on the left of the political spectrum. Lifetime Labor party commitment (moved from Blue and White to Labor, now running in Democrats primary—Labor+Meretz merger). Served as Labor faction chairman in the 'Change government' (center-left coalition). No evidence of centrist repositioning; his policy focus on education, agriculture, and social welfare reflects left-wing priorities. However, participation in pragmatic coalition government and rehabilitation coordination suggest willingness to work across left-center spectrum.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ram_Shefa",
+        "https://www.labor.org.il/proflles/75-havode-members/111-ram-shefa.html"
+      ]
+    },
+    "climate": {
+      "value": 0.45,
+      "confidence": "low",
+      "rationale": "Limited evidence. Volunteered for approximately half a year with Tevel B'Tzedek, an organization working globally on poverty, social gaps, and environmental destruction, suggesting some environmental awareness. However, his primary parliamentary focus was education, agriculture, and social policy—not climate or environmental policy specifically. No climate policy statements, committee work on environmental issues, or flagship environmental advocacy found. Applied party prior (0.45) as low-confidence default.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2"
+      ]
+    },
+    "experience": {
+      "value": 0.68,
+      "confidence": "high",
+      "rationale": "Solid parliamentary and leadership record. Served as MK in 23rd Knesset (Blue and White, 2019-2021), 24th Knesset (Labor, 2021-2022). Chaired the Education, Culture and Sports Committee. Served as chairman of the Labor parliamentary faction in the 'Change government.' Earlier leadership as chairman of the National Union of Israeli Students (student union). Post-October 7th, appointed as rehabilitation coordinator for western Negev kibbutzim by the kibbutz movement, a role requiring sustained engagement. This represents sustained middle-to-senior parliamentary and leadership experience over multiple years and contexts.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ram_Shefa",
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "cost_of_living",
+        "religion_and_state",
+        "civil_rights"
+      ],
+      "confidence": "medium",
+      "rationale": "cost_of_living: Primary legislative focus on strengthening teacher salaries, education funding, and opposing agricultural reforms that threaten farming communities' livelihoods. religion_and_state: High-profile post-October 7th fight against Ministry of Religious Affairs over kibbutz burial practices reflects strong secular institutional stance. civil_rights: Opposed government restrictions on protests during COVID-19 lockdowns, positioning himself against limitations on assembly rights. These three issues are most clearly documented and align with his parliamentary and extra-parliamentary record.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ram_Shefa",
+        "https://he.wikipedia.org/wiki/%D7%A8%D7%9D_%D7%A9%D7%A4%D7%A2",
+        "https://www.maariv.co.il/news/politics/article-1340968"
+      ]
+    }
+  },
+  "tomer_avital": {
+    "conflict": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Avital explicitly states he is 'an Israeli and Zionist' who believes 'two-state solution is today, more than ever, the best way to preserve Israel's security and moral character.' He advocates for active diplomacy with a disarmed Palestinian state under international oversight and multi-party agreements. He supports negotiated peace as essential to Israeli security.",
+      "sources": [
+        "https://x.com/TomerAvital1/status/1969296179713241441",
+        "https://tomeravital1.com/2022/07/20/running/",
+        "https://tomeravital1.com/"
+      ]
+    },
+    "economy": {
+      "value": 0.68,
+      "confidence": "high",
+      "rationale": "Avital advocates for breaking monopolies and differential corporate taxation to reduce cost of living (51% above OECD). He supports progressive taxation including inheritance taxes on amounts over 25M shekels and property taxes on multiple dwellings. He emphasizes adequate public-sector salaries for teachers, social workers, doctors, nurses and police. These positions reflect center-left social democratic economics.",
+      "sources": [
+        "https://tomeravital1.com/2022/07/20/running/",
+        "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8_%D7%90%D7%91%D7%99%D7%98%D7%9C"
+      ]
+    },
+    "religion_state": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Wikipedia explicitly documents that Avital 'promotes an agenda of separation of religion from state.' This is consistently referenced across sources as a core position. He frames this as fundamental to democratic governance and equality in Israel.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8_%D7%90%D7%91%D7%99%D7%98%D7%9C",
+        "https://www.hamichlol.org.il/%D7%AA%D7%95%D7%9E%D7%A8_%D7%90%D7%91%D7%99%D7%98%D7%9C",
+        "https://tomeravital1.com/about/"
+      ]
+    },
+    "shared_society": {
+      "value": 0.62,
+      "confidence": "medium",
+      "rationale": "Avital cooperates with Arab Knesset members and 'blesses them in Arabic in the plenum.' He advocates for 'our Arab Israeli neighbors living in security and economic prosperity' and participated in Israeli-Palestinian dialogue initiatives. He emphasizes 'shared good for as many citizens as possible' over majoritarian preferences. However, the evidence primarily reflects cooperation and equal rights principles rather than explicit advocacy for full partnership.",
+      "sources": [
+        "https://tomeravital1.com/unity/",
+        "https://x.com/TomerAvital1",
+        "https://tomeravital1.com/"
+      ]
+    },
+    "positioning": {
+      "value": 0.58,
+      "confidence": "medium",
+      "rationale": "Avital explicitly argues to 'Forget left-right: be democrats,' prioritizing democratic principles over partisan positioning. He contends the traditional spectrum obscures socio-economic reality where most citizens hold center-left positions. While he emphasizes bridge-building and de-emphasizing left-right divisions, he runs within the center-left Democrats party and addresses liberal/progressive causes, suggesting he aims at balance rather than leftward commitment.",
+      "sources": [
+        "https://tomeravital1.com/2017/04/24/democracy/",
+        "https://x.com/TomerAvital1",
+        "https://tomeravital1.com/unity/"
+      ]
+    },
+    "climate": {
+      "value": 0.57,
+      "confidence": "medium",
+      "rationale": "Avital hosts podcasts on climate with sustainability experts, participated in a Greenpeace workshop on climate and misinformation, and states that 'fighting polluting industries' and 'transitioning away from fossil fuels' are 'urgent and high priority.' However, climate is not his signature issue—it is mentioned alongside other priorities like transparency, cost of living, and democratic reform. It is a stated concern but not a central campaign focus.",
+      "sources": [
+        "https://open.spotify.com/episode/3VOYyJFJEDNBhMiX68T8dG",
+        "https://www.greenpeace.org/israel/campaign/eventclimate26/",
+        "https://tomeravital1.com/2022/07/20/running/",
+        "https://tomeravital1.com/"
+      ]
+    },
+    "experience": {
+      "value": 0.58,
+      "confidence": "high",
+      "rationale": "Avital has 17 years of journalism, activism, and public leadership experience. He founded Shakouf (described as the first fully public-owned media organization) and co-founded Lobby 99. He won the DIGIT Prize for Excellence in Online Journalism and is ranked among Israel's 100 most influential media figures. However, he is not a former Knesset member or senior government executive, which limits his formal political experience.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8_%D7%90%D7%91%D7%99%D7%98%D7%9C",
+        "https://tomeravital1.com/about/",
+        "https://www.timesofisrael.com/golans-democrats-party-unveils-51-primary-candidates-touts-85000-members/"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "democracy_integrity",
+        "civil_rights",
+        "cost_of_living"
+      ],
+      "confidence": "high",
+      "rationale": "Avital's three signature issues are: (1) democracy_integrity—his 17-year career centers on fighting corruption, promoting government transparency, and combating misinformation ('100 Days of Transparency,' founding Shakouf); (2) civil_rights—he explicitly promotes separation of religion and state as a core platform; (3) cost_of_living—he prioritizes breaking monopolies and progressive taxation to reduce the cost of living. Climate is a stated priority but is secondary to these three.",
+      "sources": [
+        "https://tomeravital1.com/",
+        "https://tomeravital1.com/about/",
+        "https://tomeravital1.com/2022/07/20/running/",
+        "https://he.wikipedia.org/wiki/%D7%AA%D7%95%D7%9E%D7%A8_%D7%90%D7%91%D7%99%D7%98%D7%9C"
+      ]
+    }
+  },
+  "eran_nissan": {
+    "conflict": {
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Explicit peace activist background at Peace Now (10+ years). Advocated for two-state solution and peaceful resolution. PeaceTalks confirms commitment to Palestinian-Israeli conflict resolution. Describes himself as 'dor shalom' (peace generation) who learned from failed negotiations and wants to negotiate peace actively now. Mehazkim amplified mobilization for end of violence during 2021 escalation.",
+      "sources": [
+        "https://www.peacetalks.net/pt/eran-nissan/",
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://x.com/eran_nissan/status/2069106940831998288"
+      ]
+    },
+    "separation_annexation": {
+      "value": 1,
+      "confidence": "high",
+      "rationale": "Explicitly mentioned 'occupation' in platform statement—one of four candidates who did so. Mehazkim actively campaigns 'against Israeli control of the West Bank' and for two-state solution. PeaceTalks biography notes he heads Peace Now education (organization dedicated to two-state solution). His generational philosophy: 'conflict we pass on to children is conflict we lost.' Advocacy centers on ending occupation and establishing Palestinian state.",
+      "sources": [
+        "https://www.peacetalks.net/pt/eran-nissan/",
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://www.mako.co.il/news-israel-elections/2026/Article-4ffab76dc4d0f91026.htm"
+      ]
+    },
+    "economy": {
+      "value": 0.7,
+      "confidence": "high",
+      "rationale": "Platform explicitly calls for 'strong welfare state with strong public systems.' Mehazkim explicitly opposes dismantling social security and supports 'social democratic policies like raising the minimum wage and expanding public spending.' Emphasized building a state where 'all citizens live good and safe lives,' opposing inequality. This is consistent left-wing redistributive stance.",
+      "sources": [
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://x.com/eran_nissan/status/2069106940831998288",
+        "https://www.erannissan.co.il/"
+      ]
+    },
+    "religion_state": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Mehazkim is explicitly progressive/secular organization. No explicit statements found on religion-state separation, but work with Mehazkim (opposing religious nationalism, supporting democracy) and Peace Now (secular organization) suggests secular-progressive stance. Work against extremism (FakeReporter monitoring hate speech by religious right) implies resistance to religious authority in politics. Confidence limited by lack of direct statement on this axis.",
+      "sources": [
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://www.progressiveisrael.org/mehazkim/"
+      ]
+    },
+    "shared_society": {
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Explicitly states 'key for positive change is Jewish-Arab partnership' and 'clear political path for all citizens of Israel.' Mehazkim created campaigns featuring Israeli-Palestinian flags with 'we are meant to live together.' Worked on humanizing Palestinian identity and building inclusive leadership development through 'New Story Leadership.' Emphasis on 'solidarity in all that we do' including against human rights violations. Central to his vision and Mehazkim's agenda.",
+      "sources": [
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://www.peacetalks.net/pt/eran-nissan/",
+        "https://www.progressiveisrael.org/mehazkim/"
+      ]
+    },
+    "positioning": {
+      "value": 0.25,
+      "confidence": "high",
+      "rationale": "Explicitly states 'we are trying to reach into the Israeli mainstream political center and pull it to the left'—goal is to pull center leftward, not move himself/party to center. Background in Peace Now (left-wing peace movement) and Mehazkim (explicitly left-wing digital movement). Runs for explicitly left-wing Democrats party. No evidence of centrist positioning; instead aims to strengthen left.",
+      "sources": [
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://x.com/eran_nissan/status/2069106940831998288"
+      ]
+    },
+    "climate": {
+      "value": 0.7,
+      "confidence": "high",
+      "rationale": "Explicitly stated that on 'climate change, anti-corruption and LGBTQ+ freedoms' it's 'relatively easy' for Mehazkim to pull center leftward—indicating climate change is a stated campaigning priority. Mehazkim campaigns across 'climate change to LGBTQ rights, women's rights, democracy, accountability, peace and occupation, and social justice.' Climate is one of their core issue areas, though not the single flagship priority.",
+      "sources": [
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://jstreet.org/our-israel-mehazkim/"
+      ]
+    },
+    "experience": {
+      "value": 0.6,
+      "confidence": "high",
+      "rationale": "10+ years working in politics without being a politician. Led education/advocacy at Peace Now (Israel's oldest peace movement), then CEO of Mehazkim for 4 years. Described as leading 'hundreds of struggles with thousands of partners.' Led major public campaigns (2019 Supreme Court Override opposition, FakeReporter extremism project, May 2021 escalation response). Significant organizational and campaign leadership, but no parliamentary/executive record.",
+      "sources": [
+        "https://www.peacetalks.net/pt/eran-nissan/",
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://x.com/eran_nissan/status/2069106940831998288"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "jewish_arab_equality",
+        "democracy_integrity",
+        "climate_env"
+      ],
+      "confidence": "high",
+      "rationale": "Jewish-Arab partnership is explicitly his core principle stated multiple times as essential to Israeli democracy and Mehazkim's mission. Democracy integrity: led FakeReporter anti-extremism/anti-disinformation project investigating fake accounts and hate speech. Climate: explicitly campaigns on climate change as one of key issues where left can win center. These three are most prominent in his stated work and platform.",
+      "sources": [
+        "https://jstreet.org/our-israel-mehazkim/",
+        "https://www.progressiveisrael.org/mehazkim/",
+        "https://www.peacetalks.net/pt/eran-nissan/",
+        "https://x.com/eran_nissan/status/2069106940831998288"
+      ]
     }
   }
 }

@@ -1,80 +1,270 @@
 {
-  "$comment": "PLACEHOLDER data (5 sample candidates A-E), re-keyed onto the הדמוקרטים parameter set so the app builds and demos. Replaced wholesale in Phase 3 Step 2 by the 51 real candidates with sourced positions + evidence.json. Positions keyed by PARAMETER id; scalars/valence in [0,1]; sets are option-id arrays.",
+  "$comment": "12 real הדמוקרטים 2026 pilot candidates. Positions keyed by PARAMETER id, projected from src/data/evidence.json (source of truth for value+confidence+rationale+sources). Omitted axis = no stated position (engine skips it).",
   "candidates": [
     {
-      "id": "A",
+      "id": "gilad_kariv",
       "positions": {
-        "conflict": 0.7,
+        "conflict": 0.9,
         "separation_annexation": 1,
-        "economy": 0.7,
-        "religion_state": 0.85,
-        "shared_society": 0.75,
-        "positioning": 0.35,
-        "climate": 0.6,
-        "experience": 0.6,
-        "flagship": ["civil_rights", "cost_of_living"]
+        "economy": 0.75,
+        "religion_state": 0.95,
+        "shared_society": 0.85,
+        "positioning": 0.2,
+        "climate": 0.5,
+        "experience": 0.8,
+        "flagship": [
+          "religion_and_state",
+          "jewish_arab_equality",
+          "civil_rights",
+          "democracy_integrity"
+        ]
       },
-      "display": { "avatarBg": "#e7ddce", "avatarInk": "#6b5f4c" }
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c"
+      }
     },
     {
-      "id": "B",
+      "id": "michal_rozin",
+      "positions": {
+        "conflict": 0.75,
+        "separation_annexation": 1,
+        "economy": 0.7,
+        "religion_state": 0.8,
+        "shared_society": 0.65,
+        "positioning": 0.45,
+        "climate": 0.45,
+        "experience": 0.85,
+        "flagship": [
+          "womens_minority_rep",
+          "civil_rights",
+          "religion_and_state",
+          "democracy_integrity"
+        ]
+      },
+      "display": {
+        "avatarBg": "#e3e6d6",
+        "avatarInk": "#57603f"
+      }
+    },
+    {
+      "id": "mossi_raz",
       "positions": {
         "conflict": 0.85,
         "separation_annexation": 1,
-        "economy": 0.8,
-        "religion_state": 0.9,
+        "economy": 0.68,
+        "religion_state": 0.75,
         "shared_society": 0.9,
-        "positioning": 0.2,
-        "climate": 0.8,
-        "experience": 0.4,
-        "flagship": ["womens_minority_rep", "civil_rights"]
+        "positioning": 0.4,
+        "climate": 0.75,
+        "experience": 0.8,
+        "flagship": [
+          "jewish_arab_equality",
+          "democracy_integrity",
+          "climate_env"
+        ]
       },
-      "display": { "avatarBg": "#e3e6d6", "avatarInk": "#57603f" }
+      "display": {
+        "avatarBg": "#e0e7e5",
+        "avatarInk": "#3d5b58"
+      }
     },
     {
-      "id": "C",
+      "id": "naama_lazimi",
       "positions": {
-        "conflict": 0.35,
-        "separation_annexation": 0,
-        "economy": 0.45,
-        "religion_state": 0.5,
-        "shared_society": 0.4,
-        "positioning": 0.75,
-        "climate": 0.35,
-        "experience": 0.75,
-        "flagship": ["cost_of_living", "democracy_integrity"]
+        "conflict": 0.8,
+        "separation_annexation": 1,
+        "economy": 0.75,
+        "religion_state": 0.55,
+        "shared_society": 0.75,
+        "positioning": 0.45,
+        "climate": 0.2,
+        "experience": 0.65,
+        "flagship": [
+          "cost_of_living",
+          "womens_minority_rep",
+          "jewish_arab_equality",
+          "civil_rights"
+        ]
       },
-      "display": { "avatarBg": "#e0e7e5", "avatarInk": "#3d5b58" }
+      "display": {
+        "avatarBg": "#ece0d8",
+        "avatarInk": "#7d4f36"
+      }
     },
     {
-      "id": "D",
+      "id": "efrat_rayten",
+      "positions": {
+        "conflict": 0.65,
+        "economy": 0.75,
+        "religion_state": 0.7,
+        "shared_society": 0.55,
+        "positioning": 0.35,
+        "climate": 0.45,
+        "experience": 0.6,
+        "flagship": [
+          "cost_of_living",
+          "democracy_integrity",
+          "civil_rights",
+          "womens_minority_rep"
+        ]
+      },
+      "display": {
+        "avatarBg": "#e6e0e8",
+        "avatarInk": "#5e4c66"
+      }
+    },
+    {
+      "id": "gaby_lasky",
+      "positions": {
+        "conflict": 0.75,
+        "separation_annexation": 1,
+        "economy": 0.65,
+        "religion_state": 0.85,
+        "shared_society": 0.75,
+        "positioning": 0.45,
+        "climate": 0.5,
+        "experience": 0.7,
+        "flagship": [
+          "civil_rights",
+          "democracy_integrity",
+          "religion_and_state",
+          "jewish_arab_equality"
+        ]
+      },
+      "display": {
+        "avatarBg": "#dfe7ee",
+        "avatarInk": "#3f5a72"
+      }
+    },
+    {
+      "id": "yariv_oppenheimer",
+      "positions": {
+        "conflict": 0.95,
+        "separation_annexation": 1,
+        "economy": 0.65,
+        "religion_state": 0.75,
+        "shared_society": 0.75,
+        "positioning": 0.15,
+        "climate": 0.45,
+        "experience": 0.65,
+        "flagship": [
+          "democracy_integrity",
+          "jewish_arab_equality",
+          "civil_rights"
+        ]
+      },
+      "display": {
+        "avatarBg": "#efe2dd",
+        "avatarInk": "#8a4a3c"
+      }
+    },
+    {
+      "id": "chen_arieli",
+      "positions": {
+        "conflict": 0.6,
+        "economy": 0.65,
+        "religion_state": 0.7,
+        "shared_society": 0.6,
+        "positioning": 0.35,
+        "climate": 0.45,
+        "experience": 0.75,
+        "flagship": [
+          "civil_rights",
+          "womens_minority_rep",
+          "democracy_integrity"
+        ]
+      },
+      "display": {
+        "avatarBg": "#dce8e0",
+        "avatarInk": "#3f6b52"
+      }
+    },
+    {
+      "id": "yael_cohen_paran",
       "positions": {
         "conflict": 0.6,
         "separation_annexation": 1,
-        "economy": 0.6,
+        "economy": 0.65,
         "religion_state": 0.7,
-        "shared_society": 0.8,
-        "positioning": 0.4,
-        "climate": 0.55,
-        "experience": 0.55,
-        "flagship": ["jewish_arab_equality", "civil_rights"]
+        "shared_society": 0.6,
+        "positioning": 0.45,
+        "climate": 0.95,
+        "experience": 0.7,
+        "flagship": [
+          "climate_env",
+          "democracy_integrity",
+          "civil_rights"
+        ]
       },
-      "display": { "avatarBg": "#ece0d8", "avatarInk": "#7d4f36" }
+      "display": {
+        "avatarBg": "#eee6d3",
+        "avatarInk": "#7a6a3a"
+      }
     },
     {
-      "id": "E",
+      "id": "ram_shefa",
       "positions": {
-        "conflict": 0.5,
-        "separation_annexation": 0,
-        "economy": 0.5,
-        "religion_state": 0.55,
-        "shared_society": 0.5,
-        "positioning": 0.6,
+        "conflict": 0.55,
+        "economy": 0.68,
+        "religion_state": 0.65,
+        "shared_society": 0.6,
+        "positioning": 0.45,
         "climate": 0.45,
-        "experience": 0.95,
-        "flagship": ["cost_of_living", "climate_env"]
+        "experience": 0.68,
+        "flagship": [
+          "cost_of_living",
+          "religion_and_state",
+          "civil_rights"
+        ]
       },
-      "display": { "avatarBg": "#e6e0e8", "avatarInk": "#5e4c66" }
+      "display": {
+        "avatarBg": "#e8dee9",
+        "avatarInk": "#6a4a6e"
+      }
+    },
+    {
+      "id": "tomer_avital",
+      "positions": {
+        "conflict": 0.75,
+        "economy": 0.68,
+        "religion_state": 0.85,
+        "shared_society": 0.62,
+        "positioning": 0.58,
+        "climate": 0.57,
+        "experience": 0.58,
+        "flagship": [
+          "democracy_integrity",
+          "civil_rights",
+          "cost_of_living"
+        ]
+      },
+      "display": {
+        "avatarBg": "#dde6ea",
+        "avatarInk": "#40606e"
+      }
+    },
+    {
+      "id": "eran_nissan",
+      "positions": {
+        "conflict": 0.75,
+        "separation_annexation": 1,
+        "economy": 0.7,
+        "religion_state": 0.65,
+        "shared_society": 0.85,
+        "positioning": 0.25,
+        "climate": 0.7,
+        "experience": 0.6,
+        "flagship": [
+          "jewish_arab_equality",
+          "democracy_integrity",
+          "climate_env"
+        ]
+      },
+      "display": {
+        "avatarBg": "#e9e3d6",
+        "avatarInk": "#6d6144"
+      }
     }
   ]
 }
