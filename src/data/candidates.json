@@ -1,83 +1,78 @@
 {
-  "$comment": "Position vectors keyed by PARAMETER id (not question id). Scalars/valence in [0,1]; sets are option-id arrays. Names/taglines/initials live in src/locales as candidate.<id>.*. Placeholder data mirrors the prototype.",
+  "$comment": "PLACEHOLDER data (5 sample candidates A-E), re-keyed onto the הדמוקרטים parameter set so the app builds and demos. Replaced wholesale in Phase 3 Step 2 by the 51 real candidates with sourced positions + evidence.json. Positions keyed by PARAMETER id; scalars/valence in [0,1]; sets are option-id arrays.",
   "candidates": [
     {
       "id": "A",
       "positions": {
-        "economy": 0.28,
-        "security": 0.48,
-        "court_political": 0,
-        "judiciary_balance": 0.66,
-        "religion_state_sep": 1,
-        "leadership_style": 0.72,
-        "ideology": 0.76,
-        "honesty": 0.7,
+        "conflict": 0.7,
+        "separation_annexation": 1,
+        "economy": 0.7,
+        "religion_state": 0.85,
+        "shared_society": 0.75,
+        "positioning": 0.35,
+        "climate": 0.6,
         "experience": 0.6,
-        "flagship": ["cost_of_living", "civil_rights"]
+        "flagship": ["civil_rights", "cost_of_living"]
       },
       "display": { "avatarBg": "#e7ddce", "avatarInk": "#6b5f4c" }
     },
     {
       "id": "B",
       "positions": {
-        "economy": 0.74,
-        "security": 0.8,
-        "court_political": 0,
-        "judiciary_balance": 0.86,
-        "religion_state_sep": 1,
-        "leadership_style": 0.62,
-        "ideology": 0.44,
-        "honesty": 0.85,
+        "conflict": 0.85,
+        "separation_annexation": 1,
+        "economy": 0.8,
+        "religion_state": 0.9,
+        "shared_society": 0.9,
+        "positioning": 0.2,
+        "climate": 0.8,
         "experience": 0.4,
-        "flagship": ["minorities_women", "civil_rights"]
+        "flagship": ["womens_minority_rep", "civil_rights"]
       },
       "display": { "avatarBg": "#e3e6d6", "avatarInk": "#57603f" }
     },
     {
       "id": "C",
       "positions": {
-        "economy": 0.46,
-        "security": 0.3,
-        "court_political": 1,
-        "judiciary_balance": 0.54,
-        "religion_state_sep": 0,
-        "leadership_style": 0.34,
-        "ideology": 0.6,
-        "honesty": 0.6,
+        "conflict": 0.35,
+        "separation_annexation": 0,
+        "economy": 0.45,
+        "religion_state": 0.5,
+        "shared_society": 0.4,
+        "positioning": 0.75,
+        "climate": 0.35,
         "experience": 0.75,
-        "flagship": ["settlements", "cost_of_living"]
+        "flagship": ["cost_of_living", "democracy_integrity"]
       },
       "display": { "avatarBg": "#e0e7e5", "avatarInk": "#3d5b58" }
     },
     {
       "id": "D",
       "positions": {
+        "conflict": 0.6,
+        "separation_annexation": 1,
         "economy": 0.6,
-        "security": 0.64,
-        "court_political": 0,
-        "judiciary_balance": 0.9,
-        "religion_state_sep": 1,
-        "leadership_style": 0.74,
-        "ideology": 0.4,
-        "honesty": 0.8,
+        "religion_state": 0.7,
+        "shared_society": 0.8,
+        "positioning": 0.4,
+        "climate": 0.55,
         "experience": 0.55,
-        "flagship": ["civil_rights", "minorities_women"]
+        "flagship": ["jewish_arab_equality", "civil_rights"]
       },
       "display": { "avatarBg": "#ece0d8", "avatarInk": "#7d4f36" }
     },
     {
       "id": "E",
       "positions": {
+        "conflict": 0.5,
+        "separation_annexation": 0,
         "economy": 0.5,
-        "security": 0.56,
-        "court_political": 1,
-        "judiciary_balance": 0.5,
-        "religion_state_sep": 0,
-        "leadership_style": 0.5,
-        "ideology": 0.84,
-        "honesty": 0.5,
+        "religion_state": 0.55,
+        "shared_society": 0.5,
+        "positioning": 0.6,
+        "climate": 0.45,
         "experience": 0.95,
-        "flagship": ["cost_of_living", "settlements"]
+        "flagship": ["cost_of_living", "climate_env"]
       },
       "display": { "avatarBg": "#e6e0e8", "avatarInk": "#5e4c66" }
     }

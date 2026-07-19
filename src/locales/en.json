@@ -5,7 +5,7 @@
     "welcome": {
       "title": "Find the candidate who speaks for you",
       "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
-      "time": "~3 min · 11 questions",
+      "time": "~4 min · 14 questions",
       "start": "Let’s begin",
       "steps": [
         { "title": "Answer honestly", "desc": "Drag, rate and select what feels closest to you." },
@@ -51,35 +51,39 @@
     }
   },
   "param": {
-    "economy": { "label": "Economy", "poleLow": "Free market", "poleHigh": "Government-run" },
-    "security": { "label": "Security", "poleLow": "Hardline", "poleHigh": "Diplomacy" },
-    "court_political": { "label": "The judiciary", "poleLow": "Professional body", "poleHigh": "Political actor" },
-    "judiciary_balance": { "label": "Judicial reform", "poleLow": "Knesset & government", "poleHigh": "The courts" },
-    "religion_state_sep": { "label": "Religion & state", "poleLow": "Religion tied to state", "poleHigh": "Separation of religion & state" },
-    "leadership_style": { "label": "Leadership style", "poleLow": "Confrontational", "poleHigh": "Bridge-builder" },
-    "ideology": { "label": "Ideology", "poleLow": "Strict ideology", "poleHigh": "Broad appeal" },
-    "honesty": { "label": "Integrity & transparency" },
+    "conflict": { "label": "Security & the conflict", "poleLow": "Security & deterrence first", "poleHigh": "Diplomacy & two states" },
+    "separation_annexation": { "label": "Occupation & settlements", "poleLow": "Keep the status quo", "poleHigh": "End the occupation" },
+    "economy": { "label": "Economy", "poleLow": "Free market", "poleHigh": "Social-democratic" },
+    "religion_state": { "label": "Religion & state", "poleLow": "Preserve the status quo", "poleHigh": "Full separation" },
+    "shared_society": { "label": "Shared society", "poleLow": "Jewish-national character first", "poleHigh": "Full Jewish–Arab equality" },
+    "positioning": { "label": "Political positioning", "poleLow": "Stay true to the left", "poleHigh": "Move to the center" },
+    "climate": { "label": "Climate & environment", "poleLow": "Not a top priority", "poleHigh": "A central cause" },
     "experience": { "label": "Experience" },
     "flagship": { "label": "Flagship issues" }
   },
   "option": {
-    "minorities_women": "Minority & women representation",
     "cost_of_living": "Cost of living",
+    "religion_and_state": "Religion & state",
     "civil_rights": "Civil rights",
-    "religion_state": "Religion & state",
-    "settlements": "Settlements"
+    "womens_minority_rep": "Women's & minority representation",
+    "democracy_integrity": "Democracy & anti-corruption",
+    "jewish_arab_equality": "Jewish–Arab equality",
+    "climate_env": "Climate & environment"
   },
   "question": {
+    "q_conflict": { "title": "On the conflict and security, where do you lean?" },
+    "q_imp_conflict": { "title": "How decisive is security and the conflict in your choice?" },
+    "q_separation": { "statement": "Israel should act to end the occupation and evacuate settlements." },
     "q_economy": { "title": "Which economic approach is closer to you?" },
-    "q_imp_security": { "title": "How decisive is security in your choice?" },
-    "q_security": { "title": "On security matters, where do you lean?" },
-    "q_court_political": { "statement": "The Supreme Court is a political actor." },
-    "q_judiciary": { "title": "In balancing branches of power, whom to strengthen?" },
-    "q_religion_sep": { "statement": "Religion and state should be separated." },
-    "q_champion": { "title": "Which issues should the candidate champion?" },
-    "q_imp_honesty": { "title": "How much weight do integrity and transparency carry?" },
-    "q_style": { "title": "Which leadership style speaks to you?" },
-    "q_ideology": { "title": "How ideologically pure should the candidate be?" },
+    "q_imp_economy": { "title": "How much weight do economic issues carry for you?" },
+    "q_religion_state": { "title": "On religion and state, where do you lean?" },
+    "q_imp_religion_state": { "title": "How much weight does religion & state carry for you?" },
+    "q_shared_society": { "title": "On Jewish–Arab shared society, where do you lean?" },
+    "q_imp_shared_society": { "title": "How much weight does shared society carry for you?" },
+    "q_positioning": { "title": "Should the party stay true to the left or move to the center?" },
+    "q_climate": { "title": "How central should climate and the environment be?" },
+    "q_imp_climate": { "title": "How much weight does climate carry in your choice?" },
+    "q_flagship": { "title": "Which issues should the candidate champion?" },
     "q_imp_experience": { "title": "How much weight for experience (political & other)?" }
   },
   "candidate": {

@@ -1,18 +1,21 @@
 {
-  "$comment": "Structural only. Questions target PARAMETERS by id. Text lives in src/locales as question.<id>.title / question.<id>.statement. Topic and hint are derived (topic = primary parameter's label; hint = widget default). Order = presentation order.",
-  "id": "hademokratim-v1",
-  "version": 1,
+  "$comment": "Structural only. Questions target PARAMETERS by id. Text lives in src/locales as question.<id>.title / question.<id>.statement. version bumped to 2: the parameter set changed, so any saved v1 answers are invalid.",
+  "id": "hademokratim-v2",
+  "version": 2,
   "questions": [
+    { "id": "q_conflict", "widget": "slider", "targets": [{ "parameter": "conflict" }] },
+    { "id": "q_imp_conflict", "widget": "importance", "importanceFor": ["conflict"] },
+    { "id": "q_separation", "widget": "boolean", "targets": [{ "parameter": "separation_annexation" }] },
     { "id": "q_economy", "widget": "slider", "targets": [{ "parameter": "economy" }] },
-    { "id": "q_imp_security", "widget": "importance", "importanceFor": ["security"] },
-    { "id": "q_security", "widget": "slider", "targets": [{ "parameter": "security" }] },
-    { "id": "q_court_political", "widget": "boolean", "targets": [{ "parameter": "court_political" }] },
-    { "id": "q_judiciary", "widget": "slider", "targets": [{ "parameter": "judiciary_balance" }] },
-    { "id": "q_religion_sep", "widget": "boolean", "targets": [{ "parameter": "religion_state_sep" }] },
-    { "id": "q_champion", "widget": "multiselect", "parameter": "flagship" },
-    { "id": "q_imp_honesty", "widget": "importance", "importanceFor": ["honesty"] },
-    { "id": "q_style", "widget": "slider", "targets": [{ "parameter": "leadership_style" }] },
-    { "id": "q_ideology", "widget": "slider", "targets": [{ "parameter": "ideology" }] },
+    { "id": "q_imp_economy", "widget": "importance", "importanceFor": ["economy"] },
+    { "id": "q_religion_state", "widget": "slider", "targets": [{ "parameter": "religion_state" }] },
+    { "id": "q_imp_religion_state", "widget": "importance", "importanceFor": ["religion_state"] },
+    { "id": "q_shared_society", "widget": "slider", "targets": [{ "parameter": "shared_society" }] },
+    { "id": "q_imp_shared_society", "widget": "importance", "importanceFor": ["shared_society"] },
+    { "id": "q_positioning", "widget": "slider", "targets": [{ "parameter": "positioning" }] },
+    { "id": "q_climate", "widget": "slider", "targets": [{ "parameter": "climate" }] },
+    { "id": "q_imp_climate", "widget": "importance", "importanceFor": ["climate"] },
+    { "id": "q_flagship", "widget": "multiselect", "parameter": "flagship" },
     { "id": "q_imp_experience", "widget": "importance", "importanceFor": ["experience"] }
   ]
 }

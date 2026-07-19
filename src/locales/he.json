@@ -5,7 +5,7 @@
     "welcome": {
       "title": "מצאו את המועמד/ת שמדבר/ת בשמכם",
       "sub": "כמה שאלות קצרות על הנושאים שחשובים לכם — ובסוף, רשימת מועמדים מדורגת לפי ההתאמה. שקוף לגמרי: תמיד תדעו למה.",
-      "time": "כ‑3 דקות · 11 שאלות",
+      "time": "כ‑4 דקות · 14 שאלות",
       "start": "בואו נתחיל",
       "steps": [
         { "title": "עונים בכנות", "desc": "גררו, דרגו וסמנו לפי מה שקרוב לליבכם." },
@@ -51,35 +51,39 @@
     }
   },
   "param": {
-    "economy": { "label": "כלכלה", "poleLow": "שוק חופשי", "poleHigh": "מעורבות ממשלתית" },
-    "security": { "label": "ביטחון", "poleLow": "קו תקיף", "poleHigh": "מהלכים דיפלומטיים" },
-    "court_political": { "label": "מערכת המשפט", "poleLow": "גורם מקצועי", "poleHigh": "גורם פוליטי" },
-    "judiciary_balance": { "label": "רפורמה משפטית", "poleLow": "הכנסת והממשלה", "poleHigh": "בתי המשפט" },
-    "religion_state_sep": { "label": "דת ומדינה", "poleLow": "זיקה בין דת למדינה", "poleHigh": "הפרדת דת ממדינה" },
-    "leadership_style": { "label": "סגנון מנהיגות", "poleLow": "עימותי ונחוש", "poleHigh": "מגשר ומאחד" },
-    "ideology": { "label": "אידאולוגיה", "poleLow": "אידאולוגיה נחרצת", "poleHigh": "פנייה לקהל רחב" },
-    "honesty": { "label": "יושרה ושקיפות" },
+    "conflict": { "label": "ביטחון והסכסוך", "poleLow": "ביטחון והרתעה תחילה", "poleHigh": "דיפלומטיה ושתי מדינות" },
+    "separation_annexation": { "label": "הכיבוש וההתנחלויות", "poleLow": "שמירה על הסטטוס קוו", "poleHigh": "סיום הכיבוש" },
+    "economy": { "label": "כלכלה", "poleLow": "שוק חופשי", "poleHigh": "סוציאל-דמוקרטי" },
+    "religion_state": { "label": "דת ומדינה", "poleLow": "שמירה על הסטטוס קוו", "poleHigh": "הפרדה מלאה" },
+    "shared_society": { "label": "חברה משותפת", "poleLow": "אופי יהודי-לאומי תחילה", "poleHigh": "שוויון יהודי-ערבי מלא" },
+    "positioning": { "label": "מיצוב פוליטי", "poleLow": "נאמנות לשמאל", "poleHigh": "מהלך למרכז" },
+    "climate": { "label": "אקלים וסביבה", "poleLow": "לא בראש סדר העדיפויות", "poleHigh": "נושא מרכזי" },
     "experience": { "label": "ניסיון" },
     "flagship": { "label": "נושאי דגל" }
   },
   "option": {
-    "minorities_women": "ייצוג מיעוטים ונשים",
     "cost_of_living": "יוקר המחיה",
+    "religion_and_state": "דת ומדינה",
     "civil_rights": "זכויות אזרח",
-    "religion_state": "דת ומדינה",
-    "settlements": "התיישבות"
+    "womens_minority_rep": "ייצוג נשים ומיעוטים",
+    "democracy_integrity": "דמוקרטיה וטוהר השלטון",
+    "jewish_arab_equality": "שוויון יהודי-ערבי",
+    "climate_env": "אקלים וסביבה"
   },
   "question": {
+    "q_conflict": { "title": "בסוגיות הסכסוך והביטחון, לאן נוטה עמדתך?" },
+    "q_imp_conflict": { "title": "עד כמה הביטחון והסכסוך מכריעים עבורך בבחירה?" },
+    "q_separation": { "statement": "על ישראל לפעול לסיום הכיבוש ולפינוי התנחלויות." },
     "q_economy": { "title": "איזו גישה כלכלית קרובה לליבך?" },
-    "q_imp_security": { "title": "עד כמה תחום הביטחון מכריע עבורך בבחירה?" },
-    "q_security": { "title": "בסוגיות ביטחון, לאן נוטה עמדתך?" },
-    "q_court_political": { "statement": "בית המשפט העליון הוא גורם פוליטי." },
-    "q_judiciary": { "title": "באיזון בין רשויות השלטון, את מי לחזק?" },
-    "q_religion_sep": { "statement": "יש להפריד בין דת למדינה." },
-    "q_champion": { "title": "אילו נושאים חשוב לך שהמועמד/ת יובילו?" },
-    "q_imp_honesty": { "title": "כמה משקל יש ליושרה ושקיפות בבחירתך?" },
-    "q_style": { "title": "איזה סגנון מנהיגות מדבר אליך?" },
-    "q_ideology": { "title": "עד כמה חשובה לך טהרנות אידאולוגית?" },
+    "q_imp_economy": { "title": "כמה משקל יש לסוגיות הכלכלה בבחירתך?" },
+    "q_religion_state": { "title": "בסוגיות דת ומדינה, לאן נוטה עמדתך?" },
+    "q_imp_religion_state": { "title": "כמה משקל יש לדת ומדינה בבחירתך?" },
+    "q_shared_society": { "title": "בסוגיית החברה המשותפת יהודים-ערבים, לאן נוטה עמדתך?" },
+    "q_imp_shared_society": { "title": "כמה משקל יש לחברה המשותפת בבחירתך?" },
+    "q_positioning": { "title": "האם על המפלגה להישאר נאמנה לשמאל או לנוע למרכז?" },
+    "q_climate": { "title": "עד כמה האקלים והסביבה צריכים להיות במרכז?" },
+    "q_imp_climate": { "title": "כמה משקל יש לאקלים בבחירתך?" },
+    "q_flagship": { "title": "אילו נושאים חשוב לך שהמועמד/ת יובילו?" },
     "q_imp_experience": { "title": "כמה משקל לניסיון (פוליטי וכללי)?" }
   },
   "candidate": {
