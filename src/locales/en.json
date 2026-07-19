@@ -50,7 +50,8 @@
       "gap": "Position gap",
       "whyMatch": "Why this match",
       "fullBreakdown": "Full breakdown",
-      "restart": "Start over"
+      "restart": "Start over",
+      "limitedRecord": "Limited public record"
     },
     "candidate": {
       "overallMatch": "Overall match to your positions",

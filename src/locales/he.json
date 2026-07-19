@@ -50,7 +50,8 @@
       "gap": "פער בעמדות",
       "whyMatch": "למה ההתאמה הזו",
       "fullBreakdown": "לפירוט המלא",
-      "restart": "להתחיל מחדש"
+      "restart": "להתחיל מחדש",
+      "limitedRecord": "מידע ציבורי מוגבל"
     },
     "candidate": {
       "overallMatch": "התאמה כוללת לעמדותיכם",

@@ -36,6 +36,7 @@ export interface Catalog {
       whyMatch: string;
       fullBreakdown: string;
       restart: string;
+      limitedRecord: string;
     };
     candidate: {
       overallMatch: string;

@@ -177,7 +177,8 @@
       },
       "display": {
         "avatarBg": "#dce8e0",
-        "avatarInk": "#3f6b52"
+        "avatarInk": "#3f6b52",
+        "limitedRecord": true
       }
     },
     {
@@ -220,7 +221,8 @@
       },
       "display": {
         "avatarBg": "#e8dee9",
-        "avatarInk": "#6a4a6e"
+        "avatarInk": "#6a4a6e",
+        "limitedRecord": true
       }
     },
     {
