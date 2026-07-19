@@ -219,6 +219,201 @@
       "name": "Eran Nissan",
       "tagline": "Activist, Mehazkim CEO",
       "initial": "E"
+    },
+    "ayed_badir": {
+      "name": "Ayed Badir",
+      "tagline": "Arab-Jewish activist for equality and genuine partnership",
+      "initial": "A"
+    },
+    "avi_dabush": {
+      "name": "Avi Dabush",
+      "tagline": "Human rights activist and voice for a different religious perspective",
+      "initial": "A"
+    },
+    "avishai_lichtenstein": {
+      "name": "Avishai Lichtenstein",
+      "tagline": "Periphery and democracy activist, architect, civil-military relations researcher",
+      "initial": "A"
+    },
+    "evyatar_beer": {
+      "name": "Evyatar Beer",
+      "tagline": "Man of action and nature from the Negev",
+      "initial": "E"
+    },
+    "achsan_chalaylah": {
+      "name": "Achsan Chalaylah",
+      "tagline": "Educator and civil rights activist focused on Arab civil society",
+      "initial": "A"
+    },
+    "ali_salalha": {
+      "name": "Ali Salalha",
+      "tagline": "Druze educator, former Meretz MK, fought Nation-State Law, advocated Arab-Jewish equality",
+      "initial": "A"
+    },
+    "alice_goldman": {
+      "name": "Alice Goldman",
+      "tagline": "Environmental lawyer and northern region social activist",
+      "initial": "A"
+    },
+    "omri_ronen": {
+      "name": "Omri Ronen",
+      "tagline": "Democracy activist, Brothers and Sisters in Arms leader, reserve officer",
+      "initial": "O"
+    },
+    "emily_moatti": {
+      "name": "Emily Moatti",
+      "tagline": "Feminist, peace activist and writer",
+      "initial": "E"
+    },
+    "amir_khnifes": {
+      "name": "Amir Khnifes",
+      "tagline": "Civil rights activist and Druze community leader",
+      "initial": "A"
+    },
+    "inbal_wortman_shoham": {
+      "name": "Inbal Wortman Shoham",
+      "tagline": "Civil society activist, founder of Avnei Derech L'Chaim, advocate for Jewish-Arab partnership",
+      "initial": "I"
+    },
+    "inbar_bezek": {
+      "name": "Inbar Bezek",
+      "tagline": "Economic manager and self-employed rights activist; experienced voice of the north",
+      "initial": "I"
+    },
+    "eran_etzion": {
+      "name": "Eran Etzion",
+      "tagline": "Diplomat and security veteran with 30 years of foreign and security policy experience",
+      "initial": "E"
+    },
+    "olivia_emanuel_de_lam": {
+      "name": "Olivia Emanuel de Lam",
+      "tagline": "Community activist emphasizing participation over electoral ambition",
+      "initial": "O"
+    },
+    "ihab_shalian": {
+      "name": "Ihab Shalian",
+      "tagline": "First Christian Arab lieutenant colonel in IDF, advocate for minority integration and Christian identity in Israeli society",
+      "initial": "I"
+    },
+    "itai_leshem": {
+      "name": "Itai Leshem",
+      "tagline": "Lawyer and government corruption investigator",
+      "initial": "I"
+    },
+    "rabbi_benjamin_daniel_minich": {
+      "name": "Rabbi Benjamin Daniel Minich",
+      "tagline": "Reform rabbi, scholar, and leader of Israel's Progressive Rabbinate",
+      "initial": "R"
+    },
+    "dani_algart": {
+      "name": "Dani Algart",
+      "tagline": "Retired Deputy Superintendent, teacher, educator, and leader of hostage families' struggle",
+      "initial": "D"
+    },
+    "dima_shapira": {
+      "name": "Dima Shapira",
+      "tagline": "Yokneam activist and Meretz–Democrats field leader",
+      "initial": "D"
+    },
+    "ghaleb_salamna": {
+      "name": "Ghaleb Salamna",
+      "tagline": "Human rights lawyer and advocate for Jewish-Arab partnership",
+      "initial": "G"
+    },
+    "gil_beilin": {
+      "name": "Gil Beilin",
+      "tagline": "Professional leadership rooted in truth and expertise",
+      "initial": "G"
+    },
+    "hadas_ragolsky": {
+      "name": "Hadas Ragolsky",
+      "tagline": "Lawyer, journalist, and leading advocate for women's equality and separation of religion and state",
+      "initial": "H"
+    },
+    "lee_hoffmann_agiv": {
+      "name": "Lee Hoffmann Agiv",
+      "tagline": "Democracy and women's activist from Bonot Alternativa",
+      "initial": "L"
+    },
+    "kati_piasecki": {
+      "name": "Kati Piasecki",
+      "tagline": "Democracy and LGBTQ+ rights activist, advocate for state-religion separation",
+      "initial": "K"
+    },
+    "malek_bader": {
+      "name": "Malek Bader",
+      "tagline": "Druze attorney, equality and democracy activist",
+      "initial": "M"
+    },
+    "mehereta_baruch_ron": {
+      "name": "Mehereta Baruch-Ron",
+      "tagline": "Former Tel Aviv deputy mayor, social bridge-builder for equality and justice",
+      "initial": "M"
+    },
+    "moshe_redman_abutbul": {
+      "name": "Moshe Redman Abutbul",
+      "tagline": "Protest movement leader, high-tech entrepreneur, social activist",
+      "initial": "M"
+    },
+    "moran_michel": {
+      "name": "Moran Michel",
+      "tagline": "Democratic entrepreneur and activist, leader of the protest movement for democracy and women's rights",
+      "initial": "M"
+    },
+    "moran_zer_katzenstein": {
+      "name": "Moran Zer Katzenstein",
+      "tagline": "Founder of Bonot Alternativa women's movement, advocate for democracy and women's rights",
+      "initial": "M"
+    },
+    "naor_narkis": {
+      "name": "Naor Narkis",
+      "tagline": "Secular activist fighting to separate religion from state and money; founder of Returning with Reason",
+      "initial": "N"
+    },
+    "nava_rozolio": {
+      "name": "Nava Rozolio",
+      "tagline": "Attorney, protest leader, and advocate for peace and Jewish-Arab partnership",
+      "initial": "N"
+    },
+    "nidal_masalha": {
+      "name": "Nidal Masalha",
+      "tagline": "Lawyer & economist from Kafr Qara, champion of Arab-Jewish partnership",
+      "initial": "N"
+    },
+    "nimrod_sheffer": {
+      "name": "Nimrod Sheffer",
+      "tagline": "Retired major general, military strategist and democratic liberal",
+      "initial": "N"
+    },
+    "rotem_sivan_hoffmann": {
+      "name": "Rotem Sivan Hoffmann",
+      "tagline": "Neurosurgeon, entrepreneur, co-founder of Aware Mothers movement",
+      "initial": "R"
+    },
+    "sumaya_bashir": {
+      "name": "Sumaya Bashir",
+      "tagline": "Social activist for Jewish-Arab partnership and civil equality",
+      "initial": "S"
+    },
+    "yair_pink": {
+      "name": "Yair Pink",
+      "tagline": "Religious left-wing activist fighting Jewish extremism and church-state separation",
+      "initial": "Y"
+    },
+    "yair_rubinstein": {
+      "name": "Yair Rubinstein",
+      "tagline": "Religion-state affairs leader, advocate for secular governance and Jewish-Arab partnership",
+      "initial": "Y"
+    },
+    "prof_yaron_niv": {
+      "name": "Prof. Yaron Niv",
+      "tagline": "Physician and public health administrator",
+      "initial": "P"
+    },
+    "yoav_agami": {
+      "name": "Yoav Agami",
+      "tagline": "Liberal social-democrat activist for peace and institutional integrity",
+      "initial": "Y"
     }
   }
 }
