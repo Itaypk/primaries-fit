@@ -1,0 +1,92 @@
+{
+  "app": { "name": "Compass", "langLabel": "עב" },
+  "ui": {
+    "badge": "Independent · no party affiliation",
+    "welcome": {
+      "title": "Find the candidate who speaks for you",
+      "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
+      "time": "~3 min · 11 questions",
+      "start": "Let’s begin",
+      "steps": [
+        { "title": "Answer honestly", "desc": "Drag, rate and select what feels closest to you." },
+        { "title": "We compare", "desc": "Your answers are weighed against candidate positions." },
+        { "title": "Transparent ranking", "desc": "Every match comes with a full explanation." }
+      ]
+    },
+    "quiz": {
+      "next": "Next",
+      "seeResults": "See results",
+      "stepOf": "Question",
+      "of": "of",
+      "dragHint": "Drag the slider to your position",
+      "rangeHint": "Rate on a 1–5 scale",
+      "multiHint": "Select as many as apply",
+      "boolHint": "Agree or disagree?",
+      "yes": "Agree",
+      "no": "Disagree",
+      "notImp": "Not at all",
+      "veryImp": "Critical",
+      "middle": "Middle",
+      "none": "None"
+    },
+    "results": {
+      "title": "Your best matches",
+      "sub": "Ordered by match. Tap a candidate for details, or open the explanation.",
+      "match": "match",
+      "topMatch": "Best match",
+      "aligned": "Aligned positions",
+      "gap": "Position gap",
+      "whyMatch": "Why this match",
+      "fullBreakdown": "Full breakdown",
+      "restart": "Start over"
+    },
+    "candidate": {
+      "overallMatch": "Overall match to your positions",
+      "byTopic": "Breakdown by topic",
+      "yourStance": "Your stance",
+      "theirStance": "Candidate stance",
+      "backToResults": "Back to list",
+      "yes": "Yes",
+      "no": "No"
+    }
+  },
+  "param": {
+    "economy": { "label": "Economy", "poleLow": "Free market", "poleHigh": "Government-run" },
+    "security": { "label": "Security", "poleLow": "Hardline", "poleHigh": "Diplomacy" },
+    "court_political": { "label": "The judiciary", "poleLow": "Professional body", "poleHigh": "Political actor" },
+    "judiciary_balance": { "label": "Judicial reform", "poleLow": "Knesset & government", "poleHigh": "The courts" },
+    "religion_state_sep": { "label": "Religion & state", "poleLow": "Religion tied to state", "poleHigh": "Separation of religion & state" },
+    "leadership_style": { "label": "Leadership style", "poleLow": "Confrontational", "poleHigh": "Bridge-builder" },
+    "ideology": { "label": "Ideology", "poleLow": "Strict ideology", "poleHigh": "Broad appeal" },
+    "honesty": { "label": "Integrity & transparency" },
+    "experience": { "label": "Experience" },
+    "flagship": { "label": "Flagship issues" }
+  },
+  "option": {
+    "minorities_women": "Minority & women representation",
+    "cost_of_living": "Cost of living",
+    "civil_rights": "Civil rights",
+    "religion_state": "Religion & state",
+    "settlements": "Settlements"
+  },
+  "question": {
+    "q_economy": { "title": "Which economic approach is closer to you?" },
+    "q_imp_security": { "title": "How decisive is security in your choice?" },
+    "q_security": { "title": "On security matters, where do you lean?" },
+    "q_court_political": { "statement": "The Supreme Court is a political actor." },
+    "q_judiciary": { "title": "In balancing branches of power, whom to strengthen?" },
+    "q_religion_sep": { "statement": "Religion and state should be separated." },
+    "q_champion": { "title": "Which issues should the candidate champion?" },
+    "q_imp_honesty": { "title": "How much weight do integrity and transparency carry?" },
+    "q_style": { "title": "Which leadership style speaks to you?" },
+    "q_ideology": { "title": "How ideologically pure should the candidate be?" },
+    "q_imp_experience": { "title": "How much weight for experience (political & other)?" }
+  },
+  "candidate": {
+    "A": { "name": "Candidate A", "tagline": "Business & management background", "initial": "A" },
+    "B": { "name": "Candidate B", "tagline": "Civil-society activism", "initial": "B" },
+    "C": { "name": "Candidate C", "tagline": "Security-sector past", "initial": "C" },
+    "D": { "name": "Candidate D", "tagline": "Academia & law", "initial": "D" },
+    "E": { "name": "Candidate E", "tagline": "Veteran politician", "initial": "E" }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$comment": "Structural only. Questions target PARAMETERS by id. Text lives in src/locales as question.<id>.title / question.<id>.statement. Topic and hint are derived (topic = primary parameter's label; hint = widget default). Order = presentation order.",
+  "id": "hademokratim-v1",
+  "version": 1,
+  "questions": [
+    { "id": "q_economy", "widget": "slider", "targets": [{ "parameter": "economy" }] },
+    { "id": "q_imp_security", "widget": "importance", "importanceFor": ["security"] },
+    { "id": "q_security", "widget": "slider", "targets": [{ "parameter": "security" }] },
+    { "id": "q_court_political", "widget": "boolean", "targets": [{ "parameter": "court_political" }] },
+    { "id": "q_judiciary", "widget": "slider", "targets": [{ "parameter": "judiciary_balance" }] },
+    { "id": "q_religion_sep", "widget": "boolean", "targets": [{ "parameter": "religion_state_sep" }] },
+    { "id": "q_champion", "widget": "multiselect", "parameter": "flagship" },
+    { "id": "q_imp_honesty", "widget": "importance", "importanceFor": ["honesty"] },
+    { "id": "q_style", "widget": "slider", "targets": [{ "parameter": "leadership_style" }] },
+    { "id": "q_ideology", "widget": "slider", "targets": [{ "parameter": "ideology" }] },
+    { "id": "q_imp_experience", "widget": "importance", "importanceFor": ["experience"] }
+  ]
+}

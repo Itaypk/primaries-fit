@@ -1,10 +1,15 @@
 # primaries.fit — data model proposal
 
-> Status: **proposal for review.** Concrete strawman lives in [`/data`](../data):
-> [`schema.ts`](../data/schema.ts) (types), [`parameters.json`](../data/parameters.json),
-> [`candidates.json`](../data/candidates.json), [`questionnaire.json`](../data/questionnaire.json),
-> and a reference scorer [`score.ts`](../data/score.ts). The model reproduces the
-> Claude Design prototype's rankings exactly (verified).
+> Status: **implemented.** Structural data lives in
+> [`src/data`](../src/data) ([`parameters.json`](../src/data/parameters.json),
+> [`candidates.json`](../src/data/candidates.json),
+> [`questionnaire.json`](../src/data/questionnaire.json)); display text lives in
+> per-locale catalogs [`src/locales`](../src/locales). The engine —
+> [`types.ts`](../src/engine/types.ts), the swappable metric
+> [`metric.ts`](../src/engine/metric.ts), [`voter.ts`](../src/engine/voter.ts),
+> [`score.ts`](../src/engine/score.ts), and post-ranking
+> [`postRank.ts`](../src/engine/postRank.ts) — reproduces the Claude Design
+> prototype's rankings exactly (verified).
 
 ## Goal
 
@@ -103,14 +108,16 @@ score = Σ wᵢ · agreementᵢ  /  Σ wᵢ        (wᵢ > 0, parameter answered
 Defaults: `scalar`/`set` importance = 1; `valence` importance = 0 until a rating
 turns it on. Unanswered parameters are **skipped**, never counted as
 disagreement. Output is `[0,1]`, shown as a percentage. See
-[`score.ts`](../data/score.ts) — `buildVoterVector` → `rankCandidates`.
+[`src/engine`](../src/engine) — `buildVoterVector` → `rankCandidates`. The
+distance maths is isolated in a swappable `ScoringStrategy`
+([`metric.ts`](../src/engine/metric.ts)); the default is `weightedManhattan`.
 
 ## Post-ranking (out of ranking scope, by design)
 
 Preferences that aren't about *closeness* — "equal number of men and women",
 "show everyone close enough in random order" — run **after** ranking as pure,
 composable steps: `(ranked, candidates) => ranked`. They reshape the list but
-never touch the match maths, so the ranking stays explainable. `score.ts` ships
+never touch the match maths, so the ranking stays explainable. `postRank.ts` ships
 `shuffleAboveThreshold` as a worked example; gender balance etc. slot in the same
 way (they'll read candidate metadata like `gender`, added to the `display`/meta
 block, never to `positions`). Keeping these separate is what lets us add them
@@ -119,12 +126,14 @@ freely without disturbing the engine.
 ## Representation & storage
 
 - **No backend.** Everything is static JSON loaded at startup: `parameters.json`,
-  `candidates.json`, `questionnaire.json` (+ UI strings later). It's read-only
-  reference data, cache-friendly, diff-reviewable, and trivially hostable. A
-  backend only becomes worthwhile if we later want server-side analytics or
-  editor tooling — nothing in this model blocks that.
-- **Localisation** is `{ he, en }` inline on every label for now; can be split
-  into per-locale string files in the production-grade phase.
+  `candidates.json`, `questionnaire.json`, plus per-locale catalogs. It's
+  read-only reference data, cache-friendly, diff-reviewable, and trivially
+  hostable. A backend only becomes worthwhile if we later want server-side
+  analytics or editor tooling — nothing in this model blocks that.
+- **Localisation** uses the **catalog** model: structural data files carry ids
+  only, and all text lives in `src/locales/<lang>.json`, resolved by convention
+  (`param.<id>.label`, `question.<id>.title`, `candidate.<id>.name`, …). Adding a
+  language is one new catalog file; the data never changes.
 - **Normalisation:** everything is `[0,1]` internally (sliders emit `0..100` at
   the UI and are divided down). One range, one distance metric, no per-kind
   scale juggling.
@@ -140,14 +149,14 @@ freely without disturbing the engine.
 - Add post-ranking preferences without touching the engine.
 - Swap the distance metric in one place if we ever want weighted-Euclidean etc.
 
-## Open questions for you
+## Resolved decisions
 
-1. **Distance metric** — keep weighted Manhattan agreement (`1 − |Δ|`, matches
-   the prototype), or move to weighted Euclidean? Manhattan is more legible for
-   the "why this match" breakdown; recommend keeping it.
-2. **valence baseline** — should honesty/experience count a little by default,
-   or only when the voter opts in (current: only on opt-in)?
-3. **Localisation shape** — inline `{he,en}` (current) vs. separate string
-   catalogues per locale. Inline is simpler now; catalogues scale better.
-4. **Ready to proceed** to the production-grade scaffold (Vite + TS, component
-   breakdown, externalised questions, CI), or iterate on the model first?
+1. **Distance metric** — weighted-Manhattan agreement (`1 − |Δ|`), kept for its
+   legibility in the "why this match" breakdown, but placed **behind a swappable
+   `ScoringStrategy`** ([`metric.ts`](../src/engine/metric.ts)) so we can iterate
+   on it (weighted-Euclidean, asymmetric penalties, non-linear importance) without
+   touching the pipeline or the UI.
+2. **Valence baseline** — **opt-in only.** A valence trait counts for nothing
+   until the voter rates its importance, because some voters actively prefer
+   *less* of one (e.g. experience, when they want fresh ideas).
+3. **Localisation** — **catalog** model (see Representation & storage above).
