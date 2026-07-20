@@ -2,9 +2,13 @@ import type { CSSProperties, ReactNode } from "react";
 import { palettes, type AccentName } from "../theme";
 import { useI18n } from "../i18n";
 
-/** Outer device chrome: the centred, gradient backdrop and the phone card.
- *  Accent palette is injected as CSS variables scoped to the card. */
-export function PhoneFrame({
+/** The app's self-contained panel: a rounded, internally-scrolling frame that
+ *  stays a phone-card size on small viewports and widens into a reading panel
+ *  with room for multi-column layouts on larger ones. Sizing and breakpoints
+ *  live in `.app-frame` (styles.css) — it reacts to its own rendered width
+ *  via container queries, not the viewport, so it degrades gracefully as a
+ *  desktop window narrows. Accent palette is injected as CSS variables. */
+export function AppFrame({
   accent,
   children,
 }: {
@@ -14,18 +18,7 @@ export function PhoneFrame({
   const { t } = useI18n();
   const p = palettes[accent];
 
-  const cardStyle = {
-    position: "relative",
-    width: "402px",
-    height: "840px",
-    background: "#faf6ef",
-    borderRadius: "46px",
-    boxShadow:
-      "0 2px 4px rgba(60,40,20,.1),0 30px 70px -20px rgba(60,40,20,.45)",
-    border: "1px solid #e8ddcd",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
+  const accentVars = {
     "--accent": p.accent,
     "--accent-soft": p.soft,
     "--accent-ink": p.ink,
@@ -44,7 +37,7 @@ export function PhoneFrame({
           "radial-gradient(120% 90% at 50% 0%, #f4ecdf 0%, #e7dccb 100%)",
       }}
     >
-      <div dir={t.dir} style={cardStyle}>
+      <div dir={t.dir} className="app-frame" style={accentVars}>
         {children}
       </div>
     </div>

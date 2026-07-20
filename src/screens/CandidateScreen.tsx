@@ -1,3 +1,6 @@
+import { useState } from "react";
+import type { CSSProperties } from "react";
+import type { Confidence } from "../engine/types";
 import type { BreakdownRow } from "../view/results";
 import { useI18n } from "../i18n";
 import { candidatesById } from "../data";
@@ -7,6 +10,36 @@ function pctColor(pct: number | null): string {
   if (pct >= 66) return "var(--accent-ink, #7d3d29)";
   if (pct >= 40) return "#b08a52";
   return "#b06a55";
+}
+
+/** Filled = a direct, on-record statement; hollow = a weak/inferred signal. */
+function ConfidenceDot({ level }: { level: Confidence }) {
+  const fill: CSSProperties =
+    level === "high"
+      ? { background: "var(--accent-ink, #7d3d29)" }
+      : level === "medium"
+        ? { background: "#b08a52" }
+        : { background: "transparent", border: "1.5px solid #c9beac" };
+  return (
+    <span
+      style={{
+        flex: "none",
+        width: "8px",
+        height: "8px",
+        borderRadius: "50%",
+        ...fill,
+      }}
+    />
+  );
+}
+
+/** Short display label for a source link: bare hostname, no protocol/www. */
+function sourceLabel(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
 }
 
 export function CandidateScreen({
@@ -23,9 +56,11 @@ export function CandidateScreen({
   const { t } = useI18n();
   const display = candidatesById[candidateId]?.display ?? {};
   const pct = Math.round(score * 100);
+  const [openEvidence, setOpenEvidence] = useState<string | null>(null);
 
   return (
     <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "4px 24px 24px" }}>
+      <div className="candidate-column">
       <div style={{ display: "flex", alignItems: "center", gap: "15px", margin: "8px 0 4px" }}>
         <div
           className="serif"
@@ -95,36 +130,90 @@ export function CandidateScreen({
         {t.ui.candidate.byTopic}
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-        {breakdown.map((b) => (
-          <div key={b.parameterId}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "9px" }}>
-              <span style={{ fontSize: "15px", fontWeight: 700, color: "#2b2622" }}>{b.topic}</span>
-              <span style={{ fontSize: "13px", fontWeight: 700, color: pctColor(b.pct) }}>
-                {b.pct == null ? "—" : `${b.pct}%`}
-              </span>
-            </div>
-            <div style={{ height: "7px", borderRadius: "999px", background: "#eee3d3", overflow: "hidden", marginBottom: "10px" }}>
-              <div
-                style={{ height: "100%", borderRadius: "999px", width: `${b.pct ?? 0}%`, background: "var(--accent, #c0684a)" }}
-              />
-            </div>
-            <div style={{ display: "flex", gap: "8px" }}>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #eee3d3", borderRadius: "12px", padding: "9px 11px" }}>
-                <div style={{ fontSize: "11px", color: "#a99e8c", fontWeight: 600, marginBottom: "2px" }}>
-                  {t.ui.candidate.yourStance}
-                </div>
-                <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#2b2622" }}>{b.you}</div>
+      <div className="breakdown-grid">
+        {breakdown.map((b) => {
+          const evidenceOpen = openEvidence === b.parameterId;
+          return (
+            <div key={b.parameterId}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "9px" }}>
+                <span style={{ fontSize: "15px", fontWeight: 700, color: "#2b2622" }}>{b.topic}</span>
+                <span style={{ fontSize: "13px", fontWeight: 700, color: pctColor(b.pct) }}>
+                  {b.pct == null ? "—" : `${b.pct}%`}
+                </span>
               </div>
-              <div style={{ flex: 1, background: "#fff", border: "1px solid #eee3d3", borderRadius: "12px", padding: "9px 11px" }}>
-                <div style={{ fontSize: "11px", color: "#a99e8c", fontWeight: 600, marginBottom: "2px" }}>
-                  {t.ui.candidate.theirStance}
-                </div>
-                <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#2b2622" }}>{b.candidate}</div>
+              <div style={{ height: "7px", borderRadius: "999px", background: "#eee3d3", overflow: "hidden", marginBottom: "10px" }}>
+                <div
+                  style={{ height: "100%", borderRadius: "999px", width: `${b.pct ?? 0}%`, background: "var(--accent, #c0684a)" }}
+                />
               </div>
+              <div style={{ display: "flex", gap: "8px" }}>
+                <div style={{ flex: 1, background: "#fff", border: "1px solid #eee3d3", borderRadius: "12px", padding: "9px 11px" }}>
+                  <div style={{ fontSize: "11px", color: "#a99e8c", fontWeight: 600, marginBottom: "2px" }}>
+                    {t.ui.candidate.yourStance}
+                  </div>
+                  <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#2b2622" }}>{b.you}</div>
+                </div>
+                <div style={{ flex: 1, background: "#fff", border: "1px solid #eee3d3", borderRadius: "12px", padding: "9px 11px" }}>
+                  <div style={{ fontSize: "11px", color: "#a99e8c", fontWeight: 600, marginBottom: "2px" }}>
+                    {t.ui.candidate.theirStance}
+                  </div>
+                  <div style={{ fontSize: "13.5px", fontWeight: 600, color: "#2b2622" }}>{b.candidate}</div>
+                </div>
+              </div>
+
+              {b.confidence && (
+                <button
+                  onClick={() => setOpenEvidence(evidenceOpen ? null : b.parameterId)}
+                  style={{
+                    marginTop: "9px",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "7px",
+                    background: "none",
+                    border: "none",
+                    padding: 0,
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    color: "#8a7f6f",
+                  }}
+                >
+                  <ConfidenceDot level={b.confidence} />
+                  {t.ui.candidate.howWeDecided}
+                  <span style={{ color: "#c9beac" }}>·</span>
+                  {t.ui.candidate.confidence[b.confidence]}
+                  <span style={{ fontSize: "10px" }}>{evidenceOpen ? "▴" : "▾"}</span>
+                </button>
+              )}
+
+              {evidenceOpen && (
+                <div
+                  style={{
+                    marginTop: "9px",
+                    padding: "12px 14px",
+                    background: "#faf7f0",
+                    border: "1px dashed #e7dccb",
+                    borderRadius: "12px",
+                  }}
+                >
+                  <div style={{ fontSize: "13px", lineHeight: 1.5, color: "#4a4238" }}>{b.rationale}</div>
+                  {!!b.sources?.length && (
+                    <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "8px", marginTop: "9px" }}>
+                      <span style={{ fontSize: "10.5px", fontWeight: 700, color: "#a99e8c" }}>
+                        {t.ui.candidate.sources}
+                      </span>
+                      {b.sources.map((src, si) => (
+                        <a key={si} href={src} target="_blank" rel="noreferrer" style={{ fontSize: "11.5px" }}>
+                          {sourceLabel(src)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       <button
@@ -144,6 +233,7 @@ export function CandidateScreen({
       >
         {t.ui.candidate.backToResults}
       </button>
+      </div>
     </div>
   );
 }

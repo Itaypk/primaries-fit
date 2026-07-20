@@ -5,6 +5,8 @@
 import type {
   Candidate,
   CandidateScore,
+  Confidence,
+  EvidenceEntry,
   Parameter,
   VoterVector,
 } from "../engine/types";
@@ -54,6 +56,10 @@ export interface BreakdownRow {
   candidate: string;
   /** 0..100 or null when the voter didn't answer this parameter. */
   pct: number | null;
+  /** Sourcing behind the candidate's position, when recorded (see evidence.json). */
+  confidence?: Confidence;
+  rationale?: string;
+  sources?: string[];
 }
 
 /** Per-parameter comparison shown on the candidate detail screen. */
@@ -62,6 +68,7 @@ export function buildBreakdown(
   voter: VoterVector,
   parameters: Parameter[],
   t: Translator,
+  evidenceForCandidate?: Record<string, EvidenceEntry>,
 ): BreakdownRow[] {
   return parameters.map((p) => {
     const cv = candidate.positions[p.id];
@@ -105,6 +112,17 @@ export function buildBreakdown(
       }
     }
 
-    return { parameterId: p.id, topic: t.param(p.id), you, candidate: candidate_, pct };
+    const ev = evidenceForCandidate?.[p.id];
+
+    return {
+      parameterId: p.id,
+      topic: t.param(p.id),
+      you,
+      candidate: candidate_,
+      pct,
+      confidence: ev?.confidence,
+      rationale: ev?.rationale,
+      sources: ev?.sources,
+    };
   });
 }

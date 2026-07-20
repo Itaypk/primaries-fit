@@ -145,3 +145,21 @@ export interface Dataset {
   candidates: Candidate[];
   questionnaire: Questionnaire;
 }
+
+// ---------------------------------------------------------------------------
+// Evidence sidecar — transparency only. The engine never reads this; it backs
+// the "how we decided" disclosure on the candidate screen. See
+// docs/candidate-scoring.md.
+// ---------------------------------------------------------------------------
+
+export type Confidence = "high" | "medium" | "low";
+
+export interface EvidenceEntry {
+  value: number | string[];
+  confidence: Confidence;
+  rationale: string;
+  sources: string[];
+}
+
+/** candidateId -> parameterId -> evidence for that position. */
+export type Evidence = Record<string, Record<string, EvidenceEntry>>;

@@ -42,54 +42,56 @@ export function QuizScreen({
         flexDirection: "column",
       }}
     >
-      <div
-        style={{
-          fontSize: "12.5px",
-          fontWeight: 700,
-          letterSpacing: ".5px",
-          color: "var(--accent-ink, #7d3d29)",
-          margin: "6px 0 10px",
-        }}
-      >
-        {questionTopic(t, question)}
+      <div className="quiz-column">
+        <div
+          style={{
+            fontSize: "12.5px",
+            fontWeight: 700,
+            letterSpacing: ".5px",
+            color: "var(--accent-ink, #7d3d29)",
+            margin: "6px 0 10px",
+          }}
+        >
+          {questionTopic(t, question)}
+        </div>
+        <h2
+          className="serif"
+          style={{
+            fontSize: "26px",
+            lineHeight: 1.28,
+            fontWeight: 600,
+            color: "#221e1a",
+            margin: "0 0 8px",
+          }}
+        >
+          {t.questionTitle(question.id)}
+        </h2>
+        <p style={{ fontSize: "14px", lineHeight: 1.5, color: "#9a8f7e", margin: "0 0 26px" }}>
+          {questionHint(t, question)}
+        </p>
+
+        {renderWidget()}
+
+        <div style={{ flex: 1, minHeight: "24px" }} />
+        <button
+          onClick={onNext}
+          disabled={!answered}
+          style={{
+            width: "100%",
+            height: "56px",
+            border: "none",
+            borderRadius: "16px",
+            background: answered ? "var(--accent, #c0684a)" : "#e5dac8",
+            color: answered ? "#fff" : "#b3a794",
+            fontSize: "17px",
+            fontWeight: 700,
+            cursor: answered ? "pointer" : "not-allowed",
+            boxShadow: answered ? "0 8px 20px -8px var(--accent, #c0684a)" : "none",
+          }}
+        >
+          {isLast ? t.ui.quiz.seeResults : t.ui.quiz.next}
+        </button>
       </div>
-      <h2
-        className="serif"
-        style={{
-          fontSize: "26px",
-          lineHeight: 1.28,
-          fontWeight: 600,
-          color: "#221e1a",
-          margin: "0 0 8px",
-        }}
-      >
-        {t.questionTitle(question.id)}
-      </h2>
-      <p style={{ fontSize: "14px", lineHeight: 1.5, color: "#9a8f7e", margin: "0 0 26px" }}>
-        {questionHint(t, question)}
-      </p>
-
-      {renderWidget()}
-
-      <div style={{ flex: 1, minHeight: "24px" }} />
-      <button
-        onClick={onNext}
-        disabled={!answered}
-        style={{
-          width: "100%",
-          height: "56px",
-          border: "none",
-          borderRadius: "16px",
-          background: answered ? "var(--accent, #c0684a)" : "#e5dac8",
-          color: answered ? "#fff" : "#b3a794",
-          fontSize: "17px",
-          fontWeight: 700,
-          cursor: answered ? "pointer" : "not-allowed",
-          boxShadow: answered ? "0 8px 20px -8px var(--accent, #c0684a)" : "none",
-        }}
-      >
-        {isLast ? t.ui.quiz.seeResults : t.ui.quiz.next}
-      </button>
     </div>
   );
 

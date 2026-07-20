@@ -60,7 +60,14 @@
       "theirStance": "עמדת המועמד/ת",
       "backToResults": "חזרה לרשימה",
       "yes": "כן",
-      "no": "לא"
+      "no": "לא",
+      "howWeDecided": "איך קבענו את זה",
+      "sources": "מקורות",
+      "confidence": {
+        "high": "עדות חזקה",
+        "medium": "עדות חלקית",
+        "low": "עדות מוגבלת"
+      }
     }
   },
   "param": {
