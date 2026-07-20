@@ -55,7 +55,17 @@
       "aiNotice": "Candidate positions were researched with AI and may contain errors. Open a candidate to see the evidence behind each one.",
       "dataAsOf": "Positions last researched {date}.",
       "share": "Share",
-      "shared": "Link copied"
+      "shared": "Link copied",
+      "viewLabel": "Show",
+      "view": {
+        "match": "By match",
+        "balanced": "Gender-balanced",
+        "close": "Close enough"
+      },
+      "viewNote": {
+        "balanced": "The same candidates, alternating between women and men. No score changed — only the order.",
+        "close": "The {count} candidates closest to your positions, in random order. Pick by instinct rather than by a decimal point."
+      }
     },
     "about": {
       "title": "About",

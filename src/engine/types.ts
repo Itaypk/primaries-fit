@@ -64,6 +64,10 @@ export interface Candidate {
     avatarInk?: string;
     /** True when most positions are low-confidence (thin public record). UI-only flag. */
     limitedRecord?: boolean;
+    /** Read only by the gender-balance post-ranking step; never scored and
+     *  never displayed as a label on a candidate. Absent means unknown, which
+     *  the step handles rather than guessing. */
+    gender?: "f" | "m";
   };
 }
 
