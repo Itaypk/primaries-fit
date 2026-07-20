@@ -26,8 +26,26 @@ export function ResultsScreen({
       >
         {t.ui.results.title}
       </h2>
-      <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 18px" }}>
+      <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 12px" }}>
         {t.ui.results.sub}
+      </p>
+
+      {/* The ranking is only as good as the researched positions behind it, so
+          the caveat sits with the ranking rather than only on the welcome
+          screen — this is the screen people screenshot and share. */}
+      <p
+        style={{
+          fontSize: "12.5px",
+          lineHeight: 1.55,
+          color: "#8a7f6f",
+          background: "#fbf6ee",
+          border: "1px solid #eee3d3",
+          borderRadius: "12px",
+          padding: "10px 12px",
+          margin: "0 0 18px",
+        }}
+      >
+        {t.ui.results.aiNotice}
       </p>
 
       <div className="results-grid">
