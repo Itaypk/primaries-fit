@@ -37,6 +37,19 @@ export interface Catalog {
       fullBreakdown: string;
       restart: string;
       limitedRecord: string;
+      aiNotice: string;
+      /** Contains a {date} placeholder. */
+      dataAsOf: string;
+      share: string;
+      shared: string;
+    };
+    about: {
+      title: string;
+      aiNotice: string;
+      feedback: string;
+      author: string;
+      repo: string;
+      linkedin: string;
     };
     candidate: {
       overallMatch: string;

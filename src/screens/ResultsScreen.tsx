@@ -1,7 +1,8 @@
 import type { CandidateScore } from "../engine/types";
 import { useI18n } from "../i18n";
-import { candidatesById } from "../data";
+import { candidatesById, dataUpdated } from "../data";
 import { reasonsFor } from "../view/results";
+import { ShareButton } from "../components/ShareButton";
 
 export function ResultsScreen({
   ranked,
@@ -16,18 +17,49 @@ export function ResultsScreen({
   onSelect: (candidateId: string) => void;
   onRestart: () => void;
 }) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+
+  const researchedOn = new Date(dataUpdated).toLocaleDateString(
+    locale === "he" ? "he-IL" : "en-GB",
+    { day: "numeric", month: "long", year: "numeric" },
+  );
 
   return (
     <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "4px 22px 24px" }}>
-      <h2
-        className="serif"
-        style={{ fontSize: "27px", lineHeight: 1.2, fontWeight: 700, color: "#221e1a", margin: "6px 0 6px" }}
-      >
-        {t.ui.results.title}
-      </h2>
-      <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 18px" }}>
+      <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "12px" }}>
+        <h2
+          className="serif"
+          style={{ fontSize: "27px", lineHeight: 1.2, fontWeight: 700, color: "#221e1a", margin: "6px 0 6px" }}
+        >
+          {t.ui.results.title}
+        </h2>
+        <ShareButton />
+      </div>
+      <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 12px" }}>
         {t.ui.results.sub}
+      </p>
+
+      {/* The ranking is only as good as the researched positions behind it, so
+          the caveat sits with the ranking rather than only on the welcome
+          screen — this is the screen people screenshot and share. */}
+      <p
+        style={{
+          fontSize: "12.5px",
+          lineHeight: 1.55,
+          color: "#8a7f6f",
+          background: "#fbf6ee",
+          border: "1px solid #eee3d3",
+          borderRadius: "12px",
+          padding: "10px 12px",
+          margin: "0 0 18px",
+        }}
+      >
+        {t.ui.results.aiNotice}{" "}
+        {/* Published on primary day, so "how current is this?" is a fair
+            question a reader shouldn't have to guess at. */}
+        <span style={{ color: "#a99e8c" }}>
+          {t.ui.results.dataAsOf.replace("{date}", researchedOn)}
+        </span>
       </p>
 
       <div className="results-grid">

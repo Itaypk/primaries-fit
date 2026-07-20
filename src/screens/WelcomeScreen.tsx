@@ -1,4 +1,5 @@
 import { useI18n } from "../i18n";
+import { AboutFooter } from "../components/AboutFooter";
 
 export function WelcomeScreen({ onStart }: { onStart: () => void }) {
   const { t } = useI18n();
@@ -113,6 +114,8 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
       >
         {w.start}
       </button>
+
+      <AboutFooter />
     </div>
   );
 }

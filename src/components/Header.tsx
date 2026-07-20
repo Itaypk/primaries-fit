@@ -44,34 +44,22 @@ export function Header({
         )}
       </div>
 
-      <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-        {/* compass mark */}
-        <div
-          style={{
-            width: "22px",
-            height: "22px",
-            borderRadius: "50%",
-            border: "2.5px solid var(--accent, #c0684a)",
-            position: "relative",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              inset: "5px 5px auto auto",
-              width: "2.5px",
-              height: "8px",
-              background: "var(--accent, #c0684a)",
-              transform: "rotate(38deg)",
-              transformOrigin: "bottom",
-              borderRadius: "2px",
-            }}
-          />
-        </div>
-        <span className="serif" style={{ fontSize: "20px", fontWeight: 700, color: "#2b2622" }}>
-          {t.app.name}
-        </span>
-      </div>
+      {/* The wordmark is the whole brand now — no icon. It's a phrase rather
+          than a single word, so it needs room to shrink between the fixed-width
+          back/language slots on a narrow frame. */}
+      <span
+        className="serif"
+        style={{
+          fontSize: "17px",
+          lineHeight: 1.25,
+          fontWeight: 700,
+          color: "#2b2622",
+          textAlign: "center",
+          minWidth: 0,
+        }}
+      >
+        {t.app.name}
+      </span>
 
       <div style={{ minWidth: "74px", display: "flex", justifyContent: "flex-end" }}>
         <button

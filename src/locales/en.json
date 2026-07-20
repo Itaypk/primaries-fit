@@ -1,10 +1,10 @@
 {
   "app": {
-    "name": "Compass",
+    "name": "The Quick Primaries Guide",
     "langLabel": "עב"
   },
   "ui": {
-    "badge": "Independent · no party affiliation",
+    "badge": "Independent · not affiliated with any candidate",
     "welcome": {
       "title": "Find the candidate who speaks for you",
       "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
@@ -51,7 +51,19 @@
       "whyMatch": "Why this match",
       "fullBreakdown": "Full breakdown",
       "restart": "Start over",
-      "limitedRecord": "Limited public record"
+      "limitedRecord": "Limited public record",
+      "aiNotice": "Candidate positions were researched with AI and may contain errors. Open a candidate to see the evidence behind each one.",
+      "dataAsOf": "Positions last researched {date}.",
+      "share": "Share",
+      "shared": "Link copied"
+    },
+    "about": {
+      "title": "About",
+      "aiNotice": "Candidate positions here were researched with AI from public sources — interviews, votes, party platforms and press. That process is imperfect: positions may be out of date, miss context, or simply be wrong. Treat this as a starting point for your own reading, not a verdict. Every match shows the evidence it rests on, so you can check it.",
+      "feedback": "Found something wrong? Tell me:",
+      "author": "Built by Itay Polack Gadassi",
+      "repo": "Source code on GitHub",
+      "linkedin": "LinkedIn"
     },
     "candidate": {
       "overallMatch": "Overall match to your positions",

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { Answer, Answers } from "./engine/types";
 import { buildVoterVector } from "./engine/voter";
 import { rankCandidates } from "./engine/score";
@@ -14,14 +14,20 @@ import { WelcomeScreen } from "./screens/WelcomeScreen";
 import { QuizScreen } from "./screens/QuizScreen";
 import { ResultsScreen } from "./screens/ResultsScreen";
 import { CandidateScreen } from "./screens/CandidateScreen";
+import { clearProgress, loadProgress, saveProgress } from "./persistence";
 
 type Screen = "welcome" | "quiz" | "results" | "candidate";
 
 export default function App() {
   const { t } = useI18n();
-  const [screen, setScreen] = useState<Screen>("welcome");
-  const [qIndex, setQIndex] = useState(0);
-  const [answers, setAnswers] = useState<Answers>({});
+
+  // Read once, before first paint, so a returning visitor doesn't see the
+  // welcome screen flash before their answers come back.
+  const [restored] = useState(() => loadProgress(questionnaire.version));
+
+  const [screen, setScreen] = useState<Screen>(restored?.screen ?? "welcome");
+  const [qIndex, setQIndex] = useState(restored?.qIndex ?? 0);
+  const [answers, setAnswers] = useState<Answers>(restored?.answers ?? {});
   const [selected, setSelected] = useState<string | null>(null);
   const [openInfo, setOpenInfo] = useState<string | null>(null);
 
@@ -38,6 +44,17 @@ export default function App() {
     () => rankCandidates(candidates, voter, parameters),
     [voter],
   );
+
+  // 'candidate' is a transient drill-down off the results list, not a place to
+  // land on reload, so it persists as 'results'.
+  useEffect(() => {
+    saveProgress({
+      version: questionnaire.version,
+      answers,
+      qIndex,
+      screen: screen === "candidate" ? "results" : screen,
+    });
+  }, [answers, qIndex, screen]);
 
   function setAnswer(value: Answer) {
     setAnswers((prev) => ({ ...prev, [question.id]: value }));
@@ -72,6 +89,7 @@ export default function App() {
   }
 
   function restart() {
+    clearProgress();
     setScreen("welcome");
     setQIndex(0);
     setAnswers({});
