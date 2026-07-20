@@ -68,7 +68,24 @@ export interface Candidate {
      *  never displayed as a label on a candidate. Absent means unknown, which
      *  the step handles rather than guessing. */
     gender?: "f" | "m";
+    /** Official portrait URL (from the party site). Used for the avatar; the
+     *  coloured initial is the fallback when absent or the image fails to load.
+     *  Language-neutral, so it lives here and not in the locale catalogs. */
+    image?: string;
+    /** Public/social links, keyed by platform id. Same in every language, so
+     *  they sit on the structural record rather than the locale catalogs. */
+    links?: CandidateLinks;
   };
+}
+
+/** A candidate's public links. All optional; only present platforms are shown. */
+export interface CandidateLinks {
+  website?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  linkedin?: string;
+  whatsapp?: string;
 }
 
 // ---------------------------------------------------------------------------

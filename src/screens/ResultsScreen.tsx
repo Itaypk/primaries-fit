@@ -2,6 +2,7 @@ import type { CandidateScore } from "../engine/types";
 import { useI18n } from "../i18n";
 import { candidatesById, dataUpdated } from "../data";
 import { reasonsFor } from "../view/results";
+import { Avatar } from "../components/Avatar";
 import { ShareButton } from "../components/ShareButton";
 import type { ViewMode } from "../App";
 
@@ -158,24 +159,7 @@ export function ResultsScreen({
               )}
 
               <div style={{ display: "flex", alignItems: "center", gap: "13px" }}>
-                <div
-                  className="serif"
-                  style={{
-                    flex: "none",
-                    width: "52px",
-                    height: "52px",
-                    borderRadius: "16px",
-                    background: display.avatarBg ?? "#e7ddce",
-                    color: display.avatarInk ?? "#6b5f4c",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: "22px",
-                    fontWeight: 700,
-                  }}
-                >
-                  {t.candidateInitial(c.candidateId)}
-                </div>
+                <Avatar candidateId={c.candidateId} size={52} radius={16} fontSize={22} />
                 <div style={{ flex: 1, minWidth: 0, cursor: "pointer" }} onClick={() => onSelect(c.candidateId)}>
                   <div style={{ fontSize: "17px", fontWeight: 700, color: "#2b2622" }}>
                     {t.candidateName(c.candidateId)}

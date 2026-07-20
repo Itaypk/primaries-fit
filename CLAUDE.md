@@ -99,7 +99,10 @@ reference — do not build on it; the React app supersedes it.
   `question.<id>.*` in the locales (text). Questions only reference parameters,
   never candidates.
 - **Add a candidate:** add positions keyed by parameter id + `display` colours to
-  `candidates.json`; add `candidate.<id>.*` to every locale.
+  `candidates.json`; add `candidate.<id>.*` to every locale. `display` may also
+  carry a portrait `image` URL and social `links` (language-neutral, so they
+  live here, not in the locales) — the avatar falls back to the coloured initial
+  when `image` is absent or fails to load.
 - **Add a language:** add one `src/locales/<code>.json`, register it in
   `src/i18n/index.tsx` (`catalogs`, `localeDir`, `LocaleCode`).
 

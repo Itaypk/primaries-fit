@@ -1,7 +1,7 @@
 import { useI18n } from "../i18n";
 import { AboutFooter } from "../components/AboutFooter";
 
-export function WelcomeScreen({ onStart }: { onStart: () => void }) {
+export function WelcomeScreen({ onStart, onBrowse }: { onStart: () => void; onBrowse: () => void }) {
   const { t } = useI18n();
   const w = t.ui.welcome;
 
@@ -114,6 +114,29 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
       >
         {w.start}
       </button>
+
+      <button
+        onClick={onBrowse}
+        style={{
+          width: "100%",
+          marginTop: "12px",
+          padding: "8px",
+          border: "none",
+          background: "none",
+          color: "var(--accent-ink, #7d3d29)",
+          fontSize: "14.5px",
+          fontWeight: 700,
+          cursor: "pointer",
+        }}
+      >
+        {w.browse} →
+      </button>
+
+      {/* The questionnaire never leaves the browser; say so up front, next to
+          the button that starts it. */}
+      <p style={{ textAlign: "center", fontSize: "12px", lineHeight: 1.5, color: "#a99e8c", margin: "10px 0 0" }}>
+        {w.privacy}
+      </p>
 
       <AboutFooter />
     </div>
