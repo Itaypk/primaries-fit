@@ -116,3 +116,9 @@ skill when available.
 Develop on a feature branch and open a PR; never commit straight to `main`. CI
 must pass before merge. A merged PR is finished — start follow-up work from a
 fresh branch off the latest `main`, don't reopen merged history.
+
+**Merging to `main` deploys to production.** A GitHub Actions workflow
+(`.github/workflows/deploy.yml`) ships every CI-green push to `main` straight
+to primaries.fit within a minute or two — there is no staging environment and
+no manual promotion step. See [`deploy/README.md`](deploy/README.md) for the
+VPS/Caddy setup and release mechanics.
