@@ -14,10 +14,11 @@ import { ProgressBar } from "./components/ProgressBar";
 import { WelcomeScreen } from "./screens/WelcomeScreen";
 import { QuizScreen } from "./screens/QuizScreen";
 import { ResultsScreen } from "./screens/ResultsScreen";
+import { BrowseScreen } from "./screens/BrowseScreen";
 import { CandidateScreen } from "./screens/CandidateScreen";
 import { clearProgress, loadProgress, saveProgress } from "./persistence";
 
-type Screen = "welcome" | "quiz" | "results" | "candidate";
+type Screen = "welcome" | "quiz" | "results" | "browse" | "candidate";
 
 /** How the ranked list is presented. Post-ranking only — none of these change
  *  a single score; see engine/postRank.ts. */
@@ -54,6 +55,9 @@ export default function App() {
   const [qIndex, setQIndex] = useState(restored?.qIndex ?? 0);
   const [answers, setAnswers] = useState<Answers>(restored?.answers ?? {});
   const [selected, setSelected] = useState<string | null>(null);
+  // Which screen a candidate drill-down was opened from, so "back" returns
+  // there and the detail view knows whether there's a voter to compare against.
+  const [selectionOrigin, setSelectionOrigin] = useState<"results" | "browse">("results");
   const [viewMode, setViewMode] = useState<ViewMode>("match");
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [openInfo, setOpenInfo] = useState<string | null>(null);
@@ -72,16 +76,18 @@ export default function App() {
     [voter],
   );
 
-  // 'candidate' is a transient drill-down off the results list, not a place to
-  // land on reload, so it persists as 'results'.
   useEffect(() => {
+    // 'candidate' and 'browse' are transient detours off the main flow, not
+    // places to restore into, so they persist as their nearest landing screen.
+    const persistedScreen =
+      screen === "candidate" ? (selectionOrigin === "browse" ? "welcome" : "results") : screen === "browse" ? "welcome" : screen;
     saveProgress({
       version: questionnaire.version,
       answers,
       qIndex,
-      screen: screen === "candidate" ? "results" : screen,
+      screen: persistedScreen,
     });
-  }, [answers, qIndex, screen]);
+  }, [answers, qIndex, screen, selectionOrigin]);
 
   // Post-ranking reshapes the list without touching scores, so the ranking
   // stays explainable in every mode. 'match' is the raw ranking.
@@ -121,7 +127,9 @@ export default function App() {
 
   function back() {
     if (screen === "candidate") {
-      setScreen("results");
+      setScreen(selectionOrigin === "browse" ? "browse" : "results");
+    } else if (screen === "browse") {
+      setScreen("welcome");
     } else if (qIndex > 0) {
       setQIndex(qIndex - 1);
     } else {
@@ -145,10 +153,26 @@ export default function App() {
 
   return (
     <AppFrame accent={DEFAULT_ACCENT}>
-      <Header showBack={screen === "quiz" || screen === "candidate"} onBack={back} />
+      <Header
+        showBack={screen === "quiz" || screen === "candidate" || screen === "browse"}
+        onBack={back}
+      />
       {screen === "quiz" && <ProgressBar step={qIndex + 1} total={total} pct={progressPct} />}
 
-      {screen === "welcome" && <WelcomeScreen onStart={() => setScreen("quiz")} />}
+      {screen === "welcome" && (
+        <WelcomeScreen onStart={() => setScreen("quiz")} onBrowse={() => setScreen("browse")} />
+      )}
+
+      {screen === "browse" && (
+        <BrowseScreen
+          onStart={() => setScreen("quiz")}
+          onSelect={(id) => {
+            setSelected(id);
+            setSelectionOrigin("browse");
+            setScreen("candidate");
+          }}
+        />
+      )}
 
       {screen === "quiz" && (
         <QuizScreen
@@ -176,18 +200,20 @@ export default function App() {
           onToggleInfo={(id) => setOpenInfo((cur) => (cur === id ? null : id))}
           onSelect={(id) => {
             setSelected(id);
+            setSelectionOrigin("results");
             setScreen("candidate");
           }}
           onRestart={restart}
         />
       )}
 
-      {screen === "candidate" && selected && selectedScore && (
+      {screen === "candidate" && selected && (
         <CandidateScreen
           candidateId={selected}
-          score={selectedScore.score}
+          score={selectedScore?.score ?? 0}
           breakdown={buildBreakdown(candidatesById[selected], voter, parameters, t, evidence[selected])}
-          onBack={() => setScreen("results")}
+          browsing={selectionOrigin === "browse"}
+          onBack={() => setScreen(selectionOrigin === "browse" ? "browse" : "results")}
         />
       )}
     </AppFrame>

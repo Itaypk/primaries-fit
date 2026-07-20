@@ -8,7 +8,15 @@ export interface Catalog {
       sub: string;
       time: string;
       start: string;
+      /** Reassurance that the questionnaire keeps nothing — shown on welcome. */
+      privacy: string;
+      /** Secondary action: skip the questionnaire and browse candidates. */
+      browse: string;
       steps: Array<{ title: string; desc: string }>;
+    };
+    browse: {
+      title: string;
+      sub: string;
     };
     quiz: {
       next: string;
@@ -65,6 +73,8 @@ export interface Catalog {
       no: string;
       howWeDecided: string;
       sources: string;
+      /** Heading over the candidate's social/contact links. */
+      links: string;
       confidence: { high: string; medium: string; low: string };
     };
   };

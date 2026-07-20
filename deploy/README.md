@@ -142,6 +142,27 @@ sudo -u deploy bash -c '
 
 ---
 
+## Analytics (optional, privacy-preserving)
+
+There is **no analytics by default** — the build ships zero third-party
+requests, which is what lets the welcome screen promise an anonymous
+questionnaire. To get a unique-visitor count, set one build-time env var and
+the app injects a [GoatCounter](https://www.goatcounter.com) beacon (no
+cookies, no personal data, unique visits via a salted hash rotated daily —
+nothing to consent to, and it only ever sees a pageview, never a
+questionnaire answer):
+
+```bash
+# in the CI Deploy step, before `npm run build`
+export VITE_GOATCOUNTER="https://<yourcode>.goatcounter.com/count"
+```
+
+Leave it unset and nothing loads. Implementation and alternatives (self-hosted
+Umami/Plausible, or a log-based count off Caddy's access log) are documented in
+`src/analytics.ts`.
+
+---
+
 ## Adding a second app to this host
 
 1. Give the new app its own directory under `/opt/<appname>/` (or its own
