@@ -3,15 +3,22 @@ import { useI18n } from "../i18n";
 import { candidatesById, dataUpdated } from "../data";
 import { reasonsFor } from "../view/results";
 import { ShareButton } from "../components/ShareButton";
+import type { ViewMode } from "../App";
+
+const MODES: ViewMode[] = ["match", "balanced", "close"];
 
 export function ResultsScreen({
   ranked,
+  viewMode,
+  onViewMode,
   openInfo,
   onToggleInfo,
   onSelect,
   onRestart,
 }: {
   ranked: CandidateScore[];
+  viewMode: ViewMode;
+  onViewMode: (mode: ViewMode) => void;
   openInfo: string | null;
   onToggleInfo: (candidateId: string) => void;
   onSelect: (candidateId: string) => void;
@@ -62,9 +69,63 @@ export function ResultsScreen({
         </span>
       </p>
 
+      {/* Presentation modes, not scoring modes — every one of these reorders or
+          filters a list whose scores are already fixed (engine/postRank.ts). */}
+      <div style={{ marginBottom: viewMode === "match" ? "18px" : "10px" }}>
+        <div
+          style={{
+            fontSize: "11.5px",
+            fontWeight: 700,
+            letterSpacing: ".5px",
+            textTransform: "uppercase",
+            color: "#a99e8c",
+            marginBottom: "7px",
+          }}
+        >
+          {t.ui.results.viewLabel}
+        </div>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "7px" }}>
+          {MODES.map((mode) => {
+            const active = mode === viewMode;
+            return (
+              <button
+                key={mode}
+                onClick={() => onViewMode(mode)}
+                aria-pressed={active}
+                style={{
+                  height: "33px",
+                  padding: "0 14px",
+                  borderRadius: "999px",
+                  border: `1px solid ${active ? "var(--accent, #3f8a86)" : "#e2d6c4"}`,
+                  background: active ? "var(--accent-soft, #dbebe9)" : "#fff",
+                  color: active ? "var(--accent-ink, #295c59)" : "#6b6152",
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  cursor: "pointer",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {t.ui.results.view[mode]}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {viewMode !== "match" && (
+        <p style={{ fontSize: "12.5px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 18px" }}>
+          {viewMode === "balanced"
+            ? t.ui.results.viewNote.balanced
+            : t.ui.results.viewNote.close.replace("{count}", String(ranked.length))}
+        </p>
+      )}
+
       <div className="results-grid">
         {ranked.map((c, i) => {
-          const isTop = i === 0;
+          // Only the match-ordered list has a "best match" at the top. In the
+          // balanced and shuffled views position carries no such claim, so
+          // highlighting the first row would assert something untrue.
+          const isTop = i === 0 && viewMode === "match";
           const display = candidatesById[c.candidateId]?.display ?? {};
           const pct = Math.round(c.score * 100);
           const reasons = reasonsFor(c);

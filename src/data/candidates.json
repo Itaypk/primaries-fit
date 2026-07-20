@@ -21,7 +21,8 @@
       },
       "display": {
         "avatarBg": "#e7ddce",
-        "avatarInk": "#6b5f4c"
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
       }
     },
     {
@@ -44,7 +45,8 @@
       },
       "display": {
         "avatarBg": "#e3e6d6",
-        "avatarInk": "#57603f"
+        "avatarInk": "#57603f",
+        "gender": "f"
       }
     },
     {
@@ -66,7 +68,8 @@
       },
       "display": {
         "avatarBg": "#e0e7e5",
-        "avatarInk": "#3d5b58"
+        "avatarInk": "#3d5b58",
+        "gender": "m"
       }
     },
     {
@@ -89,7 +92,8 @@
       },
       "display": {
         "avatarBg": "#ece0d8",
-        "avatarInk": "#7d4f36"
+        "avatarInk": "#7d4f36",
+        "gender": "f"
       }
     },
     {
@@ -111,7 +115,8 @@
       },
       "display": {
         "avatarBg": "#e6e0e8",
-        "avatarInk": "#5e4c66"
+        "avatarInk": "#5e4c66",
+        "gender": "f"
       }
     },
     {
@@ -134,7 +139,8 @@
       },
       "display": {
         "avatarBg": "#dfe7ee",
-        "avatarInk": "#3f5a72"
+        "avatarInk": "#3f5a72",
+        "gender": "f"
       }
     },
     {
@@ -156,7 +162,8 @@
       },
       "display": {
         "avatarBg": "#efe2dd",
-        "avatarInk": "#8a4a3c"
+        "avatarInk": "#8a4a3c",
+        "gender": "m"
       }
     },
     {
@@ -178,7 +185,8 @@
       "display": {
         "avatarBg": "#dce8e0",
         "avatarInk": "#3f6b52",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -200,7 +208,8 @@
       },
       "display": {
         "avatarBg": "#eee6d3",
-        "avatarInk": "#7a6a3a"
+        "avatarInk": "#7a6a3a",
+        "gender": "f"
       }
     },
     {
@@ -222,7 +231,8 @@
       "display": {
         "avatarBg": "#e8dee9",
         "avatarInk": "#6a4a6e",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -243,7 +253,8 @@
       },
       "display": {
         "avatarBg": "#dde6ea",
-        "avatarInk": "#40606e"
+        "avatarInk": "#40606e",
+        "gender": "m"
       }
     },
     {
@@ -265,7 +276,8 @@
       },
       "display": {
         "avatarBg": "#e9e3d6",
-        "avatarInk": "#6d6144"
+        "avatarInk": "#6d6144",
+        "gender": "m"
       }
     },
     {
@@ -287,7 +299,8 @@
       },
       "display": {
         "avatarBg": "#e7ddce",
-        "avatarInk": "#6b5f4c"
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
       }
     },
     {
@@ -309,7 +322,8 @@
       },
       "display": {
         "avatarBg": "#e3e6d6",
-        "avatarInk": "#57603f"
+        "avatarInk": "#57603f",
+        "gender": "m"
       }
     },
     {
@@ -331,7 +345,8 @@
       "display": {
         "avatarBg": "#e0e7e5",
         "avatarInk": "#3d5b58",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -352,7 +367,8 @@
       "display": {
         "avatarBg": "#ece0d8",
         "avatarInk": "#7d4f36",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -373,7 +389,8 @@
       "display": {
         "avatarBg": "#e6e0e8",
         "avatarInk": "#5e4c66",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -395,7 +412,8 @@
       },
       "display": {
         "avatarBg": "#dfe7ee",
-        "avatarInk": "#3f5a72"
+        "avatarInk": "#3f5a72",
+        "gender": "m"
       }
     },
     {
@@ -416,7 +434,8 @@
       },
       "display": {
         "avatarBg": "#efe2dd",
-        "avatarInk": "#8a4a3c"
+        "avatarInk": "#8a4a3c",
+        "gender": "f"
       }
     },
     {
@@ -438,7 +457,8 @@
       "display": {
         "avatarBg": "#dce8e0",
         "avatarInk": "#3f6b52",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -461,7 +481,8 @@
       },
       "display": {
         "avatarBg": "#eee6d3",
-        "avatarInk": "#7a6a3a"
+        "avatarInk": "#7a6a3a",
+        "gender": "f"
       }
     },
     {
@@ -483,7 +504,8 @@
       },
       "display": {
         "avatarBg": "#e8dee9",
-        "avatarInk": "#6a4a6e"
+        "avatarInk": "#6a4a6e",
+        "gender": "m"
       }
     },
     {
@@ -504,7 +526,8 @@
       },
       "display": {
         "avatarBg": "#dde6ea",
-        "avatarInk": "#40606e"
+        "avatarInk": "#40606e",
+        "gender": "f"
       }
     },
     {
@@ -527,7 +550,8 @@
       "display": {
         "avatarBg": "#e9e3d6",
         "avatarInk": "#6d6144",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -549,7 +573,8 @@
       },
       "display": {
         "avatarBg": "#e7ddce",
-        "avatarInk": "#6b5f4c"
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
       }
     },
     {
@@ -570,7 +595,8 @@
       "display": {
         "avatarBg": "#e3e6d6",
         "avatarInk": "#57603f",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -591,7 +617,8 @@
       },
       "display": {
         "avatarBg": "#e0e7e5",
-        "avatarInk": "#3d5b58"
+        "avatarInk": "#3d5b58",
+        "gender": "m"
       }
     },
     {
@@ -612,7 +639,8 @@
       "display": {
         "avatarBg": "#ece0d8",
         "avatarInk": "#7d4f36",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -634,7 +662,8 @@
       },
       "display": {
         "avatarBg": "#e6e0e8",
-        "avatarInk": "#5e4c66"
+        "avatarInk": "#5e4c66",
+        "gender": "m"
       }
     },
     {
@@ -656,7 +685,8 @@
       "display": {
         "avatarBg": "#dfe7ee",
         "avatarInk": "#3f5a72",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -679,7 +709,8 @@
       },
       "display": {
         "avatarBg": "#efe2dd",
-        "avatarInk": "#8a4a3c"
+        "avatarInk": "#8a4a3c",
+        "gender": "m"
       }
     },
     {
@@ -701,7 +732,8 @@
       "display": {
         "avatarBg": "#dce8e0",
         "avatarInk": "#3f6b52",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -723,7 +755,8 @@
       "display": {
         "avatarBg": "#eee6d3",
         "avatarInk": "#7a6a3a",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -745,7 +778,8 @@
       },
       "display": {
         "avatarBg": "#e8dee9",
-        "avatarInk": "#6a4a6e"
+        "avatarInk": "#6a4a6e",
+        "gender": "f"
       }
     },
     {
@@ -768,7 +802,8 @@
       "display": {
         "avatarBg": "#dde6ea",
         "avatarInk": "#40606e",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -790,7 +825,8 @@
       },
       "display": {
         "avatarBg": "#e9e3d6",
-        "avatarInk": "#6d6144"
+        "avatarInk": "#6d6144",
+        "gender": "f"
       }
     },
     {
@@ -811,7 +847,8 @@
       "display": {
         "avatarBg": "#e7ddce",
         "avatarInk": "#6b5f4c",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -833,7 +870,8 @@
       },
       "display": {
         "avatarBg": "#e3e6d6",
-        "avatarInk": "#57603f"
+        "avatarInk": "#57603f",
+        "gender": "f"
       }
     },
     {
@@ -854,7 +892,8 @@
       },
       "display": {
         "avatarBg": "#e0e7e5",
-        "avatarInk": "#3d5b58"
+        "avatarInk": "#3d5b58",
+        "gender": "m"
       }
     },
     {
@@ -876,7 +915,8 @@
       },
       "display": {
         "avatarBg": "#ece0d8",
-        "avatarInk": "#7d4f36"
+        "avatarInk": "#7d4f36",
+        "gender": "f"
       }
     },
     {
@@ -899,7 +939,8 @@
       "display": {
         "avatarBg": "#e6e0e8",
         "avatarInk": "#5e4c66",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -920,7 +961,8 @@
       },
       "display": {
         "avatarBg": "#dfe7ee",
-        "avatarInk": "#3f5a72"
+        "avatarInk": "#3f5a72",
+        "gender": "m"
       }
     },
     {
@@ -942,7 +984,8 @@
       },
       "display": {
         "avatarBg": "#efe2dd",
-        "avatarInk": "#8a4a3c"
+        "avatarInk": "#8a4a3c",
+        "gender": "f"
       }
     },
     {
@@ -964,7 +1007,8 @@
       },
       "display": {
         "avatarBg": "#dce8e0",
-        "avatarInk": "#3f6b52"
+        "avatarInk": "#3f6b52",
+        "gender": "m"
       }
     },
     {
@@ -985,7 +1029,8 @@
       },
       "display": {
         "avatarBg": "#eee6d3",
-        "avatarInk": "#7a6a3a"
+        "avatarInk": "#7a6a3a",
+        "gender": "m"
       }
     },
     {
@@ -1008,7 +1053,8 @@
       "display": {
         "avatarBg": "#e8dee9",
         "avatarInk": "#6a4a6e",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "f"
       }
     },
     {
@@ -1030,7 +1076,8 @@
       },
       "display": {
         "avatarBg": "#dde6ea",
-        "avatarInk": "#40606e"
+        "avatarInk": "#40606e",
+        "gender": "f"
       }
     },
     {
@@ -1053,7 +1100,8 @@
       },
       "display": {
         "avatarBg": "#e9e3d6",
-        "avatarInk": "#6d6144"
+        "avatarInk": "#6d6144",
+        "gender": "m"
       }
     },
     {
@@ -1075,7 +1123,8 @@
       },
       "display": {
         "avatarBg": "#e7ddce",
-        "avatarInk": "#6b5f4c"
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
       }
     },
     {
@@ -1096,7 +1145,8 @@
       "display": {
         "avatarBg": "#e3e6d6",
         "avatarInk": "#57603f",
-        "limitedRecord": true
+        "limitedRecord": true,
+        "gender": "m"
       }
     },
     {
@@ -1118,7 +1168,8 @@
       },
       "display": {
         "avatarBg": "#e0e7e5",
-        "avatarInk": "#3d5b58"
+        "avatarInk": "#3d5b58",
+        "gender": "m"
       }
     }
   ]

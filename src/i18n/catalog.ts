@@ -42,6 +42,10 @@ export interface Catalog {
       dataAsOf: string;
       share: string;
       shared: string;
+      viewLabel: string;
+      view: { match: string; balanced: string; close: string };
+      /** `close` contains a {count} placeholder. */
+      viewNote: { balanced: string; close: string };
     };
     about: {
       title: string;
