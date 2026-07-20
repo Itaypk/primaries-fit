@@ -1,0 +1,30 @@
+primaries.fit {
+    # 'current' is a symlink that deploy.sh flips atomically to the latest
+    # release directory — see scripts/deploy.sh. Caddy needs no restart or
+    # reload when it changes; it just reads through the symlink per request.
+    root * /opt/primaries-fit/current
+    encode zstd gzip
+
+    header {
+        # HSTS — Caddy already redirects HTTP→HTTPS, this tells browsers to
+        # never try plaintext for a year.
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        # Don't advertise the server software.
+        -Server
+    }
+
+    # The app is a pure client-state SPA today (App.tsx drives an in-memory
+    # screen state machine, no client-side router), so every request other
+    # than static assets should just get index.html. Costs nothing and avoids
+    # 404s if URL-based routing is ever added.
+    try_files {path} /index.html
+    file_server
+}
+
+# To add another app on this host in the future:
+#
+# another.example.com {
+#     reverse_proxy localhost:8081
+# }
+#
+# Then: sudo systemctl reload caddy
