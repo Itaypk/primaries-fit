@@ -203,8 +203,23 @@ apt-get update -q
 apt-get install -y -q caddy
 
 echo "==> Deploying Caddyfile"
+# Validate the source before overwriting the live config, so a bad Caddyfile
+# aborts the run without leaving a broken one installed. --adapter is explicit
+# because --caddyfile= may point at a file not literally named 'Caddyfile',
+# which is what Caddy otherwise sniffs the format from.
+caddy validate --adapter caddyfile --config "${CADDYFILE}"
 cp "${CADDYFILE}" /etc/caddy/Caddyfile
-systemctl enable --now caddy
+systemctl enable caddy
+# `enable --now` is not enough on a rerun: if Caddy is already running (e.g. an
+# earlier run installed it but died before writing the Caddyfile), --now is a
+# no-op and Caddy keeps serving its previous in-memory config — the package
+# default, which answers :80 with a welcome page and never provisions TLS.
+# Reload picks up the new config; restart covers the not-yet-running case.
+if systemctl is-active --quiet caddy; then
+    systemctl reload caddy
+else
+    systemctl start caddy
+fi
 echo "    Caddy status: $(systemctl is-active caddy)"
 
 # ── 8. Node.js (build toolchain — matches the Node 20 CI uses) ───────────────
