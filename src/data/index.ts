@@ -10,11 +10,15 @@ import parametersJson from "./parameters.json";
 import candidatesJson from "./candidates.json";
 import questionnaireJson from "./questionnaire.json";
 import evidenceJson from "./evidence.json";
+import metaJson from "./meta.json";
 
 export const parameters = (parametersJson.parameters as Parameter[]);
 export const candidates = (candidatesJson.candidates as Candidate[]);
 export const questionnaire = questionnaireJson as Questionnaire;
 export const evidence = evidenceJson as unknown as Evidence;
+
+/** ISO date the candidate positions were last researched. */
+export const dataUpdated = metaJson.dataUpdated;
 
 /** Index parameters by id for O(1) lookup in the UI and engine glue. */
 export const parametersById: Record<string, Parameter> = Object.fromEntries(

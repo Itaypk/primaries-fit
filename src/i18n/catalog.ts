@@ -38,6 +38,10 @@ export interface Catalog {
       restart: string;
       limitedRecord: string;
       aiNotice: string;
+      /** Contains a {date} placeholder. */
+      dataAsOf: string;
+      share: string;
+      shared: string;
     };
     about: {
       title: string;

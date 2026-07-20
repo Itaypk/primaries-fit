@@ -52,7 +52,10 @@
       "fullBreakdown": "Full breakdown",
       "restart": "Start over",
       "limitedRecord": "Limited public record",
-      "aiNotice": "Candidate positions were researched with AI and may contain errors. Open a candidate to see the evidence behind each one."
+      "aiNotice": "Candidate positions were researched with AI and may contain errors. Open a candidate to see the evidence behind each one.",
+      "dataAsOf": "Positions last researched {date}.",
+      "share": "Share",
+      "shared": "Link copied"
     },
     "about": {
       "title": "About",
