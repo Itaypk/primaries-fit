@@ -2,13 +2,12 @@ import { useMemo, useState } from "react";
 import type { Answer, Answers } from "./engine/types";
 import { buildVoterVector } from "./engine/voter";
 import { rankCandidates } from "./engine/score";
-import { candidates, candidatesById, parameters, questionnaire } from "./data";
+import { candidates, candidatesById, evidence, parameters, questionnaire } from "./data";
 import { DEFAULT_ACCENT, DEFAULT_AXIS_STYLE } from "./theme";
 import { useI18n } from "./i18n";
 import { isAnswered } from "./view/question";
 import { buildBreakdown } from "./view/results";
-import { PhoneFrame } from "./components/PhoneFrame";
-import { StatusBar } from "./components/StatusBar";
+import { AppFrame } from "./components/AppFrame";
 import { Header } from "./components/Header";
 import { ProgressBar } from "./components/ProgressBar";
 import { WelcomeScreen } from "./screens/WelcomeScreen";
@@ -86,8 +85,7 @@ export default function App() {
   const selectedScore = ranked.find((c) => c.candidateId === selected);
 
   return (
-    <PhoneFrame accent={DEFAULT_ACCENT}>
-      <StatusBar />
+    <AppFrame accent={DEFAULT_ACCENT}>
       <Header showBack={screen === "quiz" || screen === "candidate"} onBack={back} />
       {screen === "quiz" && <ProgressBar step={qIndex + 1} total={total} pct={progressPct} />}
 
@@ -123,10 +121,10 @@ export default function App() {
         <CandidateScreen
           candidateId={selected}
           score={selectedScore.score}
-          breakdown={buildBreakdown(candidatesById[selected], voter, parameters, t)}
+          breakdown={buildBreakdown(candidatesById[selected], voter, parameters, t, evidence[selected])}
           onBack={() => setScreen("results")}
         />
       )}
-    </PhoneFrame>
+    </AppFrame>
   );
 }

@@ -30,7 +30,7 @@ export function ResultsScreen({
         {t.ui.results.sub}
       </p>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "13px" }}>
+      <div className="results-grid">
         {ranked.map((c, i) => {
           const isTop = i === 0;
           const display = candidatesById[c.candidateId]?.display ?? {};
@@ -41,6 +41,7 @@ export function ResultsScreen({
           return (
             <div
               key={c.candidateId}
+              className={isTop ? "results-card-full" : undefined}
               style={{
                 background: "#fff",
                 border: isTop ? "2px solid var(--accent, #c0684a)" : "1px solid #eee3d3",

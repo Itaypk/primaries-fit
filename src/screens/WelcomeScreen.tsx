@@ -15,80 +15,84 @@ export function WelcomeScreen({ onStart }: { onStart: () => void }) {
         flexDirection: "column",
       }}
     >
-      <div
-        style={{
-          marginTop: "10px",
-          alignSelf: "flex-start",
-          fontSize: "12.5px",
-          fontWeight: 700,
-          letterSpacing: ".5px",
-          color: "var(--accent-ink, #7d3d29)",
-          background: "var(--accent-soft, #f4e5dd)",
-          padding: "6px 13px",
-          borderRadius: "999px",
-        }}
-      >
-        {t.ui.badge}
-      </div>
-
-      <h1
-        className="serif"
-        style={{
-          fontSize: "33px",
-          lineHeight: 1.18,
-          fontWeight: 700,
-          color: "#221e1a",
-          margin: "20px 0 14px",
-        }}
-      >
-        {w.title}
-      </h1>
-      <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#6b6152", margin: "0 0 22px" }}>
-        {w.sub}
-      </p>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginBottom: "8px" }}>
-        {w.steps.map((s, i) => (
+      <div className="welcome-layout" style={{ marginTop: "10px" }}>
+        <div>
           <div
-            key={i}
             style={{
-              display: "flex",
-              gap: "14px",
-              alignItems: "flex-start",
-              background: "#fff",
-              border: "1px solid #eee3d3",
-              borderRadius: "18px",
-              padding: "15px 16px",
+              alignSelf: "flex-start",
+              fontSize: "12.5px",
+              fontWeight: 700,
+              letterSpacing: ".5px",
+              color: "var(--accent-ink, #7d3d29)",
+              background: "var(--accent-soft, #f4e5dd)",
+              padding: "6px 13px",
+              borderRadius: "999px",
+              display: "inline-block",
             }}
           >
+            {t.ui.badge}
+          </div>
+
+          <h1
+            className="serif"
+            style={{
+              fontSize: "33px",
+              lineHeight: 1.18,
+              fontWeight: 700,
+              color: "#221e1a",
+              margin: "20px 0 14px",
+            }}
+          >
+            {w.title}
+          </h1>
+          <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#6b6152", margin: 0 }}>
+            {w.sub}
+          </p>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginTop: "22px" }}>
+          {w.steps.map((s, i) => (
             <div
+              key={i}
               style={{
-                flex: "none",
-                width: "38px",
-                height: "38px",
-                borderRadius: "12px",
-                background: "var(--accent-soft, #f4e5dd)",
-                color: "var(--accent-ink, #7d3d29)",
-                fontWeight: 700,
-                fontSize: "17px",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                gap: "14px",
+                alignItems: "flex-start",
+                background: "#fff",
+                border: "1px solid #eee3d3",
+                borderRadius: "18px",
+                padding: "15px 16px",
               }}
             >
-              {i + 1}
-            </div>
-            <div>
-              <div style={{ fontSize: "16px", fontWeight: 700, color: "#2b2622", marginBottom: "2px" }}>
-                {s.title}
+              <div
+                style={{
+                  flex: "none",
+                  width: "38px",
+                  height: "38px",
+                  borderRadius: "12px",
+                  background: "var(--accent-soft, #f4e5dd)",
+                  color: "var(--accent-ink, #7d3d29)",
+                  fontWeight: 700,
+                  fontSize: "17px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {i + 1}
               </div>
-              <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#8a7f6f" }}>{s.desc}</div>
+              <div>
+                <div style={{ fontSize: "16px", fontWeight: 700, color: "#2b2622", marginBottom: "2px" }}>
+                  {s.title}
+                </div>
+                <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#8a7f6f" }}>{s.desc}</div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
-      <div style={{ flex: 1 }} />
+      <div style={{ flex: 1, minHeight: "22px" }} />
       <div style={{ textAlign: "center", fontSize: "13px", color: "#a99e8c", margin: "18px 0 12px" }}>
         {w.time}
       </div>

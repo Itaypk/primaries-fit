@@ -18,7 +18,7 @@ export function Header({
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "6px 20px 14px",
+        padding: "20px 20px 14px",
       }}
     >
       <div style={{ display: "flex", alignItems: "center", gap: "9px", minWidth: "74px" }}>

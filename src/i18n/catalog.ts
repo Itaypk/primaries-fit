@@ -46,6 +46,9 @@ export interface Catalog {
       backToResults: string;
       yes: string;
       no: string;
+      howWeDecided: string;
+      sources: string;
+      confidence: { high: string; medium: string; low: string };
     };
   };
   param: Record<string, { label: string; poleLow?: string; poleHigh?: string }>;

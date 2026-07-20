@@ -49,7 +49,7 @@ src/
   locales/        # ALL display text, per language (he.json, en.json)
   i18n/           # catalog types + React provider/hook (useI18n)
   view/           # engine output -> display view-models (reasons, breakdown)
-  components/      # PhoneFrame, Header, ProgressBar, StatusBar, questions/*
+  components/      # AppFrame, Header, ProgressBar, questions/*
   screens/        # WelcomeScreen, QuizScreen, ResultsScreen, CandidateScreen
   App.tsx         # state machine (screen / qIndex / answers / selection)
   theme.ts        # accent palettes + presentation defaults
@@ -86,7 +86,7 @@ reference — do not build on it; the React app supersedes it.
 - **Styling.** Global rules + the custom range input live in `src/styles.css`;
   the rest is inline styles ported from the prototype to keep visual parity.
   Accent colours are CSS variables (`--accent`, `--accent-soft`, `--accent-ink`)
-  set on the phone frame. The app is bilingual and **RTL/LTR-aware** — direction
+  set on the app frame. The app is bilingual and **RTL/LTR-aware** — direction
   comes from the locale; don't hard-code `left`/`right`.
 
 ## Common tasks

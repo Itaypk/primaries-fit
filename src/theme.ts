@@ -17,5 +17,5 @@ export const palettes: Record<AccentName, Palette> = {
 export type AxisStyle = "slider" | "segmented";
 
 /** App-level presentation defaults (were DC props in the prototype). */
-export const DEFAULT_ACCENT: AccentName = "clay";
+export const DEFAULT_ACCENT: AccentName = "teal";
 export const DEFAULT_AXIS_STYLE: AxisStyle = "slider";

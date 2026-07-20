@@ -60,7 +60,14 @@
       "theirStance": "Candidate stance",
       "backToResults": "Back to list",
       "yes": "Yes",
-      "no": "No"
+      "no": "No",
+      "howWeDecided": "How we decided",
+      "sources": "Sources",
+      "confidence": {
+        "high": "Strong evidence",
+        "medium": "Some evidence",
+        "low": "Limited evidence"
+      }
     }
   },
   "param": {
