@@ -1,0 +1,356 @@
+{
+  "$comment": "Event-specific display copy (EventCatalog fragment). Layered over the shared chrome catalog (src/locales/he.json) by src/i18n at load time. param/option/question/candidate strings live here, keyed by the ids in this event's structural JSON.",
+  "param": {
+    "conflict": {
+      "label": "ביטחון והסכסוך",
+      "poleLow": "ביטחון והרתעה תחילה",
+      "poleHigh": "דיפלומטיה ושתי מדינות"
+    },
+    "separation_annexation": {
+      "label": "הכיבוש וההתנחלויות",
+      "poleLow": "שמירה על הסטטוס קוו",
+      "poleHigh": "סיום הכיבוש"
+    },
+    "economy": {
+      "label": "כלכלה",
+      "poleLow": "שוק חופשי",
+      "poleHigh": "סוציאל-דמוקרטי"
+    },
+    "religion_state": {
+      "label": "דת ומדינה",
+      "poleLow": "שמירה על הסטטוס קוו",
+      "poleHigh": "הפרדה מלאה"
+    },
+    "shared_society": {
+      "label": "חברה משותפת",
+      "poleLow": "אופי יהודי-לאומי תחילה",
+      "poleHigh": "שוויון יהודי-ערבי מלא"
+    },
+    "positioning": {
+      "label": "מיצוב פוליטי",
+      "poleLow": "נאמנות לשמאל",
+      "poleHigh": "מהלך למרכז"
+    },
+    "climate": {
+      "label": "אקלים וסביבה",
+      "poleLow": "לא בראש סדר העדיפויות",
+      "poleHigh": "נושא מרכזי"
+    },
+    "experience": {
+      "label": "ניסיון"
+    },
+    "flagship": {
+      "label": "נושאי דגל"
+    }
+  },
+  "option": {
+    "cost_of_living": "יוקר המחיה",
+    "religion_and_state": "דת ומדינה",
+    "civil_rights": "זכויות אזרח",
+    "womens_minority_rep": "ייצוג נשים ומיעוטים",
+    "democracy_integrity": "דמוקרטיה וטוהר השלטון",
+    "jewish_arab_equality": "שוויון יהודי-ערבי",
+    "climate_env": "אקלים וסביבה"
+  },
+  "question": {
+    "q_conflict": {
+      "title": "בסוגיות הסכסוך והביטחון, לאן נוטה עמדתך?"
+    },
+    "q_imp_conflict": {
+      "title": "עד כמה הביטחון והסכסוך מכריעים עבורך בבחירה?"
+    },
+    "q_separation": {
+      "statement": "על ישראל לפעול לסיום הכיבוש ולפינוי התנחלויות."
+    },
+    "q_economy": {
+      "title": "איזו גישה כלכלית קרובה לליבך?"
+    },
+    "q_imp_economy": {
+      "title": "כמה משקל יש לסוגיות הכלכלה בבחירתך?"
+    },
+    "q_religion_state": {
+      "title": "בסוגיות דת ומדינה, לאן נוטה עמדתך?"
+    },
+    "q_imp_religion_state": {
+      "title": "כמה משקל יש לדת ומדינה בבחירתך?"
+    },
+    "q_shared_society": {
+      "title": "בסוגיית החברה המשותפת יהודים-ערבים, לאן נוטה עמדתך?"
+    },
+    "q_imp_shared_society": {
+      "title": "כמה משקל יש לחברה המשותפת בבחירתך?"
+    },
+    "q_positioning": {
+      "title": "האם על המפלגה להישאר נאמנה לשמאל או לנוע למרכז?"
+    },
+    "q_climate": {
+      "title": "עד כמה האקלים והסביבה צריכים להיות במרכז?"
+    },
+    "q_imp_climate": {
+      "title": "כמה משקל יש לאקלים בבחירתך?"
+    },
+    "q_flagship": {
+      "title": "אילו נושאים חשוב לך שהמועמד/ת יובילו?"
+    },
+    "q_imp_experience": {
+      "title": "כמה משקל לניסיון (פוליטי וכללי)?"
+    }
+  },
+  "candidate": {
+    "gilad_kariv": {
+      "name": "גלעד קריב",
+      "tagline": "רב רפורמי וחבר כנסת",
+      "initial": "ג"
+    },
+    "michal_rozin": {
+      "name": "מיכל רוזין",
+      "tagline": "פעילה חברתית, ח״כ לשעבר",
+      "initial": "מ"
+    },
+    "mossi_raz": {
+      "name": "מוסי רז",
+      "tagline": "פעיל שלום, ח״כ לשעבר",
+      "initial": "מ"
+    },
+    "naama_lazimi": {
+      "name": "נעמה לזימי",
+      "tagline": "חברת כנסת, צדק חברתי",
+      "initial": "נ"
+    },
+    "efrat_rayten": {
+      "name": "אפרת רייטן",
+      "tagline": "חברת כנסת, יו״ר סיעה",
+      "initial": "א"
+    },
+    "gaby_lasky": {
+      "name": "גבי לסקי",
+      "tagline": "עו״ד לזכויות אדם, ח״כ לשעבר",
+      "initial": "ג"
+    },
+    "yariv_oppenheimer": {
+      "name": "יריב אופנהיימר",
+      "tagline": "פעיל שלום, שלום עכשיו",
+      "initial": "י"
+    },
+    "chen_arieli": {
+      "name": "חן אריאלי",
+      "tagline": "פעילה פמיניסטית ולהט״בית",
+      "initial": "ח"
+    },
+    "yael_cohen_paran": {
+      "name": "יעל כהן פארן",
+      "tagline": "מומחית אנרגיה וסביבה, ח״כ לשעבר",
+      "initial": "י"
+    },
+    "ram_shefa": {
+      "name": "רם שפע",
+      "tagline": "חבר כנסת, חינוך ועבודה",
+      "initial": "ר"
+    },
+    "tomer_avital": {
+      "name": "תומר אביטל",
+      "tagline": "עיתונאי שקיפות ופעיל חברתי",
+      "initial": "ת"
+    },
+    "eran_nissan": {
+      "name": "ערן ניסן",
+      "tagline": "פעיל חברתי, מנכ״ל מחזקים",
+      "initial": "ע"
+    },
+    "ayed_badir": {
+      "name": "עאיד בדיר",
+      "tagline": "פעיל ערבי-יהודי למען שוויון ושותפות אמתית",
+      "initial": "ע"
+    },
+    "avi_dabush": {
+      "name": "אבי דבוש",
+      "tagline": "פעיל זכויות אדם ובעל קול דתי שונה מהמרכז",
+      "initial": "א"
+    },
+    "avishai_lichtenstein": {
+      "name": "אבישי ליכטנשטיין",
+      "tagline": "פעיל פריפריה ודמוקרטיה, אדריכל וחוקר יחסי צבא-חברה",
+      "initial": "א"
+    },
+    "evyatar_beer": {
+      "name": "אביתר באר",
+      "tagline": "איש פעולה וטבע מהנגב",
+      "initial": "א"
+    },
+    "achsan_chalaylah": {
+      "name": "אחסאן חלאילה",
+      "tagline": "מנהל משגב, פעיל חברתי ודוקטור בחינוך שוויוני",
+      "initial": "א"
+    },
+    "ali_salalha": {
+      "name": "עלי סלאלחה",
+      "tagline": "מחנך דרוזי ויו״ר קואליציית שוויון, נאבק נגד חוק הלאום ובעד שוויון זכויות",
+      "initial": "ע"
+    },
+    "alice_goldman": {
+      "name": "אליס גולדמן",
+      "tagline": "עורכת דין ופעילת סביבה ברחבי הצפון",
+      "initial": "א"
+    },
+    "omri_ronen": {
+      "name": "עמרי רונן",
+      "tagline": "פעיל דמוקרטיה, מנהיג אחים לנשק, קצין מילואים",
+      "initial": "ע"
+    },
+    "emily_moatti": {
+      "name": "אמילי מואטי",
+      "tagline": "פמיניסטית, פעילת שלום וכותבת",
+      "initial": "א"
+    },
+    "amir_khnifes": {
+      "name": "אמיר ח'ניפס",
+      "tagline": "פעיל חברתי ואיש אקדמיה, מקים המרכז הישראלי-דרוזי",
+      "initial": "א"
+    },
+    "inbal_wortman_shoham": {
+      "name": "ענבל וורטמן שהם",
+      "tagline": "פעילת חברה אזרחית, מייסדת אבני דרך לחיים, דוגמת שותפות יהודית-ערבית",
+      "initial": "ע"
+    },
+    "inbar_bezek": {
+      "name": "ענבר בזק",
+      "tagline": "מנהלת כלכלית ופעילת זכויות עצמאים; קול מנוסה של הצפון",
+      "initial": "ע"
+    },
+    "eran_etzion": {
+      "name": "ערן עציון",
+      "tagline": "דיפלומט ובכיר ביטחון עם 30 שנות ניסיון במדיניות חוץ ובטחון",
+      "initial": "ע"
+    },
+    "olivia_emanuel_de_lam": {
+      "name": "אוליביה עמנואל דה לם",
+      "tagline": "פעיל חברתי המדגיש שותפות על פני שנאה",
+      "initial": "א"
+    },
+    "ihab_shalian": {
+      "name": "איהאב שליאן",
+      "tagline": "קצין נוצרי ראשון בצה״ל, כוח פעיל לשילוב מיעוטים וזהות נוצרית בחברה הישראלית",
+      "initial": "א"
+    },
+    "itai_leshem": {
+      "name": "איתי לשם",
+      "tagline": "עורך דין וחוקר שחיתות ממשלתית",
+      "initial": "א"
+    },
+    "rabbi_benjamin_daniel_minich": {
+      "name": "הרב בנימין דניאל מיניץ׳",
+      "tagline": "רב רפורמי, חוקר, וראש מועצת הרבנות הרפורמית בישראל",
+      "initial": "ה"
+    },
+    "dani_algart": {
+      "name": "דני אלגרט",
+      "tagline": "סגן ניצב בדימוס, מורה ומחנך, מנהיג מאבק המשפחות החטופים",
+      "initial": "ד"
+    },
+    "dima_shapira": {
+      "name": "דימה שפירא",
+      "tagline": "אקטיביסט יקנעם, מובילי שטח למרצ וההדמוקרטים",
+      "initial": "ד"
+    },
+    "ghaleb_salamna": {
+      "name": "גאלב סלאמנה",
+      "tagline": "עורך דין לזכויות אדם ותומך בשותפות יהודית-ערבית",
+      "initial": "ג"
+    },
+    "gil_beilin": {
+      "name": "גיל ביילין",
+      "tagline": "מנהיג בעל מקצועיות וערכים, איש תקשורת ופוליטיקה",
+      "initial": "ג"
+    },
+    "hadas_ragolsky": {
+      "name": "הדס רגולסקי",
+      "tagline": "משפטנית, עיתונאית וממובילות המאבק לשוויון נשים והפרדת דת ממדינה",
+      "initial": "ה"
+    },
+    "lee_hoffmann_agiv": {
+      "name": "לי הופמן אגיב",
+      "tagline": "אקטיביסטית דמוקרטיה ונשים מבונות אלטרנטיבה",
+      "initial": "ל"
+    },
+    "kati_piasecki": {
+      "name": "קטי פיאסצקי",
+      "tagline": "פעילה לטובת דמוקרטיה, זכויות קהילה LGBTQ+ והפרדת דת ממדינה",
+      "initial": "ק"
+    },
+    "malek_bader": {
+      "name": "מאלכ בדר",
+      "tagline": "עורך דין דרוזי, פעיל שוויון ודמוקרטיה",
+      "initial": "מ"
+    },
+    "mehereta_baruch_ron": {
+      "name": "מהרטה ברוך רון",
+      "tagline": "סגנית ראה״ע תל אביב לשעבר, חוזה חברתי לשוויון וצדק",
+      "initial": "מ"
+    },
+    "moshe_redman_abutbul": {
+      "name": "משה רדמן אבוטבול",
+      "tagline": "מנהיג מחאה, יזם היי-טק, פעיל חברתי וממנהיגי הדמוקרטים",
+      "initial": "מ"
+    },
+    "moran_michel": {
+      "name": "מורן מישל",
+      "tagline": "יזמת ואקטיביסטית דמוקרטית, מנהיגת המחאה לדמוקרטיה וזכויות נשים",
+      "initial": "מ"
+    },
+    "moran_zer_katzenstein": {
+      "name": "מורן זר קצנשטיין",
+      "tagline": "מייסדת תנועת בונות אלטרנטיבה, פעילה במחאה למען דמוקרטיה וזכויות נשים",
+      "initial": "מ"
+    },
+    "naor_narkis": {
+      "name": "נאור נרקיס",
+      "tagline": "פעיל חילוני להפרדת דת ממדינה ודת ממזומן; מייסד חוזרים בתבונה",
+      "initial": "נ"
+    },
+    "nava_rozolio": {
+      "name": "נאווה רוזוליו",
+      "tagline": "עורכת דין, יוזמת מחאה ודורשת שלום ושותפות יהודית-ערבית",
+      "initial": "נ"
+    },
+    "nidal_masalha": {
+      "name": "עו״ד נדאל מסאלחה",
+      "tagline": "עו״ד וכלכלן מקפר קרע, דורש שותפות יהודית-ערבית",
+      "initial": "ע"
+    },
+    "nimrod_sheffer": {
+      "name": "נמרוד שפר",
+      "tagline": "אלוף בדימוס, ראש מטה וליברל דמוקרטי",
+      "initial": "נ"
+    },
+    "rotem_sivan_hoffmann": {
+      "name": "רתם סיון הופמן",
+      "tagline": "רופאה ויזמית, מייסדת תנועת אמא ערה",
+      "initial": "ר"
+    },
+    "sumaya_bashir": {
+      "name": "סומיה בשיר",
+      "tagline": "פעילה חברתית למען שותפות יהודית-ערבית ושוויון אזרחי",
+      "initial": "ס"
+    },
+    "yair_pink": {
+      "name": "יאיר (יאיא) פינק",
+      "tagline": "פעיל שמאל דתי, נלחם בטרור יהודי ובהפרדת דת-מדינה",
+      "initial": "י"
+    },
+    "yair_rubinstein": {
+      "name": "יאיר רובינשטיין",
+      "tagline": "מנהל מטה דת ומדינה, תומך בהפרדה דתית ושותף ערבי-יהודי",
+      "initial": "י"
+    },
+    "prof_yaron_niv": {
+      "name": "פרופ' ירון ניב",
+      "tagline": "רופא ומנהל בריאות ציבורית",
+      "initial": "פ"
+    },
+    "yoav_agami": {
+      "name": "יואב אגמי",
+      "tagline": "פעיל ליברלי סוציאל-דמוקרט עבור שלום וניקיון כפיים",
+      "initial": "י"
+    }
+  }
+}

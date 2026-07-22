@@ -12,7 +12,7 @@ import {
   type ReactNode,
 } from "react";
 import type { LocaleCode } from "../engine/types";
-import type { Catalog } from "./catalog";
+import type { Catalog, EventCatalog } from "./catalog";
 import he from "../locales/he.json";
 import en from "../locales/en.json";
 
@@ -33,6 +33,8 @@ export interface Translator {
   dir: "rtl" | "ltr";
   app: Catalog["app"];
   ui: Catalog["ui"];
+  /** Party display label by id (shared catalog); falls back to the id. */
+  party(id: string): string;
   param(id: string): string;
   poleLow(id: string): string;
   poleHigh(id: string): string;
@@ -44,22 +46,29 @@ export interface Translator {
   candidateInitial(id: string): string;
 }
 
-function makeTranslator(locale: LocaleCode): Translator {
+/**
+ * Build a translator for `locale`. Chrome (`app`, `ui`, `party`) comes from the
+ * shared catalog; event-specific copy (param/option/question/candidate) comes
+ * from the loaded event's fragment `ev` — absent (on the chooser, or mid-load),
+ * those accessors fall back to the id. `app` merges any per-event override.
+ */
+function makeTranslator(locale: LocaleCode, ev: EventCatalog | null): Translator {
   const c = catalogs[locale];
   return {
     locale,
     dir: localeDir[locale],
-    app: c.app,
+    app: ev?.app ? { ...c.app, ...ev.app } : c.app,
     ui: c.ui,
-    param: (id) => c.param[id]?.label ?? id,
-    poleLow: (id) => c.param[id]?.poleLow ?? "",
-    poleHigh: (id) => c.param[id]?.poleHigh ?? "",
-    option: (id) => c.option[id] ?? id,
-    questionTitle: (id) => c.question[id]?.title ?? "",
-    questionStatement: (id) => c.question[id]?.statement ?? "",
-    candidateName: (id) => c.candidate[id]?.name ?? id,
-    candidateTagline: (id) => c.candidate[id]?.tagline ?? "",
-    candidateInitial: (id) => c.candidate[id]?.initial ?? id,
+    party: (id) => c.party[id] ?? id,
+    param: (id) => ev?.param[id]?.label ?? id,
+    poleLow: (id) => ev?.param[id]?.poleLow ?? "",
+    poleHigh: (id) => ev?.param[id]?.poleHigh ?? "",
+    option: (id) => ev?.option[id] ?? id,
+    questionTitle: (id) => ev?.question[id]?.title ?? "",
+    questionStatement: (id) => ev?.question[id]?.statement ?? "",
+    candidateName: (id) => ev?.candidate[id]?.name ?? id,
+    candidateTagline: (id) => ev?.candidate[id]?.tagline ?? "",
+    candidateInitial: (id) => ev?.candidate[id]?.initial ?? id,
   };
 }
 
@@ -68,6 +77,8 @@ interface I18nContextValue {
   locale: LocaleCode;
   setLocale: (l: LocaleCode) => void;
   toggleLocale: () => void;
+  /** Layer an event's copy fragments over the shared catalog (null to clear). */
+  setEventCatalogs: (fragments: Record<LocaleCode, EventCatalog> | null) => void;
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null);
@@ -80,13 +91,18 @@ export function I18nProvider({
   children: ReactNode;
 }) {
   const [locale, setLocale] = useState<LocaleCode>(initialLocale);
+  const [eventCatalogs, setEventCatalogs] =
+    useState<Record<LocaleCode, EventCatalog> | null>(null);
   const toggleLocale = useCallback(
     () => setLocale((l) => (l === "he" ? "en" : "he")),
     [],
   );
-  const t = useMemo(() => makeTranslator(locale), [locale]);
+  const t = useMemo(
+    () => makeTranslator(locale, eventCatalogs?.[locale] ?? null),
+    [locale, eventCatalogs],
+  );
   const value = useMemo(
-    () => ({ t, locale, setLocale, toggleLocale }),
+    () => ({ t, locale, setLocale, toggleLocale, setEventCatalogs }),
     [t, locale, toggleLocale],
   );
   return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;

@@ -22,10 +22,15 @@ import type {
   EventSummary,
   Evidence,
   EvidenceEntry,
+  LocaleCode,
   Parameter,
   Questionnaire,
 } from "../engine/types";
+import type { EventCatalog } from "../i18n/catalog";
 import registry from "./events/index.json";
+
+/** The locales an event ships a copy fragment for. Mirrors src/i18n LocaleCode. */
+const EVENT_LOCALES: LocaleCode[] = ["he", "en"];
 
 /** The featured event shown at the root until an explicit chooser exists (Phase 2). */
 export const FEATURED_EVENT_ID = "hademokratim-2026";
@@ -35,7 +40,10 @@ export const FEATURED_EVENT_ID = "hademokratim-2026";
  * (non-eager) yields a `() => Promise<module>` per match, so each event's data
  * is a separate chunk fetched only when that event is opened.
  */
-const eventFiles = import.meta.glob<{ default: unknown }>("./events/*/*.json");
+const eventFiles = import.meta.glob<{ default: unknown }>([
+  "./events/*/*.json",
+  "./events/*/locales/*.json",
+]);
 
 /** The chooser index — current and past primaries, without loading any of them. */
 export function listEvents(): EventSummary[] {
@@ -65,6 +73,14 @@ export async function loadEvent(id: string): Promise<Event> {
     ? await importJson<EventResults>(resultsPath)
     : undefined;
 
+  // Per-locale display-copy fragments, layered over the shared catalog by i18n.
+  const localeEntries = await Promise.all(
+    EVENT_LOCALES.map(
+      async (lang) => [lang, await importJson<EventCatalog>(`${dir}/locales/${lang}.json`)] as const,
+    ),
+  );
+  const locales = Object.fromEntries(localeEntries) as Record<LocaleCode, EventCatalog>;
+
   return {
     parameters: parameters.parameters,
     candidates: candidates.candidates,
@@ -72,6 +88,7 @@ export async function loadEvent(id: string): Promise<Event> {
     evidence,
     meta,
     results,
+    locales,
   };
 }
 

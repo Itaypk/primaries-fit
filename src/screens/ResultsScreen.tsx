@@ -4,7 +4,7 @@ import { useEvent } from "../data/eventContext";
 import { reasonsFor } from "../view/results";
 import { Avatar } from "../components/Avatar";
 import { ShareButton } from "../components/ShareButton";
-import type { ViewMode } from "../App";
+import type { ViewMode } from "./EventLayout";
 
 const MODES: ViewMode[] = ["match", "balanced", "close"];
 
