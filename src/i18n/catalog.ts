@@ -90,6 +90,23 @@ export interface Catalog {
       links: string;
       confidence: { high: string; medium: string; low: string };
     };
+    /** The unlisted reviewer grid at `/e/:eventId/review`. */
+    review: {
+      title: string;
+      sub: string;
+      /** Row-header column label. */
+      candidateCol: string;
+      /** Toggle: show only candidates with a flagged cell or limited record. */
+      issuesOnly: string;
+      /** One-line key to the cell colours / marker. */
+      legend: string;
+      /** Flag names used in the summary tallies. */
+      flags: { low: string; missing: string; limited: string };
+      /** Detail-panel copy. */
+      noPosition: string;
+      noEvidence: string;
+      noSources: string;
+    };
     /** Event status badge labels, keyed by EventStatus. */
     status: { upcoming: string; open: string; past: string };
     /** The event chooser at `/`. */

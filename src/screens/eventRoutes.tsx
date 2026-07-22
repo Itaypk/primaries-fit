@@ -15,6 +15,7 @@ import { QuizScreen } from "./QuizScreen";
 import { ResultsScreen } from "./ResultsScreen";
 import { BrowseScreen } from "./BrowseScreen";
 import { CandidateScreen } from "./CandidateScreen";
+import { ReviewScreen } from "./ReviewScreen";
 
 export function WelcomeRoute() {
   const navigate = useNavigate();
@@ -66,6 +67,12 @@ export function ResultsRoute() {
       onRestart={s.restart}
     />
   );
+}
+
+export function ReviewRoute() {
+  // Unlisted data-quality view. Reads the loaded event's evidence sidecar only;
+  // no voter session, so it takes nothing from the outlet context.
+  return <ReviewScreen />;
 }
 
 export function CandidateRoute() {
