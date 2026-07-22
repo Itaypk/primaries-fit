@@ -4,5 +4,6 @@
   "party": "hademokratim",
   "date": "2026-07-20",
   "status": "past",
-  "dataUpdated": "2026-07-20"
+  "dataUpdated": "2026-07-20",
+  "methodology": "https://github.com/Itaypk/primaries-fit/blob/main/docs/candidate-scoring.md"
 }

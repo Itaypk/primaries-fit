@@ -156,6 +156,7 @@ type EventFragment = {
   option?: Record<string, string>;
   question?: Record<string, { title?: string; statement?: string }>;
   candidate?: Record<string, { name?: string }>;
+  resultReason?: Record<string, string>;
 };
 const sharedCatalogs: Record<string, SharedCatalog> = {};
 for (const lang of LOCALES) sharedCatalogs[lang] = load(`${LOCALE_DIR}/${lang}.json`) as SharedCatalog;
@@ -281,20 +282,40 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
     }
   }
 
-  // (optional) results reference known candidates
+  // Locale fragments, loaded once and shared by the checks below.
+  const frags: Record<string, EventFragment> = {};
+  for (const lang of LOCALES)
+    frags[lang] = stripComment(load(`${dir}/locales/${lang}.json`) as Record<string, unknown>) as EventFragment;
+
+  // Ids a seated (`final`) entry may carry that are NOT primary candidates —
+  // e.g. the party chair heading the list. Allowed only when declared (with a
+  // display name) in EVERY locale fragment, so they still resolve for the UI.
+  const displayOnlyIds = new Set(
+    Object.keys(frags[LOCALES[0]].candidate ?? {}).filter(
+      (cid) => !candidateIds.has(cid) && LOCALES.every((l) => frags[l].candidate?.[cid]?.name),
+    ),
+  );
+
+  // (optional) results reference known candidates, and divergence reasons resolve
+  const resultReasonIds = new Set<string>();
   if (fileExists(`${dir}/results.json`)) {
     const results = parse(resultsSchema, stripComment(load(`${dir}/results.json`) as Record<string, unknown>), `${id}/results.json`);
     for (const r of results?.raw ?? [])
       if (!candidateIds.has(r.candidateId)) at(`results.raw references undefined candidate '${r.candidateId}'`);
-    for (const r of results?.final ?? [])
-      if (!candidateIds.has(r.candidateId)) at(`results.final references undefined candidate '${r.candidateId}'`);
+    for (const r of results?.final ?? []) {
+      if (!candidateIds.has(r.candidateId) && !displayOnlyIds.has(r.candidateId))
+        at(`results.final references undefined candidate '${r.candidateId}'`);
+      if (r.reason) resultReasonIds.add(r.reason);
+    }
   }
 
   // (5) locale completeness — event-specific ids in EVERY event fragment, and
   // the party label in EVERY shared catalog.
   const questionIds = (questionnaire?.questions ?? []).map((q) => q.id);
   for (const lang of LOCALES) {
-    const frag = stripComment(load(`${dir}/locales/${lang}.json`) as Record<string, unknown>) as EventFragment;
+    const frag = frags[lang];
+    for (const rid of resultReasonIds)
+      if (!frag.resultReason?.[rid]) at(`[locale:${lang}] missing resultReason.${rid}`);
     for (const p of parameters) {
       if (!frag.param?.[p.id]?.label) at(`[locale:${lang}] missing param.${p.id}.label`);
       if (p.kind === "scalar") {

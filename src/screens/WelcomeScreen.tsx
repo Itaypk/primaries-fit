@@ -1,5 +1,7 @@
 import { useI18n } from "../i18n";
 import { AboutFooter } from "../components/AboutFooter";
+import { PastEventNotice } from "../components/PastEventNotice";
+import { EventOutcome } from "../components/EventOutcome";
 
 export function WelcomeScreen({ onStart, onBrowse }: { onStart: () => void; onBrowse: () => void }) {
   const { t } = useI18n();
@@ -16,6 +18,8 @@ export function WelcomeScreen({ onStart, onBrowse }: { onStart: () => void; onBr
         flexDirection: "column",
       }}
     >
+      <PastEventNotice />
+
       <div className="welcome-layout" style={{ marginTop: "10px" }}>
         <div>
           <div
@@ -137,6 +141,10 @@ export function WelcomeScreen({ onStart, onBrowse }: { onStart: () => void; onBr
       <p style={{ textAlign: "center", fontSize: "12px", lineHeight: 1.5, color: "#a99e8c", margin: "10px 0 0" }}>
         {w.privacy}
       </p>
+
+      {/* For a past race, what actually happened — the vote order vs. the seated
+          list. Renders nothing when the event carries no results. */}
+      <EventOutcome />
 
       <AboutFooter />
     </div>

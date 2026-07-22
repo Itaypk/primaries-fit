@@ -57,6 +57,7 @@ export function ResultsRoute() {
   return (
     <ResultsScreen
       ranked={s.displayed}
+      topMatchId={s.ranked[0]?.candidateId}
       viewMode={s.viewMode}
       onViewMode={s.changeViewMode}
       openInfo={s.openInfo}

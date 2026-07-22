@@ -2,14 +2,17 @@ import type { CandidateScore } from "../engine/types";
 import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
 import { reasonsFor } from "../view/results";
+import { outcomeRankOf } from "../view/eventResults";
 import { Avatar } from "../components/Avatar";
 import { ShareButton } from "../components/ShareButton";
+import { PastEventNotice } from "../components/PastEventNotice";
 import type { ViewMode } from "./EventLayout";
 
 const MODES: ViewMode[] = ["match", "balanced", "close"];
 
 export function ResultsScreen({
   ranked,
+  topMatchId,
   viewMode,
   onViewMode,
   openInfo,
@@ -18,6 +21,9 @@ export function ResultsScreen({
   onRestart,
 }: {
   ranked: CandidateScore[];
+  /** The voter's single best match by score, regardless of the presentation
+   *  view mode — used to compare against a past race's actual outcome. */
+  topMatchId?: string;
   viewMode: ViewMode;
   onViewMode: (mode: ViewMode) => void;
   openInfo: string | null;
@@ -33,8 +39,15 @@ export function ResultsScreen({
     { day: "numeric", month: "long", year: "numeric" },
   );
 
+  // For a past race, where the voter's best match actually landed in the vote.
+  const outcomeRank =
+    event.meta.status === "past" ? outcomeRankOf(topMatchId, event.results) : null;
+  const methodology = event.meta.methodology;
+
   return (
     <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "4px 22px 24px" }}>
+      <PastEventNotice />
+
       <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: "12px" }}>
         <h2
           className="serif"
@@ -47,6 +60,26 @@ export function ResultsScreen({
       <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 12px" }}>
         {t.ui.results.sub}
       </p>
+
+      {/* On a past race, ground the ranking in what actually happened: where the
+          voter's best match landed in the real vote. */}
+      {outcomeRank != null && topMatchId && (
+        <p
+          style={{
+            fontSize: "13px",
+            lineHeight: 1.55,
+            color: "var(--accent-ink, #295c59)",
+            background: "var(--accent-soft, #dbebe9)",
+            borderRadius: "12px",
+            padding: "10px 12px",
+            margin: "0 0 12px",
+          }}
+        >
+          {t.ui.results.compareToOutcome
+            .replace("{name}", t.candidateName(topMatchId))
+            .replace("{rank}", String(outcomeRank))}
+        </p>
+      )}
 
       {/* The ranking is only as good as the researched positions behind it, so
           the caveat sits with the ranking rather than only on the welcome
@@ -69,6 +102,20 @@ export function ResultsScreen({
         <span style={{ color: "#a99e8c" }}>
           {t.ui.results.dataAsOf.replace("{date}", researchedOn)}
         </span>
+        {/* Per-event sourcing methodology, when the event declares one. */}
+        {methodology && (
+          <>
+            {" "}
+            <a
+              href={methodology}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "var(--accent-ink, #295c59)", fontWeight: 700, textDecoration: "underline" }}
+            >
+              {t.ui.results.methodology}
+            </a>
+          </>
+        )}
       </p>
 
       {/* Presentation modes, not scoring modes — every one of these reorders or

@@ -44,6 +44,8 @@ export interface Translator {
   candidateName(id: string): string;
   candidateTagline(id: string): string;
   candidateInitial(id: string): string;
+  /** Prose for a past event's result-divergence reason id; "" when absent. */
+  resultReason(id: string): string;
 }
 
 /**
@@ -69,6 +71,7 @@ function makeTranslator(locale: LocaleCode, ev: EventCatalog | null): Translator
     candidateName: (id) => ev?.candidate[id]?.name ?? id,
     candidateTagline: (id) => ev?.candidate[id]?.tagline ?? "",
     candidateInitial: (id) => ev?.candidate[id]?.initial ?? id,
+    resultReason: (id) => ev?.resultReason?.[id] ?? "",
   };
 }
 
