@@ -61,6 +61,12 @@ export interface Catalog {
       view: { match: string; balanced: string; close: string };
       /** `close` contains a {count} placeholder. */
       viewNote: { balanced: string; close: string };
+      /** Link to how candidate positions are sourced (shown when the event
+       *  declares a `methodology`). */
+      methodology: string;
+      /** Shown on a past event's results: where the voter's top match landed in
+       *  the real outcome. Contains {name} and {rank} placeholders. */
+      compareToOutcome: string;
     };
     about: {
       title: string;
@@ -88,6 +94,23 @@ export interface Catalog {
     status: { upcoming: string; open: string; past: string };
     /** The event chooser at `/`. */
     chooser: { title: string; sub: string };
+    /** Shown on a past event: the "you're exploring an archived race" notice and
+     *  the actual-outcome (raw vs. final) panel. */
+    pastEvent: {
+      /** Contains a {date} placeholder. */
+      banner: string;
+    };
+    outcome: {
+      title: string;
+      sub: string;
+      /** Column heading over the vote-order list. */
+      rawColumn: string;
+      /** Column heading over the seated-list. */
+      finalColumn: string;
+      votes: string;
+      /** Badge on a candidate whose seat differs from their vote rank. */
+      moved: string;
+    };
   };
 }
 
@@ -103,4 +126,8 @@ export interface EventCatalog {
   option: Record<string, string>;
   question: Record<string, { title?: string; statement?: string }>;
   candidate: Record<string, { name: string; tagline: string; initial: string }>;
+  /** Prose for a past event's result-divergence reasons, keyed by the reason id
+   *  referenced from `results.json` `final[].reason`. Present only for past
+   *  events that record a divergence between vote order and seated outcome. */
+  resultReason?: Record<string, string>;
 }

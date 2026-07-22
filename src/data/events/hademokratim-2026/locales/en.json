@@ -351,6 +351,17 @@
       "name": "Yoav Agami",
       "tagline": "Liberal social-democrat activist for peace and institutional integrity",
       "initial": "Y"
+    },
+    "yair_golan": {
+      "name": "Yair Golan",
+      "tagline": "Party chair",
+      "initial": "Y"
     }
+  },
+  "resultReason": {
+    "chair": "Party chairperson — heads the list by virtue of the office, without standing in the primary.",
+    "meretz_reserved": "Reserved seat under the Meretz merger agreement.",
+    "minority_reserved": "Reserved seat for minority representation.",
+    "kibbutz_reserved": "Reserved seat for the kibbutz movement."
   }
 }
