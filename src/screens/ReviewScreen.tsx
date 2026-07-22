@@ -1,33 +1,9 @@
 import { useMemo, useState } from "react";
 import type { CSSProperties } from "react";
-import type { Confidence } from "../engine/types";
 import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
 import { buildReview, type ReviewCell } from "../view/review";
-
-/** Bare hostname for a source link (mirrors the candidate screen). */
-function sourceLabel(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
-}
-
-/** Filled = on-record; half = some evidence; hollow = weak/inferred. */
-function ConfidenceDot({ level }: { level?: Confidence }) {
-  const fill: CSSProperties =
-    level === "high"
-      ? { background: "var(--accent-ink, #7d3d29)" }
-      : level === "medium"
-        ? { background: "#b08a52" }
-        : level === "low"
-          ? { background: "transparent", border: "1.5px solid #c9beac" }
-          : { background: "transparent", border: "1.5px dashed #d8ccb8" };
-  return (
-    <span style={{ flex: "none", width: "8px", height: "8px", borderRadius: "50%", ...fill }} />
-  );
-}
+import { ConfidenceDot, sourceLabel } from "../view/confidence";
 
 /** Tint a cell by its data-quality state — low confidence and missing sources
  *  are the two things a reviewer scans for, so they read at a glance. */

@@ -5,13 +5,10 @@
   },
   "ui": {
     "badge": "Independent · not affiliated with any candidate",
-    "welcome": {
+    "home": {
       "title": "Find the candidate who speaks for you",
       "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
-      "time": "~4 min · 14 questions",
-      "start": "Let’s begin",
-      "privacy": "The questionnaire is completely anonymous — your answers and results stay in your browser only and are never collected anywhere.",
-      "browse": "Just browse the candidates, skip the questionnaire",
+      "howHeading": "How it works",
       "steps": [
         {
           "title": "Answer honestly",
@@ -26,6 +23,14 @@
           "desc": "Every match comes with a full explanation."
         }
       ]
+    },
+    "welcome": {
+      "sub": "A few short questions on the issues you care about — then a candidate list ranked by how well they match. Fully transparent: you always see why.",
+      "time": "~4 min · 14 questions",
+      "start": "Let’s begin",
+      "privacy": "The questionnaire is completely anonymous — your answers and results stay in your browser only and are never collected anywhere.",
+      "browse": "Just browse the candidates, skip the questionnaire",
+      "seeResults": "See the results"
     },
     "quiz": {
       "next": "Next",
@@ -106,7 +111,8 @@
             "body": "The tool is independent and self-funded, with no tie to any candidate or party. The questions and the issue space are worded to be even-handed, and the whole thing — data, engine, and text — is open source, so anyone can inspect how a ranking is produced or flag a position that looks wrong."
           }
         ]
-      }
+      },
+      "eyebrow": "How this works"
     },
     "faq": {
       "title": "Questions & answers",
@@ -140,12 +146,15 @@
           "q": "I think a position is wrong — what do I do?",
           "a": "Please tell me. Every position links to its sources; if one is off, email itaypk@gmail.com and it can be corrected. The data is open source too, so corrections are welcome in the open."
         }
-      ]
+      ],
+      "eyebrow": "Help & answers"
     },
     "nav": {
       "about": "About",
       "faq": "Q&A",
-      "home": "Home"
+      "home": "Home",
+      "menu": "Menu",
+      "back": "Back"
     },
     "candidate": {
       "overallMatch": "Overall match to your positions",
@@ -186,7 +195,8 @@
     },
     "chooser": {
       "title": "Choose a primary",
-      "sub": "Pick a race to explore."
+      "sub": "Pick a race to explore.",
+      "eyebrow": "Choose a race"
     },
     "pastEvent": {
       "banner": "This primary was held on {date} — you're exploring an archived race, not a live one."
@@ -197,7 +207,9 @@
       "rawColumn": "By the vote",
       "finalColumn": "Final list",
       "votes": "votes",
-      "moved": "was #{rank}"
+      "moved": "was #{rank}",
+      "viewLink": "Results",
+      "eyebrow": "Primary archive"
     }
   },
   "party": {

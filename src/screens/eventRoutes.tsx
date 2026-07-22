@@ -9,6 +9,7 @@ import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
 import { encodeAnswers } from "../share";
 import { buildBreakdown } from "../view/results";
+import { buildEventResults } from "../view/eventResults";
 import { DEFAULT_AXIS_STYLE } from "../theme";
 import { useEventSession } from "./EventLayout";
 import { WelcomeScreen } from "./WelcomeScreen";
@@ -17,10 +18,17 @@ import { ResultsScreen } from "./ResultsScreen";
 import { BrowseScreen } from "./BrowseScreen";
 import { CandidateScreen } from "./CandidateScreen";
 import { ReviewScreen } from "./ReviewScreen";
+import { OutcomeScreen } from "./OutcomeScreen";
 
 export function WelcomeRoute() {
   const navigate = useNavigate();
-  return <WelcomeScreen onStart={() => navigate("quiz")} onBrowse={() => navigate("browse")} />;
+  return (
+    <WelcomeScreen
+      onStart={() => navigate("quiz")}
+      onBrowse={() => navigate("browse")}
+      onSeeResults={() => navigate("outcome")}
+    />
+  );
 }
 
 export function QuizRoute() {
@@ -78,6 +86,15 @@ export function ReviewRoute() {
   // Unlisted data-quality view. Reads the loaded event's evidence sidecar only;
   // no voter session, so it takes nothing from the outlet context.
   return <ReviewScreen />;
+}
+
+export function OutcomeRoute() {
+  // Standalone actual-outcome page. Only past races with recorded results have
+  // one — a cold link to any other event bounces back to its welcome.
+  const { t } = useI18n();
+  const { event } = useEvent();
+  if (!buildEventResults(event.results, t)) return <Navigate to=".." replace />;
+  return <OutcomeScreen />;
 }
 
 export function CandidateRoute() {

@@ -4,6 +4,54 @@
    sizing, container queries) live here. Accent colours are injected as CSS
    variables on the app frame (see AppFrame). */
 
+/* Design tokens — the single source of truth for the neutral palette, surfaces,
+   lines, radii, shadows and type scale. Everything that used to be a hardcoded
+   hex or one-off px value now resolves through these, so the look can only drift
+   in one place. Accent tokens (--accent, --accent-soft, --accent-ink) are set
+   per-frame in AppFrame; these are the accent-independent chrome. */
+:root {
+  /* Ink ramp — strongest heading down to the faintest caption. */
+  --text-strong: #221e1a;
+  --text: #2b2622;
+  --text-body: #5c5346;
+  --text-muted: #6b6152;
+  --text-soft: #8a7f6f;
+  --text-faint: #a99e8c;
+
+  /* Surfaces & lines. */
+  --bg: #efe7db;
+  --panel: #faf6ef;
+  --surface: #ffffff;
+  --surface-sunken: #f0ece2;
+  --line: #eee3d3;
+  --line-frame: #e8ddcd;
+  --line-soft: #e2d6c4;
+
+  /* Radii & shadows. */
+  --r-pill: 999px;
+  --r-card: 18px;
+  --r-card-sm: 14px;
+  --r-frame: 40px;
+  --shadow-card: 0 1px 2px rgba(60, 40, 20, 0.04);
+  --shadow-cta: 0 8px 20px -8px var(--accent, #c0684a);
+
+  /* Type scale — one deliberate ladder in place of the old 27/29/33 drift. */
+  --fs-display: 32px;
+  --fs-title: 26px;
+  --fs-h2: 19px;
+  --fs-h3: 17px;
+  --fs-body-lg: 16px;
+  --fs-body: 15px;
+  --fs-sm: 14px;
+  --fs-xs: 13px;
+  --fs-2xs: 12px;
+
+  /* Page-shape rhythm — the standard inset every PageBody uses. */
+  --page-x: 24px;
+  --page-top: 8px;
+  --page-bottom: 26px;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +63,7 @@ body {
 }
 
 body {
-  background: #efe7db;
+  background: var(--bg);
   font-family: "Assistant", -apple-system, system-ui, sans-serif;
 }
 
@@ -26,6 +74,14 @@ a {
 
 a:hover {
   color: var(--accent-ink, #7d3d29);
+}
+
+/* Focus ring — one visible, consistent keyboard affordance for every
+   interactive primitive (buttons, links, menu items, cards). */
+:focus-visible {
+  outline: 2px solid var(--accent, #c0684a);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 /* Hidden scrollbars for the scrolling screen areas. */
@@ -87,12 +143,12 @@ input[type="range"]::-moz-range-thumb {
   position: relative;
   width: min(94vw, 460px);
   height: min(92vh, 800px);
-  background: #faf6ef;
-  border-radius: 40px;
+  background: var(--panel);
+  border-radius: var(--r-frame);
   box-shadow:
     0 2px 4px rgba(60, 40, 20, 0.1),
     0 30px 70px -20px rgba(60, 40, 20, 0.45);
-  border: 1px solid #e8ddcd;
+  border: 1px solid var(--line-frame);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -100,13 +156,13 @@ input[type="range"]::-moz-range-thumb {
 
 @media (min-width: 760px) {
   .app-frame {
-    /* Content-sized rather than viewport-locked: a short screen (e.g. the
-       welcome hero) makes a compact panel instead of stretching to fill the
-       viewport with dead space; a long one (e.g. the results list) caps out
-       and scrolls internally, same as the mobile card does. */
+    /* Fixed height (not content-sized) so the panel is the SAME size on every
+       screen — the frame no longer grows and shrinks as you move between the
+       welcome hero and the results list. Short screens let the body flex to
+       fill (footer pinned at the bottom); long ones scroll internally, same as
+       the mobile card does. */
     width: min(88vw, 1180px);
-    height: auto;
-    max-height: min(88vh, 860px);
+    height: min(88vh, 860px);
     border-radius: 30px;
   }
 }
@@ -114,10 +170,6 @@ input[type="range"]::-moz-range-thumb {
 /* Base (single-column) layout for the pieces that gain a second dimension on
    a wide frame. Kept as real classes, not inline styles, because container
    queries can't be expressed inline. */
-.welcome-layout {
-  display: block;
-}
-
 .results-grid {
   display: flex;
   flex-direction: column;
@@ -130,7 +182,18 @@ input[type="range"]::-moz-range-thumb {
   gap: 16px;
 }
 
-.candidate-column {
+/* Home layout: the primaries list is the main object; "how it works" rides
+   alongside as a narrower side panel on a wide frame. Single column (list on
+   top, panel below) on a narrow one. */
+.home-split {
+  display: block;
+}
+
+/* The standard reading column: on a wide frame, content is capped and centred
+   rather than stretching edge-to-edge, giving every content page the same
+   comfortable side gap. The default for content pages (home, event launcher,
+   about, Q&A, candidate, outcome); grids opt out with their own containers. */
+.page-column {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -149,10 +212,10 @@ input[type="range"]::-moz-range-thumb {
   /* minmax(0, …), not bare fr: a bare `1fr` track has an auto (content-based)
      minimum, so an unbreakable child (e.g. the nowrap candidate tagline) can
      force its column wider than its share and blow out the frame. */
-  .welcome-layout {
+  .home-split {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-    gap: 44px;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 32px;
     align-items: start;
   }
 
@@ -172,4 +235,78 @@ input[type="range"]::-moz-range-thumb {
     column-gap: 28px;
     row-gap: 18px;
   }
+}
+
+/* The standard scrolling content region every screen sits in. Owns the one
+   canonical page inset (was re-typed with different numbers on every screen);
+   inherits the hidden-scrollbar rules from .scr. */
+.page-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--page-top) var(--page-x) var(--page-bottom);
+}
+
+/* Signature: the ballot-style kicker that sits above every page title and
+   names what kind of page this is — the one structural device shared across
+   the whole site. A short leading rule ties it to the civic/ballot subject. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-ink, #7d3d29);
+}
+.eyebrow::before {
+  content: "";
+  width: 22px;
+  height: 2px;
+  background: var(--accent, #c0684a);
+  border-radius: 2px;
+}
+
+/* The site footer: fixed chrome pinned to the bottom of the frame (flex:none
+   sibling of the scrolling body), shown on every screen. Holds the primary
+   navigation now that the header carries no menu. */
+.site-footer {
+  flex: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 16px;
+  padding: 12px var(--page-x);
+  border-top: 1px solid var(--line-frame);
+  background: var(--panel);
+}
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 6px;
+  align-items: center;
+}
+.site-footer nav a {
+  padding: 4px 9px;
+  border-radius: var(--r-pill);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.site-footer nav a:hover {
+  color: var(--text-strong);
+  background: var(--surface-sunken);
+}
+.site-footer nav a[aria-current="page"] {
+  color: var(--accent-ink, #7d3d29);
+  background: var(--accent-soft, #f4e5dd);
+}
+.site-footer .credit {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  font-size: var(--fs-xs);
+  color: var(--text-soft);
 }

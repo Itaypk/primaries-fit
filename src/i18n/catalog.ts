@@ -10,8 +10,19 @@ export interface Catalog {
   party: Record<string, string>;
   ui: {
     badge: string;
-    welcome: {
+    /** The product landing page at `/`: what primaries.fit is and how it works,
+     *  above the list of primaries. The per-event page is a focused launcher. */
+    home: {
       title: string;
+      sub: string;
+      /** Heading over the 1-2-3 "how it works" panels. */
+      howHeading: string;
+      steps: Array<{ title: string; desc: string }>;
+    };
+    /** The per-event launcher at `/e/:id`: start / browse / (past) see-results
+     *  for one primary. Its heading is the event name, not this copy. */
+    welcome: {
+      /** Short tagline under the event name; also the shared-link description. */
       sub: string;
       time: string;
       start: string;
@@ -19,7 +30,8 @@ export interface Catalog {
       privacy: string;
       /** Secondary action: skip the questionnaire and browse candidates. */
       browse: string;
-      steps: Array<{ title: string; desc: string }>;
+      /** Secondary action on a past race: open its standalone outcome page. */
+      seeResults: string;
     };
     browse: {
       title: string;
@@ -70,6 +82,7 @@ export interface Catalog {
     };
     about: {
       title: string;
+      eyebrow: string;
       aiNotice: string;
       feedback: string;
       author: string;
@@ -83,12 +96,13 @@ export interface Catalog {
     };
     /** The /faq page: a flat list of question/answer pairs. */
     faq: {
+      eyebrow: string;
       title: string;
       sub: string;
       items: Array<{ q: string; a: string }>;
     };
-    /** Cross-page navigation labels (chooser footer, page links). */
-    nav: { about: string; faq: string; home: string };
+    /** Cross-page navigation labels (header menu, footer links). */
+    nav: { about: string; faq: string; home: string; menu: string; back: string };
     candidate: {
       overallMatch: string;
       byTopic: string;
@@ -123,7 +137,7 @@ export interface Catalog {
     /** Event status badge labels, keyed by EventStatus. */
     status: { upcoming: string; open: string; past: string };
     /** The event chooser at `/`. */
-    chooser: { title: string; sub: string };
+    chooser: { eyebrow: string; title: string; sub: string };
     /** Shown on a past event: the "you're exploring an archived race" notice and
      *  the actual-outcome (raw vs. final) panel. */
     pastEvent: {
@@ -133,6 +147,10 @@ export interface Catalog {
     outcome: {
       title: string;
       sub: string;
+      /** Eyebrow on the standalone outcome page. */
+      eyebrow: string;
+      /** Link from a past-race chooser card into its standalone outcome page. */
+      viewLink: string;
       /** Column heading over the vote-order list. */
       rawColumn: string;
       /** Column heading over the seated-list. */

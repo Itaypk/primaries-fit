@@ -1,47 +1,16 @@
 import { useState } from "react";
-import type { CSSProperties } from "react";
-import type { Confidence } from "../engine/types";
 import type { BreakdownRow } from "../view/results";
 import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
 import { Avatar } from "../components/Avatar";
 import { SocialLinks } from "../components/SocialLinks";
+import { ConfidenceDot, sourceLabel } from "../view/confidence";
 
 function pctColor(pct: number | null): string {
-  if (pct == null) return "#a99e8c";
+  if (pct == null) return "var(--text-faint)";
   if (pct >= 66) return "var(--accent-ink, #7d3d29)";
   if (pct >= 40) return "#b08a52";
   return "#b06a55";
-}
-
-/** Filled = a direct, on-record statement; hollow = a weak/inferred signal. */
-function ConfidenceDot({ level }: { level: Confidence }) {
-  const fill: CSSProperties =
-    level === "high"
-      ? { background: "var(--accent-ink, #7d3d29)" }
-      : level === "medium"
-        ? { background: "#b08a52" }
-        : { background: "transparent", border: "1.5px solid #c9beac" };
-  return (
-    <span
-      style={{
-        flex: "none",
-        width: "8px",
-        height: "8px",
-        borderRadius: "50%",
-        ...fill,
-      }}
-    />
-  );
-}
-
-/** Short display label for a source link: bare hostname, no protocol/www. */
-function sourceLabel(url: string): string {
-  try {
-    return new URL(url).hostname.replace(/^www\./, "");
-  } catch {
-    return url;
-  }
 }
 
 export function CandidateScreen({
@@ -68,7 +37,7 @@ export function CandidateScreen({
 
   return (
     <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "4px 24px 24px" }}>
-      <div className="candidate-column">
+      <div className="page-column">
       <div style={{ display: "flex", alignItems: "center", gap: "15px", margin: "8px 0 4px" }}>
         <Avatar candidateId={candidateId} size={64} radius={20} fontSize={28} />
         <div style={{ flex: 1 }}>

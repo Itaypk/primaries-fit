@@ -1,10 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useI18n } from "../i18n";
 import { useMeta } from "../meta";
-import { DEFAULT_ACCENT } from "../theme";
-import { AppFrame } from "../components/AppFrame";
-import { Header } from "../components/Header";
-import { PageLinks } from "../components/PageLinks";
+import { Page } from "../components/Page";
+import { PageBody, PageHeading, SectionTitle } from "../ui/primitives";
 import { links } from "../about";
 
 const linkStyle = {
@@ -24,37 +22,24 @@ export function AboutScreen() {
   useMeta({ title: `${a.title} · ${t.app.name}`, description: a.page.sub, url: "/about", locale });
 
   return (
-    <AppFrame accent={DEFAULT_ACCENT}>
-      <Header showBack onBack={() => navigate(-1)} />
-      <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "6px 24px 26px" }}>
-        <div className="candidate-column">
-          <h1 className="serif" style={{ fontSize: "29px", fontWeight: 700, color: "#221e1a", margin: "8px 0 6px" }}>
-            {a.title}
-          </h1>
-          <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#6b6152", margin: "0 0 18px" }}>{a.page.sub}</p>
+    <Page showBack onBack={() => navigate(-1)}>
+      <PageBody>
+        <div className="page-column">
+          <PageHeading eyebrow={a.eyebrow} title={a.title} sub={a.page.sub} />
 
           {a.page.sections.map((s, i) => (
-            <section key={i} style={{ marginBottom: "20px" }}>
-              <h2 className="serif" style={{ fontSize: "19px", fontWeight: 700, color: "#2b2622", margin: "0 0 7px" }}>
-                {s.heading}
-              </h2>
-              <p style={{ fontSize: "14.5px", lineHeight: 1.65, color: "#5c5346", margin: 0 }}>{s.body}</p>
+            <section key={i} style={{ marginBottom: 20 }}>
+              <SectionTitle style={{ marginBottom: 7 }}>{s.heading}</SectionTitle>
+              <p style={{ fontSize: "var(--fs-sm)", lineHeight: 1.65, color: "var(--text-body)", margin: 0 }}>{s.body}</p>
             </section>
           ))}
 
-          <p style={{ fontSize: "14px", lineHeight: 1.6, color: "#8a7f6f", margin: "18px 0 0" }}>
+          <p style={{ fontSize: "var(--fs-sm)", lineHeight: 1.6, color: "var(--text-soft)", margin: "18px 0 0" }}>
             {a.feedback}{" "}
             <a href={`mailto:${links.email}`} style={linkStyle}>{links.email}</a>
           </p>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px", alignItems: "baseline", marginTop: "10px", fontSize: "14px", color: "#8a7f6f" }}>
-            <span>{a.author}</span>
-            <a href={links.linkedin} target="_blank" rel="noopener noreferrer" style={linkStyle}>{a.linkedin}</a>
-            <a href={links.repo} target="_blank" rel="noopener noreferrer" style={linkStyle}>{a.repo}</a>
-          </div>
-
-          <PageLinks hide="about" />
         </div>
-      </div>
-    </AppFrame>
+      </PageBody>
+    </Page>
   );
 }
