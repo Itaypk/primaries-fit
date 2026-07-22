@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { candidatesById } from "../data";
+import { useEvent } from "../data/eventContext";
 import { useI18n } from "../i18n";
 
 /** Candidate avatar: the official portrait when we have one, layered over the
@@ -23,6 +23,7 @@ export function Avatar({
   fontSize: number;
 }) {
   const { t } = useI18n();
+  const { candidatesById } = useEvent();
   const display = candidatesById[candidateId]?.display ?? {};
   const [failed, setFailed] = useState(false);
 

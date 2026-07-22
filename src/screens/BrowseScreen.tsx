@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { useI18n } from "../i18n";
-import { candidates } from "../data";
+import { useEvent } from "../data/eventContext";
 import { Avatar } from "../components/Avatar";
 
 /** Browse every candidate without taking the questionnaire. No scores here —
@@ -14,14 +14,15 @@ export function BrowseScreen({
   onStart: () => void;
 }) {
   const { t, locale } = useI18n();
+  const { event } = useEvent();
 
   // Alphabetical by the displayed name, so the order asserts no ranking.
   const ordered = useMemo(
     () =>
-      [...candidates].sort((a, b) =>
+      [...event.candidates].sort((a, b) =>
         t.candidateName(a.id).localeCompare(t.candidateName(b.id), locale === "he" ? "he" : "en"),
       ),
-    [locale, t],
+    [event, locale, t],
   );
 
   return (

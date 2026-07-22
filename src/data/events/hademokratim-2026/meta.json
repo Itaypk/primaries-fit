@@ -1,0 +1,8 @@
+{
+  "$comment": "Event metadata (EventMeta). id/party/date/status also appear in ../index.json (the registry) and must match. dataUpdated is the date the candidate positions in candidates.json / evidence.json were last researched — surfaced in the UI so a reader can judge how current the ranking is. Update it whenever candidate positions change.",
+  "id": "hademokratim-2026",
+  "party": "hademokratim",
+  "date": "2026-07-20",
+  "status": "past",
+  "dataUpdated": "2026-07-20"
+}

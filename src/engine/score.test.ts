@@ -1,8 +1,19 @@
-import { describe, expect, it } from "vitest";
-import { candidates, parameters, questionnaire } from "../data";
+import { beforeAll, describe, expect, it } from "vitest";
+import { loadEvent } from "../data";
 import { buildVoterVector } from "./voter";
 import { rankCandidates, scoreCandidate } from "./score";
-import type { Answers, Parameter } from "./types";
+import type { Answers, Candidate, Event, Parameter, Questionnaire } from "./types";
+
+// Load the featured event once via the real loader — this also smoke-tests that
+// loadEvent assembles the relocated event folder correctly.
+let candidates: Candidate[];
+let parameters: Parameter[];
+let questionnaire: Questionnaire;
+
+beforeAll(async () => {
+  const event: Event = await loadEvent("hademokratim-2026");
+  ({ candidates, parameters, questionnaire } = event);
+});
 
 /**
  * Engine parity fixture. A fixed answer set over the real הדמוקרטים dataset,

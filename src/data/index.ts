@@ -1,39 +1,99 @@
-/** Loads the structural dataset (bundled JSON) and exposes it typed. */
+/**
+ * Event data access — the boundary between the app and the on-disk primaries.
+ *
+ * A primary is a self-contained **event**: its own folder of structural JSON
+ * under `events/<id>/`, loaded on demand so the archive of past races never
+ * bloats the initial bundle (docs/multi-event.md). This module exposes exactly
+ * two things to the app:
+ *
+ *   listEvents(): EventSummary[]          — the chooser index, sync + cheap.
+ *   loadEvent(id): Promise<Event>         — fetches one event's JSON folder.
+ *
+ * The id-index helpers that used to be module globals are now **functions of a
+ * loaded event** (see indexParameters / indexCandidates / evidenceFor), so no
+ * ambient singleton assumes there is exactly one primary.
+ */
 import type {
   Candidate,
+  Dataset,
+  Event,
+  EventMeta,
+  EventResults,
+  EventSummary,
   Evidence,
   EvidenceEntry,
   Parameter,
   Questionnaire,
 } from "../engine/types";
-import parametersJson from "./parameters.json";
-import candidatesJson from "./candidates.json";
-import questionnaireJson from "./questionnaire.json";
-import evidenceJson from "./evidence.json";
-import metaJson from "./meta.json";
+import registry from "./events/index.json";
 
-export const parameters = (parametersJson.parameters as Parameter[]);
-export const candidates = (candidatesJson.candidates as Candidate[]);
-export const questionnaire = questionnaireJson as Questionnaire;
-export const evidence = evidenceJson as unknown as Evidence;
+/** The featured event shown at the root until an explicit chooser exists (Phase 2). */
+export const FEATURED_EVENT_ID = "hademokratim-2026";
 
-/** ISO date the candidate positions were last researched. */
-export const dataUpdated = metaJson.dataUpdated;
+/**
+ * Lazy loaders for every event JSON file, keyed by path. `import.meta.glob`
+ * (non-eager) yields a `() => Promise<module>` per match, so each event's data
+ * is a separate chunk fetched only when that event is opened.
+ */
+const eventFiles = import.meta.glob<{ default: unknown }>("./events/*/*.json");
 
-/** Index parameters by id for O(1) lookup in the UI and engine glue. */
-export const parametersById: Record<string, Parameter> = Object.fromEntries(
-  parameters.map((p) => [p.id, p]),
-);
+/** The chooser index — current and past primaries, without loading any of them. */
+export function listEvents(): EventSummary[] {
+  return registry.events as EventSummary[];
+}
 
-/** Index candidates by id. */
-export const candidatesById: Record<string, Candidate> = Object.fromEntries(
-  candidates.map((c) => [c.id, c]),
-);
+async function importJson<T>(path: string): Promise<T> {
+  const loader = eventFiles[path];
+  if (!loader) throw new Error(`Event data file not found: ${path}`);
+  return (await loader()).default as T;
+}
+
+/** Fetch one event's folder and assemble it into a fully loaded `Event`. */
+export async function loadEvent(id: string): Promise<Event> {
+  const dir = `./events/${id}`;
+  const [parameters, candidates, questionnaire, evidence, meta] = await Promise.all([
+    importJson<{ parameters: Parameter[] }>(`${dir}/parameters.json`),
+    importJson<{ candidates: Candidate[] }>(`${dir}/candidates.json`),
+    importJson<Questionnaire>(`${dir}/questionnaire.json`),
+    importJson<Evidence>(`${dir}/evidence.json`),
+    importJson<EventMeta>(`${dir}/meta.json`),
+  ]);
+
+  // results.json is optional (past events only); load it only if present.
+  const resultsPath = `${dir}/results.json`;
+  const results = eventFiles[resultsPath]
+    ? await importJson<EventResults>(resultsPath)
+    : undefined;
+
+  return {
+    parameters: parameters.parameters,
+    candidates: candidates.candidates,
+    questionnaire,
+    evidence,
+    meta,
+    results,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Id-index helpers — pure functions of a loaded event, not ambient state.
+// ---------------------------------------------------------------------------
+
+/** Index a loaded event's parameters by id for O(1) lookup. */
+export function indexParameters(dataset: Dataset): Record<string, Parameter> {
+  return Object.fromEntries(dataset.parameters.map((p) => [p.id, p]));
+}
+
+/** Index a loaded event's candidates by id. */
+export function indexCandidates(dataset: Dataset): Record<string, Candidate> {
+  return Object.fromEntries(dataset.candidates.map((c) => [c.id, c]));
+}
 
 /** The sourcing behind one candidate's position on one parameter, if recorded. */
 export function evidenceFor(
+  event: Event,
   candidateId: string,
   parameterId: string,
 ): EvidenceEntry | undefined {
-  return evidence[candidateId]?.[parameterId];
+  return event.evidence[candidateId]?.[parameterId];
 }

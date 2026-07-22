@@ -7,7 +7,7 @@ import { SegmentedQuestion } from "../components/questions/SegmentedQuestion";
 import { BooleanQuestion } from "../components/questions/BooleanQuestion";
 import { MultiSelectQuestion } from "../components/questions/MultiSelectQuestion";
 import { ImportanceQuestion } from "../components/questions/ImportanceQuestion";
-import { parametersById } from "../data";
+import { useEvent } from "../data/eventContext";
 
 export function QuizScreen({
   question,
@@ -29,6 +29,7 @@ export function QuizScreen({
   onNext: () => void;
 }) {
   const { t } = useI18n();
+  const { parametersById } = useEvent();
   const paramId = primaryParameter(question) ?? "";
 
   return (

@@ -1,6 +1,6 @@
 import type { CandidateScore } from "../engine/types";
 import { useI18n } from "../i18n";
-import { candidatesById, dataUpdated } from "../data";
+import { useEvent } from "../data/eventContext";
 import { reasonsFor } from "../view/results";
 import { Avatar } from "../components/Avatar";
 import { ShareButton } from "../components/ShareButton";
@@ -26,8 +26,9 @@ export function ResultsScreen({
   onRestart: () => void;
 }) {
   const { t, locale } = useI18n();
+  const { candidatesById, event } = useEvent();
 
-  const researchedOn = new Date(dataUpdated).toLocaleDateString(
+  const researchedOn = new Date(event.meta.dataUpdated).toLocaleDateString(
     locale === "he" ? "he-IL" : "en-GB",
     { day: "numeric", month: "long", year: "numeric" },
   );
