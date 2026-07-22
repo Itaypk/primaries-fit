@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { links } from "../about";
 import { useI18n } from "../i18n";
 
@@ -58,6 +59,12 @@ export function AboutFooter() {
         <a href={links.repo} target="_blank" rel="noopener noreferrer" style={linkStyle}>
           {a.repo}
         </a>
+      </div>
+
+      {/* Into the fuller editorial pages (Phase 5). */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 14px", marginTop: "12px" }}>
+        <Link to="/about" style={linkStyle}>{t.ui.nav.about}</Link>
+        <Link to="/faq" style={linkStyle}>{t.ui.nav.faq}</Link>
       </div>
     </div>
   );

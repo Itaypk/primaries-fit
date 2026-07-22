@@ -71,8 +71,18 @@ Out of ranking scope by design; each is a pure `postRank.ts` step (see
 
 ## Backlog — platform & UX
 
-- **Result persistence / sharing** — encode answers in a URL so results are
-  shareable and resumable (no backend needed).
+- **Result persistence / sharing** — ✅ done (multi-event Phase 5): answers are
+  encoded in the results URL (`/e/:eventId/results?a=…`), so a ranking is
+  shareable and resumable with no backend.
+- **Crawler-visible per-event previews (link unfurling)** — the app now sets
+  per-event title + Open Graph tags **at runtime** (`src/meta.ts`), which covers
+  in-app and JS-executing consumers. But link-unfurling crawlers (WhatsApp, X,
+  Facebook) don't run JS, so they still see only the generic fallback tags in
+  `index.html`. Making a shared link preview the *specific* primary to those
+  crawlers needs **build-time prerendered per-event HTML shells** (baked OG tags
+  per `/e/:id`) plus the Caddy routing to serve them — a small static-prerender
+  step, still no runtime backend. Deferred deliberately: it touches the build +
+  deploy pipeline and was out of scope for the editorial/sharing phase.
 - **Testing** — wire a unit-test runner (e.g. Vitest) for the engine, and a
   headless end-to-end smoke test in CI. The engine is pure and highly testable.
 - **Accessibility** — keyboard nav, focus states, ARIA on the custom widgets,

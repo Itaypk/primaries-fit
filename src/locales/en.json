@@ -81,7 +81,71 @@
       "feedback": "Found something wrong? Tell me:",
       "author": "Built by Itay Polack Gadassi",
       "repo": "Source code on GitHub",
-      "linkedin": "LinkedIn"
+      "linkedin": "LinkedIn",
+      "page": {
+        "sub": "A transparent, independent way to find the primary candidate closest to your own views.",
+        "sections": [
+          {
+            "heading": "What this is",
+            "body": "primaries.fit is an independent decision aid for party primaries. You answer a short questionnaire about the issues you care about, and it ranks the candidates by how closely they match — with a full explanation for every placement. It isn't affiliated with any candidate, party, or campaign, and it never tells you who to vote for; it organises public information so you can decide."
+          },
+          {
+            "heading": "How the ranking works",
+            "body": "Voters, candidates, and questions all live in one shared \"issue space\": a set of parameters (security, economy, religion & state, and so on). Your answers place you as a point in that space and set how much each issue weighs for you. Each candidate is a point too, positioned from their public record. The match score is an importance-weighted agreement between the two — issues you marked as decisive count for more, and an issue you skipped counts for nothing. Because the maths is just weighted agreement, every score can be broken down, topic by topic, into why it is what it is."
+          },
+          {
+            "heading": "How positions are sourced",
+            "body": "Each candidate's position on each issue is researched from public sources — interviews, Knesset votes, party platforms, and press — and recorded with a short rationale, a confidence level, and links to the sources behind it. The research leans on AI and is imperfect: a position can be out of date, miss context, or simply be wrong. So every position is shown with its evidence, and you're meant to check it, not take it on faith."
+          },
+          {
+            "heading": "Your privacy",
+            "body": "The questionnaire is completely anonymous. Your answers and results stay in your browser and are never sent anywhere or collected — there is no account and no backend storing them. A shareable results link encodes your answers in the URL itself, so sharing is your choice and nothing is stored on a server to make it work."
+          },
+          {
+            "heading": "Neutrality",
+            "body": "The tool is independent and self-funded, with no tie to any candidate or party. The questions and the issue space are worded to be even-handed, and the whole thing — data, engine, and text — is open source, so anyone can inspect how a ranking is produced or flag a position that looks wrong."
+          }
+        ]
+      }
+    },
+    "faq": {
+      "title": "Questions & answers",
+      "sub": "The things people ask most.",
+      "items": [
+        {
+          "q": "Is this affiliated with a candidate or party?",
+          "a": "No. primaries.fit is independent and not tied to any candidate, party, or campaign. It doesn't endorse anyone — it ranks candidates against your own stated views and shows its work."
+        },
+        {
+          "q": "How are candidates ranked?",
+          "a": "By importance-weighted agreement with your answers. Issues you mark as more important count for more; issues you skip don't count at all. Open any match to see the topic-by-topic breakdown behind the percentage."
+        },
+        {
+          "q": "Where do the candidate positions come from?",
+          "a": "From public sources — interviews, votes, party platforms, and press — researched with AI and recorded with a rationale, a confidence level, and links. It's imperfect, so each position is shown with its evidence for you to check."
+        },
+        {
+          "q": "Are my answers saved or sent anywhere?",
+          "a": "No. Everything stays in your browser — there's no account and no server storing your answers. A shareable results link carries your answers inside the URL, so it only exists if you choose to share it."
+        },
+        {
+          "q": "Can I explore a primary that already happened?",
+          "a": "Yes. Past primaries stay open to explore: you can take the questionnaire against an archived race and even compare your match to what actually happened, including how the final seated list differed from the raw vote."
+        },
+        {
+          "q": "Why can a candidate's final seat differ from their vote rank?",
+          "a": "Because a seated party list isn't vote order alone. Reserved seats, minority and regional quotas, and coalition or merger agreements reshape it. For past races the results view shows both, with each divergence explained."
+        },
+        {
+          "q": "I think a position is wrong — what do I do?",
+          "a": "Please tell me. Every position links to its sources; if one is off, email itaypk@gmail.com and it can be corrected. The data is open source too, so corrections are welcome in the open."
+        }
+      ]
+    },
+    "nav": {
+      "about": "About",
+      "faq": "Q&A",
+      "home": "Home"
     },
     "candidate": {
       "overallMatch": "Overall match to your positions",

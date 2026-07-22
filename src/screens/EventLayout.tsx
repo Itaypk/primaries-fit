@@ -8,6 +8,8 @@ import { loadEvent } from "../data";
 import { EventProvider } from "../data/eventContext";
 import { DEFAULT_ACCENT } from "../theme";
 import { useI18n } from "../i18n";
+import { useMeta } from "../meta";
+import { decodeAnswers } from "../share";
 import { isAnswered } from "../view/question";
 import { AppFrame } from "../components/AppFrame";
 import { Header } from "../components/Header";
@@ -108,17 +110,30 @@ export function EventLayout() {
 function EventShell({ event }: { event: Event }) {
   const navigate = useNavigate();
   const location = useLocation();
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const eventBase = `/e/${event.meta.id}`;
   const { parameters, candidates, questionnaire } = event;
 
-  useEffect(() => {
-    document.title = `${t.party(event.meta.party)} · ${t.app.name}`;
-  }, [t, event.meta.party]);
+  // A shared results link (`?a=…`) previews the right primary and lands on the
+  // ranking it encodes, so reflect the event into the document metadata.
+  useMeta({
+    title: `${t.party(event.meta.party)} · ${t.app.name}`,
+    description: t.ui.welcome.sub,
+    url: eventBase,
+    locale,
+  });
 
+  // Answers come from the shared link if present, else this event's saved
+  // progress. A `?a=` link is only in the URL on a cold load of a shared
+  // results page; the normal in-app flow navigates without it, so this seeds
+  // exactly the shared-link case. Read once at mount — later navigation within
+  // the event must not re-seed under the voter.
+  const [shared] = useState(() => decodeAnswers(new URLSearchParams(location.search).get("a")));
   const [restored] = useState(() => loadProgress(event.meta.id, questionnaire.version));
-  const [answers, setAnswers] = useState<Answers>(restored?.answers ?? {});
-  const [qIndex, setQIndex] = useState(restored?.qIndex ?? 0);
+  const [answers, setAnswers] = useState<Answers>(shared ?? restored?.answers ?? {});
+  const [qIndex, setQIndex] = useState(
+    shared ? questionnaire.questions.length - 1 : restored?.qIndex ?? 0,
+  );
   const [viewMode, setViewMode] = useState<ViewMode>("match");
   const [shuffleSeed, setShuffleSeed] = useState(0);
   const [openInfo, setOpenInfo] = useState<string | null>(null);
