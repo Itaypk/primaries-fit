@@ -3,7 +3,7 @@ import type { CSSProperties } from "react";
 import type { Confidence } from "../engine/types";
 import type { BreakdownRow } from "../view/results";
 import { useI18n } from "../i18n";
-import { candidatesById } from "../data";
+import { useEvent } from "../data/eventContext";
 import { Avatar } from "../components/Avatar";
 import { SocialLinks } from "../components/SocialLinks";
 
@@ -61,6 +61,7 @@ export function CandidateScreen({
   browsing?: boolean;
 }) {
   const { t } = useI18n();
+  const { candidatesById } = useEvent();
   const display = candidatesById[candidateId]?.display ?? {};
   const pct = Math.round(score * 100);
   const [openEvidence, setOpenEvidence] = useState<string | null>(null);

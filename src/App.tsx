@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
-import type { Answer, Answers } from "./engine/types";
+import type { Answer, Answers, Event } from "./engine/types";
 import { buildVoterVector } from "./engine/voter";
 import { rankCandidates } from "./engine/score";
 import { applyPostRanking, balanceByGender, shuffleAboveThreshold } from "./engine/postRank";
-import { candidates, candidatesById, evidence, parameters, questionnaire } from "./data";
+import { FEATURED_EVENT_ID, loadEvent } from "./data";
+import { EventProvider, useEvent } from "./data/eventContext";
 import { DEFAULT_ACCENT, DEFAULT_AXIS_STYLE } from "./theme";
 import { useI18n } from "./i18n";
 import { isAnswered } from "./view/question";
@@ -44,8 +45,16 @@ function seededRng(seed: number): () => number {
   };
 }
 
-export default function App() {
+/**
+ * The main flow, over one loaded event. Everything below reads the event's data
+ * (via the destructure and `useEvent()`) rather than any global singleton, so
+ * the same state machine drives any primary. Mounted only after the event has
+ * loaded, so its "read once before first paint" persistence init still holds.
+ */
+function EventApp({ event }: { event: Event }) {
   const { t } = useI18n();
+  const { candidatesById } = useEvent();
+  const { parameters, candidates, questionnaire, evidence } = event;
 
   // Read once, before first paint, so a returning visitor doesn't see the
   // welcome screen flash before their answers come back.
@@ -67,13 +76,16 @@ export default function App() {
   const answered = isAnswered(question, answers[question.id]);
 
   // The voter reduced to the parameter space, and the resulting ranking.
+  // The event (and so parameters/candidates/questionnaire) is fixed for this
+  // component's lifetime, so these deps are stable — listed to satisfy the
+  // exhaustive-deps rule, not because they change under us.
   const voter = useMemo(
     () => buildVoterVector(answers, questionnaire, parameters),
-    [answers],
+    [answers, questionnaire, parameters],
   );
   const ranked = useMemo(
     () => rankCandidates(candidates, voter, parameters),
-    [voter],
+    [voter, candidates, parameters],
   );
 
   useEffect(() => {
@@ -87,7 +99,7 @@ export default function App() {
       qIndex,
       screen: persistedScreen,
     });
-  }, [answers, qIndex, screen, selectionOrigin]);
+  }, [answers, qIndex, screen, selectionOrigin, questionnaire.version]);
 
   // Post-ranking reshapes the list without touching scores, so the ranking
   // stays explainable in every mode. 'match' is the raw ranking.
@@ -101,7 +113,7 @@ export default function App() {
             seededRng(shuffleSeed),
           );
     return applyPostRanking(ranked, candidates, [step]);
-  }, [ranked, viewMode, shuffleSeed]);
+  }, [ranked, candidates, viewMode, shuffleSeed]);
 
   function setAnswer(value: Answer) {
     setAnswers((prev) => ({ ...prev, [question.id]: value }));
@@ -217,5 +229,37 @@ export default function App() {
         />
       )}
     </AppFrame>
+  );
+}
+
+/**
+ * Loads the featured event, then hands off to `EventApp`. Data is lazy-fetched
+ * (see loadEvent), so there is a brief pre-load frame before the flow mounts.
+ * Routing and an event chooser arrive in Phase 2; for now the app opens the one
+ * featured primary directly, exactly as before.
+ */
+export default function App() {
+  const [event, setEvent] = useState<Event | null>(null);
+
+  useEffect(() => {
+    let alive = true;
+    loadEvent(FEATURED_EVENT_ID).then((e) => {
+      if (alive) setEvent(e);
+    });
+    return () => {
+      alive = false;
+    };
+  }, []);
+
+  if (!event) {
+    // Momentary empty frame while the event chunk loads; keeps the header/chrome
+    // stable so there's no flash of the welcome screen for a returning visitor.
+    return <AppFrame accent={DEFAULT_ACCENT}>{null}</AppFrame>;
+  }
+
+  return (
+    <EventProvider event={event}>
+      <EventApp event={event} />
+    </EventProvider>
   );
 }

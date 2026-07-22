@@ -1,0 +1,6 @@
+{
+  "$comment": "Event registry — the chooser index (EventSummary[]). One entry per primary; the full data for each lives in ./<id>/ and is lazy-loaded via loadEvent(). Each entry's id/party/date/status must match that event's meta.json. Append future events here.",
+  "events": [
+    { "id": "hademokratim-2026", "party": "hademokratim", "date": "2026-07-20", "status": "past" }
+  ]
+}

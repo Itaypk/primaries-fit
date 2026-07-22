@@ -168,6 +168,59 @@ export interface Dataset {
 }
 
 // ---------------------------------------------------------------------------
+// Events — a primary as the atomic, self-contained unit
+// ---------------------------------------------------------------------------
+//
+// Each primary carries ALL its data (parameters, questionnaire, candidates,
+// evidence, metadata, and — for past races — results) under its own id, and is
+// loaded on demand. `Event` extends `Dataset`: the engine consumes the same
+// `Dataset` shape it always has, so `meta` / `results` are read by the view/UI
+// layers only, never by scoring. Schema growth here must stay additive so one
+// engine build scores every event without branching on a version.
+// See docs/multi-event.md.
+
+export type EventStatus = "upcoming" | "open" | "past";
+
+/** Registry entry — enough to render a chooser without loading a full event. */
+export interface EventSummary {
+  /** Globally unique event id, e.g. "hademokratim-2026". Also the folder name. */
+  id: string;
+  /** Party id; the display label lives in the locale catalogs. */
+  party: string;
+  /** Primary date, ISO (YYYY-MM-DD). */
+  date: string;
+  status: EventStatus;
+}
+
+/** An event's metadata (its `meta.json`). Extends the registry summary. */
+export interface EventMeta extends EventSummary {
+  /** ISO date the candidate positions were last researched. */
+  dataUpdated: string;
+  /** Optional: a locale id resolved to prose, or an external URL. */
+  methodology?: string;
+}
+
+/**
+ * Present only for past events. `raw` (vote order) and `final` (seated outcome)
+ * are deliberately distinct: reserved seats, regional/minority quotas, and
+ * coalition agreements reshape the result, so keeping both is what makes the
+ * divergence explainable. `reason` is a locale id resolved to prose.
+ */
+export interface EventResults {
+  raw?: Array<{ candidateId: string; votes?: number; rank: number }>;
+  final?: Array<{ candidateId: string; seat: number; reason?: string }>;
+}
+
+/** A fully loaded primary: the scorable `Dataset` plus its sidecar + metadata. */
+export interface Event extends Dataset {
+  meta: EventMeta;
+  /** Transparency sidecar (see below). Carried on the event; never scored. */
+  evidence: Evidence;
+  /** Present for past events. */
+  results?: EventResults;
+}
+
+// ---------------------------------------------------------------------------
 // Evidence sidecar — transparency only. The engine never reads this; it backs
 // the "how we decided" disclosure on the candidate screen. See
 // docs/candidate-scoring.md.

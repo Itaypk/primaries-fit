@@ -1,4 +1,0 @@
-{
-  "$comment": "Dataset provenance. dataUpdated is the date the candidate positions in candidates.json / evidence.json were last researched — surfaced in the UI so a reader can judge how current the ranking is. Update it whenever candidate positions change.",
-  "dataUpdated": "2026-07-20"
-}
