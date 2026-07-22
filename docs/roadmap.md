@@ -47,6 +47,16 @@ current priority.
 - Do we need per-parameter confidence, or citations surfaced in the breakdown?
 - Neutral wording review of questions and pole labels.
 
+## ▶ Phase 4 — Generalize to many primaries
+
+Turn the single-event app into a platform that hosts many primaries (current and
+past) while keeping one engine and one additive schema. Full brief, contracts,
+and phasing in [`multi-event.md`](multi-event.md): each primary becomes a
+self-contained **event** (own parameters, questionnaire, candidates, evidence,
+metadata, results), lazily loaded; client-side routing enables event selection
+and past-primary deep-links; a build-time data validator and an in-app review
+mode raise data quality; plus a Q&A / FAQ surface. No backend.
+
 ## Backlog — post-ranking preferences
 
 Out of ranking scope by design; each is a pure `postRank.ts` step (see
