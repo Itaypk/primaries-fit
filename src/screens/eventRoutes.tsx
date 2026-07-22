@@ -7,6 +7,7 @@
 import { Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
+import { encodeAnswers } from "../share";
 import { buildBreakdown } from "../view/results";
 import { DEFAULT_AXIS_STYLE } from "../theme";
 import { useEventSession } from "./EventLayout";
@@ -55,10 +56,14 @@ export function ResultsRoute() {
   // A cold /results with no answers has nothing to rank — send them to welcome.
   // (Shareable, answer-carrying result URLs arrive in Phase 5 via ?a=.)
   if (Object.keys(s.answers).length === 0) return <Navigate to=".." replace />;
+  const shareUrl =
+    window.location.origin +
+    `/e/${s.event.meta.id}/results?a=${encodeAnswers(s.answers)}`;
   return (
     <ResultsScreen
       ranked={s.displayed}
       topMatchId={s.ranked[0]?.candidateId}
+      shareUrl={shareUrl}
       viewMode={s.viewMode}
       onViewMode={s.changeViewMode}
       openInfo={s.openInfo}

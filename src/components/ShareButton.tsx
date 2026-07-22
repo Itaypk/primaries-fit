@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useI18n } from "../i18n";
 
-/** Shares the app, not the result.
+/** Share a link.
  *
- *  Results live entirely in memory — there's no URL that encodes a ranking —
- *  so what gets shared is the tool itself. On mobile this hands off to the
- *  native share sheet (which is where sharing actually happens); elsewhere it
- *  falls back to copying the link. */
-export function ShareButton() {
+ *  Given a `url` (e.g. a results link with the answers encoded in `?a=`) it
+ *  shares that; otherwise it shares the tool itself. On mobile this hands off
+ *  to the native share sheet (which is where sharing actually happens);
+ *  elsewhere it falls back to copying the link. */
+export function ShareButton({ url }: { url?: string }) {
   const { t } = useI18n();
   const [copied, setCopied] = useState(false);
 
@@ -18,8 +18,8 @@ export function ShareButton() {
   }, [copied]);
 
   async function share() {
-    const url = window.location.origin + "/";
-    const payload = { title: t.app.name, text: t.ui.welcome.sub, url };
+    const shareUrl = url ?? window.location.origin + "/";
+    const payload = { title: t.app.name, text: t.ui.welcome.sub, url: shareUrl };
 
     if (navigator.share) {
       try {
@@ -32,7 +32,7 @@ export function ShareButton() {
     }
 
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
     } catch {
       // Clipboard blocked (insecure context or denied permission). Nothing

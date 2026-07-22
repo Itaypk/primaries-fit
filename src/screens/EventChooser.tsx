@@ -5,6 +5,7 @@ import { useI18n } from "../i18n";
 import { DEFAULT_ACCENT } from "../theme";
 import { AppFrame } from "../components/AppFrame";
 import { Header } from "../components/Header";
+import { PageLinks } from "../components/PageLinks";
 
 /** Badge tint per event status. Past races read as muted; an open one leads. */
 const STATUS_STYLE: Record<string, { bg: string; ink: string }> = {
@@ -84,6 +85,8 @@ export function EventChooser() {
             );
           })}
         </div>
+
+        <PageLinks hide="home" />
       </div>
     </AppFrame>
   );

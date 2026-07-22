@@ -13,6 +13,7 @@ const MODES: ViewMode[] = ["match", "balanced", "close"];
 export function ResultsScreen({
   ranked,
   topMatchId,
+  shareUrl,
   viewMode,
   onViewMode,
   openInfo,
@@ -24,6 +25,8 @@ export function ResultsScreen({
   /** The voter's single best match by score, regardless of the presentation
    *  view mode — used to compare against a past race's actual outcome. */
   topMatchId?: string;
+  /** Link that reproduces this ranking (answers encoded in `?a=`). */
+  shareUrl?: string;
   viewMode: ViewMode;
   onViewMode: (mode: ViewMode) => void;
   openInfo: string | null;
@@ -55,7 +58,7 @@ export function ResultsScreen({
         >
           {t.ui.results.title}
         </h2>
-        <ShareButton />
+        <ShareButton url={shareUrl} />
       </div>
       <p style={{ fontSize: "14px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 12px" }}>
         {t.ui.results.sub}

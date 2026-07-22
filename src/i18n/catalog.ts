@@ -75,7 +75,20 @@ export interface Catalog {
       author: string;
       repo: string;
       linkedin: string;
+      /** The full /about page (the footer above is the condensed version). */
+      page: {
+        sub: string;
+        sections: Array<{ heading: string; body: string }>;
+      };
     };
+    /** The /faq page: a flat list of question/answer pairs. */
+    faq: {
+      title: string;
+      sub: string;
+      items: Array<{ q: string; a: string }>;
+    };
+    /** Cross-page navigation labels (chooser footer, page links). */
+    nav: { about: string; faq: string; home: string };
     candidate: {
       overallMatch: string;
       byTopic: string;

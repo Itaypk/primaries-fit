@@ -7,6 +7,8 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { EventChooser } from "./screens/EventChooser";
 import { EventLayout } from "./screens/EventLayout";
+import { AboutScreen } from "./screens/AboutScreen";
+import { FaqScreen } from "./screens/FaqScreen";
 import {
   BrowseRoute,
   CandidateRoute,
@@ -20,6 +22,9 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<EventChooser />} />
+      {/* Static editorial pages (docs/multi-event.md, Phase 5). */}
+      <Route path="/about" element={<AboutScreen />} />
+      <Route path="/faq" element={<FaqScreen />} />
       <Route path="/e/:eventId" element={<EventLayout />}>
         <Route index element={<WelcomeRoute />} />
         <Route path="quiz" element={<QuizRoute />} />

@@ -7,10 +7,13 @@
 > and the delivery phases. It intentionally stops short of line-level design;
 > each phase is scoped to be independently shippable and CI-green.
 >
-> **Progress:** Phases 0–3 shipped (guardrails, event unit + loader, routing +
-> chooser, past-primary results & provenance). Phase 4 (reviewer tooling) in
-> progress. Phase 5 (editorial + sharing) not started. Per-phase status is
-> marked on each heading below.
+> **Progress:** Phases 0–5 shipped (guardrails; event unit + loader; routing +
+> chooser; past-primary results & provenance; reviewer tooling; editorial pages
+> + shareable results). Two follow-ups are tracked, not blocking: the optional
+> `scripts/` authoring helpers (Phase 4, deferred until a data-entry workflow
+> needs them) and **crawler-visible per-event link previews**, which need
+> build-time prerendered OG shells — runtime OG tags ship now, the prerender step
+> is noted in [`roadmap.md`](roadmap.md). Per-phase status is on each heading.
 >
 > Related: [`data-model.md`](data-model.md) (the vector-space model, unchanged),
 > [`candidate-scoring.md`](candidate-scoring.md) (the evidence sidecar and
@@ -296,15 +299,24 @@ languages with no cross-contamination of answers, copy, or routing.
   → **Deferred** (not built): the validator + review view cover correctness;
   these are authoring ergonomics to pick up if a data-entry workflow needs them.
 
-### Phase 5 — Editorial pages & sharing polish ⬜ not started
+### Phase 5 — Editorial pages & sharing polish ✅ shipped
 
 - **Q&A / FAQ** and an expanded **About** (how ranking works, how positions are
   sourced — a reader-friendly take on [`candidate-scoring.md`](candidate-scoring.md),
   privacy, neutrality). Static routes; content in the shared catalog.
+  → **Done:** `/about` (`AboutScreen`) and `/faq` (`FaqScreen`) top-level routes,
+  content in the shared `ui.about.page` / `ui.faq` catalog (both locales), linked
+  from the chooser, the welcome footer, and each other.
 - **Shareable results**: encode answers in the URL
   (`/e/:eventId/results?a=…`) so a ranking is resumable and shareable — now
   meaningful because routing exists. Per-event OG tags so a shared link previews
   the right primary.
+  → **Done:** `src/share.ts` encodes/decodes answers as URL-safe base64; the
+  results share button copies a `?a=` link; a cold load of that link seeds the
+  session and renders the ranking. Per-event title + OG tags are set at runtime
+  (`src/meta.ts`). **Caveat:** runtime OG doesn't reach JS-less link-unfurling
+  crawlers; crawler-visible per-event previews need build-time prerendered
+  shells — tracked in [`roadmap.md`](roadmap.md).
 
 ---
 
