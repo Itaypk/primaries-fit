@@ -12,6 +12,7 @@ import {
   CandidateRoute,
   QuizRoute,
   ResultsRoute,
+  ReviewRoute,
   WelcomeRoute,
 } from "./screens/eventRoutes";
 
@@ -25,6 +26,8 @@ export default function App() {
         <Route path="results" element={<ResultsRoute />} />
         <Route path="browse" element={<BrowseRoute />} />
         <Route path="c/:candidateId" element={<CandidateRoute />} />
+        {/* Unlisted reviewer view (docs/multi-event.md, Phase 4). */}
+        <Route path="review" element={<ReviewRoute />} />
       </Route>
       {/* Unknown paths fall back to the chooser. */}
       <Route path="*" element={<Navigate to="/" replace />} />

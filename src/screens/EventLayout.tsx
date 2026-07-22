@@ -188,10 +188,11 @@ function EventShell({ event }: { event: Event }) {
   };
 
   // Chrome. The quiz is the only screen with a progress bar; the back affordance
-  // shows on the inner screens (quiz/browse/candidate), not welcome/results.
+  // shows on the inner screens (quiz/browse/candidate/review), not welcome/results.
   const onQuiz = location.pathname === `${eventBase}/quiz`;
   const onBrowse = location.pathname === `${eventBase}/browse`;
   const onCandidate = location.pathname.startsWith(`${eventBase}/c/`);
+  const onReview = location.pathname === `${eventBase}/review`;
   const filled = qIndex + (answered ? 1 : 0);
 
   function onBack() {
@@ -206,7 +207,7 @@ function EventShell({ event }: { event: Event }) {
   return (
     <EventProvider event={event}>
       <AppFrame accent={DEFAULT_ACCENT}>
-        <Header showBack={onQuiz || onBrowse || onCandidate} onBack={onBack} />
+        <Header showBack={onQuiz || onBrowse || onCandidate || onReview} onBack={onBack} />
         {onQuiz && <ProgressBar step={qIndex + 1} total={total} pct={Math.round((filled / total) * 100)} />}
         <Outlet context={session} />
       </AppFrame>

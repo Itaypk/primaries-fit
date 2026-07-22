@@ -1,11 +1,16 @@
 # primaries.fit — multi-event generalization
 
-> Status: **proposed.** This document is the implementation brief for turning
+> Status: **in progress.** This document is the implementation brief for turning
 > primaries.fit from a single, now-past race (the הדמוקרטים 2026 primary) into a
 > reusable platform that hosts many primaries — current and past — while keeping
 > **one engine and one schema**. It defines the requirements, the data contracts,
 > and the delivery phases. It intentionally stops short of line-level design;
 > each phase is scoped to be independently shippable and CI-green.
+>
+> **Progress:** Phases 0–3 shipped (guardrails, event unit + loader, routing +
+> chooser, past-primary results & provenance). Phase 4 (reviewer tooling) in
+> progress. Phase 5 (editorial + sharing) not started. Per-phase status is
+> marked on each heading below.
 >
 > Related: [`data-model.md`](data-model.md) (the vector-space model, unchanged),
 > [`candidate-scoring.md`](candidate-scoring.md) (the evidence sidecar and
@@ -216,7 +221,7 @@ version bump within an event still discards that event's stale answers.
 Ordered so each lands green. **0 → 1 → 2** are the critical path; **3, 4, 5**
 parallelize once the event boundary exists.
 
-### Phase 0 — Guardrails first
+### Phase 0 — Guardrails first ✅ shipped
 
 Land the safety net before the refactor.
 
@@ -234,7 +239,7 @@ Land the safety net before the refactor.
 **Acceptance:** CI runs lint + validate + test + build; a deliberately corrupt
 data value fails the build; engine tests reproduce today's ranking.
 
-### Phase 1 — Event as a first-class unit (data + loader)
+### Phase 1 — Event as a first-class unit (data + loader) ✅ shipped
 
 No UI-flow change yet.
 
@@ -248,7 +253,7 @@ No UI-flow change yet.
 **Acceptance:** the app loads the one event through `loadEvent` and behaves
 identically; validator passes on the relocated files.
 
-### Phase 2 — Routing + event-aware shell
+### Phase 2 — Routing + event-aware shell ✅ shipped
 
 - Add the router and the routes above.
 - Thread `eventId` through [`App.tsx`](../src/App.tsx); the state machine reads a
@@ -261,7 +266,7 @@ identically; validator passes on the relocated files.
 **Acceptance:** two events (see verification) can be taken independently in both
 languages with no cross-contamination of answers, copy, or routing.
 
-### Phase 3 — Past-primary results & viewing
+### Phase 3 — Past-primary results & viewing ✅ shipped
 
 - New view-model (`src/view/eventResults.ts`) rendering **raw vs. final** side by
   side, with `reason` prose explaining each divergence (reserved seats, quotas,
@@ -272,19 +277,26 @@ languages with no cross-contamination of answers, copy, or routing.
 - Surface per-event `dataUpdated` / `methodology`, replacing the single global
   `dataAsOf` string.
 
-### Phase 4 — Reviewer / data-quality tooling (in-app)
+### Phase 4 — Reviewer / data-quality tooling (in-app) 🚧 in progress
 
 - **In-app review mode** at `/e/:eventId/review` (unlisted): reads the loaded
   event's `evidence.json` and renders every candidate × parameter with value,
   **confidence**, rationale, and clickable sources in one scannable grid;
   flags `low`-confidence and `limitedRecord` entries and any position lacking a
   source. Pure read of existing data — no auth, no backend.
+  → **Done:** `src/view/review.ts` (matrix view-model) + `ReviewScreen`, routed
+  at `/e/:eventId/review`, with a per-cell colour by confidence, a `!` marker on
+  any stated position with no source, a limited-record tag, summary tallies, and
+  an "issues only" filter. The route is unlisted (reachable by URL, linked from
+  nowhere).
 - **Optional authoring helpers** (`scripts/`): a CSV↔JSON round-trip for a
   candidate matrix and a "what changed since last `dataUpdated`" diff report.
   Defer if capacity is tight — the validator + review view already cover
   correctness; these are authoring ergonomics.
+  → **Deferred** (not built): the validator + review view cover correctness;
+  these are authoring ergonomics to pick up if a data-entry workflow needs them.
 
-### Phase 5 — Editorial pages & sharing polish
+### Phase 5 — Editorial pages & sharing polish ⬜ not started
 
 - **Q&A / FAQ** and an expanded **About** (how ranking works, how positions are
   sourced — a reader-friendly take on [`candidate-scoring.md`](candidate-scoring.md),
