@@ -1,6 +1,13 @@
-/** Shape of a locale catalog (src/locales/*.json). One per supported language. */
+/**
+ * Shape of a **shared** locale catalog (src/locales/*.json) — the language's
+ * generic chrome, one file per supported language. Event-specific copy
+ * (parameters, options, questions, candidates) lives in a per-event
+ * `EventCatalog` fragment and is layered on top of this at load time.
+ */
 export interface Catalog {
   app: { name: string; langLabel: string };
+  /** Party display labels, keyed by party id (used by the event chooser). */
+  party: Record<string, string>;
   ui: {
     badge: string;
     welcome: {
@@ -77,7 +84,21 @@ export interface Catalog {
       links: string;
       confidence: { high: string; medium: string; low: string };
     };
+    /** Event status badge labels, keyed by EventStatus. */
+    status: { upcoming: string; open: string; past: string };
+    /** The event chooser at `/`. */
+    chooser: { title: string; sub: string };
   };
+}
+
+/**
+ * A per-event locale fragment (src/data/events/<id>/locales/<lang>.json). Carries
+ * only the event's own display copy, resolved by convention from the ids in that
+ * event's structural JSON, and layered over the shared `Catalog` at load time.
+ * `app` may override the shared app name for an event; the rest is required.
+ */
+export interface EventCatalog {
+  app?: Partial<{ name: string; langLabel: string }>;
   param: Record<string, { label: string; poleLow?: string; poleHigh?: string }>;
   option: Record<string, string>;
   question: Record<string, { title?: string; statement?: string }>;

@@ -148,16 +148,17 @@ function sameSet(a: string[], b: string[]): boolean {
   return a.every((x) => sb.has(x));
 }
 
-// Locale catalogs are shared across events in this phase (event-specific copy is
-// split out later — docs/multi-event.md, Phase 2), so load them once.
-type Catalog = {
+// Shared catalogs carry generic chrome + party labels; event-specific copy lives
+// in each event's locale fragment (checked per-event below). Load shared once.
+type SharedCatalog = { party?: Record<string, string> };
+type EventFragment = {
   param?: Record<string, { label?: string; poleLow?: string; poleHigh?: string }>;
   option?: Record<string, string>;
   question?: Record<string, { title?: string; statement?: string }>;
   candidate?: Record<string, { name?: string }>;
 };
-const catalogs: Record<string, Catalog> = {};
-for (const lang of LOCALES) catalogs[lang] = load(`${LOCALE_DIR}/${lang}.json`) as Catalog;
+const sharedCatalogs: Record<string, SharedCatalog> = {};
+for (const lang of LOCALES) sharedCatalogs[lang] = load(`${LOCALE_DIR}/${lang}.json`) as SharedCatalog;
 
 // ---------------------------------------------------------------------------
 // Per-event validation
@@ -168,7 +169,15 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
   const dir = `${EVENTS_DIR}/${id}`;
   const at = (msg: string) => fail(`[${id}] ${msg}`);
 
-  for (const f of ["parameters", "candidates", "questionnaire", "evidence", "meta"]) {
+  const requiredFiles = [
+    "parameters",
+    "candidates",
+    "questionnaire",
+    "evidence",
+    "meta",
+    ...LOCALES.map((l) => `locales/${l}`),
+  ];
+  for (const f of requiredFiles) {
     if (!fileExists(`${dir}/${f}.json`)) {
       at(`missing required file ${f}.json`);
       return 0;
@@ -281,21 +290,26 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
       if (!candidateIds.has(r.candidateId)) at(`results.final references undefined candidate '${r.candidateId}'`);
   }
 
-  // (5) locale completeness — every id in EVERY shared catalog
+  // (5) locale completeness — event-specific ids in EVERY event fragment, and
+  // the party label in EVERY shared catalog.
   const questionIds = (questionnaire?.questions ?? []).map((q) => q.id);
   for (const lang of LOCALES) {
-    const cat = catalogs[lang];
+    const frag = stripComment(load(`${dir}/locales/${lang}.json`) as Record<string, unknown>) as EventFragment;
     for (const p of parameters) {
-      if (!cat.param?.[p.id]?.label) at(`[locale:${lang}] missing param.${p.id}.label`);
+      if (!frag.param?.[p.id]?.label) at(`[locale:${lang}] missing param.${p.id}.label`);
       if (p.kind === "scalar") {
-        if (!cat.param?.[p.id]?.poleLow) at(`[locale:${lang}] missing param.${p.id}.poleLow`);
-        if (!cat.param?.[p.id]?.poleHigh) at(`[locale:${lang}] missing param.${p.id}.poleHigh`);
+        if (!frag.param?.[p.id]?.poleLow) at(`[locale:${lang}] missing param.${p.id}.poleLow`);
+        if (!frag.param?.[p.id]?.poleHigh) at(`[locale:${lang}] missing param.${p.id}.poleHigh`);
       }
       if (p.kind === "set")
-        for (const o of p.options ?? []) if (!cat.option?.[o]) at(`[locale:${lang}] missing option.${o}`);
+        for (const o of p.options ?? []) if (!frag.option?.[o]) at(`[locale:${lang}] missing option.${o}`);
     }
-    for (const c of candidates) if (!cat.candidate?.[c.id]?.name) at(`[locale:${lang}] missing candidate.${c.id}.name`);
-    for (const qid of questionIds) if (!cat.question?.[qid]) at(`[locale:${lang}] missing question.${qid}`);
+    for (const c of candidates) if (!frag.candidate?.[c.id]?.name) at(`[locale:${lang}] missing candidate.${c.id}.name`);
+    for (const qid of questionIds) if (!frag.question?.[qid]) at(`[locale:${lang}] missing question.${qid}`);
+
+    // The chooser renders the party label from the shared catalog.
+    if (meta && !sharedCatalogs[lang].party?.[meta.party])
+      at(`[locale:${lang}] missing shared party.${meta.party}`);
   }
 
   return evidencePairs;

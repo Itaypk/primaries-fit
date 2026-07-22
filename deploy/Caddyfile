@@ -13,10 +13,10 @@ primaries.fit {
         -Server
     }
 
-    # The app is a pure client-state SPA today (App.tsx drives an in-memory
-    # screen state machine, no client-side router), so every request other
-    # than static assets should just get index.html. Costs nothing and avoids
-    # 404s if URL-based routing is ever added.
+    # The app is a client-side-routed SPA (react-router — /e/:eventId/… deep
+    # links, the event chooser at /). Every request other than a real static
+    # asset must fall through to index.html so those routes resolve on a cold
+    # load or refresh; the router then renders the right screen.
     try_files {path} /index.html
     file_server
 }

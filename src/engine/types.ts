@@ -218,6 +218,14 @@ export interface Event extends Dataset {
   evidence: Evidence;
   /** Present for past events. */
   results?: EventResults;
+  /**
+   * The event's own display copy per locale (param/option/question/candidate),
+   * layered over the shared chrome catalog by src/i18n. Text, not structure,
+   * but carried on the loaded event so it travels with its ids. Typed as
+   * `EventCatalog` in src/i18n/catalog.ts; kept loose here to avoid the engine
+   * depending on the i18n layer.
+   */
+  locales: Record<LocaleCode, unknown>;
 }
 
 // ---------------------------------------------------------------------------
