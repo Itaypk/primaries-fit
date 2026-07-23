@@ -11,8 +11,11 @@ import { buildEventResults } from "../view/eventResults";
  * This reads the event's `results` metadata only — never a score. The whole
  * point of keeping raw and final distinct is that the seated list is not vote
  * order alone; this panel is where that difference is made legible.
+ *
+ * `showTitle` is off when a page already provides the heading (the standalone
+ * outcome screen), on when the panel needs to caption itself.
  */
-export function EventOutcome() {
+export function EventOutcome({ showTitle = true }: { showTitle?: boolean }) {
   const { t } = useI18n();
   const { event } = useEvent();
   const vm = buildEventResults(event.results, t);
@@ -21,26 +24,24 @@ export function EventOutcome() {
   return (
     <section
       style={{
-        background: "#fff",
-        border: "1px solid #eee3d3",
-        borderRadius: "18px",
+        background: "var(--surface)",
+        border: "1px solid var(--line)",
+        borderRadius: "var(--r-card)",
         padding: "18px 18px 16px",
-        margin: "22px 0 0",
       }}
     >
-      <h3
-        className="serif"
-        style={{ fontSize: "20px", fontWeight: 700, color: "#221e1a", margin: "0 0 4px" }}
-      >
-        {t.ui.outcome.title}
-      </h3>
+      {showTitle && (
+        <h3 className="serif" style={{ fontSize: "var(--fs-h2)", fontWeight: 700, color: "var(--text-strong)", margin: "0 0 4px" }}>
+          {t.ui.outcome.title}
+        </h3>
+      )}
       {vm.hasDivergence && (
-        <p style={{ fontSize: "13px", lineHeight: 1.55, color: "#8a7f6f", margin: "0 0 14px" }}>
+        <p style={{ fontSize: "var(--fs-xs)", lineHeight: 1.55, color: "var(--text-soft)", margin: "0 0 14px" }}>
           {t.ui.outcome.sub}
         </p>
       )}
 
-      <div style={{ display: "flex", flexWrap: "wrap", gap: "18px" }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
         {vm.raw.length > 0 && (
           <div style={{ flex: "1 1 200px", minWidth: 0 }}>
             <ColumnHeading>{t.ui.outcome.rawColumn}</ColumnHeading>
@@ -50,7 +51,7 @@ export function EventOutcome() {
                   <span style={numStyle}>{r.rank}</span>
                   <span style={{ flex: 1, minWidth: 0 }}>{r.name}</span>
                   {r.votes != null && (
-                    <span style={{ flex: "none", fontSize: "12px", color: "#a99e8c" }}>
+                    <span style={{ flex: "none", fontSize: "var(--fs-2xs)", color: "var(--text-faint)" }}>
                       {r.votes.toLocaleString()} {t.ui.outcome.votes}
                     </span>
                   )}
@@ -73,7 +74,7 @@ export function EventOutcome() {
                       style={{
                         flex: "none",
                         padding: "1px 8px",
-                        borderRadius: "999px",
+                        borderRadius: "var(--r-pill)",
                         background: "var(--accent-soft, #f4e5dd)",
                         color: "var(--accent-ink, #7d3d29)",
                         fontSize: "10.5px",
@@ -87,11 +88,11 @@ export function EventOutcome() {
                     <div
                       style={{
                         flexBasis: "100%",
-                        fontSize: "12px",
+                        fontSize: "var(--fs-2xs)",
                         lineHeight: 1.5,
-                        color: "#8a7f6f",
-                        marginTop: "3px",
-                        paddingInlineStart: "30px",
+                        color: "var(--text-soft)",
+                        marginTop: 3,
+                        paddingInlineStart: 30,
                       }}
                     >
                       {f.reason}
@@ -120,8 +121,8 @@ const rowStyle = {
   display: "flex",
   alignItems: "center",
   gap: "9px",
-  fontSize: "14px",
-  color: "#4a4238",
+  fontSize: "var(--fs-sm)",
+  color: "var(--text-body)",
 };
 
 const numStyle = {
@@ -129,9 +130,9 @@ const numStyle = {
   width: "22px",
   height: "22px",
   borderRadius: "7px",
-  background: "#f0ece2",
-  color: "#8a7f6f",
-  fontSize: "12px",
+  background: "var(--surface-sunken)",
+  color: "var(--text-soft)",
+  fontSize: "var(--fs-2xs)",
   fontWeight: 700,
   display: "inline-flex",
   alignItems: "center",
@@ -146,7 +147,7 @@ function ColumnHeading({ children }: { children: React.ReactNode }) {
         fontWeight: 700,
         letterSpacing: ".5px",
         textTransform: "uppercase",
-        color: "#a99e8c",
+        color: "var(--text-faint)",
         marginBottom: "10px",
       }}
     >

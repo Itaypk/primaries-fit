@@ -12,8 +12,7 @@ import { useMeta } from "../meta";
 import { decodeAnswers } from "../share";
 import { isAnswered } from "../view/question";
 import { AppFrame } from "../components/AppFrame";
-import { Header } from "../components/Header";
-import { ProgressBar } from "../components/ProgressBar";
+import { Page } from "../components/Page";
 import { clearProgress, loadProgress, saveProgress } from "../persistence";
 
 /** How the ranked list is presented. Post-ranking only — none of these change
@@ -203,17 +202,19 @@ function EventShell({ event }: { event: Event }) {
   };
 
   // Chrome. The quiz is the only screen with a progress bar; the back affordance
-  // shows on the inner screens (quiz/browse/candidate/review), not welcome/results.
+  // The back affordance shows on every event screen. On the event's own index
+  // it returns to the home page; in the quiz it steps back through questions;
+  // elsewhere it pops the history stack.
   const onQuiz = location.pathname === `${eventBase}/quiz`;
-  const onBrowse = location.pathname === `${eventBase}/browse`;
-  const onCandidate = location.pathname.startsWith(`${eventBase}/c/`);
-  const onReview = location.pathname === `${eventBase}/review`;
+  const onIndex = location.pathname === eventBase;
   const filled = qIndex + (answered ? 1 : 0);
 
   function onBack() {
     if (onQuiz) {
       if (qIndex > 0) setQIndex(qIndex - 1);
       else navigate(eventBase);
+    } else if (onIndex) {
+      navigate("/");
     } else {
       navigate(-1);
     }
@@ -221,11 +222,14 @@ function EventShell({ event }: { event: Event }) {
 
   return (
     <EventProvider event={event}>
-      <AppFrame accent={DEFAULT_ACCENT}>
-        <Header showBack={onQuiz || onBrowse || onCandidate || onReview} onBack={onBack} />
-        {onQuiz && <ProgressBar step={qIndex + 1} total={total} pct={Math.round((filled / total) * 100)} />}
+      <Page
+        accent={DEFAULT_ACCENT}
+        showBack
+        onBack={onBack}
+        progress={onQuiz ? { step: qIndex + 1, total, pct: Math.round((filled / total) * 100) } : undefined}
+      >
         <Outlet context={session} />
-      </AppFrame>
+      </Page>
     </EventProvider>
   );
 }

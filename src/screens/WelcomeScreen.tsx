@@ -1,152 +1,84 @@
 import { useI18n } from "../i18n";
-import { AboutFooter } from "../components/AboutFooter";
+import { useEvent } from "../data/eventContext";
+import { buildEventResults } from "../view/eventResults";
 import { PastEventNotice } from "../components/PastEventNotice";
-import { EventOutcome } from "../components/EventOutcome";
+import { PageBody, PageHeading, Button } from "../ui/primitives";
 
-export function WelcomeScreen({ onStart, onBrowse }: { onStart: () => void; onBrowse: () => void }) {
+/**
+ * The per-event launcher at `/e/:id`. It is deliberately focused: the event's
+ * name, the actions for THIS primary (start the questionnaire, browse its
+ * candidates, and — for a past race — see the actual results), plus the privacy
+ * note and the methodology disclaimer that qualify its data. The product intro
+ * and the "how it works" panels live on the home page, not here.
+ */
+export function WelcomeScreen({
+  onStart,
+  onBrowse,
+  onSeeResults,
+}: {
+  onStart: () => void;
+  onBrowse: () => void;
+  onSeeResults: () => void;
+}) {
   const { t } = useI18n();
+  const { event } = useEvent();
   const w = t.ui.welcome;
+  const a = t.ui.about;
+  const fwd = t.dir === "rtl" ? "←" : "→";
+  const hasResults = Boolean(buildEventResults(event.results, t));
 
   return (
-    <div
-      className="scr"
-      style={{
-        flex: 1,
-        overflowY: "auto",
-        padding: "8px 26px 26px",
-        display: "flex",
-        flexDirection: "column",
-      }}
-    >
-      <PastEventNotice />
+    <PageBody>
+      <div className="page-column">
+        <PastEventNotice />
 
-      <div className="welcome-layout" style={{ marginTop: "10px" }}>
-        <div>
-          <div
-            style={{
-              alignSelf: "flex-start",
-              fontSize: "12.5px",
-              fontWeight: 700,
-              letterSpacing: ".5px",
-              color: "var(--accent-ink, #7d3d29)",
-              background: "var(--accent-soft, #f4e5dd)",
-              padding: "6px 13px",
-              borderRadius: "999px",
-              display: "inline-block",
-            }}
-          >
-            {t.ui.badge}
+        <PageHeading
+          eyebrow={t.ui.status[event.meta.status]}
+          title={t.party(event.meta.party)}
+          sub={w.sub}
+          size="display"
+        />
+
+        <div style={{ fontSize: "var(--fs-xs)", color: "var(--text-faint)", margin: "0 0 14px" }}>{w.time}</div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          <Button onClick={onStart}>{w.start}</Button>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 20px" }}>
+            {hasResults && (
+              <Button variant="ghost" onClick={onSeeResults} style={{ width: "auto", padding: "4px 0" }}>
+                {w.seeResults} {fwd}
+              </Button>
+            )}
+            <Button variant="ghost" onClick={onBrowse} style={{ width: "auto", padding: "4px 0" }}>
+              {w.browse} {fwd}
+            </Button>
           </div>
-
-          <h1
-            className="serif"
-            style={{
-              fontSize: "33px",
-              lineHeight: 1.18,
-              fontWeight: 700,
-              color: "#221e1a",
-              margin: "20px 0 14px",
-            }}
-          >
-            {w.title}
-          </h1>
-          <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#6b6152", margin: 0 }}>
-            {w.sub}
-          </p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "14px", marginTop: "22px" }}>
-          {w.steps.map((s, i) => (
-            <div
-              key={i}
-              style={{
-                display: "flex",
-                gap: "14px",
-                alignItems: "flex-start",
-                background: "#fff",
-                border: "1px solid #eee3d3",
-                borderRadius: "18px",
-                padding: "15px 16px",
-              }}
-            >
-              <div
-                style={{
-                  flex: "none",
-                  width: "38px",
-                  height: "38px",
-                  borderRadius: "12px",
-                  background: "var(--accent-soft, #f4e5dd)",
-                  color: "var(--accent-ink, #7d3d29)",
-                  fontWeight: 700,
-                  fontSize: "17px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                {i + 1}
-              </div>
-              <div>
-                <div style={{ fontSize: "16px", fontWeight: 700, color: "#2b2622", marginBottom: "2px" }}>
-                  {s.title}
-                </div>
-                <div style={{ fontSize: "14px", lineHeight: 1.5, color: "#8a7f6f" }}>{s.desc}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* The questionnaire never leaves the browser; say so next to the button
+            that starts it. */}
+        <p style={{ fontSize: "var(--fs-2xs)", lineHeight: 1.5, color: "var(--text-faint)", margin: "16px 0 0" }}>
+          {w.privacy}
+        </p>
+
+        {/* The AI-research caveat qualifies every claim the app makes about a
+            candidate, so it stays on the event page — a reader who expands
+            nothing must still have seen it. */}
+        <section
+          style={{
+            marginTop: 24,
+            paddingTop: 18,
+            borderTop: "1px solid var(--line-soft)",
+            fontSize: "var(--fs-xs)",
+            lineHeight: 1.6,
+            color: "var(--text-soft)",
+          }}
+        >
+          <div className="eyebrow" style={{ marginBottom: 8 }}>{a.title}</div>
+          <p style={{ margin: 0 }}>{a.aiNotice}</p>
+        </section>
       </div>
-
-      <div style={{ flex: 1, minHeight: "22px" }} />
-      <div style={{ textAlign: "center", fontSize: "13px", color: "#a99e8c", margin: "18px 0 12px" }}>
-        {w.time}
-      </div>
-      <button
-        onClick={onStart}
-        style={{
-          width: "100%",
-          height: "56px",
-          border: "none",
-          borderRadius: "16px",
-          background: "var(--accent, #c0684a)",
-          color: "#fff",
-          fontSize: "17px",
-          fontWeight: 700,
-          cursor: "pointer",
-          boxShadow: "0 8px 20px -8px var(--accent, #c0684a)",
-        }}
-      >
-        {w.start}
-      </button>
-
-      <button
-        onClick={onBrowse}
-        style={{
-          width: "100%",
-          marginTop: "12px",
-          padding: "8px",
-          border: "none",
-          background: "none",
-          color: "var(--accent-ink, #7d3d29)",
-          fontSize: "14.5px",
-          fontWeight: 700,
-          cursor: "pointer",
-        }}
-      >
-        {w.browse} →
-      </button>
-
-      {/* The questionnaire never leaves the browser; say so up front, next to
-          the button that starts it. */}
-      <p style={{ textAlign: "center", fontSize: "12px", lineHeight: 1.5, color: "#a99e8c", margin: "10px 0 0" }}>
-        {w.privacy}
-      </p>
-
-      {/* For a past race, what actually happened — the vote order vs. the seated
-          list. Renders nothing when the event carries no results. */}
-      <EventOutcome />
-
-      <AboutFooter />
-    </div>
+    </PageBody>
   );
 }
