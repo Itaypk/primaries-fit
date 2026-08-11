@@ -1,0 +1,583 @@
+{
+  "$comment": "likud-2026 display copy (Hebrew — the canonical event locale; no en fragment yet, en falls back here string-by-string).",
+  "param": {
+    "gaza_posture": {
+      "label": "המדיניות בעזה",
+      "poleLow": "שמירה על הפסקת האש וההסכם",
+      "poleHigh": "חידוש הלחימה עד הכרעה"
+    },
+    "haredi_draft": {
+      "label": "גיוס חרדים",
+      "poleLow": "שמירה על ההסדר עם המפלגות החרדיות",
+      "poleHigh": "גיוס רחב ואכיפה שוויונית"
+    },
+    "judicial_reform_pace": {
+      "label": "הרפורמה המשפטית",
+      "poleLow": "עצירה או המשך בהסכמה רחבה",
+      "poleHigh": "השלמת הרפורמה כעת"
+    },
+    "sovereignty": {
+      "label": "ריבונות ביהודה ושומרון",
+      "poleLow": "להמתין לעיתוי מדיני מתאים",
+      "poleHigh": "החלת ריבונות כעת"
+    },
+    "economy": {
+      "label": "כלכלה ויוקר המחיה",
+      "poleLow": "מעורבות ממשלתית והוזלת יוקר המחיה",
+      "poleHigh": "שוק חופשי, תחרות והפחתת רגולציה"
+    },
+    "oct7_inquiry": {
+      "label": "בירור אירועי 7 באוקטובר",
+      "poleLow": "ועדת בדיקה שתקים הממשלה",
+      "poleHigh": "ועדת חקירה ממלכתית"
+    },
+    "jewish_identity": {
+      "label": "זהות יהודית",
+      "poleLow": "ליברלית־לאומית, חיה ותן לחיות",
+      "poleHigh": "חיזוק הזהות היהודית בחינוך ובמרחב הציבורי"
+    },
+    "independence": {
+      "label": "סגנון הייצוג במפלגה",
+      "poleLow": "גיבוי מלא לקו ההנהגה",
+      "poleHigh": "קול עצמאי בתוך המפלגה"
+    },
+    "experience": {
+      "label": "ניסיון פרלמנטרי וממשלתי"
+    },
+    "flagship": {
+      "label": "נושאי דגל"
+    }
+  },
+  "option": {
+    "security_victory": "ביטחון והכרעת החמאס",
+    "judicial_reform": "הרפורמה המשפטית",
+    "cost_of_living": "יוקר המחיה והדיור",
+    "sovereignty_now": "ריבונות ביהודה ושומרון",
+    "jewish_identity_edu": "זהות יהודית בחינוך",
+    "draft_equality": "שוויון בנטל הגיוס",
+    "periphery_dev": "פיתוח הפריפריה",
+    "foreign_relations": "יחסי חוץ ונורמליזציה"
+  },
+  "region": {
+    "jerusalem_yesha": "ירושלים, יש\"ע ושפלה",
+    "dan_ta": "דן ותל אביב",
+    "negev": "נגב",
+    "galil": "גליל ועמקים",
+    "hof": "מישור החוף",
+    "moatzot": "מועצות אזוריות",
+    "haifa": "חיפה"
+  },
+  "question": {
+    "q_region": {
+      "title": "באיזה אזור אתם רשומים להצבעה?"
+    },
+    "q_gaza": {
+      "title": "מה לדעתכם המדיניות הנכונה ברצועת עזה כעת?"
+    },
+    "q_imp_gaza": {
+      "title": "עד כמה חשוב לכם נושא המדיניות בעזה?"
+    },
+    "q_haredi_draft": {
+      "title": "מה עמדתכם בסוגיית גיוס בני הישיבות?"
+    },
+    "q_imp_haredi_draft": {
+      "title": "עד כמה חשוב לכם נושא גיוס החרדים?"
+    },
+    "q_judicial": {
+      "title": "כיצד יש להמשיך במהלכי הרפורמה המשפטית?"
+    },
+    "q_imp_judicial": {
+      "title": "עד כמה חשובה לכם הרפורמה המשפטית?"
+    },
+    "q_sovereignty": {
+      "title": "מה עמדתכם בנושא החלת ריבונות ביהודה ושומרון?"
+    },
+    "q_economy": {
+      "title": "איזו גישה כלכלית קרובה יותר לעמדתכם?"
+    },
+    "q_imp_economy": {
+      "title": "עד כמה חשובים לכם נושאי הכלכלה ויוקר המחיה?"
+    },
+    "q_oct7": {
+      "title": "בירור אירועי 7 באוקטובר",
+      "statement": "יש להקים ועדת חקירה ממלכתית לבירור אירועי 7 באוקטובר."
+    },
+    "q_jewish_identity": {
+      "title": "מה מקומה הראוי של הזהות היהודית בחינוך ובמרחב הציבורי?"
+    },
+    "q_imp_jewish_identity": {
+      "title": "עד כמה חשוב לכם נושא הזהות היהודית?"
+    },
+    "q_independence": {
+      "title": "איזה סוג של חבר/ת כנסת אתם מחפשים?"
+    },
+    "q_flagship": {
+      "title": "אילו נושאים הייתם רוצים שהמועמד/ת שלכם יובילו?"
+    },
+    "q_imp_experience": {
+      "title": "עד כמה חשוב לכם ניסיון פרלמנטרי וממשלתי?"
+    }
+  },
+  "candidate": {
+    "amir_ohana": {
+      "name": "אמיר אוחנה",
+      "tagline": "יו\"ר הכנסת",
+      "initial": "א"
+    },
+    "zeev_elkin": {
+      "name": "זאב אלקין",
+      "tagline": "שר לשעבר",
+      "initial": "ז"
+    },
+    "dudi_amsalem": {
+      "name": "דודי אמסלם",
+      "tagline": "שר בממשלה",
+      "initial": "ד"
+    },
+    "avichay_buaron": {
+      "name": "אביחי בוארון",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "david_bitan": {
+      "name": "דוד ביטן",
+      "tagline": "חבר הכנסת",
+      "initial": "ד"
+    },
+    "boaz_bismuth": {
+      "name": "בועז ביסמוט",
+      "tagline": "חבר הכנסת",
+      "initial": "ב"
+    },
+    "eyal_ben_pinhas": {
+      "name": "איל בן פנחס",
+      "tagline": "",
+      "initial": "א"
+    },
+    "adi_baruch": {
+      "name": "עדי ברוך",
+      "tagline": "",
+      "initial": "ע"
+    },
+    "nir_barkat": {
+      "name": "ניר ברקת",
+      "tagline": "שר בממשלה",
+      "initial": "נ"
+    },
+    "sasson_guetta": {
+      "name": "ששון (ששי) גואטה",
+      "tagline": "חבר הכנסת",
+      "initial": "ש"
+    },
+    "tali_gottlieb": {
+      "name": "טלי גוטליב",
+      "tagline": "חברת הכנסת",
+      "initial": "ט"
+    },
+    "may_golan": {
+      "name": "מאי גולן",
+      "tagline": "שרה בממשלה",
+      "initial": "מ"
+    },
+    "gila_gamliel": {
+      "name": "גילה גמליאל",
+      "tagline": "שרה בממשלה",
+      "initial": "ג"
+    },
+    "uzi_dayan": {
+      "name": "עוזי דיין",
+      "tagline": "אלוף (מיל')",
+      "initial": "ע"
+    },
+    "avi_dichter": {
+      "name": "אבי דיכטר",
+      "tagline": "שר בממשלה",
+      "initial": "א"
+    },
+    "eli_dalal": {
+      "name": "אלי דלל",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "shalom_danino": {
+      "name": "שלום דנינו",
+      "tagline": "חבר הכנסת",
+      "initial": "ש"
+    },
+    "amit_halevi": {
+      "name": "עמית הלוי",
+      "tagline": "חבר הכנסת",
+      "initial": "ע"
+    },
+    "nissim_vaturi": {
+      "name": "ניסים ואטורי",
+      "tagline": "חבר הכנסת",
+      "initial": "נ"
+    },
+    "miki_zohar": {
+      "name": "מיקי זוהר",
+      "tagline": "שר בממשלה",
+      "initial": "מ"
+    },
+    "israel_katz": {
+      "name": "ישראל כ\"ץ",
+      "tagline": "שר בממשלה",
+      "initial": "י"
+    },
+    "eli_cohen": {
+      "name": "אלי כהן",
+      "tagline": "שר בממשלה",
+      "initial": "א"
+    },
+    "ofir_katz": {
+      "name": "אופיר כץ",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "haim_katz": {
+      "name": "חיים כץ",
+      "tagline": "שר בממשלה",
+      "initial": "ח"
+    },
+    "yariv_levin": {
+      "name": "יריב לוין",
+      "tagline": "שר בממשלה",
+      "initial": "י"
+    },
+    "hanoch_milwidsky": {
+      "name": "חנוך מילביצקי",
+      "tagline": "חבר הכנסת",
+      "initial": "ח"
+    },
+    "idit_silman": {
+      "name": "עידית סילמן",
+      "tagline": "שרה בממשלה",
+      "initial": "ע"
+    },
+    "moshe_saada": {
+      "name": "משה סעדה",
+      "tagline": "חבר הכנסת",
+      "initial": "מ"
+    },
+    "afif_abed": {
+      "name": "עפיף עבד",
+      "tagline": "חבר הכנסת",
+      "initial": "ע"
+    },
+    "etty_atia": {
+      "name": "אתי עטיה",
+      "tagline": "חברת הכנסת",
+      "initial": "א"
+    },
+    "moshe_passal": {
+      "name": "משה פסל",
+      "tagline": "חבר הכנסת",
+      "initial": "מ"
+    },
+    "tsega_melaku": {
+      "name": "צגה מלקו",
+      "tagline": "חברת הכנסת",
+      "initial": "צ"
+    },
+    "dror_kapach": {
+      "name": "דרור קאפח",
+      "tagline": "",
+      "initial": "ד"
+    },
+    "yoav_kisch": {
+      "name": "יואב קיש",
+      "tagline": "שר בממשלה",
+      "initial": "י"
+    },
+    "shay_kalach": {
+      "name": "שי קלך",
+      "tagline": "",
+      "initial": "ש"
+    },
+    "ariel_kallner": {
+      "name": "אריאל קלנר",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "shlomo_karhi": {
+      "name": "שלמה קרעי",
+      "tagline": "שר בממשלה",
+      "initial": "ש"
+    },
+    "eliyahu_revivo": {
+      "name": "אליהו רביבו",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "miri_regev": {
+      "name": "מירי רגב",
+      "tagline": "שרה בממשלה",
+      "initial": "מ"
+    },
+    "katy_shitrit": {
+      "name": "קטי שטרית",
+      "tagline": "חברת הכנסת",
+      "initial": "ק"
+    },
+    "amichai_chikli": {
+      "name": "עמיחי שיקלי",
+      "tagline": "שר בממשלה",
+      "initial": "ע"
+    },
+    "osher_shkalim": {
+      "name": "אושר שקלים",
+      "tagline": "חבר הכנסת",
+      "initial": "א"
+    },
+    "eliyahu_shatiwi": {
+      "name": "אליהו שתיוי",
+      "tagline": "",
+      "initial": "א"
+    },
+    "aviv_itach": {
+      "name": "אביב איטח",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "א"
+    },
+    "mishael_ben_ami": {
+      "name": "מישאל בן עמי",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "מ"
+    },
+    "yoel_ben_shushan": {
+      "name": "יואל בן־שושן",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "י"
+    },
+    "yigal_brand": {
+      "name": "יגאל ברנד",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "י"
+    },
+    "yair_gabay": {
+      "name": "יאיר גבאי",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "י"
+    },
+    "hadas_malka_hacohen": {
+      "name": "הדס־מלכה הכהן",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ה"
+    },
+    "gil_hadad": {
+      "name": "גיל חדד",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ג"
+    },
+    "brian_tao": {
+      "name": "בריאן טאו",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ב"
+    },
+    "yehonatan_yosef": {
+      "name": "יהונתן יוסף",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "י"
+    },
+    "ziv_maor": {
+      "name": "זיו מאור",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ז"
+    },
+    "gershon_mesika": {
+      "name": "גרשון מסיקה",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ג"
+    },
+    "jacky_pinto": {
+      "name": "ג'קי פינטו",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ג"
+    },
+    "shahar_tzfanya": {
+      "name": "שחר צפניה",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ש"
+    },
+    "shabtai_katash": {
+      "name": "שבתאי קטש",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ש"
+    },
+    "dvir_striker": {
+      "name": "דביר שטריקר",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "ד"
+    },
+    "erez_tadmor": {
+      "name": "ארז תדמור",
+      "tagline": "מחוז ירושלים, יש\"ע ושפלה",
+      "initial": "א"
+    },
+    "omri_akunis": {
+      "name": "עומרי אקוניס",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ע"
+    },
+    "kobi_gavriel": {
+      "name": "קובי גבריאל",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ק"
+    },
+    "dor_harlap": {
+      "name": "דור חרלפ",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ד"
+    },
+    "shlomo_lerner": {
+      "name": "שלמה לרנר",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ש"
+    },
+    "oren_magnezi": {
+      "name": "אורן מגנזי",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "א"
+    },
+    "shlomo_muslai": {
+      "name": "שלמה מוסלאי",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ש"
+    },
+    "sinai_kehat": {
+      "name": "סיני קהת",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ס"
+    },
+    "elyashiv_rabin": {
+      "name": "אלישיב רבין",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "א"
+    },
+    "gal_shabtai": {
+      "name": "גל שבתאי",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ג"
+    },
+    "omri_simhi": {
+      "name": "עומרי שמחי",
+      "tagline": "מחוז דן ותל אביב",
+      "initial": "ע"
+    },
+    "elad_zamir": {
+      "name": "אלעד זמיר",
+      "tagline": "מחוז נגב",
+      "initial": "א"
+    },
+    "ezra_ozer": {
+      "name": "עזרא עוזר",
+      "tagline": "מחוז נגב",
+      "initial": "ע"
+    },
+    "yossi_fitusi": {
+      "name": "יוסי פיטוסי",
+      "tagline": "מחוז נגב",
+      "initial": "י"
+    },
+    "moshe_binyamin_peretz": {
+      "name": "משה בנימין פרץ",
+      "tagline": "מחוז נגב",
+      "initial": "מ"
+    },
+    "shuki_ohana": {
+      "name": "שוקי אוחנה",
+      "tagline": "מחוז גליל ועמקים",
+      "initial": "ש"
+    },
+    "lior_lasri": {
+      "name": "ליאור לסרי",
+      "tagline": "מחוז גליל ועמקים",
+      "initial": "ל"
+    },
+    "moshe_pinyan": {
+      "name": "משה (מושיקו) פיניאן",
+      "tagline": "מחוז גליל ועמקים",
+      "initial": "מ"
+    },
+    "yair_freiman": {
+      "name": "יאיר אדי פריימן",
+      "tagline": "מחוז גליל ועמקים",
+      "initial": "י"
+    },
+    "eli_alush": {
+      "name": "אלי אלוש",
+      "tagline": "מחוז מישור החוף",
+      "initial": "א"
+    },
+    "shay_galili": {
+      "name": "שי גלילי",
+      "tagline": "מחוז מישור החוף",
+      "initial": "ש"
+    },
+    "nimrod_madrer": {
+      "name": "נמרוד מדרר",
+      "tagline": "מחוז מישור החוף",
+      "initial": "נ"
+    },
+    "avi_malki": {
+      "name": "אבי מלכי",
+      "tagline": "מחוז מישור החוף",
+      "initial": "א"
+    },
+    "efi_nave": {
+      "name": "אפי נוה",
+      "tagline": "מחוז מישור החוף",
+      "initial": "א"
+    },
+    "reuven_oded": {
+      "name": "ראובן עודד",
+      "tagline": "מחוז מישור החוף",
+      "initial": "ר"
+    },
+    "rami_bardugo": {
+      "name": "רמי ברדוגו",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "ר"
+    },
+    "mati_yogev": {
+      "name": "מטי יוגב",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "מ"
+    },
+    "yehuda_cohen": {
+      "name": "יהודה כהן",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "י"
+    },
+    "david_magidish": {
+      "name": "דוד מגידיש",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "ד"
+    },
+    "sharon_saada": {
+      "name": "שרון סעדה",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "ש"
+    },
+    "shay_shukrun": {
+      "name": "שי שוקרון",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "ש"
+    },
+    "kobi_shmuel": {
+      "name": "קובי שמואל",
+      "tagline": "מחוז מועצות אזוריות",
+      "initial": "ק"
+    },
+    "eyal_eli": {
+      "name": "אייל אלי",
+      "tagline": "מחוז חיפה",
+      "initial": "א"
+    },
+    "tzviel_rubin": {
+      "name": "צביאל רובין",
+      "tagline": "מחוז חיפה",
+      "initial": "צ"
+    }
+  }
+}

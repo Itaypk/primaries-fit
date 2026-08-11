@@ -44,34 +44,50 @@ export interface Translator {
   candidateName(id: string): string;
   candidateTagline(id: string): string;
   candidateInitial(id: string): string;
+  /** District-race label by region id; falls back to the id. */
+  region(id: string): string;
   /** Prose for a past event's result-divergence reason id; "" when absent. */
   resultReason(id: string): string;
 }
 
+/** The canonical event locale: an event may ship copy only in Hebrew, and other
+ *  locales fall back to it string-by-string until translations are added. */
+const CANONICAL_EVENT_LOCALE: LocaleCode = "he";
+
 /**
  * Build a translator for `locale`. Chrome (`app`, `ui`, `party`) comes from the
  * shared catalog; event-specific copy (param/option/question/candidate) comes
- * from the loaded event's fragment `ev` — absent (on the chooser, or mid-load),
- * those accessors fall back to the id. `app` merges any per-event override.
+ * from the loaded event's fragment `ev`, falling back string-by-string to the
+ * canonical (Hebrew) fragment `fb` for events that ship partial translations —
+ * absent both (on the chooser, or mid-load), those accessors fall back to the
+ * id. `app` merges any per-event override.
  */
-function makeTranslator(locale: LocaleCode, ev: EventCatalog | null): Translator {
+function makeTranslator(
+  locale: LocaleCode,
+  ev: EventCatalog | null,
+  fb: EventCatalog | null,
+): Translator {
   const c = catalogs[locale];
   return {
     locale,
     dir: localeDir[locale],
-    app: ev?.app ? { ...c.app, ...ev.app } : c.app,
+    app: ev?.app || fb?.app ? { ...c.app, ...fb?.app, ...ev?.app } : c.app,
     ui: c.ui,
     party: (id) => c.party[id] ?? id,
-    param: (id) => ev?.param[id]?.label ?? id,
-    poleLow: (id) => ev?.param[id]?.poleLow ?? "",
-    poleHigh: (id) => ev?.param[id]?.poleHigh ?? "",
-    option: (id) => ev?.option[id] ?? id,
-    questionTitle: (id) => ev?.question[id]?.title ?? "",
-    questionStatement: (id) => ev?.question[id]?.statement ?? "",
-    candidateName: (id) => ev?.candidate[id]?.name ?? id,
-    candidateTagline: (id) => ev?.candidate[id]?.tagline ?? "",
-    candidateInitial: (id) => ev?.candidate[id]?.initial ?? id,
-    resultReason: (id) => ev?.resultReason?.[id] ?? "",
+    param: (id) => ev?.param[id]?.label ?? fb?.param[id]?.label ?? id,
+    poleLow: (id) => ev?.param[id]?.poleLow ?? fb?.param[id]?.poleLow ?? "",
+    poleHigh: (id) => ev?.param[id]?.poleHigh ?? fb?.param[id]?.poleHigh ?? "",
+    option: (id) => ev?.option[id] ?? fb?.option[id] ?? id,
+    questionTitle: (id) => ev?.question[id]?.title ?? fb?.question[id]?.title ?? "",
+    questionStatement: (id) =>
+      ev?.question[id]?.statement ?? fb?.question[id]?.statement ?? "",
+    candidateName: (id) => ev?.candidate[id]?.name ?? fb?.candidate[id]?.name ?? id,
+    candidateTagline: (id) =>
+      ev?.candidate[id]?.tagline ?? fb?.candidate[id]?.tagline ?? "",
+    candidateInitial: (id) =>
+      ev?.candidate[id]?.initial ?? fb?.candidate[id]?.initial ?? id,
+    region: (id) => ev?.region?.[id] ?? fb?.region?.[id] ?? id,
+    resultReason: (id) => ev?.resultReason?.[id] ?? fb?.resultReason?.[id] ?? "",
   };
 }
 
@@ -80,8 +96,9 @@ interface I18nContextValue {
   locale: LocaleCode;
   setLocale: (l: LocaleCode) => void;
   toggleLocale: () => void;
-  /** Layer an event's copy fragments over the shared catalog (null to clear). */
-  setEventCatalogs: (fragments: Record<LocaleCode, EventCatalog> | null) => void;
+  /** Layer an event's copy fragments over the shared catalog (null to clear).
+   *  Partial: an event may ship only its canonical (Hebrew) fragment. */
+  setEventCatalogs: (fragments: Partial<Record<LocaleCode, EventCatalog>> | null) => void;
 }
 
 const I18nContext = createContext<I18nContextValue | null>(null);
@@ -95,13 +112,20 @@ export function I18nProvider({
 }) {
   const [locale, setLocale] = useState<LocaleCode>(initialLocale);
   const [eventCatalogs, setEventCatalogs] =
-    useState<Record<LocaleCode, EventCatalog> | null>(null);
+    useState<Partial<Record<LocaleCode, EventCatalog>> | null>(null);
   const toggleLocale = useCallback(
     () => setLocale((l) => (l === "he" ? "en" : "he")),
     [],
   );
   const t = useMemo(
-    () => makeTranslator(locale, eventCatalogs?.[locale] ?? null),
+    () =>
+      makeTranslator(
+        locale,
+        eventCatalogs?.[locale] ?? null,
+        locale === CANONICAL_EVENT_LOCALE
+          ? null
+          : eventCatalogs?.[CANONICAL_EVENT_LOCALE] ?? null,
+      ),
     [locale, eventCatalogs],
   );
   const value = useMemo(

@@ -38,6 +38,10 @@ export function buildVoterVector(
   for (const q of questionnaire.questions) {
     const raw = answers[q.id];
 
+    // Profile questions (region) select what the results screen shows; they
+    // carry no position or importance and must never touch the vectors.
+    if (q.widget === "region") continue;
+
     if (q.widget === "importance") {
       if (typeof raw !== "number" || !q.importanceFor) continue;
       const w = importanceWeight(raw);

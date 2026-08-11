@@ -1,13 +1,12 @@
 # Subject research — Likud 2026 primary (Step 1, draft)
 
-> Status: **draft — research, not yet approved.** This is the Step-1 issue-space
-> research for a future `likud-2026` event (the Likud primary for the 26th
-> Knesset list, **17 August 2026**), following the same process that produced
-> [`parameters.md`](parameters.md) for the הדמוקרטים 2026 event. Nothing here is
-> structural yet: the goal of this document is to identify **which subjects
-> discriminate between candidates inside this party**, propose a draft parameter
-> set, and flag open questions. Candidate positions + evidence are Step 2
-> (per [`candidate-scoring.md`](candidate-scoring.md)).
+> Status: **approved (Step 1).** This is the Step-1 issue-space research for the
+> `likud-2026` event (the Likud primary for the 26th Knesset list,
+> **17 August 2026**), following the same process that produced
+> [`parameters.md`](parameters.md) for the הדמוקרטים 2026 event. The parameter
+> set below was approved by the product owner on 11 Aug 2026, together with the
+> scope decisions recorded at the end of this document. Candidate positions +
+> evidence are Step 2 (per [`candidate-scoring.md`](candidate-scoring.md)).
 
 ## Event context
 
@@ -138,24 +137,25 @@ Likud retail politics: `security_victory`, `judicial_reform`, `cost_of_living`,
   `judicial_reform_pace` × `oct7_inquiry` may correlate strongly across
   candidates. If Step-2 scoring shows they double-count one worldview, merge.
 
-## Scope & platform decisions to settle
+## Scope & platform decisions (settled 11 Aug 2026)
 
-1. **Which candidates does the app rank?** Recommendation: **the national list
-   (43 candidates)** — every member nationwide votes on it, and it's where the
-   ideological choice lives. District slates and sector slots are separate
-   ballots with regional/sectoral logic; listing them as ranked candidates
-   would mislead. They can appear as reference content later.
-2. **Hebrew-only event.** Per product decision (11 Aug 2026), this event ships
-   **without English translations**. The platform currently requires every data
-   id to have strings in *every* locale catalog (validator + convention). The
-   event-locale layering from the multi-event work helps, but we must choose:
-   (a) relax the validator to per-event locale declarations, or (b) auto-fall
-   back en→he for this event. To be decided in the implementation PR.
-3. **Timing.** The primary is on 17 August; if the event ships after that date
-   it enters as a `past` event with `results.json` (raw vs. final is *very*
-   relevant here: reserved picks, district seats, sector slots and women's
-   floors heavily reshape vote-order into the final list — exactly what the
-   raw/final divergence view was built for).
+1. **Region-aware voting.** The app mirrors the real ballot: the questionnaire
+   asks the voter which **district** they vote in, and the results screen shows
+   **both** rankings — the national list and the voter's district slate.
+   Structurally this means candidates carry an optional `region` id (absent =
+   national list), the event declares its region ids, and a new single-select
+   "region" question feeds the results split (never the scoring — region is a
+   filter, not a parameter). Sector slates (young, non-Jewish, olim,
+   disabilities, "new woman") are out of v1 scope; revisit if time allows.
+2. **Hebrew-only event, en→he fallback.** This event ships without English
+   translations; the i18n layer falls back to the Hebrew event fragment when an
+   English string is missing, and the validator treats Hebrew as the canonical
+   (required) event locale. English strings can be added gradually later.
+3. **Timing.** Target shipping **before 17 August** (the original event shipped
+   in under 48 hours). If the date slips past the primary, the event enters as
+   `past` with `results.json` — raw vs. final divergence is *very* relevant
+   here: reserved picks, district seats, sector slots and women's floors
+   heavily reshape vote-order into the final list.
 
 ## Appendix — official candidate lists (from party PDFs, as of 09.08.2026 14:00)
 

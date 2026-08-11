@@ -1,0 +1,3 @@
+{
+  "$comment": "Step-2 sidecar: candidateId -> parameterId -> {value, confidence, rationale, sources}. Empty until candidate positions are researched (docs/candidate-scoring.md)."
+}

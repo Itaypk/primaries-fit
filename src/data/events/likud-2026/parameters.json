@@ -1,0 +1,55 @@
+{
+  "$comment": "Structural only. Display text lives in locales/he.json (en falls back). Approved Step-1 set — see docs/parameters-likud-2026.md.",
+  "parameters": [
+    {
+      "id": "gaza_posture",
+      "kind": "scalar"
+    },
+    {
+      "id": "haredi_draft",
+      "kind": "scalar"
+    },
+    {
+      "id": "judicial_reform_pace",
+      "kind": "scalar"
+    },
+    {
+      "id": "sovereignty",
+      "kind": "scalar"
+    },
+    {
+      "id": "economy",
+      "kind": "scalar"
+    },
+    {
+      "id": "oct7_inquiry",
+      "kind": "scalar"
+    },
+    {
+      "id": "jewish_identity",
+      "kind": "scalar"
+    },
+    {
+      "id": "independence",
+      "kind": "scalar"
+    },
+    {
+      "id": "experience",
+      "kind": "valence"
+    },
+    {
+      "id": "flagship",
+      "kind": "set",
+      "options": [
+        "security_victory",
+        "judicial_reform",
+        "cost_of_living",
+        "sovereignty_now",
+        "jewish_identity_edu",
+        "draft_equality",
+        "periphery_dev",
+        "foreign_relations"
+      ]
+    }
+  ]
+}

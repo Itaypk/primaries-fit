@@ -52,6 +52,10 @@ export interface Catalog {
       veryImp: string;
       middle: string;
       none: string;
+      /** Hint under a region (district) question. */
+      regionHint: string;
+      /** The "not sure / no district" choice on a region question. */
+      regionNone: string;
     };
     results: {
       title: string;
@@ -79,6 +83,10 @@ export interface Catalog {
       /** Shown on a past event's results: where the voter's top match landed in
        *  the real outcome. Contains {name} and {rank} placeholders. */
       compareToOutcome: string;
+      /** Section headings on two-ballot events (national + district slates).
+       *  `regionalList` contains a {region} placeholder. */
+      nationalList: string;
+      regionalList: string;
     };
     about: {
       title: string;
@@ -174,6 +182,9 @@ export interface EventCatalog {
   option: Record<string, string>;
   question: Record<string, { title?: string; statement?: string }>;
   candidate: Record<string, { name: string; tagline: string; initial: string }>;
+  /** District-race labels, keyed by the region ids in the event's
+   *  `meta.regions`. Present only for events with district slates. */
+  region?: Record<string, string>;
   /** Prose for a past event's result-divergence reasons, keyed by the reason id
    *  referenced from `results.json` `final[].reason`. Present only for past
    *  events that record a divergence between vote order and seated outcome. */
