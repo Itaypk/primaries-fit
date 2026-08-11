@@ -4,15 +4,15 @@
     {
       "id": "amir_ohana",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
+        "gaza_posture": 0.55,
+        "haredi_draft": 0.15,
+        "judicial_reform_pace": 0.65,
+        "sovereignty": 0.6,
+        "economy": 0.5,
         "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
+        "jewish_identity": 0.5,
+        "independence": 0.45,
+        "experience": 1.0,
         "flagship": []
       },
       "display": {
@@ -25,15 +25,17 @@
       "id": "zeev_elkin",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "haredi_draft": 0.55,
+        "judicial_reform_pace": 0.2,
+        "sovereignty": 0.85,
+        "economy": 0.5,
+        "oct7_inquiry": 0.75,
+        "jewish_identity": 0.5,
+        "independence": 0.85,
+        "experience": 1.0,
+        "flagship": [
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#dbe4ec",
@@ -44,16 +46,18 @@
     {
       "id": "dudi_amsalem",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.75,
+        "haredi_draft": 0.1,
+        "judicial_reform_pace": 0.95,
+        "sovereignty": 0.6,
+        "economy": 0.4,
+        "oct7_inquiry": 0.05,
+        "jewish_identity": 0.7,
+        "independence": 0.15,
+        "experience": 1.0,
+        "flagship": [
+          "judicial_reform"
+        ]
       },
       "display": {
         "avatarBg": "#ead9d3",
@@ -64,16 +68,19 @@
     {
       "id": "avichay_buaron",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
+        "gaza_posture": 0.85,
+        "haredi_draft": 0.7,
+        "judicial_reform_pace": 0.9,
+        "sovereignty": 0.7,
+        "economy": 0.5,
+        "oct7_inquiry": 0.2,
+        "jewish_identity": 0.5,
+        "independence": 0.15,
         "experience": 0.5,
-        "flagship": []
+        "flagship": [
+          "judicial_reform",
+          "security_victory"
+        ]
       },
       "display": {
         "avatarBg": "#dde7db",
@@ -84,16 +91,18 @@
     {
       "id": "david_bitan",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
+        "gaza_posture": 0.55,
+        "haredi_draft": 0.3,
+        "judicial_reform_pace": 0.5,
+        "sovereignty": 0.5,
+        "economy": 0.3,
         "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "jewish_identity": 0.5,
+        "independence": 0.2,
+        "experience": 1.0,
+        "flagship": [
+          "cost_of_living"
+        ]
       },
       "display": {
         "avatarBg": "#e9e0d0",
@@ -164,15 +173,19 @@
       "id": "nir_barkat",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "haredi_draft": 0.75,
+        "judicial_reform_pace": 0.25,
+        "sovereignty": 0.8,
+        "economy": 0.65,
+        "oct7_inquiry": 0.8,
+        "jewish_identity": 0.4,
+        "independence": 0.55,
+        "experience": 1.0,
+        "flagship": [
+          "cost_of_living",
+          "draft_equality",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#e7ddce",
@@ -203,16 +216,19 @@
     {
       "id": "tali_gottlieb",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
+        "gaza_posture": 0.75,
+        "haredi_draft": 0.6,
+        "judicial_reform_pace": 0.85,
+        "sovereignty": 0.6,
         "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.65,
+        "independence": 0.55,
+        "experience": 0.35,
+        "flagship": [
+          "judicial_reform",
+          "security_victory"
+        ]
       },
       "display": {
         "avatarBg": "#ead9d3",
@@ -224,15 +240,17 @@
       "id": "may_golan",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "haredi_draft": 0.35,
+        "judicial_reform_pace": 0.8,
+        "sovereignty": 0.6,
+        "economy": 0.5,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.5,
+        "independence": 0.3,
+        "experience": 0.85,
+        "flagship": [
+          "judicial_reform"
+        ]
       },
       "display": {
         "avatarBg": "#dde7db",
@@ -263,16 +281,19 @@
     {
       "id": "uzi_dayan",
       "positions": {
-        "gaza_posture": 0.6,
+        "gaza_posture": 0.8,
         "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "judicial_reform_pace": 0.5,
+        "sovereignty": 0.75,
+        "economy": 0.45,
+        "oct7_inquiry": 0.5,
+        "jewish_identity": 0.5,
+        "independence": 0.55,
+        "experience": 0.75,
+        "flagship": [
+          "security_victory",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#dcdff0",
@@ -283,16 +304,19 @@
     {
       "id": "avi_dichter",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.8,
+        "haredi_draft": 0.6,
+        "judicial_reform_pace": 0.4,
+        "sovereignty": 0.75,
+        "economy": 0.2,
+        "oct7_inquiry": 0.4,
+        "jewish_identity": 0.5,
+        "independence": 0.3,
+        "experience": 1.0,
+        "flagship": [
+          "security_victory",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#ecdcdc",
@@ -343,16 +367,19 @@
     {
       "id": "amit_halevi",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
+        "gaza_posture": 0.85,
+        "haredi_draft": 0.45,
+        "judicial_reform_pace": 0.75,
+        "sovereignty": 0.7,
+        "economy": 0.5,
         "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "jewish_identity": 0.8,
+        "independence": 0.55,
+        "experience": 0.45,
+        "flagship": [
+          "security_victory",
+          "jewish_identity_edu"
+        ]
       },
       "display": {
         "avatarBg": "#dbe4ec",
@@ -363,16 +390,19 @@
     {
       "id": "nissim_vaturi",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
+        "gaza_posture": 0.95,
+        "haredi_draft": 0.3,
+        "judicial_reform_pace": 0.9,
+        "sovereignty": 0.8,
+        "economy": 0.5,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.7,
+        "independence": 0.15,
         "experience": 0.5,
-        "flagship": []
+        "flagship": [
+          "security_victory",
+          "judicial_reform"
+        ]
       },
       "display": {
         "avatarBg": "#ead9d3",
@@ -403,16 +433,19 @@
     {
       "id": "israel_katz",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
+        "gaza_posture": 0.7,
+        "haredi_draft": 0.25,
         "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "sovereignty": 0.8,
+        "economy": 0.5,
+        "oct7_inquiry": 0.2,
+        "jewish_identity": 0.5,
+        "independence": 0.15,
+        "experience": 1.0,
+        "flagship": [
+          "security_victory",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#e9e0d0",
@@ -423,16 +456,19 @@
     {
       "id": "eli_cohen",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.75,
+        "haredi_draft": 0.65,
+        "judicial_reform_pace": 0.65,
+        "sovereignty": 0.6,
+        "economy": 0.2,
+        "oct7_inquiry": 0.4,
+        "jewish_identity": 0.5,
+        "independence": 0.2,
+        "experience": 0.9,
+        "flagship": [
+          "cost_of_living",
+          "draft_equality"
+        ]
       },
       "display": {
         "avatarBg": "#dcdff0",
@@ -463,16 +499,18 @@
     {
       "id": "haim_katz",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.5,
+        "haredi_draft": 0.35,
+        "judicial_reform_pace": 0.5,
+        "sovereignty": 0.5,
+        "economy": 0.15,
+        "oct7_inquiry": 0.4,
+        "jewish_identity": 0.5,
+        "independence": 0.1,
+        "experience": 1.0,
+        "flagship": [
+          "cost_of_living"
+        ]
       },
       "display": {
         "avatarBg": "#d9e6e6",
@@ -484,15 +522,18 @@
       "id": "yariv_levin",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "haredi_draft": 0.55,
+        "judicial_reform_pace": 1.0,
+        "sovereignty": 0.85,
+        "economy": 0.6,
+        "oct7_inquiry": 0.1,
+        "jewish_identity": 0.7,
+        "independence": 0.2,
+        "experience": 1.0,
+        "flagship": [
+          "judicial_reform",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#e7ddce",
@@ -503,16 +544,19 @@
     {
       "id": "hanoch_milwidsky",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
+        "gaza_posture": 0.9,
+        "haredi_draft": 0.45,
+        "judicial_reform_pace": 0.85,
+        "sovereignty": 0.8,
+        "economy": 0.6,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.7,
+        "independence": 0.05,
         "experience": 0.5,
-        "flagship": []
+        "flagship": [
+          "judicial_reform",
+          "security_victory"
+        ]
       },
       "display": {
         "avatarBg": "#dbe4ec",
@@ -524,15 +568,18 @@
       "id": "idit_silman",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
+        "haredi_draft": 0.55,
         "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "sovereignty": 0.9,
+        "economy": 0.5,
+        "oct7_inquiry": 0.6,
+        "jewish_identity": 0.9,
+        "independence": 0.45,
+        "experience": 0.6,
+        "flagship": [
+          "jewish_identity_edu",
+          "sovereignty_now"
+        ]
       },
       "display": {
         "avatarBg": "#ead9d3",
@@ -544,14 +591,14 @@
       "id": "moshe_saada",
       "positions": {
         "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
+        "haredi_draft": 0.55,
+        "judicial_reform_pace": 0.55,
+        "sovereignty": 0.5,
+        "economy": 0.5,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.6,
+        "independence": 0.75,
+        "experience": 0.35,
         "flagship": []
       },
       "display": {
@@ -663,16 +710,19 @@
     {
       "id": "yoav_kisch",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.55,
+        "haredi_draft": 0.6,
+        "judicial_reform_pace": 0.7,
+        "sovereignty": 0.5,
+        "economy": 0.6,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.85,
+        "independence": 0.2,
+        "experience": 0.9,
+        "flagship": [
+          "jewish_identity_edu",
+          "draft_equality"
+        ]
       },
       "display": {
         "avatarBg": "#dbe4ec",
@@ -702,16 +752,19 @@
     {
       "id": "ariel_kallner",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.8,
+        "haredi_draft": 0.1,
+        "judicial_reform_pace": 0.9,
+        "sovereignty": 0.95,
+        "economy": 0.7,
+        "oct7_inquiry": 0.1,
+        "jewish_identity": 0.7,
+        "independence": 0.15,
+        "experience": 0.55,
+        "flagship": [
+          "sovereignty_now",
+          "judicial_reform"
+        ]
       },
       "display": {
         "avatarBg": "#dde7db",
@@ -722,16 +775,18 @@
     {
       "id": "shlomo_karhi",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.5,
+        "haredi_draft": 0.1,
+        "judicial_reform_pace": 0.9,
+        "sovereignty": 0.6,
+        "economy": 0.5,
+        "oct7_inquiry": 0.15,
+        "jewish_identity": 0.6,
+        "independence": 0.15,
+        "experience": 0.75,
+        "flagship": [
+          "judicial_reform"
+        ]
       },
       "display": {
         "avatarBg": "#e9e0d0",
@@ -762,16 +817,18 @@
     {
       "id": "miri_regev",
       "positions": {
-        "gaza_posture": 0.6,
+        "gaza_posture": 0.5,
         "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
+        "judicial_reform_pace": 0.55,
         "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "economy": 0.4,
+        "oct7_inquiry": 0.45,
+        "jewish_identity": 0.5,
+        "independence": 0.45,
+        "experience": 0.9,
+        "flagship": [
+          "periphery_dev"
+        ]
       },
       "display": {
         "avatarBg": "#ecdcdc",
@@ -802,16 +859,19 @@
     {
       "id": "amichai_chikli",
       "positions": {
-        "gaza_posture": 0.6,
-        "haredi_draft": 0.5,
-        "judicial_reform_pace": 0.6,
-        "sovereignty": 0.55,
-        "economy": 0.55,
-        "oct7_inquiry": 0.3,
-        "jewish_identity": 0.55,
-        "independence": 0.35,
-        "experience": 0.5,
-        "flagship": []
+        "gaza_posture": 0.55,
+        "haredi_draft": 0.55,
+        "judicial_reform_pace": 0.65,
+        "sovereignty": 0.6,
+        "economy": 0.5,
+        "oct7_inquiry": 0.1,
+        "jewish_identity": 0.65,
+        "independence": 0.65,
+        "experience": 0.75,
+        "flagship": [
+          "foreign_relations",
+          "jewish_identity_edu"
+        ]
       },
       "display": {
         "avatarBg": "#e7ddce",

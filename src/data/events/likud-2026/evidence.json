@@ -1,283 +1,348 @@
 {
-  "$comment": "Evidence sidecar (see docs/candidate-scoring-likud.md). candidateId -> parameterId -> {value,confidence,rationale,sources}. Engine does NOT read this; candidates.json[positions] is projected from here. Baseline pass: all 92 candidates on the low-confidence party prior; pilot batch of higher-profile candidates upgraded where a public record was verified.",
+  "$comment": "Evidence sidecar (see docs/candidate-scoring-likud.md). candidateId -> parameterId -> {value,confidence,rationale,sources}. Engine does NOT read this; candidates.json[positions] is projected from here. 24 higher-profile candidates carry real, cited research (medium/high confidence on axes with a public record, low elsewhere); the remaining 68 are on the low-confidence party-wide prior pending a later research pass.",
   "amir_ohana": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct explicit statement found on renewing full-scale offensive vs preserving the ceasefire; as Knesset Speaker he has stayed largely procedural on this axis. Estimated slightly hawkish given party alignment.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "As Knesset Speaker he pressured the legal counsel to find a path for an exemption law to bring Shas/Degel HaTorah back to the table, signaling accommodation of the haredi parties over enforced broad enlistment.",
+      "sources": [
+        "https://www.mako.co.il/news-politics/2026_q2/Article-4d0564b5d056e91027.htm"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Supports giving elected representatives (Knesset) the final word over the courts as 'good, desirable and more democratic', though he said he was not consulted on Levin's original plan and frames the debate as between rivals not enemies, suggesting support for reform but less maximalist framing than hardliners.",
+      "sources": [
+        "https://www.srugim.co.il/755055",
+        "https://www.maariv.co.il/news/politics/Article-1022909"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "Signed a Likud MKs' letter urging Netanyahu to apply sovereignty immediately, but as Knesset Speaker later blocked a symbolic Knesset declaration on sovereignty from reaching a vote, showing a gap between rhetorical support and procedural action.",
+      "sources": [
+        "https://www.c14.co.il/article/1275662"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear direct statements found specifically on free-market vs. intervention; no strong record identified on this axis.",
       "sources": []
     },
     "oct7_inquiry": {
       "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "As Speaker, he oversaw and enabled the coalition-favored 'ועדה עוקפת-ממלכתית' (bypass) inquiry model championed by MK Kalner and backed by Netanyahu, rather than an independent state commission appointed by the Supreme Court president; he stated he would appoint opposition representatives if they refuse to participate, indicating cooperation with the government-controlled inquiry model.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/rkbnnxtq11e"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No explicit statements found positioning him strongly on either end of national-liberal vs. Jewish-identity-in-public-sphere axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Generally a loyal senior Likud figure and Netanyahu ally who holds the Speaker's chair, but has shown some independence by blocking coalition-aligned symbolic votes (sovereignty declaration) and criticizing lack of internal Likud consultation on the judicial reform rollout.",
+      "sources": [
+        "https://www.c14.co.il/article/1275662",
+        "https://www.maariv.co.il/news/politics/Article-1022909"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Former Justice Minister, Public Security Minister, and current Knesset Speaker since December 2022 — sustained senior ministerial and parliamentary record.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Amir_Ohana"
+      ]
     }
   },
   "zeev_elkin": {
     "gaza_posture": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found specifically on renewing military action vs. preserving the current ceasefire; general right-wing/security-hawk profile inferred from his broader record.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Publicly stated as minister there is very low chance of passing the draft law in the current Knesset and placed blame on haredi MKs' internal disagreements, but has also predicted an eventual 'agreed law approved by the rabbis', suggesting he favors a negotiated middle path rather than either full exemption or aggressive enforcement.",
+      "sources": [
+        "https://www.kikar.co.il/interviews/te8vp1",
+        "https://hm-news.co.il/561891/"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "high",
+      "rationale": "Publicly criticized Yariv Levin's 2023 judicial reform proposal as 'crooked and imbalanced' with 'absolute politicization of the court', calling for a more sustainable, broadly-negotiated approach rather than a unilateral overhaul — one of the clearest Likud-aligned critics of the reform's pace/design.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%96%D7%90%D7%91_%D7%90%D7%9C%D7%A7%D7%99%D7%9F"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Explicit and sustained advocate for applying Israeli sovereignty over Judea and Samaria, calling it 'the true answer' to Palestinian statehood pushes and declaring sovereignty 'the order of the day' during a visit to Samaria.",
+      "sources": [
+        "https://www.c14.co.il/article/1327533",
+        "https://www.jdn.co.il/news/2466201/"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear direct statements found on free-market vs. government-intervention economic stance.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Publicly stated 'I am for a state commission of inquiry, I have not changed my position' and boycotted a vote on a rival, government-controlled political inquiry committee specifically in support of a broader, more independent state commission model (though he wants its scope/composition set by Justice Solberg rather than Chief Justice Amit).",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1266756",
+        "https://www.bhol.co.il/news/1714166"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No explicit statements found specifically on the national-liberal vs. Jewish-identity-in-public-sphere axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Left Likud in 2020 to join New Hope, later served in National Unity/Tkuma-aligned factions, and boycotted a coalition-backed Knesset vote in favor of his own preferred inquiry-committee design — a sustained record of public breaks with party leadership before now returning to Likud for the 2026 primary.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ze'ev_Elkin",
+        "https://www.bhol.co.il/news/1714166"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Long ministerial and Knesset record spanning multiple portfolios (Water, Higher Education, Jerusalem Affairs, Housing) and parties since the mid-2000s.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Ze'ev_Elkin"
+      ]
     }
   },
   "dudi_amsalem": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Stated that stopping the fighting now would be 'a huge mistake', questioning the point of the war if it were halted, indicating a preference for continued/decisive military action over preserving the ceasefire framework.",
+      "sources": [
+        "https://news.walla.co.il/item/3764627"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "Strongly advocates preserving the arrangement with the haredi parties: opposes sanctions, argues the IDF has 'enormous surpluses' and cannot draft everyone, and frames pressure for broad enlistment as bordering on antisemitism.",
+      "sources": [
+        "https://www.kikar.co.il/haredim-news/sb7ge7",
+        "https://x.com/dudiamsalem/status/1932117605151592600"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "One of the most vocal proponents of completing the judicial overhaul, stating the government will do it 'by soft or hard means', calling the status quo 'Supreme Court dictatorship' and saying 'without judicial reform there will be no true democracy'.",
+      "sources": [
+        "https://www.srugim.co.il/1027051-%D7%90%D7%9E%D7%A1%D7%9C%D7%9D-%D7%A0%D7%A2%D7%A9%D7%94-%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94-%D7%90%D7%95-%D7%91%D7%9E%D7%95%D7%97-%D7%90%D7%95-%D7%91%D7%9B%D7%95%D7%97"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found specifically calling for immediate West Bank sovereignty; general hardline-right profile inferred, but weak direct evidence on this specific axis.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.4,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear direct record found on free-market vs. intervention economic policy specifically.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.05,
+      "confidence": "high",
+      "rationale": "Explicitly opposes a Supreme-Court-president-appointed state commission of inquiry, arguing in the Knesset plenum 'we will not establish a state commission of inquiry, but rather a real commission of inquiry, of the people' and accused judges of being conflicted / potential defendants themselves.",
+      "sources": [
+        "https://www.maariv.co.il/breaking-news/article-1155475",
+        "https://www.ynet.co.il/news/article/s1qdgnwn1e"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Publicly defended the value of Torah study as equal to military service ('Torah study has a value no less than IDF service') and has emphasized embracing haredi religious life within the state, signaling a stronger Jewish-identity-in-public-sphere orientation.",
+      "sources": [
+        "https://www.hidabroot.org/article/1196255"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "A longtime hardline Netanyahu loyalist and vocal defender of coalition/government positions (judicial reform, anti-Supreme-Court rhetoric, backing the Likud party tribunal); little public record of breaking with leadership.",
+      "sources": [
+        "https://news.walla.co.il/item/3858578"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Sustained ministerial record — Minister in the Justice Ministry, government-Knesset liaison, Minister of Regional Cooperation, long-serving MK.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93%D7%99_%D7%90%D7%9E%D7%A1%D7%9C%D7%9D"
+      ]
     }
   },
   "avichay_buaron": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Stated 'you cannot end the fighting without destroying Hamas' and that he is 'not prepared to stop the war as part of a hostage deal', explicitly prioritizing continued military action over a ceasefire/deal framework.",
+      "sources": [
+        "https://103fm.maariv.co.il/programs/media.aspx?ZrqvnVq=JLIFFM&c41t4nzVQ=EF",
+        "https://www.inn.co.il/news/656488"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Stated support for the conscription law and said the coalition intends to complete it before elections, noting his own sons serve in the military — signals support for broader enforced enlistment relative to haredi-aligned colleagues, though not full parity messaging.",
+      "sources": [
+        "https://news.walla.co.il/item/3837155"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Called for structural overhaul including a new constitutional court to sideline the Supreme Court, criticized a court ruling as 'judicial activism on steroids' and 'judicial tyranny', and pushed to curb the Attorney General's authority over ministers.",
+      "sources": [
+        "https://www.jdn.co.il/news/politics/2705094/",
+        "https://finance.walla.co.il/item/3748004"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.7,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct explicit statement on West Bank sovereignty found; his general hardline security/legal posture suggests a leaning toward the pro-sovereignty end, but this is inferred rather than directly documented.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear direct record found on free-market vs. intervention economic stance specifically.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.2,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on the inquiry-committee question specifically; his broader alignment with hardline anti-judicial-establishment positions suggests skepticism of a Supreme-Court-appointed independent commission, but this is inferred.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No explicit statements found positioning him on the national-liberal vs. strengthen-Jewish-identity axis specifically.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "A vocal defender of coalition legal-reform positions and combative in media appearances defending government/army actions; no record found of public breaks with Likud leadership.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1161739"
+      ]
     },
     "experience": {
       "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "Sitting first-term-era MK and attorney; active in Knesset legislative fights on judicial matters but without a long ministerial record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99%D7%97%D7%99_%D7%91%D7%95%D7%90%D7%A8%D7%95%D7%9F"
+      ]
     }
   },
   "david_bitan": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct explicit statement found on renewing decisive military action vs. preserving the ceasefire specifically; no strong record identified on this axis.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.3,
+      "confidence": "medium",
+      "rationale": "As a senior Likud coalition figure, argued responsibility for the draft law's delays can't be pinned solely on Likud and that a law lacking haredi support can't be passed — a framing that leans toward preserving accommodation with haredi parties over unilateral enforcement.",
+      "sources": [
+        "https://www.inn.co.il/news/697592"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear direct statement found on his specific position regarding the pace/scope of the judicial overhaul; as a senior coalition Likud MK he is presumed broadly supportive but without documented specifics.",
       "sources": []
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on West Bank sovereignty specifically.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.3,
+      "confidence": "medium",
+      "rationale": "As Economics Committee chairman he has pushed interventionist cost-of-living measures — proposing to cut VAT on food to 8%, requiring suppliers to report profitability, and legislating against price hikes — indicating a government-intervention leaning rather than free-market deregulation.",
+      "sources": [
+        "https://www.globes.co.il/news/article.aspx?did=1001551279",
+        "https://www.calcalist.co.il/local_news/article/h1bfqjgss"
+      ]
     },
     "oct7_inquiry": {
       "value": 0.3,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on the inquiry-committee question specifically; general senior-coalition-Likud alignment suggests skepticism of an independent state commission, but this is inferred rather than documented.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No explicit statements found positioning him on this axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
+      "value": 0.2,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "Long-serving senior Likud coalition figure (Economics Committee chair, former coalition chairman) generally aligned with party leadership; no clear record of public breaks found, though evidence is thin.",
       "sources": []
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Long-serving MK, former Likud coalition chairman, current chair of the Knesset Economics Committee.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%93%D7%95%D7%93_%D7%91%D7%99%D7%98%D7%9F"
+      ]
     }
   },
   "boaz_bismuth": {
@@ -452,56 +517,74 @@
     "gaza_posture": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No direct explicit statement found specifically on renewing decisive military action vs. the ceasefire; a Channel 12 report referenced an alleged effort by Barkat-aligned MKs to unseat Netanyahu via no-confidence vote right after Oct 7, suggesting friction with the government's crisis handling, but this doesn't map cleanly onto the axis.",
+      "sources": [
+        "https://www.timesofisrael.com/topic/nir-barkat/"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Publicly stated he and other Likud MKs would oppose a haredi exemption/draft law in its current (lenient) form, arguing 'to win you need soldiers' and proposing individual sanctions for non-enlistment (no passport, driver's license, daycare subsidies) — a clear pro-broad-enlistment stance.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/rjofrigia",
+        "https://www.maariv.co.il/news/politics/article-1108425"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.25,
+      "confidence": "medium",
+      "rationale": "Was among coalition members reported to have said they would back Netanyahu if he halted the 2023 judicial reform legislation amid mass protests, indicating a preference for pausing/compromise over pushing the overhaul through.",
+      "sources": [
+        "https://he.wikiquote.org/wiki/%D7%94%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA_%D7%91%D7%99%D7%A9%D7%A8%D7%90%D7%9C_(2023)"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "medium",
+      "rationale": "Called for dismantling the Palestinian Authority and applying sovereignty in Judea and Samaria.",
+      "sources": [
+        "https://www.mako.co.il/news-politics/2025_q4/Article-adde2e1b1806b91026.htm"
+      ]
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Self-describes as 'liberal and open', a private-sector reformer pushing import-market liberalization and European-standard product competition as Economy Minister — a free-market/deregulation-leaning record, though he has also used interventionist 'regulatory shaming' tactics against firms over price hikes, tempering the score.",
+      "sources": [
+        "https://mida.org.il/2023/05/23/%D7%94%D7%A4%D7%95%D7%A4%D7%95%D7%9C%D7%99%D7%96%D7%9D-%D7%A9%D7%9C-%D7%A0%D7%99%D7%A8-%D7%91%D7%A8%D7%A7%D7%AA-%D7%9E%D7%96%D7%99%D7%A7-%D7%9C%D7%9B%D7%9C%D7%9B%D7%9C%D7%94/",
+        "https://finance.walla.co.il/item/3593781"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Publicly called for a state commission of inquiry into the October 7th failures, covering both the military/security establishment and the government cabinet's responsibility — though he also suggested a committee composition 'comfortable for both sides', tempering full independence.",
+      "sources": [
+        "https://www.israelhayom.co.il/news/politics/article/17022155"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.4,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No explicit direct statements found on this specific axis; his self-described 'liberal and open' identity suggests a lean toward the national-liberal end, but this is inferred rather than a direct statement on the axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Reported to have been part of an internal effort by Likud MKs to replace Netanyahu via no-confidence vote just after October 7, and has been positioned by media as weakened by Netanyahu allies (e.g. reserved primary slot for a rival) — signals of real friction with party leadership, though he remains a sitting minister and has not fully broken publicly.",
+      "sources": [
+        "https://www.timesofisrael.com/topic/nir-barkat/"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Former two-term Jerusalem mayor (2008-2018) and current Minister of Economy and Industry with a sustained ministerial/public record.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Nir_Barkat"
+      ]
     }
   },
   "sasson_guetta": {
@@ -562,114 +645,147 @@
   },
   "tali_gottlieb": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Attacked hostage-deal skeptics as undermining negotiations and consistently frames the war in maximalist terms ('war of plunder/existence'), signaling a hawkish posture, though no single explicit 'renew offensive now' statement was found.",
+      "sources": [
+        "https://www.srugim.co.il/1150074",
+        "https://www.maariv.co.il/news/israel/article-1197946"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "Announced she would vote against the coalition's conscription bill because its ~1,750/year quota is too low and it harms the sense of shared burden, while proposing an individualized 'safety valve' exemption mechanism as an alternative enforcement tool.",
+      "sources": [
+        "https://www.maariv.co.il/news/military/article-1101442",
+        "https://www.inn.co.il/news/674053"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "A leading voice in the campaign against the judiciary/attorney-general ('judicial junta'), repeatedly calling to 'send the attorney general home' and fighting Supreme Court oversight; her 2026 primary campaign has centered on this fight.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-973027",
+        "https://www.timesofisrael.com/liveblog_entry/poll-finds-likud-members-would-put-gotliv-atop-electoral-slate-second-only-to-netanyahu/"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No direct statement on West Bank sovereignty found; she replaced Yuli Edelstein on the Foreign Affairs and Defense Committee amid intra-coalition disputes, but the sovereignty-specific link is unclear. Estimate based on her broader hardline-right profile.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1246501"
+      ]
     },
     "economy": {
       "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on economic policy specifically; defaulted near-center with a slight free-market lean consistent with general Likud-right positioning.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "high",
+      "rationale": "Explicitly opposes a judicially-imposed state commission of inquiry, said 'I have no confidence in [Supreme Court president] Amit' and argued a government fact-finding committee with broad powers is preferable, not a court-mandated state commission now.",
+      "sources": [
+        "https://www.inn.co.il/news/679833",
+        "https://www.maariv.co.il/news/politics/article-1191952"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Grew up in a national-religious home in Bnei Brak; consistently frames the conflict and politics in religious-nationalist terms, though not a specific education/public-sphere policy statement.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%98%D7%9C%D7%99_%D7%92%D7%95%D7%98%D7%9C%D7%99%D7%91"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Threatened to quit the Likud race if primaries were scrapped, called the party's reserved slot for Israel Katz 'despicable,' and publicly told Netanyahu to withdraw testimony during his trial — repeated public friction with party/leadership decisions even while remaining a Netanyahu ally overall.",
+      "sources": [
+        "https://www.theyeshivaworld.com/news/israel-news/2573589/primary-showdown-tali-gotliv-threatens-to-quit-likud-race-if-party-scraps-primaries.html",
+        "https://www.jpost.com/israel-election-2026/article-905170",
+        "https://www.maariv.co.il/news/politics/article-1275688"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "First-term MK (25th Knesset, entered 2022); 22 years as a criminal defense lawyer before politics but no ministerial or prior Knesset record.",
+      "sources": [
+        "https://portal.takdin.co.il/article/Article/5405679",
+        "https://he.wikipedia.org/wiki/%D7%98%D7%9C%D7%99_%D7%92%D7%95%D7%98%D7%9C%D7%99%D7%91"
+      ]
     }
   },
   "may_golan": {
     "gaza_posture": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement on renewing offensive action found; as a sitting Likud minister she generally backs government/coalition war policy, estimated hawkish-leaning by party-line default.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "Said every proposed conscription law is 'infected with populism' and that mass immediate Haredi enlistment isn't realistic; indicated she would support a law mainly as a coalition-preserving move rather than pushing broad enforced enlistment.",
+      "sources": [
+        "https://www.bhol.co.il/news/1728725"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "As Minister called Supreme Court justices '15 dictators' dismantling Israeli democracy and accused the Court of 'neutering' the state's foundations, indicating strong support for curbing judicial power.",
+      "sources": [
+        "https://www.ice.co.il/local-news/news/article/1045180",
+        "https://www.mako.co.il/news-politics/2023_q3/Article-a40bb88a8d65a81026.htm"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific statement found on West Bank sovereignty; estimated from her general hardline-right coalition positioning.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on economic policy specifically; kept at neutral default.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.15,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct quote found; as a sitting government minister she has not broken from the coalition's general resistance to an independent state commission of inquiry, so scored near the government-line end as a weak inference.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No direct statement found on religion/education-in-public-sphere policy; grew up in a secular/Haredi-adjacent single-parent household in south Tel Aviv, giving no clear signal either way.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%99_%D7%92%D7%95%D7%9C%D7%9F"
+      ]
     },
     "independence": {
-      "value": 0.35,
+      "value": 0.3,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear record of public breaks with Netanyahu or party leadership found; treated as a fairly loyal coalition minister by default.",
       "sources": []
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Sitting cabinet minister (Social Equality/Women's Advancement portfolio since 2023 and reportedly Diaspora Affairs since); sustained ministerial and Knesset record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%90%D7%99_%D7%92%D7%95%D7%9C%D7%9F",
+        "https://www.ynet.co.il/news/article/sjfayimk6"
+      ]
     }
   },
   "gila_gamliel": {
@@ -730,114 +846,147 @@
   },
   "uzi_dayan": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Argued Israel should occupy Gaza ('it's possible and necessary to do') and, during the earlier war, called to leverage international support for a ground incursion — a consistently hawkish military stance.",
+      "sources": [
+        "https://www.inn.co.il/news/686629",
+        "https://www.maariv.co.il/news/military/Article-1045014"
+      ]
     },
     "haredi_draft": {
       "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No explicit policy statement found; publicly honored Haredi IDF soldiers and bereaved Haredi families at a memorial ceremony, which signals sympathy for integration but not a specific enforcement stance.",
+      "sources": [
+        "https://www.maariv.co.il/breaking-news/article-1312420"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public statement found on the judicial overhaul specifically; kept at neutral default given his background as a security/establishment figure rather than a judicial-reform campaigner.",
       "sources": []
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Has stated Jordan Valley sovereignty as a political goal tied to outcomes of the Gaza conflict.",
+      "sources": [
+        "https://www.inn.co.il/news/686629"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.45,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "As Pais Authority chairman advocated redistributing gaming outlets away from weaker socio-economic neighborhoods, suggesting some social-equity sensitivity rather than a strict free-market stance; on joining Likud emphasized generically 'a strong and growing economy.'",
+      "sources": [
+        "https://www.maariv.co.il/economy/israel/article-568372",
+        "https://www.ynet.co.il/articles/0,7340,L-3574271,00.html"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct public statement found on the state commission of inquiry; scored neutral given no record.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on religion/education-in-public-sphere policy.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Founded rival watchdog/advocacy bodies (Israel Security Council as counterweight to the Council for Peace and Security; Mevatchei Yisrael) outside establishment structures, suggesting some independent streak, though his current Likud candidacy has not shown public breaks with leadership.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%96%D7%99_%D7%93%D7%99%D7%99%D7%9F"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Former IDF Deputy Chief of Staff and head of the National Security Council, past Knesset member (Tafnit, then Likud) and chairman of the Pais Authority — extensive senior public-service record, though not a Knesset minister.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%95%D7%96%D7%99_%D7%93%D7%99%D7%99%D7%9F"
+      ]
     }
   },
   "avi_dichter": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Repeatedly said Israel must retain security control over Gaza, floated a temporary military regime there, and argued from 'a position of power' — consistent hawkish, control-oriented posture.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1105120",
+        "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%93%D7%99%D7%9B%D7%98%D7%A8"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "Publicly backed advancing a conscription law in 2025, saying the IDF 'needs fighters and not just soldiers' and that change must happen 'even though some of the Haredi leadership are insistent on delaying' it.",
+      "sources": [
+        "https://www.srugim.co.il/578306-%D7%90%D7%91%D7%99-%D7%93%D7%99%D7%9B%D7%98%D7%A8-%D7%9C%D7%9E%D7%94-%D7%A9%D7%99%D7%A0%D7%99%D7%AA%D7%99-%D7%90%D7%AA-%D7%93%D7%A2%D7%AA%D7%99-%D7%95%D7%94%D7%A6%D7%91%D7%A2%D7%AA%D7%99-%D7%A0%D7%92"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.4,
+      "confidence": "medium",
+      "rationale": "Publicly stated 'in this confrontation being built here, there will be no reform,' suggesting a preference for pausing/compromising rather than pressing the overhaul through amid conflict, despite being in a coalition that champions it.",
+      "sources": [
+        "https://www.youtube.com/shorts/x_Cwg4RGjDE"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Told Yesha Council heads 'the time has come to apply sovereignty — the hour has ripened,' specifically backing sovereignty over the Jordan Valley and major settlement blocs.",
+      "sources": [
+        "https://www.inn.co.il/news/664652"
+      ]
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "high",
+      "rationale": "As Agriculture Minister strongly opposed market-liberalizing budget cuts/import reforms, arguing they would destroy Israeli agriculture, and said he doesn't want farmers or consumers 'to pay the price of border protection' — a clear protectionist, interventionist stance.",
+      "sources": [
+        "https://www.ice.co.il/finance/news/article/1073999",
+        "https://www.calcalist.co.il/local_news/article/bjfx6gptt"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.4,
+      "confidence": "medium",
+      "rationale": "Publicly said a state commission of inquiry into October 7 will be established, but specifically framed it as coming 'with the end of the war' — endorsing the state-commission form while conditioning it on war's end, and is himself one of the ministers on the government's own (non-state) inquiry panel.",
+      "sources": [
+        "https://www.calcalist.co.il/conferences/article/sjlabopka",
+        "https://www.mako.co.il/news-politics/2024_q4/Article-49571bedf9e0491027.htm"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on religion/education-in-public-sphere policy; his public profile centers on security and agriculture, not identity politics.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
+      "value": 0.3,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No clear record of public breaks with Netanyahu/party leadership found; generally operates within coalition/ministerial discipline, aside from budget disputes over his own ministry's cuts.",
+      "sources": [
+        "https://www.calcalist.co.il/local_news/article/bjfx6gptt"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Former Shin Bet director, former Minister of Public Security and Minister of Home Front Defense, current Minister of Agriculture and Food Security, and long-serving MK — extensive sustained ministerial record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%90%D7%91%D7%99_%D7%93%D7%99%D7%9B%D7%98%D7%A8"
+      ]
     }
   },
   "eli_dalal": {
@@ -954,114 +1103,153 @@
   },
   "amit_halevi": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "Publicly demanded a tougher IDF operational plan for conquering Gaza and stated 'there must be at least Israeli security control over all of the Gaza Strip, there is no other way to win.'",
+      "sources": [
+        "https://www.inn.co.il/news/676851",
+        "https://103fm.maariv.co.il/programs/media.aspx?ZrqvnVq=KDJEDH&c41t4nzVQ=EF"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Said 'I am not saying it is acceptable to me that people are not serving,' but frames the path forward as gradual understanding-based integration rather than immediate broad enforcement, and left the door open to Haredi entry into Likud itself.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/Article-1088349",
+        "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1215506-0/"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Has argued for curbing the judiciary's 'reasonableness' doctrine and criticized courts for treating Basic Laws as a constitution to strike down legislation, reflecting sustained support for the overhaul.",
+      "sources": [
+        "https://www.inn.co.il/news/691870"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Co-founded the College of Statesmanship centered on Zionist-Jewish sovereignty thought and has written on Jewish-state sovereignty; no specific Knesset vote record found, so scored from ideological alignment rather than a direct legislative act.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%AA_%D7%94%D7%9C%D7%95%D7%99"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on economic policy specifically; kept at neutral default.",
       "sources": []
     },
     "oct7_inquiry": {
       "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "Pushed for a Knesset-legislated parliamentary inquiry (with MKs Saada and Kellner) rather than backing an independent judicial state commission, while sharply criticizing IDF/military leadership conduct around October 7.",
+      "sources": [
+        "https://www.inn.co.il/news/696471"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "medium",
+      "rationale": "Co-founded and led for 13 years the 'College of Statesmanship' (originally 'Politics, Jewish Identity and Strategic Thinking'), an institution built on Zionist-Jewish thought, and has written on the threat of anti-Jewish-statehood ideas.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%AA_%D7%94%D7%9C%D7%95%D7%99"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Publicly and sharply criticized IDF Chief of Staff Eyal Zamir and former Chief Herzi Halevi ('the army is not a private militia'), and criticized how the Prime Minister's office handled wartime communications — willing to take on senior figures publicly.",
+      "sources": [
+        "https://www.inn.co.il/news/696471",
+        "https://www.ynet.co.il/news/article/s1ergh3smx"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Two-term MK (23rd Knesset from 2020, re-elected to 25th), Foreign Affairs and Security Committee member and subcommittee chair, but no ministerial post.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%AA_%D7%94%D7%9C%D7%95%D7%99"
+      ]
     }
   },
   "nissim_vaturi": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "Publicly and repeatedly called to 'burn Gaza' ('I stand by that'), advocated 'voluntary transfer' of Gaza/West Bank residents, and the Knesset Ethics Committee ruled these statements did not violate ethics rules — among the most explicit hardline positions found in this research batch.",
+      "sources": [
+        "https://www.maariv.co.il/news/military/Article-1053551",
+        "https://www.maariv.co.il/news/politics/article-1055553",
+        "https://www.haaretz.co.il/news/law/2025-05-04/ty-article/.premium/00000196-9b02-d0b1-a797-df2244870000"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.3,
+      "confidence": "medium",
+      "rationale": "Argued that drafting 30,000 Haredim at once 'would destroy the IDF' and favored a slow, phased approach (around 12,000 gradually), also arguing Arab-Israelis are bigger 'draft dodgers' than Haredim — signals sympathy toward the existing arrangement over rapid broad enforcement.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1215018",
+        "https://www.maariv.co.il/news/politics/article-1257199"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Actively rallied support for the judicial overhaul ('Freedom March: breaking free of the Supreme Court's chains'), and called a proposed compromise on the reform 'total surrender.'",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%94%D7%AA%D7%9E%D7%99%D7%9B%D7%94_%D7%91%D7%A8%D7%A4%D7%95%D7%A8%D7%9E%D7%94_%D7%94%D7%9E%D7%A9%D7%A4%D7%98%D7%99%D7%AA",
+        "https://www.0404.co.il/?p=912695"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "medium",
+      "rationale": "Involved in advancing expanded Israeli control in Judea and Samaria (e.g., natural-gas hookup discussions) as part of a broader de-facto-annexation push associated with the government he supports.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/yokra14366667"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on economic policy specifically; kept at neutral default.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Claimed the army 'intentionally failed Netanyahu on the morning of October 7 due to ego motives,' deflecting blame from the political leadership — consistent with opposing an independent state commission that could implicate the government.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%A1%D7%99%D7%9D_%D7%95%D7%90%D7%98%D7%95%D7%A8%D7%99"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.7,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Religious-nationalist, married with seven children, lives in Alonei HaBashan settlement; no specific education/public-sphere policy statement found, so scored from general profile rather than direct quote.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1215018"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Stated 'I refrained from criticizing Netanyahu' and defended him strongly ('Netanyahu acts like a leader'), showing sustained public loyalty rather than breaks with leadership.",
+      "sources": [
+        "https://www.mako.co.il/news-politics/2023_q2/Article-b6374d0e18d3781027.htm"
+      ]
     },
     "experience": {
       "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "Entered Knesset in the 23rd Knesset (2020, replacing Gideon Sa'ar), re-elected to the 25th; currently Deputy Speaker of the Knesset and a committee member, but has not held a ministerial portfolio.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A0%D7%99%D7%A1%D7%99%D7%9D_%D7%95%D7%90%D7%98%D7%95%D7%A8%D7%99"
+      ]
     }
   },
   "miki_zohar": {
@@ -1122,114 +1310,147 @@
   },
   "israel_katz": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "As Defense Minister he has overseen continued military pressure and expansion of control in Gaza and framed destruction there as deliberate policy to remove threats, though he has also floated a post-war 'disengagement' infrastructure plan.",
+      "sources": [
+        "https://www.mako.co.il/news-israel-elections/2026/Article-3803f1c7bd1df91027.htm",
+        "https://www.hrw.org/he/news/2026/08/06/israeli-defense-ministry-plan-suggests-potential-war-crimes"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.25,
+      "confidence": "high",
+      "rationale": "As Defense Minister he authored a draft-exemption framework with only gradual, small annual conscription targets (4,800 in year one) built with haredi party input, and instructed removal of the IDF's more ambitious draft assessment from a Supreme Court filing.",
+      "sources": [
+        "https://www.calcalist.co.il/local_news/article/skxs4odrjl",
+        "https://www.calcalist.co.il/local_news/article/ry6poimwje",
+        "https://www.maariv.co.il/news/politics/article-1162443"
+      ]
     },
     "judicial_reform_pace": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct, on-axis statement found; he has echoed coalition rhetoric framing judicial pushback as an unelected 'coup,' suggesting alignment with the reform camp but this is inferred, not a documented personal position.",
       "sources": []
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Co-sponsored a 2000 Knesset bill applying sovereignty to Judea, Samaria and Gaza settlements, and as Defense Minister in 2026 initiated the first West Bank land registration process since 1967 and emphasized 'deepening the grip' on the territory.",
+      "sources": [
+        "https://www.israelhayom.co.il/news/local/article/18271231",
+        "https://www.mako.co.il/news-politics/2026_q1/Article-0dfe1e731016c91027.htm"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found directly on free-market vs. intervention; his career has centered on security/infrastructure portfolios rather than economic policy.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "As Defense Minister he pushed for internal IDF probes (ordering the Chief of Staff to complete inquiries) rather than championing an independent state commission, consistent with the government's general resistance to one.",
+      "sources": [
+        "https://www.haaretz.co.il/news/politics/2024-12-19/ty-article/00000193-debb-d8a1-ad9b-fffb54710000"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on this specific axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Long-time Netanyahu loyalist who received a safeguarded (meshuryan) Likud list slot from Netanyahu ahead of 2026, and publicly frames his own orders as done 'with the PM's knowledge,' signaling alignment rather than independence.",
+      "sources": [
+        "https://www.haaretz.co.il/news/elections/2026-08-11/ty-article/0000019f-edc5-db03-a9ff-ffd7e04c0000",
+        "https://www.mako.co.il/news-israel-elections/2026/Article-3803f1c7bd1df91027.htm"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Veteran Likud figure with an extensive ministerial record spanning Defense, Foreign Affairs, Transportation, Finance, and other portfolios across multiple governments.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A9%D7%A8%D7%90%D7%9C_%D7%9B%22%D7%A5_(%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%93)"
+      ]
     }
   },
   "eli_cohen": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "medium",
+      "rationale": "Stated Israel is 'on the way to full control of the Gaza Strip -- until we reach 100%,' a hawkish continued-military-action framing.",
+      "sources": [
+        "https://ch10.co.il/news/1083643/"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "high",
+      "rationale": "Publicly says those whose 'Torah is not their craft' must enlist, cites that ~55% of haredi draft-age men are not studying and should have a clear conscription target, and wants more than 50% of haredim drafted within five years alongside real sanctions.",
+      "sources": [
+        "https://www.inn.co.il/news/703064",
+        "https://www.ynet.co.il/news/article/hjecnn7nbe",
+        "https://www.ynet.co.il/news/article/b1vygmyfgg"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Advocates removing sitting judges from the judicial selection committee and having the Knesset plenum appoint Supreme Court justices by a ~72-MK majority -- a significant structural reform, though he frames it as increasing court legitimacy/heterogeneity rather than a full overhaul.",
+      "sources": [
+        "https://www.globes.co.il/news/article.aspx?did=1001439781"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "As a minister he stated Israel should 'apply sovereignty in Judea and Samaria through infrastructure,' favoring an incremental but active approach.",
+      "sources": [
+        "https://www.c14.co.il/article/1566253"
+      ]
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "As Economy Minister he proposed freezing electricity, water and property-tax payments to fight cost of living, an interventionist stance criticized by business commentators as populist.",
+      "sources": [
+        "https://www.calcalist.co.il/local_news/article/r1mhxaawbg"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.4,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found; as a senior sitting minister in a government that has resisted an independent state commission, a leaning against one is a reasonable but unconfirmed inference.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on this specific axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "Long-serving minister across multiple Netanyahu governments (Foreign Affairs, Defense briefly, Economy/Intelligence) with no documented public breaks from the leadership line found.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99_%D7%9B%D7%94%D7%9F_(%D7%A4%D7%95%D7%9C%D7%99%D7%98%D7%99%D7%A7%D7%90%D7%99,_1972)"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Held Foreign Affairs, Defense (briefly), Economy and Industry, and Intelligence portfolios across successive governments -- a sustained senior ministerial record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%90%D7%9C%D7%99_%D7%9B%D7%94%D7%9F_(%D7%A4%D7%95%D7%9C%D7%99%D7%98%D7%99%D7%A7%D7%90%D7%99,_1972)"
+      ]
     }
   },
   "ofir_katz": {
@@ -1290,282 +1511,364 @@
   },
   "haim_katz": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found directly addressing renewed military action vs. the ceasefire framework.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "Sends mixed signals: publicly skeptical of winning a 'religious war' over the draft and voted for a law freezing arrests of haredi draft-dodgers (softening enforcement), even while claiming an exemption-law framework would eventually bring 'tens of thousands' of haredim into meaningful service.",
+      "sources": [
+        "https://www.ynet.co.il/news/120andone/article/hkx00tpqxzx",
+        "https://www.mako.co.il/news-politics/2026_q3/liveblog-61fbed3566f5f91027.htm"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific public statement found on this axis.",
       "sources": []
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific public statement found on this axis.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "high",
+      "rationale": "Longtime chairman of the aerospace-industry workers' union, closely identified with the Histadrut and worker committees, and served as Minister of Labor, Welfare and Social Services (2015-2019) -- a clear pro-labor, interventionist record.",
+      "sources": [
+        "https://www.hashomrim.org/knesset/katzh",
+        "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%99%D7%9D_%D7%9B%D7%A5"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.4,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found; inferred loosely from his position as a loyal senior coalition figure in a government that has resisted a state commission.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on this specific axis.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "Veteran Likud Central Committee chairman and one of the ministers/MKs Netanyahu specifically safeguarded a list slot for ahead of the 2026 primary -- a clear establishment-loyalist profile with no documented public breaks from leadership.",
+      "sources": [
+        "https://www.haaretz.co.il/news/elections/2026-08-11/ty-article/0000019f-edc5-db03-a9ff-ffd7e04c0000",
+        "https://www.mako.co.il/news-israel-elections/2026/Article-4b26244f49def91027.htm"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "MK since 2003 with an extensive ministerial record including Welfare, Tourism, Construction and Housing, and Health.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%99%D7%99%D7%9D_%D7%9B%D7%A5"
+      ]
     }
   },
   "yariv_levin": {
     "gaza_posture": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "No explicit 'renew military action' statement found, but he has noted that pre-October 7 it would have been politically hard to mobilize support for the kind of deep Gaza military presence Israel now holds, implying support for the harder current posture.",
+      "sources": [
+        "https://www.c14.co.il/article/1633358"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Publicly stated the conscription law 'can and must' be passed now rather than dragged out further, though he has also been in tension with haredi coalition partners who tie their support for other legislation to draft-law progress.",
+      "sources": [
+        "https://www.bhol.co.il/news/1718811",
+        "https://www.kikar.co.il/haredim-news/susnyu"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "Chief architect of the 2023 judicial overhaul (judicial-selection committee changes, override clause, reasonableness-doctrine curbs); says the reform 'changed Israel for the good' and that 'nothing will move me from the path.'",
+      "sources": [
+        "https://www.ynet.co.il/news/120andone/article/h1n4bdebxl",
+        "https://www.kan.org.il/content/kan-news/politic/915529/"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "One of the key figures who negotiated in-principle U.S. agreement for sovereignty over ~30% of the West Bank during Trump's first term and continues to champion applying sovereignty, calling it a 'huge achievement and enormous opportunity.'",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%9C%D7%95%D7%99%D7%9F"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on this specific axis; a soft inference from his general free-market-oriented Likud ideological positioning.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "As Justice Minister he heads the ministerial committee that is setting the mandate for a government-controlled inquiry rather than an independent state commission, which opposition figures have criticized as self-investigation.",
+      "sources": [
+        "https://www.kan.org.il/content/kan-news/politic/971537/",
+        "https://www.globes.co.il/news/article.aspx?did=1001526684"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.7,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Frames his signature judicial reform explicitly in terms of preserving Israel as 'a Jewish and democratic state,' suggesting a traditionalist orientation, though no dedicated statement on education/public-sphere religious policy was found.",
+      "sources": [
+        "https://www.ynet.co.il/news/120andone/article/h1n4bdebxl"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "A committed Netanyahu-government insider driving the coalition's signature legislative project; no public breaks with leadership found, though he is known for pushing his own ideological agenda forcefully within government.",
+      "sources": [
+        "https://www.ynet.co.il/news/120andone/article/h1n4bdebxl"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 1.0,
+      "confidence": "high",
+      "rationale": "MK since 2009 and current Justice Minister, with prior portfolios including Tourism, Public Security, and Knesset Speaker.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%A8%D7%99%D7%91_%D7%9C%D7%95%D7%99%D7%9F"
+      ]
     }
   },
   "hanoch_milwidsky": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Called explicitly for annexing and resettling Gaza (and Lebanon) to 'create a new equation,' one of the most hawkish stated positions found among these candidates.",
+      "sources": [
+        "https://www.ice.co.il/local-news/news/article/1033722"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Says a blanket draft exemption for haredim and Arabs is 'not right, not just' and won't pass politically, but he has also tried to push through budget transfers to haredi institutions against legal-advisor instructions, indicating a pragmatic, coalition-preserving middle position rather than a strong enforcement push.",
+      "sources": [
+        "https://kol-barama.co.il/item/%D7%97%D7%9B-%D7%97%D7%A0%D7%95%D7%9A-%D7%9E%D7%99%D7%9C%D7%91%D7%99%D7%A6%D7%A7%D7%99-%D7%94%D7%9B%D7%A2%D7%A1-%D7%94%D7%97%D7%A8%D7%93%D7%99-%D7%9E%D7%95%D7%A6%D7%93%D7%A7-%D7%9C%D7%90-%D7%A1/",
+        "https://103fm.maariv.co.il/programs/media.aspx?ZrqvnVq=JHDLML&c41t4nzVQ=GJL",
+        "https://www.calcalist.co.il/local_news/article/sylk00q00ibe"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "As Finance Committee chair he has proposed his own 'governance judicial reform,' and has attacked the Attorney General in harsh personal terms, accusing the judiciary of acting 'in rebellion against the elected government.'",
+      "sources": [
+        "https://www.bhol.co.il/news/1732349",
+        "https://www.srugim.co.il/news/1298967"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "medium",
+      "rationale": "His explicit call for annexing and settling both Gaza and Lebanon signals a strong maximalist territorial posture that likely extends to the West Bank, though no West-Bank-specific quote was found.",
+      "sources": [
+        "https://www.ice.co.il/local-news/news/article/1033722"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Background as a private-sector entrepreneur (helped establish the Aroma Espresso Bar chain in the US) and current Finance Committee chair suggests a market-friendly lean, but no explicit policy statement was found.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%95%D7%9A_%D7%9E%D7%99%D7%9C%D7%91%D7%99%D7%A6%D7%A7%D7%99"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
+      "value": 0.15,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found; inferred from his sustained public attacks on the judiciary and Attorney General, which suggest resistance to an independent judicially-linked state commission.",
       "sources": []
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.7,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Prior career as legal advisor and spokesperson for the 'Bnei Baruch' Kabbalah organization signals a strong personal religious/spiritual identity, though this is a Kabbalah-study background rather than a documented mainstream-Orthodox policy position.",
+      "sources": [
+        "https://www.the7eye.org.il/536390",
+        "https://www.ha-makom.co.il/hanoch-milwidsky-shakuf/"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.05,
+      "confidence": "high",
+      "rationale": "A consistent, vocal defender of Netanyahu and attacker of the Attorney General and judiciary on his behalf, with no documented breaks from the leadership line.",
+      "sources": [
+        "https://www.bhol.co.il/news/1732349"
+      ]
     },
     "experience": {
       "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "high",
+      "rationale": "First elected to the 25th Knesset (2022); chairs the Finance Committee, giving him significant institutional weight despite being a first-term MK.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%97%D7%A0%D7%95%D7%9A_%D7%9E%D7%99%D7%9C%D7%91%D7%99%D7%A6%D7%A7%D7%99"
+      ]
     }
   },
   "idit_silman": {
     "gaza_posture": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific direct quote found on renewed military action; general hawkish coalition alignment inferred.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Said in a radio interview that 'everyone needs to search their soul, and we need a conscription law,' signaling support for passing a draft law without staking out specifics.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1347342"
+      ]
     },
     "judicial_reform_pace": {
       "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific direct statement found on this axis; a general alignment with the government/Likud reform camp is inferred rather than documented.",
       "sources": []
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Explicitly called for full Israeli sovereignty over Judea and Samaria, calling it 'a just and moral step' that 'should have happened already yesterday.'",
+      "sources": [
+        "https://www.hidabroot.org/article/1214265",
+        "https://www.c14.co.il/article/1324198"
+      ]
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on this specific axis.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "In a podcast interview she said 'there should be an inquiry committee -- a real inquiry committee,' pushing back when challenged on what a 'real' committee (vs. the government-controlled one) legally means -- signaling support for a genuine, independent-style inquiry though she stopped short of clearly endorsing the state-commission format specifically.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/syjflzcfex"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Cited defense of 'the Jewish identity of the State of Israel and the Jewish people' as her explicit, headline reason for quitting the Bennett-Lapid coalition in 2022, and continues to raise concern over 'erosion' of Jewish identity in public life.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/Article-909408",
+        "https://www.maariv.co.il/journalists/article-1032241"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Best known for a dramatic 2022 public break -- resigning as coalition chair and collapsing the Bennett-Lapid government's majority -- but that break was against a different (non-Likud-led) coalition; since joining Likud her 2026 campaign has focused on distancing herself from that Bennett-era image and aligning with the Netanyahu-line/anti-AG messaging, suggesting reduced but not absent independent-streak potential.",
+      "sources": [
+        "https://www.calcalist.co.il/local_news/article/s18zqq5x5",
+        "https://www.shomrim.news/hebrew/face-of-base-silman"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "high",
+      "rationale": "MK since 2019; chaired the Knesset Health Committee and served as coalition chair, and currently serves as a government minister (Environmental Protection) -- a first-term-plus but not senior-decades record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%99%D7%93%D7%99%D7%AA_%D7%A1%D7%99%D7%9C%D7%9E%D7%9F"
+      ]
     }
   },
   "moshe_saada": {
     "gaza_posture": {
       "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "Before the Oct 2025 deal he opposed a partial hostage deal, arguing it would abandon hostages left behind and let Hamas retain power in Gaza, signaling a hawkish preference over a partial ceasefire arrangement, though he has not explicitly called for renewed offensive since the deal took effect.",
+      "sources": [
+        "https://www.inn.co.il/news/658573",
+        "https://www.maariv.co.il/news/politics/article-1163791"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "In a July 2026 radio debate he said 'a [full] draft-evasion-shielding law is a bad law, not moral, not Zionist' and argued the Knesset must set limits on the court on this issue, a stance harder to pin to one pole but signaling discomfort with a permanent blanket exemption while also resisting judicial imposition of full conscription.",
+      "sources": [
+        "https://www.inn.co.il/news/701071"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "As a former career prosecutor turned Likud MK he has pushed legislation (e.g. an independent police-investigations-unit bill) that the Attorney General's office opposed, and has sparred publicly with the Attorney General, but he is not among the most vocal overhaul hardliners.",
+      "sources": [
+        "https://oknesset.org/meetings/2/1/2199806.html",
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%A9%D7%94_%D7%A1%D7%A2%D7%93%D7%94"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found specifically on West Bank sovereignty timing; best-guess estimate based on general Likud-hawk alignment, not a documented personal position.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No clear public record found on cost-of-living vs. free-market economic policy specifically attributable to Sa'ada.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Voted against a Knesset proposal to establish a state commission of inquiry into October 7th.",
+      "sources": [
+        "https://www.knesset.tv/parliament/1307/87598/"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Personally religiously observant (son of a kibbutz rabbi) but no specific public-sphere/education policy statements found on this axis.",
+      "sources": [
+        "https://www.hamichlol.org.il/%D7%9E%D7%A9%D7%94_%D7%A1%D7%A2%D7%93%D7%94"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Known for repeated public breaks with Netanyahu and party leadership: sharply criticized Likud's state-comptroller vote conduct, publicly clashed with the PM's office over remarks on military operations, and accused former senior law-enforcement officials of protecting Netanyahu — a distinctive pattern of independent, sometimes anti-establishment public statements even while in the coalition.",
+      "sources": [
+        "https://www.srugim.co.il/1306119-%D7%9E%D7%A9%D7%94-%D7%A1%D7%A2%D7%93%D7%94-%D7%AA%D7%95%D7%A7%D7%A3-%D7%90%D7%AA-%D7%94%D7%91%D7%97%D7%99%D7%A8%D7%95%D7%AA-%D7%9C%D7%9E%D7%91%D7%A7%D7%A8-%D7%94%D7%9E%D7%93%D7%99%D7%A0%D7%94",
+        "https://www.kipa.co.il/%D7%97%D7%93%D7%A9%D7%95%D7%AA/1228432-0/"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.35,
+      "confidence": "medium",
+      "rationale": "First elected to the 25th Knesset (2022); no ministerial post; extensive prior 24-year career as a senior state prosecutor (deputy/acting head of the police-investigations unit) but limited parliamentary tenure.",
+      "sources": [
+        "https://www.hamichlol.org.il/%D7%9E%D7%A9%D7%94_%D7%A1%D7%A2%D7%93%D7%94"
+      ]
     }
   },
   "afif_abed": {
@@ -1850,58 +2153,74 @@
   },
   "yoav_kisch": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct personal statement found calling for renewed offensive vs. preserving the ceasefire; general coalition-line alignment assumed given his ministerial loyalty to Netanyahu's government.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.6,
+      "confidence": "medium",
+      "rationale": "As Education Minister, publicly said 'Haredim will enter under the stick,' that 'what was will not be,' and 'no more studying and working,' favoring a meaningfully expanded enlistment, though reporting notes the actual numbers negotiated remain limited.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/bkttmev8jl",
+        "https://www.kikar.co.il/interviews/t6jqa4"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Appeared on stage at a right-wing rally alongside Levin, Ben Gvir, Karhi and Smotrich centered on judicial reform, signaling alignment with the overhaul push.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1202941"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific public statement found on West Bank sovereignty timing.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Has a record of deregulation efforts (repealed the 'Books Law', chaired telecom-market deregulation committee), suggesting a free-market lean, but no direct statement on cost-of-living policy found.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%90%D7%91_%D7%A7%D7%99%D7%A9"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "As Education Minister he voiced opposition to a state commission of inquiry, expressing concern that Supreme Court President Yitzhak Amit would select investigators aligned with anti-government protest ('Kaplan') circles.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/rkgmbnvikl"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.85,
+      "confidence": "high",
+      "rationale": "As Education Minister launched the 'Roots' program and a mandatory Bible-study/civics overhaul, increasing the Jewish-identity budget share from 2% to 4%, restricting external (non-ministry) educational programs — a clear, sustained push to strengthen Jewish identity in public education, drawing controversy for being coercive.",
+      "sources": [
+        "https://www.davar1.co.il/603979/",
+        "https://www.israelhayom.co.il/news/education/article/18049302"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "Publicly described trusting and believing Netanyahu's personal promise on equal service burden ('I sat across from Netanyahu who promised me... and I believed him'), indicating alignment with the leadership line rather than a pattern of public breaks.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%90%D7%91_%D7%A7%D7%99%D7%A9"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Sustained ministerial record: current Education Minister, previously Minister of Regional Cooperation and Deputy Health Minister, plus prior Knesset committee chair roles.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%99%D7%95%D7%90%D7%91_%D7%A7%D7%99%D7%A9"
+      ]
     }
   },
   "shay_kalach": {
@@ -1962,114 +2281,141 @@
   },
   "ariel_kallner": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.8,
+      "confidence": "high",
+      "rationale": "Co-signed a coalition MK letter demanding decisive defeat of Hamas and full Israeli control of Gaza, calling for 'absolute victory'; said a ceasefire involving territorial withdrawal or unrestricted humanitarian aid entry is 'very problematic', and described the current process as 'imposed on us.'",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1212335"
+      ]
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "Explicitly rejected the premise of equal draft treatment when asked directly: 'Equality? Of course not. There is no comparison... and that's not fair,' and has been associated with a governing approach of 'preserving the partnership with the Haredim at all costs.'",
+      "sources": [
+        "https://www.mako.co.il/news-n12_magazine/2026_q3/Article-2470cd225e96f91027.htm"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Publicly stated 'the judicial reform cannot die,' a direct call to complete the overhaul.",
+      "sources": [
+        "https://www.mako.co.il/news-n12_magazine/2026_q3/Article-2470cd225e96f91027.htm"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.95,
+      "confidence": "high",
+      "rationale": "Leading sovereignty advocate: calls it 'the order of the hour and a Zionist necessity,' argues security comes through applying sovereignty rather than land division, and asserts Israel's 'eternal and exclusive right' to the land 'from the sea to the Jordan.'",
+      "sources": [
+        "https://www.c14.co.il/article/1275657",
+        "https://www.israelhayom.co.il/news/geopolitics/article/17567791"
+      ]
     },
     "economy": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Chairs the Knesset subcommittee for reducing regulation and personally described himself as much more of a 'freedom lover' who would like a much freer economy.",
+      "sources": [
+        "https://zmanknesset.co.il/member/23609"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "Author of an alternative, non-state 'national' inquiry committee proposal (coalition- and opposition-appointed rather than judicially led) specifically to bypass a Supreme-Court-led state commission of inquiry, which bereaved-family groups called a 'political whitewash committee.'",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1263631",
+        "https://www.srugim.co.il/1304160-%D7%A7%D7%9C%D7%A0%D7%A8-%D7%9C%D7%95%D7%95%D7%A2%D7%93%D7%AA-%D7%97%D7%A7%D7%99%D7%A8%D7%94-%D7%9C%D7%90%D7%95%D7%9E%D7%99%D7%AA-%D7%9C%D7%90-%D7%9C%D7%98%D7%99%D7%99%D7%97-%D7%9E%D7%97%D7%93%D7%9C"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.7,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "Founder/chair of a 'National Vision' Zionist-leadership organization, suggesting a strong nationalist-identity orientation, but no direct statement on education/public-sphere religious policy found.",
+      "sources": [
+        "https://keydon.co.il/?page_id=145"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Consistently amplifies coalition/government positions (judicial reform, non-state inquiry, sovereignty) rather than breaking with leadership; no record found of public disputes with Netanyahu.",
       "sources": []
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "MK since 2019 (21st Knesset onward), chairs two Knesset committees, but has not held a ministerial post.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%90%D7%A8%D7%99%D7%90%D7%9C_%D7%A7%D7%9C%D7%A0%D7%A8"
+      ]
     }
   },
   "shlomo_karhi": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific public statement found calling for or against renewed military action; as a resident of the Gaza-envelope area he has a personal stake, but no direct quote located on this axis.",
       "sources": []
     },
     "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "high",
+      "rationale": "Declared himself '100% committed to my Haredi brothers and the right-wing bloc,' calling yeshiva students 'the crown on our head' and saying 'we are fighting to protect them,' opposing broad enforced enlistment.",
+      "sources": [
+        "https://www.mako.co.il/news-politics/2026_q3/Article-cf2b1dbfdf16f91027.htm"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "A leading judicial-reform proponent: pushed a Communications Law critics call politically motivated against media rivals, defied a Supreme Court ruling on the Second Authority citing 'constitutional crisis' with the court 'trampling' the Knesset, and said 'everyone... is subject to the law' framing the court as overreaching.",
+      "sources": [
+        "https://www.the7eye.org.il/571227",
+        "https://www.emess.co.il/radio/1896043"
+      ]
     },
     "sovereignty": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific statement found on West Bank sovereignty timing; general hardline coalition alignment assumed.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct public record found on cost-of-living vs. free-market economic policy.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Said the Supreme Court itself 'shares responsibility for the loss of deterrence,' argued the Knesset (not judges) should be the neutral convener and that the government should control the inquiry's timing, and was appointed to the government's non-state inquiry-mandate team rather than backing a judicially-led state commission.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%95%D7%A2%D7%93%D7%AA_%D7%97%D7%A7%D7%99%D7%A8%D7%94_%D7%9E%D7%9E%D7%9C%D7%9B%D7%AA%D7%99%D7%AA_(%D7%99%D7%A9%D7%A8%D7%90%D7%9C)"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.6,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found on public-sphere/education Jewish-identity policy specifically; inferred mildly from his strong pro-Haredi alignment.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "value": 0.15,
+      "confidence": "medium",
+      "rationale": "Consistently described as executing the coalition/Netanyahu line on communications, judicial and Haredi-draft policy with no located instance of public breaks with leadership.",
       "sources": []
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Sitting Communications Minister and multi-term Likud MK (PhD in industrial engineering, former lecturer), with a sustained ministerial record.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%9E%D7%94_%D7%A7%D7%A8%D7%A2%D7%99"
+      ]
     }
   },
   "eliyahu_revivo": {
@@ -2130,58 +2476,69 @@
   },
   "miri_regev": {
     "gaza_posture": {
-      "value": 0.6,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct statement found calling for renewing the offensive versus preserving the ceasefire framework.",
       "sources": []
     },
     "haredi_draft": {
       "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "confidence": "medium",
+      "rationale": "Publicly called the coalition's new conscription law 'good and historic' and pledged Likud would advance a drafting law immediately after elections, but the law itself is a negotiated coalition compromise rather than the broad enforced-enlistment pole.",
+      "sources": [
+        "https://www.emess.co.il/radio/1789364",
+        "https://news.walla.co.il/item/3855084"
+      ]
     },
     "judicial_reform_pace": {
-      "value": 0.6,
+      "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific personal statement found on judicial-overhaul pace; general coalition-minister alignment assumed but not confirmed with a direct quote.",
       "sources": []
     },
     "sovereignty": {
       "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No specific public statement found on West Bank sovereignty timing.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.4,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "rationale": "As Transportation Minister has pushed public-transit reforms opposed by Haredi parties over Sabbath-service concerns, but no clear free-market vs. intervention statement found on cost-of-living specifically.",
+      "sources": [
+        "https://www.calcalist.co.il/local_news/article/bylmqpc4zx"
+      ]
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Said she supports a commission of inquiry with 'all the powers of a state commission of inquiry, but whoever heads it will not be a judge' — a middle position endorsing inquiry powers while resisting judicial leadership, citing her daughter's personal connection to the Nova festival attack.",
+      "sources": [
+        "https://www.maariv.co.il/news/politics/article-1161637"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct public statement found on Jewish-identity education/public-sphere policy specifically.",
       "sources": []
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.45,
+      "confidence": "medium",
+      "rationale": "Has publicly criticized coalition policy ('gave Likud a punch in the gut' over confused Netanyahu-Hamas-related policy) and stated 'I'm not his [Netanyahu's] commentator, and maybe I don't agree with everything he says,' indicating some willingness to diverge, short of sustained public breaks.",
+      "sources": [
+        "https://www.ynet.co.il/topics/%D7%9E%D7%99%D7%A8%D7%99_%D7%A8%D7%92%D7%91"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.9,
+      "confidence": "high",
+      "rationale": "Long sustained record: current Transportation Minister, former Culture and Sport Minister, security-cabinet member, plus a senior IDF career (Chief Military Censor, IDF Spokesperson, Brigadier General).",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%9E%D7%99%D7%A8%D7%99_%D7%A8%D7%92%D7%91"
+      ]
     }
   },
   "katy_shitrit": {
@@ -2242,58 +2599,75 @@
   },
   "amichai_chikli": {
     "gaza_posture": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
-    },
-    "haredi_draft": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
-    },
-    "judicial_reform_pace": {
-      "value": 0.6,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
-    },
-    "sovereignty": {
       "value": 0.55,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "Served several weeks of reserve duty in northern Gaza during the war while serving as minister, signaling personal commitment to the military effort, but no direct current statement found on renewing versus preserving the ceasefire.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%97%D7%99_%D7%A9%D7%99%D7%A7%D7%9C%D7%99"
+      ]
+    },
+    "haredi_draft": {
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Said 'what was before [Oct 7] can't continue' and 'we simply need the young Haredi men,' favoring meaningfully more enlistment, but also emphasized a law reached 'in consensus' with Haredi parties rather than unilateral broad enforcement.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/by87alvap",
+        "https://jppi.org.il/en/%D7%AA%D7%99%D7%A7%D7%95%D7%9F-%D7%97%D7%91%D7%A8%D7%AA%D7%99-%D7%97%D7%95%D7%A7-%D7%94%D7%92%D7%99%D7%95%D7%A1-%D7%95%D7%94%D7%A1%D7%99%D7%9B%D7%95%D7%99-%D7%9C%D7%90%D7%97%D7%93%D7%95%D7%AA-%D7%A7/"
+      ]
+    },
+    "judicial_reform_pace": {
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Criticized the Attorney General's office for trying to block Knesset legislation (reserve-service extension / conscription-law continuity) as undermining democratic principles, signaling support for curbing judicial/AG constraints on the Knesset, though not among the most vocal overhaul leaders.",
+      "sources": [
+        "https://www.ynet.co.il/news/article/by87alvap"
+      ]
+    },
+    "sovereignty": {
+      "value": 0.6,
+      "confidence": "low",
+      "rationale": "No specific public statement found on West Bank sovereignty timing; general national-religious/right-wing alignment assumed.",
       "sources": []
     },
     "economy": {
-      "value": 0.55,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
+      "rationale": "No direct public record found on cost-of-living vs. free-market economic policy.",
       "sources": []
     },
     "oct7_inquiry": {
-      "value": 0.3,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.1,
+      "confidence": "medium",
+      "rationale": "Publicly questioned a state commission of inquiry, saying 'there are ultra-left judges,' opposing a judicially-led state commission.",
+      "sources": [
+        "https://www.ynet.co.il/news/120andone/article/hkvr3uny1l"
+      ]
     },
     "jewish_identity": {
-      "value": 0.55,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Frames Israeli society through an 'Israeli-Jewish' identity lens and has spoken about youth losing Jewish identity as being 'at-risk,' though he also emphasizes openness to varied expressions of Judaism rather than a narrowly imposed model, moderating the value somewhat below the strongest identity hawks.",
+      "sources": [
+        "https://www.ynet.co.il/judaism/article/rkgh8lsen",
+        "https://www.hidabroot.org/article/236153"
+      ]
     },
     "independence": {
-      "value": 0.35,
-      "confidence": "low",
-      "rationale": "No candidate-specific public record found for this axis yet; using the Likud membership's documented party-wide center of gravity as a low-confidence placeholder (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Has the clearest historical record of independence among these candidates: as a Yamina MK he voted against Naftali Bennett's own coalition government, was expelled from the faction and sat as an independent MK, and resigned a ministerial post in 2024 to save public funds — though since joining Likud he has generally aligned with Netanyahu's coalition line, so this reflects a strong past pattern rather than current active dissent.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%97%D7%99_%D7%A9%D7%99%D7%A7%D7%9C%D7%99",
+        "https://www.mako.co.il/news-n12_magazine/2021_q4/Article-bc3ceb82d1d8c71026.htm"
+      ]
     },
     "experience": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "No public record verified yet for this candidate's ministerial/Knesset history; defaulting to an unremarkable, unverified record rather than asserting no experience (see docs/candidate-scoring-likud.md).",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Sitting Minister of Diaspora Affairs and Combating Antisemitism (previously also Minister of Social Equality), MK continuously since 2021 across three parties/status changes.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%A2%D7%9E%D7%99%D7%97%D7%99_%D7%A9%D7%99%D7%A7%D7%9C%D7%99"
+      ]
     }
   },
   "osher_shkalim": {
