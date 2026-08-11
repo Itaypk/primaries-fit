@@ -58,6 +58,13 @@ export type CandidatePositions = Record<string, number | string[]>;
 export interface Candidate {
   id: string;
   positions: CandidatePositions;
+  /**
+   * The district race this candidate runs in (a region id declared in the
+   * event's `meta.regions`). Absent = the national list. Never scored — the
+   * results view uses it to split the ranking into national + the voter's
+   * district slate, mirroring ballots where members vote both lists.
+   */
+  region?: string;
   /** Presentation-only; never scored. */
   display?: {
     avatarBg?: string;
@@ -97,7 +104,11 @@ export type QuestionWidget =
   | "segmented"
   | "boolean"
   | "multiselect"
-  | "importance";
+  | "importance"
+  /** Single-select of the event's `meta.regions`. Profile, not position: the
+   *  answer (a region id, or "" for "not sure") never enters the voter vector —
+   *  it only selects which district slate the results screen shows. */
+  | "region";
 
 /**
  * One parameter a question loads onto, with a signed weight (default 1). Several
@@ -131,8 +142,9 @@ export interface Questionnaire {
 // Voter & scoring
 // ---------------------------------------------------------------------------
 
-/** Raw answer as produced by a widget, keyed by question id. */
-export type Answer = number | boolean | string[];
+/** Raw answer as produced by a widget, keyed by question id. A plain string is
+ *  a region id (the `region` widget); "" means "not sure / no district". */
+export type Answer = number | boolean | string | string[];
 export type Answers = Record<string, Answer>;
 
 /**
@@ -198,6 +210,12 @@ export interface EventMeta extends EventSummary {
   dataUpdated: string;
   /** Optional: a locale id resolved to prose, or an external URL. */
   methodology?: string;
+  /**
+   * District-race ids for events where members also vote a regional slate
+   * (labels resolve from the locale catalogs as `region.<id>`). Candidates
+   * reference these via `Candidate.region`; absent = no district races.
+   */
+  regions?: string[];
 }
 
 /**
@@ -223,9 +241,10 @@ export interface Event extends Dataset {
    * layered over the shared chrome catalog by src/i18n. Text, not structure,
    * but carried on the loaded event so it travels with its ids. Typed as
    * `EventCatalog` in src/i18n/catalog.ts; kept loose here to avoid the engine
-   * depending on the i18n layer.
+   * depending on the i18n layer. Partial: an event may ship only its canonical
+   * (Hebrew) fragment, and i18n falls back string-by-string.
    */
-  locales: Record<LocaleCode, unknown>;
+  locales: Partial<Record<LocaleCode, unknown>>;
 }
 
 // ---------------------------------------------------------------------------

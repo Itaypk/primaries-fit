@@ -7,6 +7,7 @@ import { SegmentedQuestion } from "../components/questions/SegmentedQuestion";
 import { BooleanQuestion } from "../components/questions/BooleanQuestion";
 import { MultiSelectQuestion } from "../components/questions/MultiSelectQuestion";
 import { ImportanceQuestion } from "../components/questions/ImportanceQuestion";
+import { RegionQuestion } from "../components/questions/RegionQuestion";
 import { useEvent } from "../data/eventContext";
 
 export function QuizScreen({
@@ -29,7 +30,7 @@ export function QuizScreen({
   onNext: () => void;
 }) {
   const { t } = useI18n();
-  const { parametersById } = useEvent();
+  const { parametersById, event } = useEvent();
   const paramId = primaryParameter(question) ?? "";
 
   return (
@@ -126,6 +127,14 @@ export function QuizScreen({
           />
         );
       }
+      case "region":
+        return (
+          <RegionQuestion
+            regions={event.meta.regions ?? []}
+            value={typeof answer === "string" ? answer : null}
+            onChange={onAnswer}
+          />
+        );
     }
   }
 }

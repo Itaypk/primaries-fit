@@ -74,12 +74,14 @@ export async function loadEvent(id: string): Promise<Event> {
     : undefined;
 
   // Per-locale display-copy fragments, layered over the shared catalog by i18n.
+  // A fragment file may be absent (a Hebrew-only event); i18n then falls back
+  // to the canonical Hebrew fragment string-by-string.
   const localeEntries = await Promise.all(
-    EVENT_LOCALES.map(
+    EVENT_LOCALES.filter((lang) => eventFiles[`${dir}/locales/${lang}.json`]).map(
       async (lang) => [lang, await importJson<EventCatalog>(`${dir}/locales/${lang}.json`)] as const,
     ),
   );
-  const locales = Object.fromEntries(localeEntries) as Record<LocaleCode, EventCatalog>;
+  const locales = Object.fromEntries(localeEntries) as Partial<Record<LocaleCode, EventCatalog>>;
 
   return {
     parameters: parameters.parameters,

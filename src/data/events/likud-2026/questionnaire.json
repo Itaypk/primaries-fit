@@ -1,0 +1,130 @@
+{
+  "$comment": "Structural only. q_region is a profile question (selects the district slate on the results screen; never scored). Text in locales/he.json.",
+  "id": "likud-v1",
+  "version": 1,
+  "questions": [
+    {
+      "id": "q_region",
+      "widget": "region"
+    },
+    {
+      "id": "q_gaza",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "gaza_posture"
+        }
+      ]
+    },
+    {
+      "id": "q_imp_gaza",
+      "widget": "importance",
+      "importanceFor": [
+        "gaza_posture"
+      ]
+    },
+    {
+      "id": "q_haredi_draft",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "haredi_draft"
+        }
+      ]
+    },
+    {
+      "id": "q_imp_haredi_draft",
+      "widget": "importance",
+      "importanceFor": [
+        "haredi_draft"
+      ]
+    },
+    {
+      "id": "q_judicial",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "judicial_reform_pace"
+        }
+      ]
+    },
+    {
+      "id": "q_imp_judicial",
+      "widget": "importance",
+      "importanceFor": [
+        "judicial_reform_pace"
+      ]
+    },
+    {
+      "id": "q_sovereignty",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "sovereignty"
+        }
+      ]
+    },
+    {
+      "id": "q_economy",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "economy"
+        }
+      ]
+    },
+    {
+      "id": "q_imp_economy",
+      "widget": "importance",
+      "importanceFor": [
+        "economy"
+      ]
+    },
+    {
+      "id": "q_oct7",
+      "widget": "boolean",
+      "targets": [
+        {
+          "parameter": "oct7_inquiry"
+        }
+      ]
+    },
+    {
+      "id": "q_jewish_identity",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "jewish_identity"
+        }
+      ]
+    },
+    {
+      "id": "q_imp_jewish_identity",
+      "widget": "importance",
+      "importanceFor": [
+        "jewish_identity"
+      ]
+    },
+    {
+      "id": "q_independence",
+      "widget": "slider",
+      "targets": [
+        {
+          "parameter": "independence"
+        }
+      ]
+    },
+    {
+      "id": "q_flagship",
+      "widget": "multiselect",
+      "parameter": "flagship"
+    },
+    {
+      "id": "q_imp_experience",
+      "widget": "importance",
+      "importanceFor": [
+        "experience"
+      ]
+    }
+  ]
+}

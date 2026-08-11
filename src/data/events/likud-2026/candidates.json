@@ -1,0 +1,869 @@
+{
+  "$comment": "Likud 2026 primary — 43 national-list candidates + district-slate candidates (region = district id from meta.regions; absent = national list). Official candidate notices, 09.08.2026. positions are EMPTY pending Step-2 evidence research (docs/parameters-likud-2026.md); the engine skips missing positions.",
+  "candidates": [
+    {
+      "id": "amir_ohana",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "zeev_elkin",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "dudi_amsalem",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "avichay_buaron",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "david_bitan",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "boaz_bismuth",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eyal_ben_pinhas",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "adi_baruch",
+      "positions": {},
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363"
+      }
+    },
+    {
+      "id": "nir_barkat",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "sasson_guetta",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "tali_gottlieb",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "may_golan",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "gila_gamliel",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "uzi_dayan",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "avi_dichter",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eli_dalal",
+      "positions": {},
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shalom_danino",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "amit_halevi",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "nissim_vaturi",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "miki_zohar",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "israel_katz",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eli_cohen",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "ofir_katz",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "haim_katz",
+      "positions": {},
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yariv_levin",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "hanoch_milwidsky",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "idit_silman",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "moshe_saada",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "afif_abed",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "etty_atia",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "moshe_passal",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "tsega_melaku",
+      "positions": {},
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "dror_kapach",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yoav_kisch",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shay_kalach",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38"
+      }
+    },
+    {
+      "id": "ariel_kallner",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shlomo_karhi",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eliyahu_revivo",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "miri_regev",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "katy_shitrit",
+      "positions": {},
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "amichai_chikli",
+      "positions": {},
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "osher_shkalim",
+      "positions": {},
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eliyahu_shatiwi",
+      "positions": {},
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "aviv_itach",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "mishael_ben_ami",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yoel_ben_shushan",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yigal_brand",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yair_gabay",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "hadas_malka_hacohen",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "f"
+      }
+    },
+    {
+      "id": "gil_hadad",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77"
+      }
+    },
+    {
+      "id": "brian_tao",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yehonatan_yosef",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "ziv_maor",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a"
+      }
+    },
+    {
+      "id": "gershon_mesika",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "jacky_pinto",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a"
+      }
+    },
+    {
+      "id": "shahar_tzfanya",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363"
+      }
+    },
+    {
+      "id": "shabtai_katash",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "dvir_striker",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "erez_tadmor",
+      "positions": {},
+      "region": "jerusalem_yesha",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "omri_akunis",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "kobi_gavriel",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "dor_harlap",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177"
+      }
+    },
+    {
+      "id": "shlomo_lerner",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "oren_magnezi",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shlomo_muslai",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "sinai_kehat",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77"
+      }
+    },
+    {
+      "id": "elyashiv_rabin",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "gal_shabtai",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647"
+      }
+    },
+    {
+      "id": "omri_simhi",
+      "positions": {},
+      "region": "dan_ta",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "elad_zamir",
+      "positions": {},
+      "region": "negev",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "ezra_ozer",
+      "positions": {},
+      "region": "negev",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yossi_fitusi",
+      "positions": {},
+      "region": "negev",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "moshe_binyamin_peretz",
+      "positions": {},
+      "region": "negev",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shuki_ohana",
+      "positions": {},
+      "region": "galil",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "lior_lasri",
+      "positions": {},
+      "region": "galil",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38"
+      }
+    },
+    {
+      "id": "moshe_pinyan",
+      "positions": {},
+      "region": "galil",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yair_freiman",
+      "positions": {},
+      "region": "galil",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eli_alush",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "shay_galili",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a"
+      }
+    },
+    {
+      "id": "nimrod_madrer",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "avi_malki",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "efi_nave",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "reuven_oded",
+      "positions": {},
+      "region": "hof",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "rami_bardugo",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "mati_yogev",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#e9e0d0",
+        "avatarInk": "#77613a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "yehuda_cohen",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#dcdff0",
+        "avatarInk": "#4a5177",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "david_magidish",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#ecdcdc",
+        "avatarInk": "#774a4a",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "sharon_saada",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#d9e6e6",
+        "avatarInk": "#3f6363"
+      }
+    },
+    {
+      "id": "shay_shukrun",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#e7ddce",
+        "avatarInk": "#6b5f4c"
+      }
+    },
+    {
+      "id": "kobi_shmuel",
+      "positions": {},
+      "region": "moatzot",
+      "display": {
+        "avatarBg": "#dbe4ec",
+        "avatarInk": "#3c5a77",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "eyal_eli",
+      "positions": {},
+      "region": "haifa",
+      "display": {
+        "avatarBg": "#ead9d3",
+        "avatarInk": "#7d4a38",
+        "gender": "m"
+      }
+    },
+    {
+      "id": "tzviel_rubin",
+      "positions": {},
+      "region": "haifa",
+      "display": {
+        "avatarBg": "#dde7db",
+        "avatarInk": "#4a6647",
+        "gender": "m"
+      }
+    }
+  ]
+}

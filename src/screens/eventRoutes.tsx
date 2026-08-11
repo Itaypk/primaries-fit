@@ -61,16 +61,22 @@ export function BrowseRoute() {
 export function ResultsRoute() {
   const s = useEventSession();
   const navigate = useNavigate();
+  const { candidatesById } = useEvent();
   // A cold /results with no answers has nothing to rank — send them to welcome.
   // (Shareable, answer-carrying result URLs arrive in Phase 5 via ?a=.)
   if (Object.keys(s.answers).length === 0) return <Navigate to=".." replace />;
   const shareUrl =
     window.location.origin +
     `/e/${s.event.meta.id}/results?a=${encodeAnswers(s.answers)}`;
+  // The best *national* match — district candidates sit in their own slate and
+  // shouldn't claim the headline (or the past-outcome comparison).
+  const topMatchId = s.ranked.find((c) => !candidatesById[c.candidateId]?.region)?.candidateId;
   return (
     <ResultsScreen
       ranked={s.displayed}
-      topMatchId={s.ranked[0]?.candidateId}
+      regional={s.regional}
+      voterRegion={s.voterRegion}
+      topMatchId={topMatchId}
       shareUrl={shareUrl}
       viewMode={s.viewMode}
       onViewMode={s.changeViewMode}

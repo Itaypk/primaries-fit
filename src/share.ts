@@ -33,11 +33,13 @@ export function encodeAnswers(answers: Answers): string {
   return toBase64Url(btoa(bytes));
 }
 
-/** True when a decoded value is a legal raw answer (number | boolean | string[]). */
+/** True when a decoded value is a legal raw answer
+ *  (number | boolean | string (region id) | string[]). */
 function isAnswerValue(v: unknown): boolean {
   return (
     typeof v === "number" ||
     typeof v === "boolean" ||
+    typeof v === "string" ||
     (Array.isArray(v) && v.every((x) => typeof x === "string"))
   );
 }

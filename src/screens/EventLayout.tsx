@@ -10,7 +10,7 @@ import { DEFAULT_ACCENT } from "../theme";
 import { useI18n } from "../i18n";
 import { useMeta } from "../meta";
 import { decodeAnswers } from "../share";
-import { isAnswered } from "../view/question";
+import { isAnswered, selectedRegion } from "../view/question";
 import { AppFrame } from "../components/AppFrame";
 import { Page } from "../components/Page";
 import { clearProgress, loadProgress, saveProgress } from "../persistence";
@@ -50,8 +50,16 @@ export interface EventSession {
   toggleOption: (optionId: string) => void;
   goNext: () => void;
   voter: VoterVector;
+  /** Every candidate, scored — the lookup for candidate pages. */
   ranked: CandidateScore[];
+  /** The national list (candidates without a `region`), post-ranked per the
+   *  view mode — what the results grid renders. */
   displayed: CandidateScore[];
+  /** The voter's district slate (match order), when they picked a district
+   *  and the event has candidates in it. Empty otherwise. */
+  regional: CandidateScore[];
+  /** The district the voter picked in the region question, if any. */
+  voterRegion: string | null;
   viewMode: ViewMode;
   changeViewMode: (mode: ViewMode) => void;
   openInfo: string | null;
@@ -153,14 +161,30 @@ function EventShell({ event }: { event: Event }) {
     () => rankCandidates(candidates, voter, parameters),
     [voter, candidates, parameters],
   );
+  // The ballot split: the national ranking and (when the voter picked a
+  // district) their district slate. Region is a filter over one scored list —
+  // it never changes a score.
+  const voterRegion = selectedRegion(questionnaire.questions, answers);
+  const byId = useMemo(() => new Map(candidates.map((c) => [c.id, c])), [candidates]);
+  const national = useMemo(
+    () => ranked.filter((c) => !byId.get(c.candidateId)?.region),
+    [ranked, byId],
+  );
+  const regional = useMemo(
+    () =>
+      voterRegion
+        ? ranked.filter((c) => byId.get(c.candidateId)?.region === voterRegion)
+        : [],
+    [ranked, byId, voterRegion],
+  );
   const displayed = useMemo(() => {
-    if (viewMode === "match") return ranked;
+    if (viewMode === "match") return national;
     const step =
       viewMode === "balanced"
         ? balanceByGender()
-        : shuffleAboveThreshold((ranked[0]?.score ?? 0) - CLOSE_ENOUGH_MARGIN, seededRng(shuffleSeed));
-    return applyPostRanking(ranked, candidates, [step]);
-  }, [ranked, candidates, viewMode, shuffleSeed]);
+        : shuffleAboveThreshold((national[0]?.score ?? 0) - CLOSE_ENOUGH_MARGIN, seededRng(shuffleSeed));
+    return applyPostRanking(national, candidates, [step]);
+  }, [national, candidates, viewMode, shuffleSeed]);
 
   const session: EventSession = {
     event,
@@ -185,6 +209,8 @@ function EventShell({ event }: { event: Event }) {
     voter,
     ranked,
     displayed,
+    regional,
+    voterRegion,
     viewMode,
     changeViewMode: (mode) => {
       setViewMode(mode);

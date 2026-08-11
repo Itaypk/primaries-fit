@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { CandidateScore } from "../engine/types";
 import { useI18n } from "../i18n";
 import { useEvent } from "../data/eventContext";
@@ -12,6 +13,8 @@ const MODES: ViewMode[] = ["match", "balanced", "close"];
 
 export function ResultsScreen({
   ranked,
+  regional = [],
+  voterRegion = null,
   topMatchId,
   shareUrl,
   viewMode,
@@ -22,6 +25,10 @@ export function ResultsScreen({
   onRestart,
 }: {
   ranked: CandidateScore[];
+  /** The voter's district slate (match order) — shown as its own section under
+   *  the national list when the voter picked a district that has candidates. */
+  regional?: CandidateScore[];
+  voterRegion?: string | null;
   /** The voter's single best match by score, regardless of the presentation
    *  view mode — used to compare against a past race's actual outcome. */
   topMatchId?: string;
@@ -46,6 +53,17 @@ export function ResultsScreen({
   const outcomeRank =
     event.meta.status === "past" ? outcomeRankOf(topMatchId, event.results) : null;
   const methodology = event.meta.methodology;
+
+  // Two-ballot events: the national list gets a heading and the voter's
+  // district slate follows as its own section.
+  const hasRegional = regional.length > 0 && !!voterRegion;
+  const sectionHeading: CSSProperties = {
+    fontSize: "19px",
+    lineHeight: 1.25,
+    fontWeight: 700,
+    color: "#221e1a",
+    margin: "0 0 12px",
+  };
 
   return (
     <div className="scr" style={{ flex: 1, overflowY: "auto", padding: "4px 22px 24px" }}>
@@ -172,12 +190,47 @@ export function ResultsScreen({
         </p>
       )}
 
+      {hasRegional && <h3 className="serif" style={sectionHeading}>{t.ui.results.nationalList}</h3>}
+
       <div className="results-grid">
-        {ranked.map((c, i) => {
-          // Only the match-ordered list has a "best match" at the top. In the
-          // balanced and shuffled views position carries no such claim, so
-          // highlighting the first row would assert something untrue.
-          const isTop = i === 0 && viewMode === "match";
+        {/* Only the match-ordered list has a "best match" at the top. In the
+            balanced and shuffled views position carries no such claim, so
+            highlighting the first row would assert something untrue. */}
+        {ranked.map((c, i) => card(c, i === 0 && viewMode === "match"))}
+      </div>
+
+      {hasRegional && (
+        <>
+          <h3 className="serif" style={{ ...sectionHeading, margin: "26px 0 12px" }}>
+            {t.ui.results.regionalList.replace("{region}", t.region(voterRegion ?? ""))}
+          </h3>
+          {/* District slates are short; they stay in plain match order — the
+              presentation view modes above apply to the national list only. */}
+          <div className="results-grid">{regional.map((c) => card(c, false))}</div>
+        </>
+      )}
+
+      <button
+        onClick={onRestart}
+        style={{
+          width: "100%",
+          height: "50px",
+          marginTop: "20px",
+          border: "1px solid #e2d6c4",
+          borderRadius: "14px",
+          background: "#fff",
+          color: "#6b6152",
+          fontSize: "15px",
+          fontWeight: 700,
+          cursor: "pointer",
+        }}
+      >
+        {t.ui.results.restart}
+      </button>
+    </div>
+  );
+
+  function card(c: CandidateScore, isTop: boolean) {
           const display = candidatesById[c.candidateId]?.display ?? {};
           const pct = Math.round(c.score * 100);
           const reasons = reasonsFor(c);
@@ -340,26 +393,5 @@ export function ResultsScreen({
               )}
             </div>
           );
-        })}
-      </div>
-
-      <button
-        onClick={onRestart}
-        style={{
-          width: "100%",
-          height: "50px",
-          marginTop: "20px",
-          border: "1px solid #e2d6c4",
-          borderRadius: "14px",
-          background: "#fff",
-          color: "#6b6152",
-          fontSize: "15px",
-          fontWeight: 700,
-          cursor: "pointer",
-        }}
-      >
-        {t.ui.results.restart}
-      </button>
-    </div>
-  );
+  }
 }

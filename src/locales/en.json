@@ -46,7 +46,9 @@
       "notImp": "Not at all",
       "veryImp": "Critical",
       "middle": "Middle",
-      "none": "None"
+      "none": "None",
+      "regionHint": "Members also vote for a district candidate — pick your district and we'll show its slate too.",
+      "regionNone": "Not sure / no district"
     },
     "results": {
       "title": "Your best matches",
@@ -74,7 +76,9 @@
         "close": "The {count} candidates closest to your positions, in random order. Pick by instinct rather than by a decimal point. Tap “Close enough” again to reshuffle."
       },
       "methodology": "How positions are sourced",
-      "compareToOutcome": "Your closest match, {name}, finished #{rank} in the actual primary vote."
+      "compareToOutcome": "Your closest match, {name}, finished #{rank} in the actual primary vote.",
+      "nationalList": "National list",
+      "regionalList": "Candidates in {region}"
     },
     "browse": {
       "title": "All candidates",
@@ -213,6 +217,7 @@
     }
   },
   "party": {
-    "hademokratim": "The Democrats"
+    "hademokratim": "The Democrats",
+    "likud": "Likud"
   }
 }

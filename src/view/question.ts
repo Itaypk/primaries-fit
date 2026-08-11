@@ -28,6 +28,8 @@ export function questionHint(t: Translator, q: Question): string {
       return t.ui.quiz.multiHint;
     case "boolean":
       return t.ui.quiz.boolHint;
+    case "region":
+      return t.ui.quiz.regionHint;
   }
 }
 
@@ -35,4 +37,15 @@ export function questionHint(t: Translator, q: Question): string {
 export function isAnswered(q: Question, answer: unknown): boolean {
   if (q.widget === "multiselect") return Array.isArray(answer) && answer.length > 0;
   return answer != null;
+}
+
+/** The voter's selected district: the region question's answer, if any.
+ *  "" (the explicit "not sure" choice) reads as no district. */
+export function selectedRegion(
+  questions: Question[],
+  answers: Record<string, unknown>,
+): string | null {
+  const q = questions.find((x) => x.widget === "region");
+  const a = q ? answers[q.id] : undefined;
+  return typeof a === "string" && a !== "" ? a : null;
 }

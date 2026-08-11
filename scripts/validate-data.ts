@@ -26,6 +26,10 @@ const root = resolve(here, "..");
 const EVENTS_DIR = "src/data/events";
 const LOCALE_DIR = "src/locales";
 const LOCALES = ["he", "en"] as const;
+/** The canonical event locale: an event MUST ship complete copy here. Other
+ *  locales are optional per event — i18n falls back to this one string-by-string
+ *  — and are only validated for the ids they do carry. */
+const CANONICAL = "he" as const;
 
 /** Read + JSON-parse a repo-relative file. The only place that touches disk. */
 function load(rel: string): unknown {
@@ -58,6 +62,7 @@ const eventSummarySchema = z
 const eventMetaSchema = eventSummarySchema.extend({
   dataUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected ISO YYYY-MM-DD"),
   methodology: z.string().optional(),
+  regions: z.array(z.string().min(1)).optional(),
 });
 
 const parameterSchema = z
@@ -74,6 +79,8 @@ const candidateSchema = z
   .object({
     id: z.string().min(1),
     positions: z.record(z.string(), positionValue),
+    // The district race this candidate runs in; must be one of meta.regions.
+    region: z.string().min(1).optional(),
     // display is presentation-only; validate loosely (never scored).
     display: z.record(z.string(), z.unknown()).optional(),
   })
@@ -86,7 +93,7 @@ const positionTarget = z
 const questionSchema = z
   .object({
     id: z.string().min(1),
-    widget: z.enum(["slider", "segmented", "boolean", "multiselect", "importance"]),
+    widget: z.enum(["slider", "segmented", "boolean", "multiselect", "importance", "region"]),
     targets: z.array(positionTarget).optional(),
     parameter: z.string().min(1).optional(),
     importanceFor: z.array(z.string().min(1)).optional(),
@@ -156,6 +163,7 @@ type EventFragment = {
   option?: Record<string, string>;
   question?: Record<string, { title?: string; statement?: string }>;
   candidate?: Record<string, { name?: string }>;
+  region?: Record<string, string>;
   resultReason?: Record<string, string>;
 };
 const sharedCatalogs: Record<string, SharedCatalog> = {};
@@ -170,13 +178,15 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
   const dir = `${EVENTS_DIR}/${id}`;
   const at = (msg: string) => fail(`[${id}] ${msg}`);
 
+  // Only the canonical locale fragment is required; other locales are optional
+  // per event (missing strings fall back to canonical at runtime).
   const requiredFiles = [
     "parameters",
     "candidates",
     "questionnaire",
     "evidence",
     "meta",
-    ...LOCALES.map((l) => `locales/${l}`),
+    `locales/${CANONICAL}`,
   ];
   for (const f of requiredFiles) {
     if (!fileExists(`${dir}/${f}.json`)) {
@@ -282,19 +292,34 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
     }
   }
 
-  // Locale fragments, loaded once and shared by the checks below.
+  // Locale fragments, loaded once and shared by the checks below. Only the
+  // fragments the event actually ships are loaded; canonical is guaranteed.
   const frags: Record<string, EventFragment> = {};
   for (const lang of LOCALES)
-    frags[lang] = stripComment(load(`${dir}/locales/${lang}.json`) as Record<string, unknown>) as EventFragment;
+    if (fileExists(`${dir}/locales/${lang}.json`))
+      frags[lang] = stripComment(load(`${dir}/locales/${lang}.json`) as Record<string, unknown>) as EventFragment;
 
   // Ids a seated (`final`) entry may carry that are NOT primary candidates —
   // e.g. the party chair heading the list. Allowed only when declared (with a
-  // display name) in EVERY locale fragment, so they still resolve for the UI.
+  // display name) in the canonical fragment, so they still resolve for the UI.
   const displayOnlyIds = new Set(
-    Object.keys(frags[LOCALES[0]].candidate ?? {}).filter(
-      (cid) => !candidateIds.has(cid) && LOCALES.every((l) => frags[l].candidate?.[cid]?.name),
+    Object.keys(frags[CANONICAL].candidate ?? {}).filter(
+      (cid) => !candidateIds.has(cid) && frags[CANONICAL].candidate?.[cid]?.name,
     ),
   );
+
+  // Region integrity: candidates may only reference declared district ids, and
+  // a `region` question only makes sense on an event that declares districts.
+  const regionIds = new Set(meta?.regions ?? []);
+  for (const c of candidates)
+    if (c.region && !regionIds.has(c.region))
+      at(`candidate '${c.id}': region '${c.region}' is not declared in meta.regions`);
+  if (questionnaire) {
+    const regionQs = questionnaire.questions.filter((q) => q.widget === "region");
+    if (regionQs.length > 1) at(`questionnaire has ${regionQs.length} region questions; at most one is supported`);
+    if (regionQs.length === 1 && regionIds.size === 0)
+      at(`question '${regionQs[0].id}': region widget on an event with no meta.regions`);
+  }
 
   // (optional) results reference known candidates, and divergence reasons resolve
   const resultReasonIds = new Set<string>();
@@ -309,10 +334,14 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
     }
   }
 
-  // (5) locale completeness — event-specific ids in EVERY event fragment, and
-  // the party label in EVERY shared catalog.
+  // (5) locale completeness — event-specific ids must fully resolve in the
+  // CANONICAL fragment (the runtime fallback target). Other shipped fragments
+  // may be partial: whatever they omit falls back, so nothing is enforced
+  // there. The party label must exist in EVERY shared catalog — the chooser
+  // renders it with no event fallback in scope.
   const questionIds = (questionnaire?.questions ?? []).map((q) => q.id);
-  for (const lang of LOCALES) {
+  {
+    const lang = CANONICAL;
     const frag = frags[lang];
     for (const rid of resultReasonIds)
       if (!frag.resultReason?.[rid]) at(`[locale:${lang}] missing resultReason.${rid}`);
@@ -327,11 +356,11 @@ function validateEvent(summary: z.infer<typeof eventSummarySchema>): number {
     }
     for (const c of candidates) if (!frag.candidate?.[c.id]?.name) at(`[locale:${lang}] missing candidate.${c.id}.name`);
     for (const qid of questionIds) if (!frag.question?.[qid]) at(`[locale:${lang}] missing question.${qid}`);
-
-    // The chooser renders the party label from the shared catalog.
+    for (const rid of regionIds) if (!frag.region?.[rid]) at(`[locale:${lang}] missing region.${rid}`);
+  }
+  for (const lang of LOCALES)
     if (meta && !sharedCatalogs[lang].party?.[meta.party])
       at(`[locale:${lang}] missing shared party.${meta.party}`);
-  }
 
   return evidencePairs;
 }
