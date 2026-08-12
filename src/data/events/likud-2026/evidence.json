@@ -473,10 +473,12 @@
       "sources": []
     },
     "experience": {
-      "value": 0.2,
-      "confidence": "low",
-      "rationale": "No evidence found of prior ministerial or Knesset service; appears to be a lower-profile national-list primary candidate. Best-guess based on apparent lack of a public record, not a confirmed biography.",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Repeat candidate — also appeared on the Likud national-list primary candidate roster in the 2022 primaries, indicating a sustained (if unelected) history of party political engagement rather than a first-time entrant.",
+      "sources": [
+        "https://he.wikipedia.org/wiki/%D7%94%D7%91%D7%97%D7%99%D7%A8%D7%95%D7%AA_%D7%94%D7%9E%D7%A7%D7%93%D7%99%D7%9E%D7%95%D7%AA_%D7%91%D7%9C%D7%99%D7%9B%D7%95%D7%93_(2022)"
+      ]
     }
   },
   "adi_baruch": {
@@ -1160,12 +1162,11 @@
       ]
     },
     "experience": {
-      "value": 0.4,
+      "value": 0.9,
       "confidence": "high",
-      "rationale": "Sitting member of the 25th Knesset (Likud), elected in the Negev/southern district seat in the 2022 primary; member of the Economics and Foreign Affairs and Defense Committees and chair of Knesset friendship groups. No ministerial post.",
+      "rationale": "Sitting 25th-Knesset Member for Likud, chairs joint Knesset committees on foreign affairs & defense, the citizenship/entry law, and IDF career-service pensions — a real, current parliamentary record.",
       "sources": [
-        "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9D_%D7%93%D7%A0%D7%99%D7%A0%D7%95",
-        "https://www.hamichlol.org.il/%D7%A9%D7%9C%D7%95%D7%9D_%D7%93%D7%A0%D7%99%D7%A0%D7%95"
+        "https://he.wikipedia.org/wiki/%D7%A9%D7%9C%D7%95%D7%9D_%D7%93%D7%A0%D7%99%D7%A0%D7%95"
       ]
     }
   },
@@ -3042,11 +3043,11 @@
       ]
     },
     "experience": {
-      "value": 0.05,
-      "confidence": "high",
-      "rationale": "No ministerial or parliamentary record — first-time political candidate motivated by the loss of his son Idan Shatiwi on October 7.",
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Leading figure in the bereaved/hostage-families advocacy movement following the murder of his son Idan in the October 7 Nova massacre; running to give voice to the victims. Real public-advocacy leadership, but not ministerial/parliamentary or municipal office. No policy statements on the scored axes were found in his campaign messaging beyond this general mission, so scalar axes stay at the party-prior baseline.",
       "sources": [
-        "https://www.ice.co.il/local-news/news/article/1118489"
+        "https://www.ynet.co.il/news/article/rk9rvyjgfl"
       ]
     }
   },
@@ -3116,13 +3117,11 @@
       ]
     },
     "experience": {
-      "value": 0.85,
-      "confidence": "high",
-      "rationale": "Confirmed identity: chairman of the Likud faction in Rehovot and deputy/acting mayor of Rehovot; previously advisor to Likud ministers of transportation, foreign affairs and education, and president of the National Union of Students. Won the Shfela-district sample poll (57% then leading later polls) to represent the Jerusalem/Yesha/Shfela district (list slot ~27/300s).",
+      "value": 0.7,
+      "confidence": "medium",
+      "rationale": "Former deputy mayor of Rehovot (won a contested 2023 primary within the local list 57%-43%), former chair of the Israeli National Union of Students, and former advisor to ministers Israel Katz and Yoav Gallant — substantial municipal and political-staff experience, though not ministerial/parliamentary himself. Reported as the frontrunner for the Jerusalem/Yesha/Shfela district seat in internal polling.",
       "sources": [
-        "https://www.be106.net/233/139349",
-        "https://www.be106.net/233/151397",
-        "https://rehovot.news/%D7%94%D7%9C%D7%99%D7%9B%D7%95%D7%93-%D7%91%D7%A8%D7%97%D7%95%D7%91%D7%95%D7%AA-%D7%91%D7%94%D7%95%D7%91%D7%9C%D7%AA-%D7%90%D7%91%D7%99%D7%91-%D7%90%D7%99%D7%98%D7%97-%D7%94%D7%92%D7%99%D7%A9%D7%95/"
+        "https://www.be106.net/233/151397"
       ]
     }
   },
@@ -3152,10 +3151,13 @@
       "sources": []
     },
     "economy": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "Could not confirm identity / no record found.",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "Flagship campaign proposal: a state/bank-backed 100% mortgage program for young couples (no down payment required, modeled on French/European policy) — a clear government-intervention stance on housing affordability rather than a free-market approach.",
+      "sources": [
+        "https://www.scooper.co.il/pr/1049847/",
+        "https://www.bhol.co.il/news/1412306"
+      ]
     },
     "oct7_inquiry": {
       "value": 0.5,
@@ -3176,10 +3178,13 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
-      "confidence": "low",
-      "rationale": "Could not confirm identity / no record found; no public office or leadership record located for this name.",
-      "sources": []
+      "value": 0.75,
+      "confidence": "high",
+      "rationale": "Economist (six academic degrees) and Likud member for over three decades; chaired the Jerusalem Likud branch 2006-2013, during which branch membership hit a record ~23,000 — a substantial, sustained party-organizational leadership record, though not a ministerial or Knesset seat.",
+      "sources": [
+        "https://www.scooper.co.il/pr/1049847/",
+        "https://www.bhol.co.il/news/1412306"
+      ]
     }
   },
   "yoel_ben_shushan": {
@@ -3472,12 +3477,11 @@
       ]
     },
     "experience": {
-      "value": 0.8,
-      "confidence": "high",
-      "rationale": "Confirmed identity: Dr. Hadas Malka HaCohen, former deputy mayor of Rishon LeZion (through March 2024), where she established the special-education and municipal-accessibility portfolios and the country's first committee of its kind for special needs; currently chairs the Likud faction's special-education/accessibility education staff and represents the movement on the World Zionist Organization's finance committee; announced her Likud Knesset primary candidacy in the party's 'new woman' slot.",
+      "value": 0.65,
+      "confidence": "medium",
+      "rationale": "Former deputy mayor of Ra'anana (~5 years through March 2024), where she established the city's special-education and municipal-accessibility portfolios and its first special-needs committee; also the Likud movement's representative on the World Zionist Organization's Finance Committee. Real municipal leadership record, not ministerial/parliamentary.",
       "sources": [
-        "https://www.be106.net/231/150911",
-        "https://www.rishonlezion.muni.il/Activities/CityCouncilCommittees/Lists/List2/CustomDispForm.aspx?ID=12"
+        "https://www.be106.net/231/150911"
       ]
     }
   },
@@ -3605,9 +3609,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no record found; search returned only unrelated namesakes (an actor, a chess player, and a court case).",
+      "rationale": "Search returned only unrelated namesakes; no confirmed public office or organizational record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -3661,9 +3665,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.3,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "One unverified reference suggests a person of this name previously worked in Likud MK Miri Regev's office, which would indicate a minor organizational role, but the source could not be confirmed as the same district candidate.",
+      "rationale": "A well-documented Jerusalem public figure of this name (grandson of Rabbi Ovadia Yosef, former Jerusalem city-council member) surfaced, but could not be confidently confirmed as the same individual as this Likud Jerusalem/Yesha/Shfela district candidate — treated as unconfirmed identity rather than asserted fact. Defaults to the documented neutral baseline.",
       "sources": []
     }
   },
@@ -3827,10 +3831,12 @@
       "sources": []
     },
     "economy": {
-      "value": 0.5,
-      "confidence": "low",
-      "rationale": "Could not confirm identity / no record found.",
-      "sources": []
+      "value": 0.2,
+      "confidence": "medium",
+      "rationale": "Campaign platform centers on 'housing for young couples at reduced prices,' reducing the cost of living, and raising the minimum wage — a clear government-intervention stance rather than free-market deregulation.",
+      "sources": [
+        "https://mcity.co.il/?id=8202207311246427"
+      ]
     },
     "oct7_inquiry": {
       "value": 0.5,
@@ -3851,10 +3857,22 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
-      "confidence": "low",
-      "rationale": "Could not confirm identity / no record found; no public office or organizational role could be attributed to a specific, confirmed individual.",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Real-estate professional from Modiin running for the Likud national list (Shfela-district slot); local media describe him gaining momentum and broad support in a five-way race, but no ministerial/parliamentary record.",
+      "sources": [
+        "https://mcity.co.il/?id=8202207311246427"
+      ]
+    },
+    "flagship": {
+      "value": [
+        "cost_of_living"
+      ],
+      "confidence": "high",
+      "rationale": "Explicit campaign platform: housing for young couples at reduced prices, cost of living, minimum wage, support for weaker populations and disabled IDF veterans — squarely the 'cost of living & housing' flagship tag.",
+      "sources": [
+        "https://mcity.co.il/?id=8202207311246427"
+      ]
     }
   },
   "shahar_tzfanya": {
@@ -4032,9 +4050,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no record found; no public office or organizational role could be attributed to a confirmed individual of this name.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -4474,9 +4492,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no record found; no public office or leadership record located under this name in connection with the Likud Dan/Tel-Aviv primary.",
+      "rationale": "A Tel Aviv city councillor (2003-2013, Likud faction) with a similar name ('Shlomo Maslawi'/מסלאוי) surfaced, but the spelling differs from this candidate's name and identity could not be confidently confirmed — treated as unconfirmed rather than asserted fact. Defaults to the documented neutral baseline.",
       "sources": []
     }
   },
@@ -4530,9 +4548,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.3,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "A person named Sinai Kehat (b. 1957), an attorney and member of the Tel Aviv district committee, chairing a law-firm ethics committee, surfaced in search, but this could not be confidently confirmed as the same individual as the Likud Dan/Tel-Aviv primary candidate; treated as unconfirmed identity.",
+      "rationale": "An attorney of this name surfaced in Likud-internal legal contexts, but identity could not be confidently confirmed as this Dan/Tel-Aviv district candidate — treated as unconfirmed rather than asserted fact. Defaults to the documented neutral baseline.",
       "sources": []
     }
   },
@@ -4648,9 +4666,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no record found for a candidate named 'Gal Shabtai' in the Likud Dan/Tel-Aviv primary.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -4780,11 +4798,11 @@
       ]
     },
     "experience": {
-      "value": 0.5,
+      "value": 0.65,
       "confidence": "medium",
-      "rationale": "Long-serving chief of staff to Communications Minister Shlomo Karhi, giving significant political/organizational experience, though no elected office held. Also has a documented Civil Service Disciplinary Court conviction (two counts of improper conduct, including assaulting a journalist and distributing a doctored photo of an MK), which is a factual, non-ideological record note.",
+      "rationale": "Former chief of staff to Communications Minister Shlomo Karhi (~3.5 years); Beersheba native and Netivot resident with degrees in political science/communications and American Jewish studies — senior political-staff experience, not elected office.",
       "sources": [
-        "https://br7news.co.il/he/news/news-1786265532"
+        "https://br7news.co.il/he/news/news-1783533372"
       ]
     }
   },
@@ -4854,9 +4872,9 @@
       ]
     },
     "experience": {
-      "value": 0.5,
+      "value": 0.6,
       "confidence": "medium",
-      "rationale": "Currently serves as an Ashkelon city council member and deputy mayor, a genuine municipal record, though his campaign is described as needing to translate a local Ashkelon base into district-wide support.",
+      "rationale": "Ashkelon city councillor and deputy mayor, running on municipal experience and local-activist familiarity in the southern coastal area.",
       "sources": [
         "https://br7news.co.il/he/news/news-1786265532"
       ]
@@ -5078,12 +5096,11 @@
       ]
     },
     "experience": {
-      "value": 0.9,
+      "value": 0.85,
       "confidence": "high",
-      "rationale": "Former mayor of Tzfat (served until losing re-election in November 2023), a sustained municipal leadership record; now seeking the primaries as, per reporting, a springboard to national office.",
+      "rationale": "Former Mayor of Tzfat (won 2018 with 62% runoff; lost 2024 re-election 43%-52.2%), retired IDF brigadier general with a security-studies/law background who served as a staff officer in Northern Command, and a repeat Likud primary contender (also ran for the Galilee & Valleys district in the Knesset 19 primaries) — substantial municipal and military leadership record.",
       "sources": [
-        "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A7%D7%99_%D7%90%D7%95%D7%97%D7%A0%D7%94",
-        "https://www.ynet.co.il/news/article/ry100bw3hp"
+        "https://he.wikipedia.org/wiki/%D7%A9%D7%95%D7%A7%D7%99_%D7%90%D7%95%D7%97%D7%A0%D7%94"
       ]
     }
   },
@@ -5490,9 +5507,9 @@
       ]
     },
     "experience": {
-      "value": 0.3,
-      "confidence": "medium",
-      "rationale": "Described in his own campaign material as an IDF reserve major and a molecular biology PhD; no record of prior elected/municipal office found, i.e. professional/military leadership but not sustained political office.",
+      "value": 0.5,
+      "confidence": "low",
+      "rationale": "Brain researcher (Hebrew University) and first-time Likud primary candidate in the coastal-plain district; campaign discusses process/values rather than a prior public-office record. No leadership record found beyond academic career, so kept at the neutral baseline.",
       "sources": [
         "https://nimrodmadrer.com/"
       ]
@@ -5548,9 +5565,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no public office or leadership record found for a Likud Coastal Plain candidate by this name.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -5678,9 +5695,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no public office or leadership record found.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -5946,9 +5963,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no public office or leadership record found.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -6002,10 +6019,13 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
-      "confidence": "low",
-      "rationale": "No public office or leadership record found beyond an internal Likud straw-poll placement.",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Sitting member of the Ashkelon Coast Regional Council plenum (מועצה אזורית חוף אשקלון) — real, confirmed local-government experience, though not ministerial/parliamentary. Also placed first in the 'moshavim' category of an internal Likud straw poll (Likudiyada) in the regional-councils district she's contesting.",
+      "sources": [
+        "https://www.inn.co.il/news/695891",
+        "https://oknesset.org/meetings/2/2/2232900.html"
+      ]
     }
   },
   "shay_shukrun": {
@@ -6058,10 +6078,12 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
-      "confidence": "low",
-      "rationale": "Could not confirm identity / no public office or leadership record found.",
-      "sources": []
+      "value": 0.55,
+      "confidence": "medium",
+      "rationale": "Repeat candidate: also ran in the 2022 Likud primaries in the regional-councils (מועצות אזוריות) category — the same district he's contesting in 2026. Former youth-league footballer (Maccabi Haifa academy, Hapoel Haifa), Atlit resident; public-facing communal role but no ministerial/parliamentary record.",
+      "sources": [
+        "https://www.goler1.co.il/Article/23504"
+      ]
     }
   },
   "kobi_shmuel": {
@@ -6114,9 +6136,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "No public office or leadership record found.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -6170,9 +6192,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.0,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Could not confirm identity / no public office or leadership record found.",
+      "rationale": "Could not confirm identity or any public office/organizational leadership record; defaults to the documented neutral baseline rather than asserting 'no record'.",
       "sources": []
     }
   },
@@ -6226,9 +6248,9 @@
       "sources": []
     },
     "experience": {
-      "value": 0.3,
+      "value": 0.5,
       "confidence": "low",
-      "rationale": "Described as a businessman and chair of Nahariya's basketball division who has organized Likud campaign events and engaged in legal proceedings over primary rules — some local/organizational role, but no elected office confirmed.",
+      "rationale": "A businessman and chair of Nahariya's basketball division, described as a Haifa-district Likud primary contender, surfaced but the record is thin and not confidently tied to sustained public/organizational leadership; kept at the documented neutral baseline pending firmer confirmation.",
       "sources": []
     }
   }
