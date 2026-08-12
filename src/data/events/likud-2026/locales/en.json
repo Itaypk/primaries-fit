@@ -1,0 +1,583 @@
+{
+  "$comment": "likud-2026 display copy (English fragment; layered over he.json — see src/data/events/likud-2026/locales/he.json for the canonical Hebrew).",
+  "param": {
+    "gaza_posture": {
+      "label": "Policy in Gaza",
+      "poleLow": "Preserve the ceasefire & deal framework",
+      "poleHigh": "Renew fighting until decisive victory"
+    },
+    "haredi_draft": {
+      "label": "Haredi enlistment",
+      "poleLow": "Preserve the arrangement with the haredi parties",
+      "poleHigh": "Broad enlistment with equal enforcement"
+    },
+    "judicial_reform_pace": {
+      "label": "Judicial reform",
+      "poleLow": "Pause, or continue only by broad consensus",
+      "poleHigh": "Complete the reform now"
+    },
+    "sovereignty": {
+      "label": "Sovereignty in Judea & Samaria",
+      "poleLow": "Wait for the right diplomatic timing",
+      "poleHigh": "Apply sovereignty now"
+    },
+    "economy": {
+      "label": "Economy & cost of living",
+      "poleLow": "Government intervention to lower the cost of living",
+      "poleHigh": "Free market, competition & deregulation"
+    },
+    "oct7_inquiry": {
+      "label": "Inquiry into the events of October 7",
+      "poleLow": "A government-appointed inquiry",
+      "poleHigh": "An independent state commission of inquiry"
+    },
+    "jewish_identity": {
+      "label": "Jewish identity",
+      "poleLow": "National-liberal, live and let live",
+      "poleHigh": "Strengthen Jewish identity in education & public life"
+    },
+    "independence": {
+      "label": "Representation style in the party",
+      "poleLow": "Full backing for the leadership's line",
+      "poleHigh": "An independent voice within the party"
+    },
+    "experience": {
+      "label": "Parliamentary & government experience"
+    },
+    "flagship": {
+      "label": "Flagship issues"
+    }
+  },
+  "option": {
+    "security_victory": "Security & defeating Hamas",
+    "judicial_reform": "Judicial reform",
+    "cost_of_living": "Cost of living & housing",
+    "sovereignty_now": "Sovereignty in Judea & Samaria",
+    "jewish_identity_edu": "Jewish identity in education",
+    "draft_equality": "Equal share of the enlistment burden",
+    "periphery_dev": "Developing the periphery",
+    "foreign_relations": "Foreign relations & normalization"
+  },
+  "region": {
+    "jerusalem_yesha": "Jerusalem, Yesha & Shfela",
+    "dan_ta": "Dan & Tel Aviv",
+    "negev": "Negev",
+    "galil": "Galilee & Valleys",
+    "hof": "Coastal Plain",
+    "moatzot": "Regional Councils",
+    "haifa": "Haifa"
+  },
+  "question": {
+    "q_region": {
+      "title": "Which region are you registered to vote in?"
+    },
+    "q_gaza": {
+      "title": "What do you think is the right policy in the Gaza Strip right now?"
+    },
+    "q_imp_gaza": {
+      "title": "How important is the policy in Gaza to you?"
+    },
+    "q_haredi_draft": {
+      "title": "Where do you stand on the haredi enlistment issue?"
+    },
+    "q_imp_haredi_draft": {
+      "title": "How important is haredi enlistment to you?"
+    },
+    "q_judicial": {
+      "title": "How should the judicial reform move forward?"
+    },
+    "q_imp_judicial": {
+      "title": "How important is the judicial reform to you?"
+    },
+    "q_sovereignty": {
+      "title": "Where do you stand on applying sovereignty in Judea & Samaria?"
+    },
+    "q_economy": {
+      "title": "Which economic approach is closer to your view?"
+    },
+    "q_imp_economy": {
+      "title": "How important are the economy and cost of living to you?"
+    },
+    "q_oct7": {
+      "title": "Inquiry into the events of October 7",
+      "statement": "An independent state commission of inquiry should be established to investigate the events of October 7."
+    },
+    "q_jewish_identity": {
+      "title": "What should Jewish identity's place be in education and public life?"
+    },
+    "q_imp_jewish_identity": {
+      "title": "How important is Jewish identity to you?"
+    },
+    "q_independence": {
+      "title": "What kind of Knesset member are you looking for?"
+    },
+    "q_flagship": {
+      "title": "Which issues would you want your candidate to champion?"
+    },
+    "q_imp_experience": {
+      "title": "How important is parliamentary & government experience to you?"
+    }
+  },
+  "candidate": {
+    "amir_ohana": {
+      "name": "Amir Ohana",
+      "tagline": "Knesset Speaker",
+      "initial": "A"
+    },
+    "zeev_elkin": {
+      "name": "Ze'ev Elkin",
+      "tagline": "Former minister",
+      "initial": "Z"
+    },
+    "dudi_amsalem": {
+      "name": "Dudi Amsalem",
+      "tagline": "Cabinet minister",
+      "initial": "D"
+    },
+    "avichay_buaron": {
+      "name": "Avichay Buaron",
+      "tagline": "Knesset Member",
+      "initial": "A"
+    },
+    "david_bitan": {
+      "name": "David Bitan",
+      "tagline": "Knesset Member",
+      "initial": "D"
+    },
+    "boaz_bismuth": {
+      "name": "Boaz Bismuth",
+      "tagline": "Knesset Member",
+      "initial": "B"
+    },
+    "eyal_ben_pinhas": {
+      "name": "Eyal Ben Pinhas",
+      "tagline": "",
+      "initial": "E"
+    },
+    "adi_baruch": {
+      "name": "Adi Baruch",
+      "tagline": "",
+      "initial": "A"
+    },
+    "nir_barkat": {
+      "name": "Nir Barkat",
+      "tagline": "Cabinet minister",
+      "initial": "N"
+    },
+    "sasson_guetta": {
+      "name": "Sasson (\"Sassi\") Gueta",
+      "tagline": "Knesset Member",
+      "initial": "S"
+    },
+    "tali_gottlieb": {
+      "name": "Tali Gottlieb",
+      "tagline": "Knesset Member",
+      "initial": "T"
+    },
+    "may_golan": {
+      "name": "May Golan",
+      "tagline": "Cabinet minister",
+      "initial": "M"
+    },
+    "gila_gamliel": {
+      "name": "Gila Gamliel",
+      "tagline": "Cabinet minister",
+      "initial": "G"
+    },
+    "uzi_dayan": {
+      "name": "Uzi Dayan",
+      "tagline": "Maj. Gen. (res.)",
+      "initial": "U"
+    },
+    "avi_dichter": {
+      "name": "Avi Dichter",
+      "tagline": "Cabinet minister",
+      "initial": "A"
+    },
+    "eli_dalal": {
+      "name": "Eli Dalal",
+      "tagline": "Knesset Member",
+      "initial": "E"
+    },
+    "shalom_danino": {
+      "name": "Shalom Danino",
+      "tagline": "Knesset Member",
+      "initial": "S"
+    },
+    "amit_halevi": {
+      "name": "Amit Halevi",
+      "tagline": "Knesset Member",
+      "initial": "A"
+    },
+    "nissim_vaturi": {
+      "name": "Nissim Vaturi",
+      "tagline": "Knesset Member",
+      "initial": "N"
+    },
+    "miki_zohar": {
+      "name": "Miki Zohar",
+      "tagline": "Cabinet minister",
+      "initial": "M"
+    },
+    "israel_katz": {
+      "name": "Israel Katz",
+      "tagline": "Cabinet minister",
+      "initial": "I"
+    },
+    "eli_cohen": {
+      "name": "Eli Cohen",
+      "tagline": "Cabinet minister",
+      "initial": "E"
+    },
+    "ofir_katz": {
+      "name": "Ofir Katz",
+      "tagline": "Knesset Member",
+      "initial": "O"
+    },
+    "haim_katz": {
+      "name": "Haim Katz",
+      "tagline": "Cabinet minister",
+      "initial": "H"
+    },
+    "yariv_levin": {
+      "name": "Yariv Levin",
+      "tagline": "Cabinet minister",
+      "initial": "Y"
+    },
+    "hanoch_milwidsky": {
+      "name": "Hanoch Milwidsky",
+      "tagline": "Knesset Member",
+      "initial": "H"
+    },
+    "idit_silman": {
+      "name": "Idit Silman",
+      "tagline": "Cabinet minister",
+      "initial": "I"
+    },
+    "moshe_saada": {
+      "name": "Moshe Saada",
+      "tagline": "Knesset Member",
+      "initial": "M"
+    },
+    "afif_abed": {
+      "name": "Afif Abed",
+      "tagline": "Knesset Member",
+      "initial": "A"
+    },
+    "etty_atia": {
+      "name": "Etty Atia",
+      "tagline": "Knesset Member",
+      "initial": "E"
+    },
+    "moshe_passal": {
+      "name": "Moshe Passal",
+      "tagline": "Knesset Member",
+      "initial": "M"
+    },
+    "tsega_melaku": {
+      "name": "Tsega Melaku",
+      "tagline": "Knesset Member",
+      "initial": "T"
+    },
+    "dror_kapach": {
+      "name": "Dror Kapach",
+      "tagline": "",
+      "initial": "D"
+    },
+    "yoav_kisch": {
+      "name": "Yoav Kisch",
+      "tagline": "Cabinet minister",
+      "initial": "Y"
+    },
+    "shay_kalach": {
+      "name": "Shay Kalach",
+      "tagline": "",
+      "initial": "S"
+    },
+    "ariel_kallner": {
+      "name": "Ariel Kallner",
+      "tagline": "Knesset Member",
+      "initial": "A"
+    },
+    "shlomo_karhi": {
+      "name": "Shlomo Karhi",
+      "tagline": "Cabinet minister",
+      "initial": "S"
+    },
+    "eliyahu_revivo": {
+      "name": "Eliyahu Revivo",
+      "tagline": "Knesset Member",
+      "initial": "E"
+    },
+    "miri_regev": {
+      "name": "Miri Regev",
+      "tagline": "Cabinet minister",
+      "initial": "M"
+    },
+    "katy_shitrit": {
+      "name": "Katy Shitrit",
+      "tagline": "Knesset Member",
+      "initial": "K"
+    },
+    "amichai_chikli": {
+      "name": "Amichai Chikli",
+      "tagline": "Cabinet minister",
+      "initial": "A"
+    },
+    "osher_shkalim": {
+      "name": "Osher Shkalim",
+      "tagline": "Knesset Member",
+      "initial": "O"
+    },
+    "eliyahu_shatiwi": {
+      "name": "Eliyahu Shatiwi",
+      "tagline": "",
+      "initial": "E"
+    },
+    "aviv_itach": {
+      "name": "Aviv Itach",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "A"
+    },
+    "mishael_ben_ami": {
+      "name": "Mishael Ben Ami",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "M"
+    },
+    "yoel_ben_shushan": {
+      "name": "Yoel Ben-Shushan",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "Y"
+    },
+    "yigal_brand": {
+      "name": "Yigal Brand",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "Y"
+    },
+    "yair_gabay": {
+      "name": "Yair Gabay",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "Y"
+    },
+    "hadas_malka_hacohen": {
+      "name": "Hadas-Malka Hacohen",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "H"
+    },
+    "gil_hadad": {
+      "name": "Gil Hadad",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "G"
+    },
+    "brian_tao": {
+      "name": "Brian Tao",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "B"
+    },
+    "yehonatan_yosef": {
+      "name": "Yehonatan Yosef",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "Y"
+    },
+    "ziv_maor": {
+      "name": "Ziv Maor",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "Z"
+    },
+    "gershon_mesika": {
+      "name": "Gershon Mesika",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "G"
+    },
+    "jacky_pinto": {
+      "name": "Jacky Pinto",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "J"
+    },
+    "shahar_tzfanya": {
+      "name": "Shahar Tzafania",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "S"
+    },
+    "shabtai_katash": {
+      "name": "Shabtai Katash",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "S"
+    },
+    "dvir_striker": {
+      "name": "Dvir Striker",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "D"
+    },
+    "erez_tadmor": {
+      "name": "Erez Tadmor",
+      "tagline": "Jerusalem, Yesha & Shfela district",
+      "initial": "E"
+    },
+    "omri_akunis": {
+      "name": "Omri Akunis",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "O"
+    },
+    "kobi_gavriel": {
+      "name": "Kobi Gavriel",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "K"
+    },
+    "dor_harlap": {
+      "name": "Dor Harlap",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "D"
+    },
+    "shlomo_lerner": {
+      "name": "Shlomo Lerner",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "S"
+    },
+    "oren_magnezi": {
+      "name": "Oren Magnezi",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "O"
+    },
+    "shlomo_muslai": {
+      "name": "Shlomo Muslai",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "S"
+    },
+    "sinai_kehat": {
+      "name": "Sinai Kehat",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "S"
+    },
+    "elyashiv_rabin": {
+      "name": "Elyashiv Rabin",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "E"
+    },
+    "gal_shabtai": {
+      "name": "Gal Shabtai",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "G"
+    },
+    "omri_simhi": {
+      "name": "Omri Simchi",
+      "tagline": "Dan & Tel Aviv district",
+      "initial": "O"
+    },
+    "elad_zamir": {
+      "name": "Elad Zamir",
+      "tagline": "Negev district",
+      "initial": "E"
+    },
+    "ezra_ozer": {
+      "name": "Ezra Ozer",
+      "tagline": "Negev district",
+      "initial": "E"
+    },
+    "yossi_fitusi": {
+      "name": "Yossi Fitusi",
+      "tagline": "Negev district",
+      "initial": "Y"
+    },
+    "moshe_binyamin_peretz": {
+      "name": "Moshe Binyamin Peretz",
+      "tagline": "Negev district",
+      "initial": "M"
+    },
+    "shuki_ohana": {
+      "name": "Shuki Ohana",
+      "tagline": "Galilee & Valleys district",
+      "initial": "S"
+    },
+    "lior_lasri": {
+      "name": "Lior Lasri",
+      "tagline": "Galilee & Valleys district",
+      "initial": "L"
+    },
+    "moshe_pinyan": {
+      "name": "Moshe (\"Moshiko\") Pinyan",
+      "tagline": "Galilee & Valleys district",
+      "initial": "M"
+    },
+    "yair_freiman": {
+      "name": "Yair Adi Freiman",
+      "tagline": "Galilee & Valleys district",
+      "initial": "Y"
+    },
+    "eli_alush": {
+      "name": "Eli Alush",
+      "tagline": "Coastal Plain district",
+      "initial": "E"
+    },
+    "shay_galili": {
+      "name": "Shay Galili",
+      "tagline": "Coastal Plain district",
+      "initial": "S"
+    },
+    "nimrod_madrer": {
+      "name": "Nimrod Madrer",
+      "tagline": "Coastal Plain district",
+      "initial": "N"
+    },
+    "avi_malki": {
+      "name": "Avi Malki",
+      "tagline": "Coastal Plain district",
+      "initial": "A"
+    },
+    "efi_nave": {
+      "name": "Efi Naveh",
+      "tagline": "Coastal Plain district",
+      "initial": "E"
+    },
+    "reuven_oded": {
+      "name": "Reuven Oded",
+      "tagline": "Coastal Plain district",
+      "initial": "R"
+    },
+    "rami_bardugo": {
+      "name": "Rami Bardugo",
+      "tagline": "Regional Councils district",
+      "initial": "R"
+    },
+    "mati_yogev": {
+      "name": "Mati Yogev",
+      "tagline": "Regional Councils district",
+      "initial": "M"
+    },
+    "yehuda_cohen": {
+      "name": "Yehuda Cohen",
+      "tagline": "Regional Councils district",
+      "initial": "Y"
+    },
+    "david_magidish": {
+      "name": "David Magidish",
+      "tagline": "Regional Councils district",
+      "initial": "D"
+    },
+    "sharon_saada": {
+      "name": "Sharon Saada",
+      "tagline": "Regional Councils district",
+      "initial": "S"
+    },
+    "shay_shukrun": {
+      "name": "Shay Shukrun",
+      "tagline": "Regional Councils district",
+      "initial": "S"
+    },
+    "kobi_shmuel": {
+      "name": "Kobi Shmuel",
+      "tagline": "Regional Councils district",
+      "initial": "K"
+    },
+    "eyal_eli": {
+      "name": "Eyal Eli",
+      "tagline": "Haifa district",
+      "initial": "E"
+    },
+    "tzviel_rubin": {
+      "name": "Tzviel Rubin",
+      "tagline": "Haifa district",
+      "initial": "T"
+    }
+  }
+}
