@@ -578,6 +578,42 @@
       "name": "Tzviel Rubin",
       "tagline": "Haifa district",
       "initial": "T"
+    },
+    "benjamin_netanyahu": {
+      "name": "Benjamin Netanyahu",
+      "tagline": "Prime Minister & Likud chair",
+      "initial": "B"
+    },
+    "gideon_saar": {
+      "name": "Gideon Saar",
+      "tagline": "",
+      "initial": "G"
+    },
+    "oren_dobronsky": {
+      "name": "Oren Dobronsky",
+      "tagline": "",
+      "initial": "O"
+    },
+    "almog_cohen": {
+      "name": "Almog Cohen",
+      "tagline": "",
+      "initial": "A"
+    },
+    "moshe_peretz_galil": {
+      "name": "Moshe Peretz",
+      "tagline": "Galilee & Valleys district",
+      "initial": "M"
+    },
+    "keren_atias_bublil": {
+      "name": "Keren Atias Bublil",
+      "tagline": "",
+      "initial": "K"
     }
+  },
+  "resultReason": {
+    "chair": "Prime Minister & Likud chair — heads the list by virtue of the role, without standing in the primary.",
+    "reserved": "A reserved seat on the party's published final list.",
+    "women_representation_guarantee": "A list position adjusted under the party's women's-representation guarantee.",
+    "new_woman_seat": "A seat reserved for a \"new woman\" on the list, per party rules."
   }
 }
