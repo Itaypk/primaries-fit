@@ -611,8 +611,8 @@
     }
   },
   "resultReason": {
-    "chair": "Prime Minister & Likud chair — heads the list by virtue of the role, without standing in the primary.",
-    "reserved": "A reserved seat on the party's published final list.",
+    "chair": "Prime Minister & Likud chair — elected party leader in a separate, earlier leadership race, and heads the list by virtue of that role, not by standing in this primary.",
+    "reserved": "A reserved (\"shiryon\") seat the party leader may fill directly, regardless of the primary vote's outcome.",
     "women_representation_guarantee": "A list position adjusted under the party's women's-representation guarantee.",
     "new_woman_seat": "A seat reserved for a \"new woman\" on the list, per party rules."
   }
