@@ -40,6 +40,22 @@ export function EventOutcome({ showTitle = true }: { showTitle?: boolean }) {
           {t.ui.outcome.sub}
         </p>
       )}
+      {event.meta.resultsOfficial === false && (
+        <p
+          style={{
+            fontSize: "var(--fs-xs)",
+            lineHeight: 1.55,
+            color: "#7a3a1e",
+            background: "#fbe9de",
+            border: "1px solid #f0c7a8",
+            borderRadius: "10px",
+            padding: "10px 12px",
+            margin: "0 0 14px",
+          }}
+        >
+          {t.ui.outcome.unofficial}
+        </p>
+      )}
 
       <div style={{ display: "flex", flexWrap: "wrap", gap: 18 }}>
         {vm.raw.length > 0 && (

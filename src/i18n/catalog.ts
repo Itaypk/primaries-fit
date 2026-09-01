@@ -166,6 +166,9 @@ export interface Catalog {
       votes: string;
       /** Badge on a candidate whose seat differs from their vote rank. */
       moved: string;
+      /** Caveat shown when the event's results are not yet an official,
+       *  final party publication (`meta.resultsOfficial === false`). */
+      unofficial: string;
     };
   };
 }

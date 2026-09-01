@@ -99,6 +99,12 @@ export function ResultsScreen({
           {t.ui.results.compareToOutcome
             .replace("{name}", t.candidateName(topMatchId))
             .replace("{rank}", String(outcomeRank))}
+          {event.meta.resultsOfficial === false && (
+            <>
+              {" "}
+              <strong>{t.ui.outcome.unofficial}</strong>
+            </>
+          )}
         </p>
       )}
 
