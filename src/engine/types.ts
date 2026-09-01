@@ -211,6 +211,14 @@ export interface EventMeta extends EventSummary {
   /** Optional: a locale id resolved to prose, or an external URL. */
   methodology?: string;
   /**
+   * Set to `false` when a past event's `results` are not yet an official,
+   * final party publication (e.g. sourced from media reporting while
+   * litigation, recounts, or unfilled reserved seats are still pending).
+   * Absent/`true` = official. Read by the outcome UI to show a caveat;
+   * never affects scoring.
+   */
+  resultsOfficial?: boolean;
+  /**
    * District-race ids for events where members also vote a regional slate
    * (labels resolve from the locale catalogs as `region.<id>`). Candidates
    * reference these via `Candidate.region`; absent = no district races.

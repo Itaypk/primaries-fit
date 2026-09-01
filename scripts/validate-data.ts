@@ -63,6 +63,7 @@ const eventMetaSchema = eventSummarySchema.extend({
   dataUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "expected ISO YYYY-MM-DD"),
   methodology: z.string().optional(),
   regions: z.array(z.string().min(1)).optional(),
+  resultsOfficial: z.boolean().optional(),
 });
 
 const parameterSchema = z

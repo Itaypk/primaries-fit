@@ -208,6 +208,7 @@
     "outcome": {
       "title": "What actually happened",
       "sub": "The primary set the vote order, but the seated list differs: the party chair heads it, and reserved seats lift some candidates above their vote rank. Each change is explained below.",
+      "unofficial": "⚠️ These results are not official or final. They're sourced from media reporting, not an official party publication, and may still change — including pending legal challenges and reserved seats not yet filled. We'll update this once official, final results are published.",
       "rawColumn": "By the vote",
       "finalColumn": "Final list",
       "votes": "votes",
